@@ -1,0 +1,1086 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+.boxmaster {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.mapbox {
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.linediv {
+    position: relative;
+    top: 10px;
+    height: 40px;
+    width: 2px;
+    background: #18c8ff;
+}
+
+
+
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+    border: 1px solid rgb(129 129 129);
+    border-radius: 6px;
+    background-clip: padding-box;
+    box-shadow: 2px 2px 3px 0px rgb(0 0 0 / 21%);
+}
+
+
+.leaflet-top {
+    top: auto;
+    height: 88px;
+    background: red;
+    position: absolute;
+    width: 56px;
+    bottom: 26px;
+    display: none;
+}
+
+.leaflet-left {
+    top: auto;
+    bottom: 145px;
+    height: 88px;
+    background: rgb(0 17 255 / 0%);
+    position: absolute;
+    width: 56px;
+    right: 7px;
+    left: auto;
+    display: block;
+}
+
+.leaflet-touch .leaflet-bar a:first-child {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.leaflet-touch .leaflet-bar a:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.leaflet-touch .leaflet-bar a {
+    width: 34px;
+    height: 34px;
+    line-height: 30px;
+}
+
+
+#locateButton {
+    position: absolute;
+    top: auto;
+    bottom: 236px;
+    height: 35px;
+    width: 35px;
+    right: 18px;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 8px;
+    border: 1px solid rgb(129 129 129);
+    box-shadow: 2px 2px 3px 0px rgb(0 0 0 / 21%);
+    transition: 0.3s;
+}
+
+#locateButton img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+}
+
+#locateButton:hover {
+    background-color: #d1d1d1;
+    transform: scale(0.95);
+    transition: 0.3s;
+}
+
+
+
+
+    .price-text {
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        font-size: 14px;
+        /* Agrega más estilos según lo necesites */
+    }
+
+
+
+
+    .barcontacto {
+        position: absolute;
+        height: 93px;
+        width: 165px;
+        background: #ffffff00;
+        top: 0px;
+        right: 0px;
+        z-index: 1000;
+        /* border-radius: 0px 0px 0px 19px; */
+        /* box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 7%); */
+    }
+
+    .barcontactobtn {
+        position: relative;
+        /* left: 93px; */
+        margin-top: 7px;
+        height: 34px;
+        width: 110px;
+        background: #000000;
+        border-radius: 30px;
+        font-family: system-ui;
+        font-weight: bold;
+        font-size: 23px;
+        padding: 0px 10px 2px 15px;
+        color: #ffffff;
+    }
+
+    .barredesbtn {
+        margin-top: 3px;
+        margin-left: 7px;
+        height: 32px;
+        width: 32px;
+        background: red;
+        border-radius: 32px;
+        display: inline-flex;
+    }
+
+    .layer-button {
+        position: absolute;
+        top: auto;
+        bottom: 35px;
+        right: 19px;
+        height: 100px;
+        width: 100px;
+        z-index: 1000;
+        background: #ffffff;
+        padding: 0px;
+        border-radius: 121px;
+        cursor: pointer;
+        border-style: none;
+        /* box-shadow: 0px 0px 0px 3px rgb(255 255 255), 2px 2px 4px 3px rgb(0 0 0 / 45%); */
+        transition: 0.3s;
+        box-shadow: 5px 5px 10px 0px rgb(0 0 0 / 45%);
+    }
+
+
+    .capasimgs {
+        height: 100%;
+        width: 100%;
+        background-image: url(../img/capasatelite3.png);
+        background-size: 165px;
+        background-position-x: 784px;
+        border-radius: 50px;
+    }
+
+.capasombra {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100px;
+    width: 100px;
+    background: #8ca4eb00;
+    border-radius: 50px;
+    box-shadow: 7px 7px 11px -2px rgb(79 172 207 / 54%) inset, -7px -6px 21px 5px rgb(0 0 0 / 83%) inset;
+}
+
+
+
+
+
+
+
+
+
+
+
+    #map {
+        height: 100%;
+        width: 100%;
+    }
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .menumaster {
+position: relative;
+top: 0px;
+height: 60px;
+width: 100%;
+background: #ffffff;
+box-shadow: 0px 0px 15px 8px rgb(0 0 0 / 7%);
+z-index: 1000;
+display: inline-flex;
+}
+
+.menumaster {
+    position: relative;
+    top: 0px;
+    height: 60px;
+    width: 670px;
+    background: #ffffff;
+    box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 7%);
+    z-index: 1000;
+    display: inline-flex;
+    border-radius: 0px 0px 19px 0px;
+}
+
+.botonbox {
+position: relative;
+height: 100%;
+margin-left: 40px;
+left: 0px;
+background: #00000000;
+}
+
+.boton1 {
+position: relative;
+background: #18c8ff;
+color: aliceblue;
+font-family: system-ui;
+font-weight: bold;
+font-size: 24px;
+padding: 0px 14px 5px 14px;
+border-radius: 9px;
+margin-top: 11px;
+}
+
+.botonbox a {
+position: absolute;
+top: 0px;
+left: 0px;
+height: 100%;
+width: 100%;
+}
+
+.logonombre {
+    position: relative;
+    display: inline-flex;
+    top: 0px;
+    font-family: system-ui;
+    font-weight: bold;
+    font-size: 27px;
+    color: #096caf;
+    margin-top: 0px;
+    margin-left: 32px;
+    margin-right: 13px;
+}
+
+.logonombre h1 {
+    font-family: system-ui;
+    font-size: 30px;
+    margin-block-start: 11px;
+    margin-block-end: 0px;
+    margin-left: 10px;
+}
+
+.logo1 {
+    position: relative;
+    margin-top: 1px;
+    height: 57px;
+    width: 57px;
+    background: #ff000000;
+    background-image: url(../img/logo2.svg);
+    background-size: 57px;
+    background-repeat: no-repeat;
+    transform-style: preserve-3d; /* Necesario para que la rotación 3D funcione correctamente */
+    animation: girarYcambiar 10s infinite; 
+}
+
+@keyframes girarYcambiar {
+    0%, 5% { 
+        background-image: url(../img/logo2.svg); 
+        transform: rotateY(90deg); 
+    }
+    5%, 45% { 
+        background-image: url(../img/logo2.svg); 
+        transform: rotateY(0deg); 
+    }
+    50% { 
+        background-image: url(../img/logo2.svg); 
+        transform: rotateY(90deg); 
+    }
+    51% { 
+        background-image: url(../img/logoletra1r.png); 
+        transform: rotateY(90deg); 
+    }
+    56%, 95% { 
+        background-image: url(../img/logoletra1r.png); 
+        transform: rotateY(180deg); 
+    }
+    100% { 
+        background-image: url(../img/logoletra1r.png); 
+        transform: rotateY(270deg); 
+    }
+}
+
+
+    .filter {
+        position: absolute;
+        top: 120px;
+        left: 10px;
+        height: 135px;
+        width: 300px;
+        background: white;
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    .range-slider {
+        margin-top: 14px;
+        width: 90%;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .range-slider input {
+        width: 102%;
+        left: -2%;
+        position: absolute;
+        height: 6px;
+        pointer-events: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background: #00000000;
+    }
+    .range-slider input[type="range"]::-webkit-slider-thumb {
+        pointer-events: all;
+        width: 20px;
+        height: 20px;
+        border: 0;
+        border-radius: 50%;
+        background: #14e0e0;
+        box-shadow: 3px 3px 6px 0px rgb(0 0 0 / 30%);
+        cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+        z-index: 9999;
+    }
+    .range-slider input[type="range"]::-webkit-slider-thumb:hover {
+        box-shadow: 0px 0px 0px 7px rgb(143 143 143 / 30%);
+    }
+    .range-slider input[type="range"]::-moz-range-thumb {
+        pointer-events: all;
+        width: 20px;
+        height: 20px;
+        border: 0;
+        border-radius: 50%;
+        background: #398cce;
+        cursor: pointer;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    .range-slider .track {
+        position: absolute;
+        height: 10px;
+        border-radius: 15px;
+        background: #00000026;
+        width: 100%;
+        box-shadow: 3px 4px 5px -4px rgb(0 0 0 / 36%) inset;
+    }
+    .range-slider .range {
+        position: absolute;
+        height: 10px;
+        border-radius: 15px;
+        background: #24dbdb;
+        box-shadow: 3px 4px 5px -4px rgb(27 57 165) inset;
+    }
+    .range-slider .range {
+        position: absolute;
+        height: 10px;
+        border-radius: 15px;
+        background: linear-gradient(45deg, #0072ff, #00e5ff);
+        box-shadow: 3px 4px 5px -4px rgb(27 57 165) inset;
+    }
+    .price-labels {
+        margin-top: 50px;
+        display: flex;
+        height: 28px;
+        justify-content: space-between;
+        background: #00000024;
+    }
+    .price-labels input {
+        width: 100px;
+        text-align: center;
+        border: none;
+        background: none;
+        background: #00000026;
+        border-radius: 8px;
+    }
+
+
+            /* Sobrescribir estilos de Leaflet */
+            .leaflet-div-icon {
+        background: none !important;
+        border: none !important;
+    }
+
+    .leaflet-popup-tip-container {
+        width: 0;
+height: 0;
+border-left: 10px solid transparent;
+border-right: 10px solid transparent;
+border-top: 10px solid #00000000;
+position: relative;
+margin-left: auto;
+margin-right: auto;
+left: 0;
+top: 0;
+}
+
+.price-tip {
+border: 7px solid transparent;
+}
+
+
+
+.leaflet-marker-icon span,
+    .leaflet-marker-icon img{
+        transition: 0.2s;
+    }
+
+    .leaflet-marker-icon:hover span{
+        transition: 0.2s;
+        transform: scale(1.24);
+    }
+
+    .leaflet-marker-icon:hover img{
+        transition: 0.2s;
+        transform: scale(1.24);
+        background: white;
+    }
+
+
+
+
+    .carousel {
+position: relative;
+width: 100%;
+overflow: hidden;
+text-align: center;
+height: 190px; /* Establece la altura fija aquí */
+pointer-events: none;
+}
+
+.carousel img {
+width: 100%;
+height: 100%; /* Asegúrate de que las imágenes ocupen todo el alto del carrusel */
+object-fit: cover; /* Esta propiedad es clave para el efecto "background-cover" */
+display: none;
+max-width: 100%;
+max-height: 190px;
+border-radius: 14px 14px 0px 0px;
+}
+
+.carousel img.active {
+display: block;
+}
+
+.carousel button {
+    position: absolute;
+    background-color: rgb(255 255 255);
+    color: #000000;
+    font-weight: bold;
+    border: none;
+    padding: 15px 10px 15px 10px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+    .carousel button.prev {
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 10px 4px 4px 10px;
+        transition: 0.3s;
+    }
+    .carousel button.next {
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 4px 10px 10px 4px;
+        transition: 0.3s;
+    }
+
+    .carousel button.prev:hover,
+    .carousel button.next:hover {
+        transform: translateY(-50%) scale(1.2);
+        transition: 0.3s;
+    }
+
+    .carousel button.prev:active,
+    .carousel button.next:active {
+        background-color: #adadad;
+
+}
+
+    .carousel .indicators {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .carousel .indicators {
+position: relative;
+text-align: center;
+margin-top: -21px;
+background: #00000057;
+backdrop-filter: blur(8px);
+width: 91px;
+border-radius: 8px;
+margin-left: auto;
+margin-right: auto;
+padding: 3px;
+}
+
+
+.carousel .indicator {
+position: relative;
+top: -1px;
+display: inline-block;
+width: 8px;
+height: 8px;
+background-color: #a9a9a9a8;
+border-radius: 50%;
+margin: 0 2px;
+cursor: pointer;
+pointer-events: auto;
+}
+
+.carousel .indicator.active {
+background-color: #fff;
+width: 10px;
+height: 10px;
+top: 0px;
+margin: 0px 1px;
+}
+
+
+    .leaflet-popup-content {
+margin: 0;
+line-height: 0;
+}
+
+.informacion-basica {
+line-height: 1.4;
+height: 100px;
+padding: 0px 14px 0px 14px;
+}
+
+.price-text {
+font-family: system-ui;
+font-weight: bold;
+color: rgb(0, 0, 0);
+font-size: 20px;
+}
+
+.detalles-basicos {
+position: relative;
+top: 10px;
+background: #ff000000;
+font-size: 15px;
+font-family: system-ui;
+font-weight: bold;
+}
+
+#vermodal {
+    position: absolute;
+    background: #ff000000;
+    top: 0px;
+    left: 0px;
+    height: 290px;
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+#btncomollegar {
+    position: absolute;
+    background: #bbbbbbd4;
+    right: 5px;
+    cursor: pointer;
+    border: none;
+    padding: 4px 8px 4px 0px;
+    border-radius: 0px 0px 5px 5px;
+    transition: 0.3s;
+}
+
+#btncomollegar img {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    margin: 0px 4px 0px 6px;
+}
+
+#btncomollegar:hover {
+    background: #8a8a8ad4;
+    transition: 0.3s;
+}
+
+.informacion-basica button {
+cursor: pointer;
+}
+
+.leaflet-popup-content {
+        margin: 0;
+        line-height: 0;
+        width: 350px; 
+        max-height: 300px; 
+        overflow-y: auto; 
+    }
+
+    .leaflet-popup-content .carousel button {
+        opacity: 0; /* Inicialmente ocultos */
+        transition: opacity 0.5s ease; /* Transición suave para la opacidad */
+      }
+      
+      .leaflet-popup-content:hover .carousel button {
+        opacity: 1; /* Visibles al pasar el ratón */
+        transition: 0.3s;
+      }
+
+    .leaflet-popup-content-wrapper {
+padding: 0;
+text-align: left;
+border-radius: 14px;
+transition: 0.3s;
+}
+
+
+
+.leaflet-popup:hover {
+    transform: scale(1.04);
+    transition: 0.3s;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+position: absolute;
+top: 0;
+right: 0;
+padding: 0;
+margin: 7px;
+border: none;
+text-align: center;
+width: 35px;
+height: 35px;
+font: 24px / 35px math;
+color: #3f3f3f;
+text-decoration: none;
+font-weight: bold;
+background: white;
+border-radius: 50px;
+}
+
+
+
+
+
+
+.modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+.modal-logo {
+    width: 100%;
+    background: rgba(255, 0, 0, 0);
+    height: 50px;
+    pointer-events: none;
+}
+
+.modal-logo-in {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background: #ff000000;
+    height: 50px;
+    width: 200px;
+}
+
+.modal-logo img {
+    position: absolute;
+    height: 50px;
+}
+
+.modal-logo-in p {
+    position: absolute;
+    font-size: 28px;
+    font-family: system-ui;
+    font-weight: bold;
+    margin-block-start: 7px;
+    margin-block-end: 0px;
+    margin-left: 60px;
+    color: #c70214;
+}
+
+.modal-logo-in span {
+    color: #0061a1;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    max-height: 1440px;
+    width: 80%;
+    max-width: 1080px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+}
+
+.modal-in {
+    background: rgba(255, 255, 255, 0);
+    overflow: auto;
+    flex: 1;
+    margin: 0px 5px 0px 25px;
+    padding-right: 10px;
+}
+    
+
+/* Estilos para Chrome, Safari y Edge */
+.modal-in::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+  }
+  
+  .modal-in::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo del track */
+  }
+  
+  .modal-in::-webkit-scrollbar-thumb {
+    background: #00000041; /* Color del pulgar (la parte que se arrastra) */
+    border-radius: 4px; /* Bordes redondeados */
+  }
+  
+  .modal-in::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color del pulgar al pasar el mouse por encima */
+  }
+  
+  /* Estilos para Firefox */
+  /* .modal-in {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+  } */
+    
+    .modal-footer {
+        /*display: flex;*/
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .modal-end {
+        background: #c5c5c5bd;
+        height: 70px;
+        width: 100%;
+        border-radius: 0px 0px 14px 14px;
+    }
+
+    .modal-end p {
+        font-family: system-ui;
+        font-weight: bold;
+        margin-block-start: 0px;
+        margin-block-end: 5px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .modal-redes {
+        position: relative;
+        height: 35px;
+        background: #ff000000;
+        width: 185px;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .modal-redes img {
+        height: 35px;
+        margin: 0px 4px;
+    }
+
+    .modal-header h2 {
+        margin: 0;
+    }
+
+    .infocompleta {
+        display: flex;
+    }
+
+    .modal-body {
+        position: relative;
+        flex: 3;
+        background: #e7e7e7;
+    }
+
+
+
+    .modal-body h3 {
+        font-family: sans-serif;
+        background: #2f9eff;
+        color: white;
+        display: inline-flex;
+        font-size: 21px;
+        margin-block-start: 5px;
+        margin-block-end: 0px;
+        padding: 4px;
+        border-radius: 7px;
+    }
+
+    .detallesmodalicon {
+        display: flex; /* Activamos Flexbox */
+        flex-wrap: wrap; /* Permitimos que los elementos se dividan en varias líneas */
+        justify-content: space-around; /* Distribuimos los elementos con espacio alrededor */
+        font-family: sans-serif;
+    }
+    
+    .item {
+        display: flex; /* También usamos Flexbox para cada elemento individual */
+        flex-direction: column; /* Colocamos la imagen arriba y el texto abajo */
+        align-items: center; /* Centramos verticalmente el contenido */
+        text-align: center; /* Centramos el texto horizontalmente */
+        width: 23%; /* Ajusta el ancho según sea necesario para que quepan 4 por línea */
+        margin: 14px 0px 0px 0px;
+    }
+
+    .detallesmodalicon img {
+        height: 50px;
+    }
+
+    .detallesmodaltext {
+    font-family: sans-serif;
+}
+
+    .contactows{
+        flex: 1;
+        background: rgb(165, 238, 187);
+    }
+
+    .close {
+        position: absolute;
+        top: 7px;
+        right: 7px;
+        color: #fffffff2;
+        font-family: math;
+        font-size: 31px;
+        font-weight: bold;
+        cursor: pointer;
+        background: red;
+        padding: 0px 10px 0px 10px;
+        border-radius: 12px;
+        z-index: 9999;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+
+
+    .loader {
+        position: fixed; /* Para que ocupe toda la pantalla */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white; /* Color de fondo de la pantalla de carga */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; /* Asegúrate de que esté por encima de todo */
+        flex-direction: column;
+    }
+    
+    .content {
+        display: none; /* Oculta el contenido inicialmente */
+    }
+    
+    /* Puedes agregar más estilos para personalizar la apariencia del logo */
+    .loader img {
+        width: 555px; /* Ajusta el tamaño según tus necesidades */
+    }
+
+    /*@media (prefers-color-scheme: dark) {
+        .loader {
+            background-color: #222222; color de fondo de pantalla de cargar para los temas
+        }
+    }
+*/
+
+
+    .loader {
+        animation: loaderFadeOut 5s forwards; 
+    }
+    
+    .loader img {
+        animation: loaderScale 5s forwards; 
+    }
+    
+    @keyframes loaderFadeOut {
+        0% {
+            opacity: 1; 
+        }
+        80% {
+            opacity: 1; 
+        }
+        90% {
+            opacity: 0; 
+        }
+        100% {
+            opacity: 0; 
+        }
+    }
+    
+    @keyframes loaderScale {
+        0% {
+            transform: scale(0); 
+        }
+        20% {
+            transform: scale(1); 
+        }
+        80% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(5); 
+        }
+    }
+
+    @keyframes loadernombre {
+        0% {
+            opacity: 0; 
+        }
+        30% {
+            opacity: 0; 
+        }
+        40% {
+            opacity: 1; 
+        }
+        100% {
+            opacity: 1; 
+        }
+    }
+
+
+    .contactos p {
+        font-family: system-ui;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        color: black;
+        margin-block-start: 19px;
+        margin-block-end: 3px;
+    }
+
+    .whatsapp-button {
+        display: block;
+        background-color: #25D366;
+        padding: 0px 10px 10px 2px;
+        font-size: 28px;
+        font-family: system-ui;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        border-radius: 7px;
+        max-width: 180px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 12px;
+        transition: 0.3s;
+    }
+
+    .whatsapp-button:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+    transition: 0.3s;
+}
+
+.whatsapp-button img {
+    position: relative;
+    top: 8px;
+    height: 40px;
+    margin: 5px;
+}
+
+    .whatsapp-button span {
+        position: relative;
+        top: -7px;
+        color: white;
+        font-family: system-ui;
+        font-weight: bold;
+        font-size: 26px;
+    }
+
+
+
+    .layer-button {
+        position: absolute;
+        top: auto;
+        bottom: 35px;
+        right: 19px;
+        height: 100px;
+        width: 100px;
+        z-index: 1000;
+        background: #ffffff;
+        padding: 0px;
+        border-radius: 14px;
+        cursor: pointer;
+        border-style: none;
+        box-shadow: 0px 0px 0px 3px rgb(255 255 255), 2px 2px 4px 3px rgb(0 0 0 / 45%);
+        transition: 0.3s;
+    }
+
+    .layer-button:hover {
+        transform: scale(0.94);
+        transition: 0.3s;
+    }
+    
+    .layer-button img {
+        width: 100%;
+        height: 100%;
+        border-radius: 14px;
+    }
+
+
+
+
+
+
+
+
+
+

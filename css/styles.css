@@ -1,0 +1,57 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+.boxmaster {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.mapbox {
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.linediv {
+    position: relative;
+    top: 10px;
+    height: 40px;
+    width: 2px;
+    background: #18c8ff;
+}
+
+.leaflet-top {
+top: 311px;
+height: 88px;
+background: red;
+position: absolute;
+width: 56px;
+}
+
+.leaflet-left  {
+    top: 311px;
+    height: 88px;
+    background: rgb(0, 17, 255);
+    position: absolute;
+    width: 56px;
+    }
+
+
+    .price-text {
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        font-size: 14px;
+        /* Agrega más estilos según lo necesites */
+    }
