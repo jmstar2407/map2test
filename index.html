@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UP - Eleva tu búsqueda</title>
+    <link rel="shortcut icon" href="./img/logo4.svg">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="./css/stylesup.css"/>
+    <link rel="stylesheet" href="./css/stylesgallery.css"/>
+</head>
+
+
+<body>
+    <div class="loader">
+        <img src="./img/logo2.png" alt="Logo de carga"> 
+        <img src="./img/logonombre1.png" alt="Logo de carga" style="margin-top: -45px; animation: loadernombre 5s forwards; ">
+    </div>
+
+<div class="boxmaster">
+
+    <div class="menumaster">
+        <!-- <div class="logoicon"><img src="./img/logo2.png"></div> -->
+        <div class="logonombre">
+            <div class="logo1"></div>
+            <h1>Eleva tu búsqueda</h1>
+        </div>
+
+        <div class="linediv"></div>
+
+        <div class="botonbox"> 
+            <div class="boton1">Alquiler<a href="#" onclick="toggleMarkers('alquiler')"></a></div>
+        </div>
+
+
+        <div class="botonbox"> 
+            <div class="boton1">Venta<a href="#" onclick="toggleMarkers('venta')"></a></div>
+        </div>
+
+
+    </div>
+
+    <!-- contacto -->
+    <div class="barcontacto">
+        <div class="barcontactobtn">Síguenos:</div>
+        <div class="barredesbtn" style="background: #0093ff;"></div>
+        <div class="barredesbtn" style="background: #ff6c00;"></div>
+        <div class="barredesbtn" style="background: #2d2d2d;"></div>   
+    </div>
+    <!-- contacto FIN-->
+
+
+<!-- MAPA -->
+<div class="mapbox">
+    <div id="map" style="background: #aad3df;"></div>
+     <!-- Botones capas, location -->
+         <button id="changeLayerButton" class="layer-button">
+            <div class="capasimgs" style="background-image: url(./img/capasatelite3.jpg);"></div>
+            <!-- <img src="./img/capasatelite2.png" alt="Cambiar capa" id="layerIcon"> -->
+            <div class="capasombra"></div>
+         </button>
+
+         <button id="locateButton">
+            <img src="./img/mi-ubicacion1.png" alt="Mostrar mi ubicación">
+         </button>
+     <!-- Botones capas, location FIN -->
+    </div>
+</div>
+<!-- MAPA Fin-->
+
+
+<!-- Modal -->
+<div id="propertyModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-logo">
+            <div class="modal-logo-in">
+            <img src="./img/logo2.png"> <p>ARRIBA<span>TE</span></p>  
+            </div>
+            
+        </div>
+          <div class="modal-in">
+            <h2>Información de la Propiedad</h2>
+
+
+
+
+<!-- Galeria -->
+            <div class="gallery">
+                <div class="main-image">
+                    
+                    <button class="nav-button-img-p left" id="prevMainImage">&#10094;</button>
+                    <img id="currentImage" src="https://sachinchoolur.github.io/lightslider/img/cS-1.jpg" alt="Imagen Principal">
+                    <button class="nav-button-img-p right" id="nextMainImage">&#10095;</button>
+                </div>
+                <div class="thumbnails-container">
+                    <button class="scroll-button left">&#10094;</button> 
+                    <div class="thumbnails">
+
+                    </div>
+                    <button class="scroll-button right">&#10095;</button> 
+            </div>
+            </div>
+            
+            <div id="fullscreenView">
+                <button class="nav-button left" id="prevImage">&#10094;</button>
+                <div id="fullscreenImageContainer"> 
+                    <img id="fullscreenImage" src="" alt="Imagen en pantalla completa">
+                </div>
+                <button class="nav-button right" id="nextImage">&#10095;</button>
+                <button id="closeFullscreen">Cerrar</button>
+            </div>
+ <!-- Galeria FIN -->
+
+
+
+ <!-- Aquí se inyectará la información de CADA propiedad -->
+ <div class="infocompleta">
+            <div class="modal-body" id="modalPropertyDetails"></div>
+                
+                <div class="contactos">
+
+                    <p>¿Te interesa esta propiedad?<br>
+                        Escríbenos:
+                    </p>
+                    <a href="#" id="whatsappButton" class="whatsapp-button" onclick="openWhatsApp()"><img src="./img/icons/whatsapp2.svg"><span>WhatsApp</span></a>
+
+
+                </div>
+
+
+            </div>
+ <!-- Aquí se inyectará la información de CADA propiedad FIN -->
+
+
+
+
+
+            <div class="modal-footer">
+
+
+
+          </div>
+
+
+
+          
+        </div>
+
+         <!-- Información general para todas las propiedades -->
+         <div class="modal-end">
+
+                           
+            <div class="modal-redes">  
+                <p>Síguenos en:</p>
+               <img src="./img/icons/instagram1.png">
+               <img src="./img/icons/facebook1.png">
+               <img src="./img/icons/tiktok1.png">
+               <img src="./img/icons/x1.png">
+            </div>
+               
+</div>
+        <span class="close" onclick="closeModal()">&times;</span>
+    </div>
+    <!-- Modal FIN -->
+
+
+
+</div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- // Detectar cambios en el tema del sistema operativo
+const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+function handleColorSchemeChange(e) {
+    const isDarkMode = e.matches;
+    const loader = document.querySelector('.loader');
+
+    if (isDarkMode) {
+        loader.style.backgroundColor = '#222222';
+    } else {
+        loader.style.backgroundColor = 'white';
+    }
+}
+
+// Aplicar estilos iniciales y escuchar cambios
+handleColorSchemeChange(colorSchemeQuery);
+colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
+
+
+
+
+<!-- Cuadro de filtro -->
+<div id="price-filter" class="filter">
+
+
+    <div class="filter-buttons">
+        <button id="filter-house" class="filter-button active">
+            <img src="./img/casa4.png" alt="Casas">
+        </button>
+        <button id="filter-building" class="filter-button active">
+            <img src="./img/apartamento2.png" alt="Edificios">
+        </button>
+        <button id="filter-land" class="filter-button active">
+            <img src="./img/solar2.png" alt="Solares">
+        </button>
+    </div>
+
+    
+
+    <label for="price-range">Rango de Precios</label>
+    <div class="range-slider">
+        <div class="track"></div>
+        <div class="range" id="range-highlight"></div>
+        <input type="range" id="min-price-range" min="0" max="10000000" value="0">
+        <input type="range" id="max-price-range" min="0" max="10000000" value="10000000">
+    </div>
+    <div class="price-labels">
+        <input type="text" id="min-price" placeholder="RD$0">
+        <input type="text" id="max-price" placeholder="RD$0">
+    </div>
+</div>
+
+</div>
+<script>
+
+    // Ocultar la pantalla de carga y mostrar el contenido después de 5 segundos
+setTimeout(function() {
+    document.querySelector('.loader').style.display = 'none';
+    document.querySelector('.content').style.display = 'block';   
+
+}, 5000); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Inicialización del mapa con un maxZoom aumentado
+var map = L.map('map').setView([18.7357, -70.1627], 8);
+
+ // Capas de mapa
+ var baseMaps = {
+            "Claro": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }).addTo(map),
+            "Vista Satelital": L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+                maxZoom: 19
+            })
+        };
+
+// Referencia al botón de cambio de capa
+const changeLayerButton = document.getElementById('changeLayerButton');
+let isSatelliteView = false;  // Estado inicial
+
+changeLayerButton.addEventListener('click', () => {
+    const capasImgs = changeLayerButton.querySelector('.capasimgs');
+    
+    if (isSatelliteView) {
+        // Cambiar a capa de mapa
+        map.removeLayer(baseMaps["Vista Satelital"]);
+        baseMaps["Claro"].addTo(map);
+        
+        // Cambiar imagen de fondo a la correspondiente al mapa
+        capasImgs.style.backgroundImage = "url(./img/capasatelite3.jpg)";
+    } else {
+        // Cambiar a capa satelital
+        map.removeLayer(baseMaps["Claro"]);
+        baseMaps["Vista Satelital"].addTo(map);
+        
+        // Cambiar imagen de fondo a la correspondiente al satélite
+        capasImgs.style.backgroundImage = "url(./img/capamapa3.jpg)";
+    }
+    
+    isSatelliteView = !isSatelliteView; // Alternar estado
+});
+
+
+
+
+
+// Botón de mi ubicación
+const locateButton = document.getElementById('locateButton');
+
+// Evento click para centrar el mapa en la ubicación del usuario
+locateButton.addEventListener('click', () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+
+            // Centrar el mapa en la ubicación del usuario
+            map.setView([lat, lng], 17);
+
+            // Agregar un marcador en la ubicación del usuario sin popup
+            L.marker([lat, lng]).addTo(map);
+        }, () => {
+            console.error("No se pudo obtener la ubicación.");
+        });
+    } else {
+        console.error("La geolocalización no es soportada por este navegador.");
+    }
+});
+// Botón de mi ubicación FIN
+
+
+
+
+
+
+// Función para formatear números con comas como separadores de miles
+function formatNumber(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+// Variables de iconos
+var houseIcon = './img/casa4.png';
+var buildingIcon = './img/apartamento2.png';
+var landIcon = './img/solar2.png';
+
+// Función para obtener el color del fondo del span según el tipo de propiedad
+function getBackgroundColor(iconUrl) {
+    if (iconUrl === houseIcon) {
+        return '#e17477'; // Color para casas
+    } else if (iconUrl === buildingIcon) {
+        return '#52bae8'; // Color para apartamentos
+    } else if (iconUrl === landIcon) {
+        return '#59a739'; // Color para solares
+    } else {
+        return 'white'; // Color por defecto
+    }
+}
+
+
+// Creación de íconos personalizados con precio y color según el tipo de propiedad
+function createIcon(iconUrl, price) {
+    var backgroundColor = getBackgroundColor(iconUrl); // Obtener color de fondo
+    return L.divIcon({
+        html: `<div style="position: relative; display: flex; flex-direction: column; align-items: center;">
+                    <img src="${iconUrl}" style="margin-top: -26px;
+                    width: 32px; height: 32px; background: #0f1931; border-radius: 31px; border-style: solid; border-color: ${backgroundColor};; border-width: 3px;" />
+                    <span style="background: ${backgroundColor}; 
+
+                    font-family: system-ui;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+                    
+                    
+                    padding: 2px 4px; border-radius: 3px; margin-top: -8px;">RD$${formatNumber(price)}</span>
+                    <div class="price-tip" style="border-top-color: ${backgroundColor};"></div>
+                </div>`,
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+    });
+}
+
+// Íconos para referencia
+var roomIcon = './img/icons/habitacion1.svg'; // ícono para habitaciones
+var bathroomIcon = './img/icons/baño1.svg'; // ícono para baños
+var parkingIcon = './img/icons/parqueo1.svg'; // ícono para parqueo
+var areaIcon = './img/icons/area1.svg'; // ícono para área
+
+// Normalización de ubicaciones
+function normalizeLocation(location) {
+    return location.latLng ? { ...location, lat: location.latLng[0], lng: location.latLng[1] } : location;
+}
+
+// Definición de ubicaciones con información adicional
+var alquileres = [
+    { id: 224506, lat: 18.4861, lng: -69.9312, title: 'Casa en Alquiler en Santo Domingo', price: 1200, icon: houseIcon, rooms: 3, bathrooms: 2, parking: 1, area: 120, imageFolder: './img/properties/224506/', imageCount: 5 },
+    { id: 224507, latLng: [18.81260613062721, -70.5605276914127], title: 'Edificio Santo Domingo', price: 8000000, icon: buildingIcon, rooms: 15, bathrooms: 12, parking: 8, area: 800, imageFolder: './img/properties/224507/', imageCount: 5 },
+    { id: 224508, lat: 19.7570, lng: -70.7667, title: 'Casa en Alquiler en Santiago', price: 1000, icon: houseIcon, rooms: 2, bathrooms: 1, parking: 1, area: 80, imageFolder: './img/properties/224508/', imageCount: 5 }
+];
+
+var ventas = [
+    { id: 224501, lat: 18.533976342086266, lng: -69.84789351675421, title: 'Casa en Venta en Don Oscar', price: 250000, icon: houseIcon, rooms: 3, bathrooms: 2, parking: 1, area: 100,
+     caracteristicas: 'El lugar donde puedes disfrutar del estilo de vida de tus sueños. Un entorno excepcional y un estilo de vida inigualable para nuestros residentes. <p>Un conjunto de apartamentos con una amplia gama de comodidades y exclusivas amenidades.', 
+    imageFolder: './img/properties/224501/', imageCount: 7 },
+    { id: 224502, latLng: [18.465055290827987, -69.81047256391996], title: 'Solar Santo Domingo', price: 5000000, icon: landIcon, rooms: 0, bathrooms: 0, parking: 0, area: 1000, imageFolder: './img/properties/224502/', imageCount: 5 },
+    { id: 224503, latLng: [18.515361605411158, -69.79580351613811], title: 'Edificio Santo Domingo', price: 7000000, icon: buildingIcon, rooms: 12, bathrooms: 10, parking: 6, area: 700, imageFolder: './img/properties/224503/', imageCount: 5 },
+    { id: 224504, latLng: [18.534530697687792, -69.84886578381361], title: 'Casa calle Santo Domingo', price: 230000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 2, area: 150, imageFolder: './img/properties/224504/', imageCount: 7 }
+];
+
+//Carousel
+
+// Modificar la función createCarousel para generar imágenes dinámicamente
+function createCarousel(imageFolder, imageCount) {
+    let carousel = `<div class="carousel">`;
+    for (let i = 1; i <= imageCount; i++) {
+        const imgSrc = `${imageFolder}${i}.jpg`;
+        carousel += `<img src="${imgSrc}" class="${i === 1 ? 'active' : ''}" onload="setCarouselHeight(this)">`;
+    }
+    carousel += `
+        <button class="prev" onclick="changeImage(this, -1)">&#10094;</button>
+        <button class="next" onclick="changeImage(this, 1)">&#10095;</button>
+        <div class="indicators">
+            ${Array.from({ length: imageCount }, (_, index) => `<span class="indicator ${index === 0 ? 'active' : ''}" onclick="setActiveImage(${index})"></span>`).join('')}
+        </div>
+    </div>`;
+    return carousel;
+}
+
+
+
+
+function changeImage(button, direction) {
+    const carousel = button.parentElement;
+    const images = carousel.querySelectorAll('img');
+    const indicators = carousel.querySelectorAll('.indicator');
+    let currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+    images[currentIndex].classList.remove('active');
+    indicators[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + direction + images.length) % images.length;
+    images[currentIndex].classList.add('active');
+    indicators[currentIndex].classList.add('active');
+}
+
+function setActiveImage(index) {
+    const carousels = document.querySelectorAll('.carousel');
+    carousels.forEach(carousel => {
+        const images = carousel.querySelectorAll('img');
+        const indicators = carousel.querySelectorAll('.indicator');
+        images.forEach(img => img.classList.remove('active'));
+        indicators.forEach(ind => ind.classList.remove('active'));
+        images[index].classList.add('active');
+        indicators[index].classList.add('active');
+    });
+}
+
+//Carousel FIN
+
+
+
+// PopUP
+function createMarkers(locations, markersArray) {
+    locations.forEach(function(location) {
+        location = normalizeLocation(location);
+        var marker = L.marker([location.lat, location.lng], { icon: createIcon(location.icon, location.price) });
+
+        // Crear el carrusel si hay una carpeta de imágenes disponible
+        var carousel = location.imageFolder ? createCarousel(location.imageFolder, location.imageCount) : '';
+
+        marker.bindPopup(
+            `<button id="vermodal" onclick="openModal(${JSON.stringify(location).replace(/"/g, '&quot;')})"></button>
+            ${carousel}
+            <div class="informacion-basica"> 
+
+             <button id="btncomollegar" onclick="comoLlegar(${location.lat}, ${location.lng})"><img src="./img/icons/location1.svg">Cómo llegar</button>
+
+
+            <span class="price-text">RD$ ${formatNumber(location.price)}</span><br>
+            
+            <b>${location.title}</b><br>
+            <div class="detalles-basicos"> 
+                
+            <tittle><img src="${roomIcon}" style="width: 26px; height: 26px;"/> ${location.rooms}
+            <img src="${bathroomIcon}" style="width: 26px; height: 26px; margin-left: 10px;"/> ${location.bathrooms}
+            <img src="${parkingIcon}" style="width: 26px; height: 26px; margin-left: 10px;"/> ${location.parking}
+            <img src="${areaIcon}" style="width: 26px; height: 26px; margin-left: 10px;"/><title="Haz clic para obtener indicaciones de cómo llegar"> ${location.area} m²
+            </div>
+            </div>`
+        ).addTo(map);
+
+        markersArray.push(marker);
+    });
+}
+
+
+
+
+
+
+// Función para abrir el modal con la información de la propiedad
+function openModal(property) {
+    const modal = document.getElementById('propertyModal');
+    const modalDetails = document.getElementById('modalPropertyDetails');
+
+        // Configurar el botón de WhatsApp
+        const whatsappButton = document.getElementById('whatsappButton');
+    const propertyLink = `https://tusitioweb.com/#id-${property.id}`; // Reemplaza con la URL real de tu sitio web
+    const whatsappMessage = `Me interesa saber más de esta propiedad con el ID ${property.id}: ${propertyLink}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=+18299605566&text=${encodeURIComponent(whatsappMessage)}`;
+
+    whatsappButton.href = whatsappUrl;
+
+
+    modalDetails.innerHTML = `
+         <p>Precio: RD$ ${formatNumber(property.price)}</p>
+     <h3>ID: ${property.id}</h3>
+        <h4>${property.title}</h4>
+
+
+
+    <div class="detallesmodalicon"> 
+        <div class="item">
+        <img src="${roomIcon}"><p> ${property.rooms} Habitaciones</p>
+        </div>
+        <div class="item">
+        <img src="${bathroomIcon}"><p>${property.bathrooms} Baños</p>
+</div>
+        <div class="item">
+        <img src="${parkingIcon}"><p>${property.parking} Parqueos</p>
+</div>
+        <div class="item">
+        <img src="${areaIcon}"><p>${property.area} m²</p>
+        </div>
+    </div>    
+    <div class="detallesmodaltext"> 
+        <p><strong>Caracteristicas:</strong> ${property.caracteristicas}</p>
+    </div>  
+    `;
+
+
+
+
+
+
+
+
+
+    // Actualizar la galería del modal
+    updateGallery(property.imageFolder, property.imageCount);
+
+
+// Función para actualizar la galería del modal
+function updateGallery(imageFolder, imageCount) {
+    // Limpiar la galería
+    const mainImage = document.getElementById('currentImage');
+    const thumbnailsContainer = document.querySelector('.thumbnails');
+    mainImage.src = '';
+    thumbnailsContainer.innerHTML = '';
+
+    // Generar miniaturas
+    let images = [];
+    for (let i = 1; i <= imageCount; i++) {
+        const imgSrc = `${imageFolder}${i}.jpg`;
+        images.push(imgSrc);
+
+        const thumbnail = document.createElement('img');
+        thumbnail.src = imgSrc;
+        thumbnail.alt = `Thumbnail ${i}`;
+        thumbnail.dataset.index = i - 1; // Guardar el índice de la imagen
+        thumbnail.addEventListener('click', () => {
+            mainImage.src = imgSrc;
+            currentIndex = i - 1; // Actualizar el índice actual
+        });
+        thumbnailsContainer.appendChild(thumbnail);
+    }
+
+    // Establecer la primera imagen como principal
+    if (imageCount > 0) {
+        mainImage.src = images[0];
+    }
+
+    // Variables para el índice actual y la lista de imágenes
+    let currentIndex = 0;
+
+    // Funciones para navegar entre imágenes
+    document.getElementById('prevMainImage').onclick = function() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = images.length - 1; // Ciclo al final si es la primera imagen
+        }
+        mainImage.src = images[currentIndex];
+    };
+
+    document.getElementById('nextMainImage').onclick = function() {
+        if (currentIndex < images.length - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Ciclo al principio si es la última imagen
+        }
+        mainImage.src = images[currentIndex];
+    };
+}
+
+// Actualizar la galería del modal FIN
+
+
+
+
+
+
+
+
+
+    history.pushState(null, '', `#id-${property.id}`); 
+    modal.style.display = "block";
+}
+
+// Función para cerrar el modal
+function closeModal() {
+    const modal = document.getElementById('propertyModal');
+    modal.style.display = "none";
+}
+// Asegúrate de que este script se ejecute después de que se haya cargado el contenido HTML
+window.addEventListener('DOMContentLoaded', (event) => {
+});
+
+
+// LINK ID - Verificar si hay un ID en la URL al cargar la página
+window.addEventListener('load', () => {
+    const hash = window.location.hash;
+    if (hash.startsWith('#id-')) { // Buscar "id-" en lugar de "property-"
+        const propertyId = parseInt(hash.substring('#id-'.length)); 
+
+// LINK ID - Verificar si hay un ID en la URL al cargar la página FIN
+
+        // Buscar la propiedad correspondiente en alquileres o ventas
+        const allProperties = [...alquileres, ...ventas];
+        const property = allProperties.find(p => p.id === propertyId);
+
+        if (property) {
+            openModal(property);
+        }
+    }
+});
+
+
+
+// Función de cómo llegar
+function comoLlegar(lat, lng) {
+    var url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+    window.open(url, '_blank');
+}
+
+
+
+
+var alquilerMarkers = [];
+var ventaMarkers = [];
+
+createMarkers(alquileres, alquilerMarkers);
+createMarkers(ventas, ventaMarkers);
+
+// Variable para mantener el tipo activo
+var activeType = 'alquiler';
+
+// Funciones para mostrar/ocultar marcadores
+function toggleMarkers(type) {
+    activeType = type; // Actualizar el tipo activo
+
+    var showMarkers = type === 'alquiler' ? alquilerMarkers : ventaMarkers;
+    var hideMarkers = type === 'alquiler' ? ventaMarkers : alquilerMarkers;
+
+    showMarkers.forEach(marker => marker.addTo(map));
+    hideMarkers.forEach(marker => map.removeLayer(marker));
+
+    filterMarkers(); // Filtrar los marcadores después de cambiar el tipo
+}
+
+// Inicialmente mostrar solo los alquileres
+toggleMarkers('alquiler');
+</script>
+
+
+    <script src="./js/scriptgallery.js"></script>
+
+    <script>
+        // Filtro de precio
+// Función para filtrar los marcadores en el mapa según el rango de precios
+function filterMarkers() {
+    const minPrice = parseInt(document.getElementById('min-price-range').value);
+    const maxPrice = parseInt(document.getElementById('max-price-range').value);
+
+    // Determinar si el valor máximo está en el límite
+    const isMaxPriceAtLimit = (activeType === 'alquiler' && maxPrice === 100000) || (activeType === 'venta' && maxPrice === 1000000);
+
+    // Obtener el conjunto de marcadores a filtrar según el tipo activo
+    const locations = activeType === 'alquiler' ? alquileres : ventas;
+    const markers = activeType === 'alquiler' ? alquilerMarkers : ventaMarkers;
+
+    markers.forEach((marker, index) => {
+        const location = locations[index];  // Obtener el objeto de la propiedad correspondiente
+        const markerPrice = location.price;
+
+        // Mostrar u ocultar el marcador según el rango de precios
+        if (markerPrice >= minPrice && (isMaxPriceAtLimit || markerPrice <= maxPrice)) {
+            marker.addTo(map);
+        } else {
+            map.removeLayer(marker);
+        }
+    });
+}
+
+// Función para actualizar las etiquetas de los precios
+function updatePriceLabels() {
+    const minPrice = parseInt(document.getElementById('min-price-range').value);
+    const maxPrice = parseInt(document.getElementById('max-price-range').value);
+
+    document.getElementById('min-price').value = `RD$${formatNumber(minPrice)}`;
+    const isMax = (activeType === 'alquiler' && maxPrice === 100000) || (activeType === 'venta' && maxPrice === 1000000);
+    document.getElementById('max-price').value = `RD$${formatNumber(maxPrice)}${isMax ? '+' : ''}`;
+}
+
+// Event listeners para los controles deslizantes de precio
+document.getElementById('min-price-range').addEventListener('input', () => {
+    const minPriceRange = document.getElementById('min-price-range');
+    const maxPriceRange = document.getElementById('max-price-range');
+
+    if (parseInt(minPriceRange.value) > parseInt(maxPriceRange.value)) {
+        minPriceRange.value = maxPriceRange.value;
+    }
+    updatePriceLabels();
+    filterMarkers();
+});
+
+document.getElementById('max-price-range').addEventListener('input', () => {
+    const minPriceRange = document.getElementById('min-price-range');
+    const maxPriceRange = document.getElementById('max-price-range');
+
+    if (parseInt(maxPriceRange.value) < parseInt(minPriceRange.value)) {
+        maxPriceRange.value = minPriceRange.value;
+    }
+    updatePriceLabels();
+    filterMarkers();
+});
+
+// Event listeners para los campos de texto de precio
+document.getElementById('min-price').addEventListener('input', () => {
+    const minPrice = parseInt(document.getElementById('min-price').value.replace(/\D/g, ''), 10); // Eliminar caracteres no numéricos
+    const minPriceRange = document.getElementById('min-price-range');
+    const maxPriceRange = document.getElementById('max-price-range');
+
+    if (!isNaN(minPrice) && minPrice <= parseInt(maxPriceRange.value)) {
+        minPriceRange.value = minPrice;
+        updatePriceLabels();
+        filterMarkers();
+    }
+});
+
+document.getElementById('max-price').addEventListener('input', () => {
+    const maxPrice = parseInt(document.getElementById('max-price').value.replace(/\D/g, ''), 10); // Eliminar caracteres no numéricos
+    const minPriceRange = document.getElementById('min-price-range');
+    const maxPriceRange = document.getElementById('max-price-range');
+
+    if (!isNaN(maxPrice) && maxPrice >= parseInt(minPriceRange.value)) {
+        maxPriceRange.value = maxPrice;
+        updatePriceLabels();
+        filterMarkers();
+    }
+});
+
+// Función para actualizar los controles deslizantes y las etiquetas de precio
+function updatePriceSlider(minValue, maxValue, step) {
+    const minPriceRange = document.getElementById('min-price-range');
+    const maxPriceRange = document.getElementById('max-price-range');
+    
+    minPriceRange.min = minValue;
+    minPriceRange.max = maxValue;
+    minPriceRange.value = minValue;
+
+    maxPriceRange.min = minValue;
+    maxPriceRange.max = maxValue;
+    maxPriceRange.value = maxValue;
+
+    minPriceRange.step = step;
+    maxPriceRange.step = step;
+
+    updatePriceLabels();
+}
+
+// Función para manejar el cambio entre alquiler y venta
+function toggleMarkers(type) {
+    activeType = type;
+
+    // Ajustar los rangos de precios según el tipo de propiedad
+    if (type === 'alquiler') {
+        updatePriceSlider(1000, 100000, 1000);  // Rango para alquileres
+    } else if (type === 'venta') {
+        updatePriceSlider(200000, 1000000, 10000);  // Rango para ventas
+    }
+
+    // Mostrar los marcadores correctos según el tipo y filtrar
+    const showMarkers = type === 'alquiler' ? alquilerMarkers : ventaMarkers;
+    const hideMarkers = type === 'alquiler' ? ventaMarkers : alquilerMarkers;
+
+    showMarkers.forEach(marker => marker.addTo(map));
+    hideMarkers.forEach(marker => map.removeLayer(marker));
+
+    // Restablecer los valores de los controles deslizantes al cambiar de tipo
+    document.getElementById('min-price-range').value = document.getElementById('min-price-range').min;
+    document.getElementById('max-price-range').value = document.getElementById('max-price-range').max;
+
+    // Actualizar las etiquetas de los precios
+    updatePriceLabels();
+
+    // Aplicar el filtro de precio con el nuevo rango
+    filterMarkers();
+}
+
+// Función para formatear números con comas
+function formatNumber(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+// Inicializar el filtro con el rango para alquileres
+toggleMarkers('alquiler');
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar el estado de los botones
+    var filters = {
+        house: true,
+        building: true,
+        land: true
+    };
+
+    // Referencias a los botones
+    var filterHouseButton = document.getElementById('filter-house');
+    var filterBuildingButton = document.getElementById('filter-building');
+    var filterLandButton = document.getElementById('filter-land');
+
+    // Agregar eventos de clic a los botones
+    filterHouseButton.addEventListener('click', function() {
+        toggleFilter('house');
+    });
+
+    filterBuildingButton.addEventListener('click', function() {
+        toggleFilter('building');
+    });
+
+    filterLandButton.addEventListener('click', function() {
+        toggleFilter('land');
+    });
+
+    // Función para alternar el filtro
+    function toggleFilter(type) {
+        filters[type] = !filters[type];
+
+        var button = document.getElementById('filter-' + type);
+        button.classList.toggle('active', filters[type]);
+
+        updateMarkersVisibility();
+    }
+
+    // Función para actualizar la visibilidad de los marcadores
+    function updateMarkersVisibility() {
+        var markers = activeType === 'alquiler' ? alquilerMarkers : ventaMarkers;
+        markers.forEach(function(marker, index) {
+            var location = activeType === 'alquiler' ? alquileres[index] : ventas[index];
+            
+            var shouldShow = (filters.house && location.icon === houseIcon) ||
+                             (filters.building && location.icon === buildingIcon) ||
+                             (filters.land && location.icon === landIcon);
+
+            if (shouldShow) {
+                marker.addTo(map);
+            } else {
+                map.removeLayer(marker);
+            }
+        });
+    }
+
+    // Asegúrate de que activeType esté definido antes de llamar a las funciones
+    if (typeof activeType === 'undefined') {
+        activeType = 'venta'; // Asignar un valor por defecto si no está definido
+    }
+
+    // Llamar a updateMarkersVisibility para establecer el estado correcto de los marcadores
+    updateMarkersVisibility();
+
+    // Si tienes un código de inicialización para mostrar 'alquiler' o 'venta' desde el inicio:
+    toggleMarkers(activeType);  // Usa 'alquiler' o 'venta' según lo que necesites
+});
+
+
+
+
+
+    </script>
+</body>
+</html>
