@@ -1,0 +1,16 @@
+{
+    "alquileres": [
+        { "lat": 18.4861, "lng": -69.9312, "title": "Casa en Alquiler en Santo Domingo", "price": 1200, "icon": "houseIcon", "rooms": 3, "bathrooms": 2, "parking": 1, "area": 120, "images": ["./img/img1.jpg", "./img/img2.jpg"] },
+        { "lat": 18.472, "lng": -69.892, "title": "Casa en Alquiler en Santo Domingo Este", "price": 10000, "icon": "houseIcon", "rooms": 4, "bathrooms": 3, "parking": 2, "area": 200 },
+        { "latLng": [18.48943496049313, -69.30870505593616], "title": "Edificio Santo Domingo", "price": 5000000, "icon": "buildingIcon", "rooms": 10, "bathrooms": 8, "parking": 5, "area": 500 },
+        { "latLng": [18.81260613062721, -70.5605276914127], "title": "Edificio Santo Domingo", "price": 8000000, "icon": "buildingIcon", "rooms": 15, "bathrooms": 12, "parking": 8, "area": 800 },
+        { "lat": 19.7570, "lng": -70.7667, "title": "Casa en Alquiler en Santiago", "price": 1000, "icon": "houseIcon", "rooms": 2, "bathrooms": 1, "parking": 1, "area": 80 }
+    ],
+    "ventas": [
+        { "lat": 18.533976342086266, "lng": -69.84789351675421, "title": "Casa en Venta en Don Oscar", "price": 250000, "icon": "houseIcon", "rooms": 3, "bathrooms": 2, "parking": 1, "area": 100, "images": ["./img/casas/casa1.jpg", "./img/casas/casa2.jpg", "./img/casas/casa3.jpg", "./img/casas/casa4.jpg", "./img/casas/casa5.jpg", "./img/casas/casa6.jpg", "./img/casas/casa7.jpg"] },
+        { "lat": 18.4741, "lng": -69.9312, "title": "Solar en Venta en Santo Domingo", "price": 230000, "icon": "landIcon", "rooms": 0, "bathrooms": 0, "parking": 0, "area": 300 },
+        { "latLng": [18.465055290827987, -69.81047256391996], "title": "Solar Santo Domingo", "price": 5000000, "icon": "landIcon", "rooms": 0, "bathrooms": 0, "parking": 0, "area": 1000 },
+        { "latLng": [18.515361605411158, "lng": -69.79580351613811], "title": "Edificio Santo Domingo", "price": 7000000, "icon": "buildingIcon", "rooms": 12, "bathrooms": 10, "parking": 6, "area": 700 },
+        { "latLng": [18.534530697687792, "lng": -69.84886578381361], "title": "Casa calle Santo Domingo", "price": 230000, "icon": "houseIcon", "rooms": 4, "bathrooms": 3, "parking": 2, "area": 150, "images": ["./img/casas/casa1.jpg", "./img/casas/casa2.jpg", "./img/casas/casa3.jpg", "./img/casas/casa4.jpg", "./img/casas/casa5.jpg"] }
+    ]
+}

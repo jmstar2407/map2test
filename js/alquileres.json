@@ -1,0 +1,56 @@
+[
+    {
+        "lat": 18.4861,
+        "lng": -69.9312,
+        "title": "Casa en Alquiler en Santo Domingo",
+        "price": 1200,
+        "icon": "houseIcon",
+        "rooms": 3,
+        "bathrooms": 2,
+        "parking": 1,
+        "area": 120,
+        "images": ["./img/img1.jpg", "./img/img2.jpg"]
+    },
+    {
+        "lat": 18.472,
+        "lng": -69.892,
+        "title": "Casa en Alquiler en Santo Domingo Este",
+        "price": 10000,
+        "icon": "houseIcon",
+        "rooms": 4,
+        "bathrooms": 3,
+        "parking": 2,
+        "area": 200
+    },
+    {
+        "latLng": [18.48943496049313, -69.30870505593616],
+        "title": "Edificio Santo Domingo",
+        "price": 5000000,
+        "icon": "buildingIcon",
+        "rooms": 10,
+        "bathrooms": 8,
+        "parking": 5,
+        "area": 500
+    },
+    {
+        "latLng": [18.81260613062721, -70.5605276914127],
+        "title": "Edificio Santo Domingo",
+        "price": 8000000,
+        "icon": "buildingIcon",
+        "rooms": 15,
+        "bathrooms": 12,
+        "parking": 8,
+        "area": 800
+    },
+    {
+        "lat": 19.7570,
+        "lng": -70.7667,
+        "title": "Casa en Alquiler en Santiago",
+        "price": 1000,
+        "icon": "houseIcon",
+        "rooms": 2,
+        "bathrooms": 1,
+        "parking": 1,
+        "area": 80
+    }
+]

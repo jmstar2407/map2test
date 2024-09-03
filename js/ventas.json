@@ -1,0 +1,56 @@
+[
+    {
+        "lat": 18.533976342086266,
+        "lng": -69.84789351675421,
+        "title": "Casa en Venta en Don Oscar",
+        "price": 250000,
+        "icon": "houseIcon",
+        "rooms": 3,
+        "bathrooms": 2,
+        "parking": 1,
+        "area": 100,
+        "images": ["./img/casas/casa1.jpg", "./img/casas/casa2.jpg", "./img/casas/casa3.jpg", "./img/casas/casa4.jpg", "./img/casas/casa5.jpg", "./img/casas/casa6.jpg", "./img/casas/casa7.jpg"]
+    },
+    {
+        "lat": 18.4741,
+        "lng": -69.9312,
+        "title": "Solar en Venta en Santo Domingo",
+        "price": 230000,
+        "icon": "landIcon",
+        "rooms": 0,
+        "bathrooms": 0,
+        "parking": 0,
+        "area": 300
+    },
+    {
+        "latLng": [18.465055290827987, -69.81047256391996],
+        "title": "Solar Santo Domingo",
+        "price": 5000000,
+        "icon": "landIcon",
+        "rooms": 0,
+        "bathrooms": 0,
+        "parking": 0,
+        "area": 1000
+    },
+    {
+        "latLng": [18.515361605411158, -69.79580351613811],
+        "title": "Edificio Santo Domingo",
+        "price": 7000000,
+        "icon": "buildingIcon",
+        "rooms": 12,
+        "bathrooms": 10,
+        "parking": 6,
+        "area": 700
+    },
+    {
+        "latLng": [18.534530697687792, -69.84886578381361],
+        "title": "Casa calle Santo Domingo",
+        "price": 230000,
+        "icon": "houseIcon",
+        "rooms": 4,
+        "bathrooms": 3,
+        "parking": 2,
+        "area": 150,
+        "images": ["./img/casas/casa1.jpg", "./img/casas/casa2.jpg", "./img/casas/casa3.jpg", "./img/casas/casa4.jpg", "./img/casas/casa5.jpg"]
+    }
+]
