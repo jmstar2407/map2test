@@ -32,10 +32,146 @@ html, body {
     background: #18c8ff;
 }
 
+.menumaster {
+    position: absolute;
+    top: 0px;
+    height: 60px;
+    width: 100%;
+    background: #ffffff00;
+    z-index: 1000;
+    display: inline-flex;
+}
+
+.botonbox {
+    position: relative;
+    display: inline-flex;
+}
+
+.botonbox2 {
+    position: relative;
+    display: none;
+}
+
+.botonbox-in {
+    position: relative;
+    height: 100%;
+    margin: 0px 18px;
+    left: 0px;
+    background: #00000000;
+}
+
+.botonbox-in a {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    }
+
+.menumaster-in-left {
+    position: relative;
+    top: 0px;
+    height: 60px;
+    background: #ffffff;
+    box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 7%);
+    display: inline-flex;
+    border-radius: 0px 0px 19px 0px;
+}
+
+.menumaster-in-right {
+    position: relative;
+    margin-left: auto;
+    padding-right: 20px;
+    background: #ffffff;
+    box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 7%);
+    display: inline-flex;
+    border-radius: 0px 0px 0px 19px;
+}
+
+.Menu-contacto-redes{
+    display: none;
+}
+
+.redes-box {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redes-box-in {
+    text-align: center;
+    position: relative;
+    top: -5px;
+    width: 100%;
+}
+
+.redes-box-in p {
+    font-family: sans-serif;
+    font-size: 12px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+.redes-buttones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.redes-button {
+    width: 30px;
+    height: 30px;
+    background-color: #18c8ff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+    cursor: pointer;
+    background-image: url(../img/icons/instagram1.png);
+    background-size: 30px;
+}
+
+.Menu-contacto-redes-respon {
+    display: none;
+    margin: 7px 25px 0px 0px;
+    height: 45px;
+    width: 45px;
+    border-radius: 10px;
+    background: #18c8ff00;
+    box-shadow: 0px 0px 0px 1px rgb(24 200 255);
+}
+
+.alquilar-vender-box {
+    display: block;
+}
 
 
+.alquilar-vender-box-In {
+    margin-top: 12px;
+    margin-left: 14px;
+    margin-right: 22px;
+    font-size: 23px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #f34449;
+    box-shadow: 0px 0px 0px 1px rgb(24 200 255);
+    padding: 4px 13px;
+    border-radius: 10px;
+    background: #ebf8fe;
+    color: #00ade3;
+    transition: 0.3s;
+    word-break: break-all;
+    height: 26px;
+    overflow: hidden;
+}
 
-
+.alquilar-vender-box-In:hover {
+    background: #18c8ff;
+    color: #ffffff;
+    transition: 0.3s;
+}
 
 .layer-button {
     position: absolute;
@@ -47,12 +183,11 @@ html, body {
     z-index: 1000;
     background: #ffffff;
     padding: 0px;
-    border-radius: 121px;
+    border-radius: 14px;
     cursor: pointer;
     border-style: none;
-    /* box-shadow: 0px 0px 0px 3px rgb(255 255 255), 2px 2px 4px 3px rgb(0 0 0 / 45%); */
+    box-shadow: 0px 0px 0px 3px rgb(255 255 255), 2px 2px 4px 3px rgb(0 0 0 / 45%);
     transition: 0.3s;
-    box-shadow: 5px 5px 10px 0px rgb(0 0 0 / 45%);
 }
 
 .layer-button:hover {
@@ -244,52 +379,6 @@ html, body {
 
 
 
-
-
-
-
-    #map {
-        height: 100%;
-        width: 100%;
-    }
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-
-    .menumaster {
-position: relative;
-top: 0px;
-height: 60px;
-width: 100%;
-background: #ffffff;
-box-shadow: 0px 0px 15px 8px rgb(0 0 0 / 7%);
-z-index: 1000;
-display: inline-flex;
-}
-
-.menumaster {
-    position: relative;
-    top: 0px;
-    height: 60px;
-    width: 670px;
-    background: #ffffff;
-    box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 7%);
-    z-index: 1000;
-    display: inline-flex;
-    border-radius: 0px 0px 19px 0px;
-}
-
-.botonbox {
-position: relative;
-height: 100%;
-margin-left: 40px;
-left: 0px;
-background: #00000000;
-}
-
 .boton1 {
 position: relative;
 background: #18c8ff;
@@ -302,13 +391,7 @@ border-radius: 9px;
 margin-top: 11px;
 }
 
-.botonbox a {
-position: absolute;
-top: 0px;
-left: 0px;
-height: 100%;
-width: 100%;
-}
+
 
 .logonombre {
     position: relative;
@@ -341,7 +424,7 @@ width: 100%;
     background-size: 57px;
     background-repeat: no-repeat;
     transform-style: preserve-3d; /* Necesario para que la rotación 3D funcione correctamente */
-    animation: girarYcambiar 10s infinite; 
+    /* animation: girarYcambiar 10s infinite; */
 }
 
 @keyframes girarYcambiar {
@@ -370,129 +453,6 @@ width: 100%;
         transform: rotateY(270deg); 
     }
 }
-
-
-    .filter {
-        position: absolute;
-        top: 120px;
-        left: 10px;
-        height: 135px;
-        width: 300px;
-        background: white;
-        padding: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-    }
-    .range-slider {
-        margin-top: 14px;
-        width: 90%;
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .range-slider input {
-        width: 102%;
-        left: -2%;
-        position: absolute;
-        height: 6px;
-        pointer-events: none;
-        -webkit-appearance: none;
-        appearance: none;
-        background: #00000000;
-    }
-    .range-slider input[type="range"]::-webkit-slider-thumb {
-        pointer-events: all;
-        width: 20px;
-        height: 20px;
-        border: 0;
-        border-radius: 50%;
-        background: #14e0e0;
-        box-shadow: 3px 3px 6px 0px rgb(0 0 0 / 30%);
-        cursor: pointer;
-        -webkit-appearance: none;
-        appearance: none;
-        z-index: 9999;
-    }
-    .range-slider input[type="range"]::-webkit-slider-thumb:hover {
-        box-shadow: 0px 0px 0px 7px rgb(143 143 143 / 30%);
-    }
-    .range-slider input[type="range"]::-moz-range-thumb {
-        pointer-events: all;
-        width: 20px;
-        height: 20px;
-        border: 0;
-        border-radius: 50%;
-        background: #398cce;
-        cursor: pointer;
-        -moz-appearance: none;
-        appearance: none;
-    }
-    .range-slider .track {
-        position: absolute;
-        height: 10px;
-        border-radius: 15px;
-        background: #00000026;
-        width: 100%;
-        box-shadow: 3px 4px 5px -4px rgb(0 0 0 / 36%) inset;
-    }
-    .range-slider .range {
-        position: absolute;
-        height: 10px;
-        border-radius: 15px;
-        background: #24dbdb;
-        box-shadow: 3px 4px 5px -4px rgb(27 57 165) inset;
-    }
-    .range-slider .range {
-        position: absolute;
-        height: 10px;
-        border-radius: 15px;
-        background: linear-gradient(45deg, #0072ff, #00e5ff);
-        box-shadow: 3px 4px 5px -4px rgb(27 57 165) inset;
-    }
-    .price-labels {
-        margin-top: 50px;
-        display: flex;
-        height: 28px;
-        justify-content: space-between;
-        background: #00000024;
-    }
-    .price-labels input {
-        width: 100px;
-        text-align: center;
-        border: none;
-        background: none;
-        background: #00000026;
-        border-radius: 8px;
-    }
-
-
-
-
-    .filter-buttons {
-        display: flex;
-        justify-content: space-around;
-        margin: 10px 0;
-    }
-    
-    .filter-button {
-        background-color: #f0f0f0;
-        border: none;
-        padding: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    
-    .filter-button img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .filter-button.active {
-        border: 2px solid #007bff;
-    }
-
-    
-
 
 
 
@@ -998,9 +958,10 @@ border-radius: 50px;
     
     /* Puedes agregar más estilos para personalizar la apariencia del logo */
     .loader img {
-        width: 555px; /* Ajusta el tamaño según tus necesidades */
+        width: 100%;
+        max-width: 555px;
+        height: auto;
     }
-
     /*@media (prefers-color-scheme: dark) {
         .loader {
             background-color: #222222; color de fondo de pantalla de cargar para los temas
@@ -1010,11 +971,11 @@ border-radius: 50px;
 
 
     .loader {
-        animation: loaderFadeOut 5s forwards; 
+        animation: loaderFadeOut 3s forwards; 
     }
     
     .loader img {
-        animation: loaderScale 5s forwards; 
+        animation: loaderScale 3s forwards; 
     }
     
     @keyframes loaderFadeOut {
@@ -1036,7 +997,7 @@ border-radius: 50px;
         0% {
             transform: scale(0); 
         }
-        20% {
+        40% {
             transform: scale(1); 
         }
         80% {
@@ -1115,13 +1076,129 @@ border-radius: 50px;
     }
 
 
+    .bar-redes {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 100%;
+        width: 60px;
+        background: #00000000;
+        z-index: 1000;
+        pointer-events: none;
+    }
+
+    .bar-redes-in {
+        position: relative;
+        margin-right: auto;
+        margin-left: auto;
+        border-radius: 12px;
+        width: 50px;
+        background: #0000008c;
+        backdrop-filter: blur(9px);
+        top: 50%;
+        transform: translate(0%, -50%);
+        padding: 33px 0px 1px 0px;
+    }
+
+    .button-redes {
+        height: 39px;
+        width: 40px;
+        background: #0c0c0c5c;
+        /* backdrop-filter: blur(6px); */
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 10px;
+        border-radius: 14px;
+        pointer-events: auto;
+    }
 
 
 
 
+    @media screen and (max-width: 900px) {
+        .menumaster {
+            background: #ffffff;
+            box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 7%);
+        }
+
+        .redes-box {
+            display: none;
+        }
+
+        .menumaster-in-left {
+            box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0);
+        }
+
+        .menumaster-in-right {
+            padding-right: 5px;
+            box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 0%);
+        }
+
+    }
+
+    @media (max-width: 860px) {
+        .alquilar-vender-box-In {
+            word-break: break-all;
+            height: 26px;
+            overflow: hidden;
+        }
+    }
+
+    
+
+
+    @media screen and (max-width: 790px) {
+    .alquilar-vender-box {
+        display: none;
+    }
+
+    .Menu-contacto-redes-respon {
+        display: block;
+    }
+
+}
 
 
 
 
+@media (max-width: 700px) {
+
+    .botonbox {
+        display: none;
+    }
+
+    .linediv {
+        display: none;
+    }
+
+    .menumaster {
+        background: #ffffff;
+        display: grid;
+        height: 120px;
+    }
+
+    .menumaster-in-right {
+        padding-right: 5px;
+        position: absolute;
+        right: 0px;
+    }
+    
+    .menumaster-in-left {
+        width: 100%;
+    }
+
+    .logonombre {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .boton1 {
+        top: -5px;
+    }
+
+
+
+}
 
 
