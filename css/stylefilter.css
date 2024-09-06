@@ -238,7 +238,7 @@
 
 .filter-counter {
     position: relative;
-    display: inline-flex;
+    display: block;
     width: 100%;
     background: #ff000000;
     margin-bottom: 24px;
