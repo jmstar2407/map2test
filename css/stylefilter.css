@@ -22,8 +22,8 @@
 .body-filter {
     padding: 0px 25px;
     overflow: auto;
-    max-height: calc(100vh - 170px);
-    min-width: 330px;
+    /* max-height: calc(100vh - 126px); */
+    min-width: 310px;
 }
 
 .footer-filter {
