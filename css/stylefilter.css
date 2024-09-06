@@ -255,7 +255,7 @@
 .filter-counter span {
     font-family: sans-serif;
     height: 20px;
-    padding: 4px 9px;
+    padding: 4px 5px;
     width: 88px;
     /* overflow: hidden; */
     display: inline-block;
@@ -264,7 +264,7 @@
     /* margin-bottom: 16px; */
     border-radius: 7px;
     position: relative;
-    left: -8px;
+    left: 0px;
 }
 
 .filter-counter button {
@@ -277,7 +277,7 @@
     background: #ffffff;
     transition: 0.2s;
     position: relative;
-    left: 16px;
+    left: 14px;
     z-index: 10;
 }
 
@@ -292,7 +292,7 @@
 #increase-bathrooms,
 #increase-parking {
     position: absolute;
-    right: 11px;
+    right: 7px;
     left: auto;
 }
 
