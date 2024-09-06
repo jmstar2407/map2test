@@ -254,17 +254,16 @@
 
 .filter-counter span {
     font-family: sans-serif;
-    height: 19px;
-    width: 95px;
-    overflow: hidden;
+    height: 21px;
+    width: 88px;
+    /* overflow: hidden; */
     display: inline-block;
     text-align: center;
     background: #d9d9d9;
-    padding: 0px 0px;
     /* margin-bottom: 16px; */
     /* border-radius: 15px; */
-    /* position: relative; */
-    /* left: -12px; */
+    position: relative;
+    left: 0px;
 }
 
 .filter-counter button {
@@ -277,7 +276,7 @@
     background: #ffffff;
     transition: 0.2s;
     position: relative;
-    left: 16px;
+    left: 8px;
     z-index: 10;
 }
 
@@ -292,7 +291,7 @@
 #increase-bathrooms,
 #increase-parking {
     position: absolute;
-    right: 0px;
+    right: 11px;
     left: auto;
 }
 
