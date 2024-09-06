@@ -20,10 +20,10 @@
 }
 
 .body-filter {
-    width: 340px;
-    padding: 0px 20px;
+    padding: 0px 25px;
     overflow: auto;
     max-height: calc(100vh - 170px);
+    min-width: 330px;
 }
 
 .footer-filter {
@@ -382,13 +382,7 @@
         justify-content: center;
     }
 
-    .Menu-contacto-redes-respon {
-        display: block;
-        height: 35px;
-        width: 35px;
-        margin: 10px 5px 0px 0px;
-        border-radius: 7px;
-    }
+
 
     #open-filter-button-respon {
         height: 35px;
@@ -474,3 +468,56 @@
     color: #fff;
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 500px) {
+
+    .filter.open-filter {
+        display: block;
+        animation: slideInLeft 0.3s ease-in-out;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px 15px 0px 0px;
+    }
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
