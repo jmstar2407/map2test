@@ -22,8 +22,8 @@
 .body-filter {
     padding: 0px 25px;
     overflow: auto;
-    /* max-height: calc(100vh - 126px); */
-    min-width: 310px;
+    max-height: calc(100vh - 170px);
+    min-width: 330px;
 }
 
 .footer-filter {
@@ -238,7 +238,7 @@
 
 .filter-counter {
     position: relative;
-    display: block;
+    display: inline-flex;
     width: 100%;
     background: #ff000000;
     margin-bottom: 24px;
@@ -477,21 +477,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 500px) {
 
     .filter.open-filter {
@@ -502,8 +487,42 @@
         width: 100%;
         height: 100%;
         border-radius: 15px 15px 0px 0px;
+        overflow: hidden;
+    }
+
+    .filter {
+        display: none;
+    }
+
+    html, body {
+        overflow: hidden;
     }
     
+    .filter {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+    }
+
+    @keyframes slideInLeft {
+        from {
+            transform: translateY(110%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideOutLeft {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(110%);
+        }
+    }
 
 }
 
