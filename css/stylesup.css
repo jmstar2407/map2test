@@ -930,7 +930,6 @@ border-radius: 50px;
         background: red;
         padding: 0px 10px 0px 10px;
         border-radius: 12px;
-        z-index: 9999;
     }
 
     .close:hover,
@@ -1158,6 +1157,8 @@ border-radius: 50px;
 
     .Menu-contacto-redes-respon {
         display: block;
+        background-image: url(../img/icons/menu1.svg);
+        background-size: 45px;
     }
 
 }
