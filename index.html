@@ -9,6 +9,250 @@
     <link rel="stylesheet" href="./css/stylesup.css"/>
     <link rel="stylesheet" href="./css/stylefilter.css"/>
     <link rel="stylesheet" href="./css/stylesgallery.css"/>
+
+
+    <style>
+        .gallery {
+    width: 100%;
+    max-height: 500px;
+    background: #000000;
+    border-radius: 10px;
+}
+.main-image {
+    position: relative;
+    max-height: 400px;
+    width: 100%;
+    max-width: 675px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    cursor: zoom-in;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.thumbnails {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background: #2b2b2b;
+    padding: 5px 55px 5px 55px;
+}
+
+
+.thumbnails img {
+    width: 100px;
+    max-height: 60px;
+    height: auto;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s;
+    position: relative;
+    object-fit: cover;
+    transition: 0.2s;
+}
+
+.thumbnails img:hover {
+    box-shadow: 0px 0px 0px 2px rgb(205 205 205);
+    filter: brightness(1.3);
+    transition: 0.2s;
+}
+
+.thumbnails img.active {
+    border: 3px solid #007bff;
+}
+
+
+
+
+
+.nav-button-img-p {
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 100px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.nav-button-img-p:hover {
+background-color: rgba(0, 0, 0, 0.568);
+transition: 0.3s;
+}
+
+.nav-button-img-p.left {
+    left: 0px;
+}
+
+.nav-button-img-p.right {
+    right: 0px;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 10;
+}
+
+.nav-button.left {
+    left: 20px;
+}
+
+.nav-button.right {
+    right: 20px;
+}
+
+.thumbnails-container {
+position: relative; /* Para posicionar los botones dentro */
+}
+
+
+.scroll-button {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-color: rgba(0, 0, 0, 0.5); /* Puedes ajustar el color y la opacidad */
+color: white;
+padding: 10px 15px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+z-index: 1; /* Para que estén por encima de las miniaturas */
+}
+
+.scroll-button.left {
+left: 0;
+}
+
+.scroll-button.right {
+right: 0;
+}
+
+
+
+
+
+
+
+
+.thumbnails {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Para un desplazamiento suave */
+    background: #2b2b2b;
+    padding: 5px 55px 5px 55px;
+}
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Color y opacidad del botón */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1; /* Para que estén por encima de las miniaturas */
+}
+
+.scroll-button.left {
+    left: 0;
+}
+
+.scroll-button.right {
+    right: 0;
+}
+
+
+
+
+
+.fullscreen-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 93%);
+    backdrop-filter: blur(19px);
+    overflow: hidden;
+}
+
+.fullscreen-image {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 900px;
+    height: auto;
+    max-height: 90%;
+}
+
+.close-fullscreen {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: #000000;
+    background: red;
+    padding: 0px 20px;
+    border-radius: 7px;
+    border-style: none;
+    font-size: 31px;
+    /* font-weight: bold; */
+    cursor: pointer;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 10;
+}
+
+.nav-button.left {
+    left: 20px;
+}
+
+.nav-button.right {
+    right: 20px;
+}
+
+
+
+
+    </style>
+
+    
 </head>
 
 
@@ -224,7 +468,15 @@
         <span class="close" onclick="closeModal()">&times;</span>
     </div>
     <!-- Modal FIN -->
-
+     
+    <!-- Modal para imágenes en pantalla completa -->
+    <div id="fullscreenModal" class="fullscreen-modal">
+        <button class="close-fullscreen" onclick="closeFullscreenModal()">&times;</button>
+        <img class="fullscreen-image" id="fullscreenModalImage" src=""> 
+        <button class="nav-button left" id="prevFullscreenImage">&#10094;</button>
+        <button class="nav-button right" id="nextFullscreenImage">&#10095;</button>
+    </div>
+    <!-- Modal para imágenes en pantalla completa FIN -->
 
 
 </div>
@@ -525,7 +777,7 @@ var alquileres = [
 var ventas = [
     { id: 224501, lat: 18.533976342086266, lng: -69.84789351675421, title: 'Casa en Venta en Don Oscar', price: 250000, icon: houseIcon, rooms: 3, bathrooms: 2, parking: 1, area: 100,
      caracteristicas: 'El lugar donde puedes disfrutar del estilo de vida de tus sueños. Un entorno excepcional y un estilo de vida inigualable para nuestros residentes. <p>Un conjunto de apartamentos con una amplia gama de comodidades y exclusivas amenidades.', 
-    imageFolder: './img/properties/224501/', imageCount: 7 },
+    imageFolder: './img/properties/224501/', imageCount: 14 },
     { id: 224502, latLng: [18.465055290827987, -69.81047256391996], title: 'Solar Santo Domingo', price: 5000000, icon: landIcon, rooms: 0, bathrooms: 0, parking: 0, area: 1000, imageFolder: './img/properties/224502/', imageCount: 5 },
     { id: 224503, latLng: [18.515361605411158, -69.79580351613811], title: 'Edificio Santo Domingo', price: 7000000, icon: buildingIcon, rooms: 12, bathrooms: 10, parking: 6, area: 700, imageFolder: './img/properties/224503/', imageCount: 5 },
     { id: 224504, latLng: [18.534530697687792, -69.84886578381361], title: 'Casa calle Santo Domingo', price: 230000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 2, area: 150, imageFolder: './img/properties/224504/', imageCount: 7 }
@@ -668,20 +920,23 @@ function openModal(property) {
 
 
 
-    // Actualizar la galería del modal
-    updateGallery(property.imageFolder, property.imageCount);
-
+  // Función para actualizar la galería del modal
+updateGallery(property.imageFolder, property.imageCount);
 
 // Función para actualizar la galería del modal
 function updateGallery(imageFolder, imageCount) {
-    // Limpiar la galería
+    // Obtener referencias a los elementos del DOM
     const mainImage = document.getElementById('currentImage');
     const thumbnailsContainer = document.querySelector('.thumbnails');
+
+    // Limpiar la galería antes de actualizar
     mainImage.src = '';
     thumbnailsContainer.innerHTML = '';
 
-    // Generar miniaturas
+    // Crear un array para almacenar las rutas de las imágenes
     let images = [];
+
+    // Generar miniaturas y almacenar rutas de imágenes
     for (let i = 1; i <= imageCount; i++) {
         const imgSrc = `${imageFolder}${i}.jpg`;
         images.push(imgSrc);
@@ -689,43 +944,106 @@ function updateGallery(imageFolder, imageCount) {
         const thumbnail = document.createElement('img');
         thumbnail.src = imgSrc;
         thumbnail.alt = `Thumbnail ${i}`;
-        thumbnail.dataset.index = i - 1; // Guardar el índice de la imagen
-        thumbnail.addEventListener('click', () => {
-            mainImage.src = imgSrc;
-            currentIndex = i - 1; // Actualizar el índice actual
+        thumbnail.dataset.index = i - 1; // Almacenar el índice de la imagen para referencia posterior
+
+        // Agregar evento click a la miniatura
+        thumbnail.addEventListener('click', function() {
+            // Cambiar la imagen principal al hacer clic en la miniatura
+            mainImage.src = this.src;
+
+            // Actualizar el índice de la imagen actual
+            currentIndex = parseInt(this.dataset.index);
+
+            // Resaltar la miniatura seleccionada y deseleccionar las demás
+            updateActiveThumbnail(currentIndex);
         });
+
+        // Agregar la miniatura al contenedor
         thumbnailsContainer.appendChild(thumbnail);
     }
 
-    // Establecer la primera imagen como principal
+    // Establecer la primera imagen como principal si hay imágenes
     if (imageCount > 0) {
         mainImage.src = images[0];
+        updateActiveThumbnail(0); // Resaltar la primera miniatura
     }
 
-    // Variables para el índice actual y la lista de imágenes
+    // Índice de la imagen actual
     let currentIndex = 0;
 
-    // Funciones para navegar entre imágenes
-    document.getElementById('prevMainImage').onclick = function() {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = images.length - 1; // Ciclo al final si es la primera imagen
-        }
-        mainImage.src = images[currentIndex];
-    };
+    // Botones de navegación de la galería principal
+    const prevMainImageButton = document.getElementById('prevMainImage');
+    const nextMainImageButton = document.getElementById('nextMainImage');
 
-    document.getElementById('nextMainImage').onclick = function() {
-        if (currentIndex < images.length - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0; // Ciclo al principio si es la última imagen
-        }
+    // Manejador de eventos para el botón "Anterior"
+    prevMainImageButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length; // Circular hacia atrás
         mainImage.src = images[currentIndex];
-    };
+        updateActiveThumbnail(currentIndex);
+    });
+
+    // Manejador de eventos para el botón "Siguiente"
+    nextMainImageButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length; // Circular hacia adelante
+        mainImage.src = images[currentIndex];
+        updateActiveThumbnail(currentIndex);
+    });
+
+    // Función para resaltar la miniatura activa
+    function updateActiveThumbnail(index) {
+        const allThumbnails = document.querySelectorAll('.thumbnails img');
+        allThumbnails.forEach(img => img.classList.remove('active'));
+        allThumbnails[index].classList.add('active');
+    }
+
+    // Funcionalidad de pantalla completa
+    let currentFullscreenIndex = 0;
+    let fullscreenImages = images; // Usar las mismas imágenes que en la galería
+
+    // Referencias a los elementos del modal de pantalla completa
+    const fullscreenModal = document.getElementById('fullscreenModal');
+    const fullscreenImage = document.getElementById('fullscreenModalImage');
+    const prevFullscreenImageButton = document.getElementById('prevFullscreenImage');
+    const nextFullscreenImageButton = document.getElementById('nextFullscreenImage');
+
+    // Abrir el modal en pantalla completa
+    function openFullscreenModal(index) {
+        currentFullscreenIndex = index;
+        fullscreenImage.src = fullscreenImages[currentFullscreenIndex];
+        fullscreenModal.style.display = 'block';
+    }
+
+    // Cerrar el modal en pantalla completa
+    function closeFullscreenModal() {
+        fullscreenModal.style.display = 'none';
+    }
+
+    // Eventos para cerrar el modal
+    const closeButton = document.querySelector('.close-fullscreen');
+    closeButton.addEventListener('click', closeFullscreenModal);
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === "Escape") {
+            closeFullscreenModal();
+        }
+    });
+
+    // Manejadores de eventos para los botones de navegación en pantalla completa
+    prevFullscreenImageButton.addEventListener('click', () => {
+        currentFullscreenIndex = (currentFullscreenIndex - 1 + fullscreenImages.length) % fullscreenImages.length;
+        fullscreenImage.src = fullscreenImages[currentFullscreenIndex];
+    });
+
+    nextFullscreenImageButton.addEventListener('click', () => {
+        currentFullscreenIndex = (currentFullscreenIndex + 1) % fullscreenImages.length;
+        fullscreenImage.src = fullscreenImages[currentFullscreenIndex];
+    });
+
+    // Abrir pantalla completa al hacer clic en la imagen principal
+    mainImage.addEventListener('click', () => {
+        openFullscreenModal(currentIndex);
+    });
 }
-
-// Actualizar la galería del modal FIN
 
 
 
@@ -805,7 +1123,7 @@ toggleMarkers('alquiler');
 </script>
 
 
-    <script src="./js/scriptgallery.js"></script>
+    <!-- <script src="./js/scriptgallery.js"></script> -->
 
 
 
@@ -1369,5 +1687,21 @@ document.getElementById('close-filter-button').addEventListener('click', functio
         // Filtros FIN
         
             </script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const thumbnails = document.querySelector('.thumbnails');
+        const scrollLeftButton = document.querySelector('.scroll-button.left');
+        const scrollRightButton = document.querySelector('.scroll-button.right');
+    
+        scrollLeftButton.addEventListener('click', () => {
+            thumbnails.scrollLeft -= 150; // Ajusta la cantidad de desplazamiento
+        });
+    
+        scrollRightButton.addEventListener('click', () => {
+            thumbnails.scrollLeft += 150; // Ajusta la cantidad de desplazamiento
+        });
+    });
+    </script>
 </body>
 </html>
