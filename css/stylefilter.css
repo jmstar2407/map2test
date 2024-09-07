@@ -350,8 +350,7 @@
 
         #open-filter-button-respon {
             position: absolute;
-            background: #3f3f3f3d;
-            height: 45px;
+            background: #00000000;
             width: 45px;
             right: 0px;
             border: none;
@@ -359,6 +358,8 @@
             box-shadow: 0px 0px 0px 1px rgb(24 200 255);
             font-weight: bold;
             margin: 2px 30px 0px 0px;
+            background-image: url(../img/icons/filtro1.png);
+            background-size: 45px;
             transition: 0.3s;
             cursor: pointer;
         }
@@ -377,6 +378,15 @@
         display: block;
     }
 
+    #open-filter-button-respon {
+        height: 35px;
+        width: 35px;
+        border-radius: 7px;
+        margin: 0px 10px 0px 0px;
+        background-image: url(../img/icons/filtro1.svg);
+        background-size: 35px;
+    }
+    
     .botonbox2 {
         position: relative;
         display: inline-flex;
@@ -391,7 +401,14 @@
         border-radius: 7px;
         margin: 0px 10px 0px 0px;
     }
+
+    .filter {
+        top: 130px;
+    }
     
+    .body-filter {
+        max-height: calc(100vh - 225px);
+    }
 
 }
 
@@ -530,6 +547,12 @@
 
 
 
+@media (min-width: 700px) {
+    .body-filter {
+        max-width: 345px;
+    }
+
+}
 
 
 

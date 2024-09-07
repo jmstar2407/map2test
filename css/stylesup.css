@@ -400,10 +400,14 @@ margin-top: 11px;
     font-family: system-ui;
     font-weight: bold;
     font-size: 27px;
-    color: #096caf;
+    color: #cd1025;
     margin-top: 0px;
     margin-left: 32px;
     margin-right: 13px;
+}
+
+.logonombre span {
+    color: #096caf
 }
 
 .logonombre h1 {
@@ -1210,18 +1214,24 @@ border-radius: 50px;
         width: 35px;
         margin: 10px 5px 0px 0px;
         border-radius: 7px;
+        background-image: url(../img/icons/menu1.svg);
+        background-size: 35px;
     }
 
     .layer-button {
         height: 80px;
         width: 80px;
     }
+
+    .leaflet-left {
+        bottom: 120px;
+    }
     
+    #locateButton {
+        bottom: 210px;
+    }
 
 }
-
-
-
 
 
 
