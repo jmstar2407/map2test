@@ -1472,5 +1472,74 @@ document.getElementById('close-filter-button').addEventListener('click', functio
         });
     });
     </script>
+
+    <script>
+
+// Obtén referencias a los elementos del DOM
+const mainImage = document.getElementById('currentImage');
+const thumbnailsContainer = document.querySelector('.thumbnails');
+const thumbnails = document.querySelectorAll('.thumbnails img');
+
+// Variables para manejar el deslizamiento táctil
+let touch startX, touchstartY;
+
+// Manejar el inicio del toque en la imagen principal
+mainImage.addEventListener('touchstart', (e) => {
+    touchstartX = e.touches[0].clientX;
+    touchstartY = e.touches[0].clientY;
+});
+
+// Manejar el movimiento del toque en la imagen principal
+mainImage.addEventListener('touchmove', (e) => {
+    if (!touchstartX || !touchstartY) return;
+
+    const touchendX = e.touches[0].clientX;
+    const touchendY = e.touches[0].clientY;
+
+    const diffX = touchstartX - touchendX;
+    const diffY = touchstartY - touchendY;
+
+    // Verifica si el movimiento es principalmente horizontal
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX > 0) { 
+            nextImage(); // Desliza hacia la derecha
+        } else { 
+            prevImage(); // Desliza hacia la izquierda
+        }
+    }
+
+    touchstartX = null;
+    touchstartY = null;
+});
+
+// Manejar el inicio del toque en el contenedor de miniaturas
+thumbnailsContainer.addEventListener('touchstart', (e) => {
+    touchstartX = e.touches[0].clientX;
+});
+
+// Manejar el movimiento del toque en el contenedor de miniaturas
+thumbnailsContainer.addEventListener('touchmove', (e) => {
+    if (!touchstartX) return;
+
+    const touchendX = e.touches[0].clientX;
+
+    const diffX = touchstartX - touchendX;
+
+    thumbnailsContainer.scrollLeft += diffX;
+
+    touchstartX = null;
+});
+
+// Funciones para cambiar la imagen principal
+function nextImage() {
+    // ... (Implementa la lógica para mostrar la siguiente imagen)
+}
+
+function prevImage() {
+    // ... (Implementa la lógica para mostrar la imagen anterior)
+}
+
+
+    </script>
 </body>
 </html>
