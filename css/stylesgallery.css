@@ -1,9 +1,225 @@
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-logo {
+width: 100%;
+background: rgba(255, 0, 0, 0);
+height: 50px;
+pointer-events: none;
+}
+
+.modal-logo-in {
+position: relative;
+margin-left: auto;
+margin-right: auto;
+background: #ff000000;
+height: 50px;
+width: 200px;
+}
+
+.modal-logo img {
+position: absolute;
+height: 50px;
+}
+
+.modal-logo-in p {
+position: absolute;
+font-size: 28px;
+font-family: system-ui;
+font-weight: bold;
+margin-block-start: 7px;
+margin-block-end: 0px;
+margin-left: 60px;
+color: #c70214;
+}
+
+.modal-logo-in span {
+color: #0061a1;
+}
+
+.modal-content {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: #fefefe;
+max-height: 1440px;
+width: 80%;
+max-width: 1080px;
+border-radius: 14px;
+display: flex;
+flex-direction: column;
+height: 90%;
+}
+
+.modal-in {
+background: rgba(255, 255, 255, 0);
+overflow: auto;
+flex: 1;
+}
+
+
+/* Estilos para Chrome, Safari y Edge */
+.modal-in::-webkit-scrollbar {
+width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+.modal-in::-webkit-scrollbar-track {
+background: #f1f1f1; /* Color de fondo del track */
+}
+
+.modal-in::-webkit-scrollbar-thumb {
+background: #00000041; /* Color del pulgar (la parte que se arrastra) */
+border-radius: 4px; /* Bordes redondeados */
+}
+
+.modal-in::-webkit-scrollbar-thumb:hover {
+background: #555; /* Color del pulgar al pasar el mouse por encima */
+}
+
+/* Estilos para Firefox */
+/* .modal-in {
+scrollbar-width: thin;
+scrollbar-color: #888 #f1f1f1;
+} */
+
+.modal-footer {
+    /*display: flex;*/
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-end {
+    background: #c5c5c5bd;
+    height: 70px;
+    width: 100%;
+    border-radius: 0px 0px 14px 14px;
+}
+
+.modal-end p {
+    font-family: system-ui;
+    font-weight: bold;
+    margin-block-start: 0px;
+    margin-block-end: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.modal-redes {
+    position: relative;
+    height: 35px;
+    background: #ff000000;
+    width: 185px;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-redes img {
+    height: 35px;
+    margin: 0px 4px;
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+.infocompleta {
+    display: flex;
+}
+
+.modal-body {
+    position: relative;
+    flex: 3;
+    background: #e7e7e7;
+}
+
+
+
+.modal-body h3 {
+    font-family: sans-serif;
+    background: #2f9eff;
+    color: white;
+    display: inline-flex;
+    font-size: 21px;
+    margin-block-start: 5px;
+    margin-block-end: 0px;
+    padding: 4px;
+    border-radius: 7px;
+}
+
+.detallesmodalicon {
+    display: flex; /* Activamos Flexbox */
+    flex-wrap: wrap; /* Permitimos que los elementos se dividan en varias líneas */
+    justify-content: space-around; /* Distribuimos los elementos con espacio alrededor */
+    font-family: sans-serif;
+}
+
+.item {
+    display: flex; /* También usamos Flexbox para cada elemento individual */
+    flex-direction: column; /* Colocamos la imagen arriba y el texto abajo */
+    align-items: center; /* Centramos verticalmente el contenido */
+    text-align: center; /* Centramos el texto horizontalmente */
+    width: 23%; /* Ajusta el ancho según sea necesario para que quepan 4 por línea */
+    margin: 14px 0px 0px 0px;
+}
+
+.detallesmodalicon img {
+    height: 50px;
+}
+
+.detallesmodaltext {
+font-family: sans-serif;
+}
+
+.contactows{
+    flex: 1;
+    background: rgb(165, 238, 187);
+}
+
+.close {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    color: #fffffff2;
+    font-family: math;
+    font-size: 31px;
+    font-weight: bold;
+    cursor: pointer;
+    background: red;
+    padding: 0px 10px 0px 10px;
+    border-radius: 12px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
 .gallery {
     width: 100%;
     max-height: 500px;
     background: #000000;
-    border-radius: 10px;
+    border-radius: 0px;
+    padding: 10px 0px;
 }
+
 .main-image {
     position: relative;
     max-height: 400px;
@@ -17,62 +233,33 @@
 .main-image img {
     width: 100%;
     height: auto;
-    border-radius: 14px;
+    border-radius: 7px;
     cursor: zoom-in;
     max-height: 400px;
     object-fit: cover;
 }
 
-.thumbnails {
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    background: #2b2b2b;
-    padding: 5px 55px 5px 55px;
-}
 
-
-.thumbnails img {
-    width: 100px;
-    max-height: 60px;
-    height: auto;
-    margin-right: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: transform 0.2s;
-    position: relative;
-    object-fit: cover;
-    transition: 0.2s;
-}
-
-.thumbnails img:hover {
-    box-shadow: 0px 0px 0px 2px rgb(205 205 205);
-    filter: brightness(1.3);
-    transition: 0.2s;
-}
-
-.thumbnails img.active {
-    border: 3px solid #007bff;
-}
 
 #fullscreenView {
-    display: none; 
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
-    z-index: 1000; 
+    z-index: 1000;
     justify-content: center;
     align-items: center;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 #fullscreenImageContainer {
     position: relative;
     width: 90%;
     height: 90%;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 #fullscreenImage {
@@ -81,7 +268,7 @@
     left: 0;
     width: 100%;
     height: auto;
-    cursor: zoom-in; 
+    cursor: zoom-in;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -100,7 +287,6 @@
     font-size: 16px;
 }
 
-
 .nav-button-img-p {
     position: absolute;
     top: 0px;
@@ -117,8 +303,8 @@
 }
 
 .nav-button-img-p:hover {
-background-color: rgba(0, 0, 0, 0.568);
-transition: 0.3s;
+    background-color: rgba(0, 0, 0, 0.568);
+    transition: 0.3s;
 }
 
 .nav-button-img-p.left {
@@ -143,8 +329,6 @@ transition: 0.3s;
     z-index: 10;
 }
 
-
-
 .nav-button.left {
     left: 20px;
 }
@@ -153,68 +337,28 @@ transition: 0.3s;
     right: 20px;
 }
 
-
-
-
-
-
 .thumbnails-container {
-position: relative; /* Para posicionar los botones dentro */
-}
-
-
-.scroll-button {
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-background-color: rgba(0, 0, 0, 0.5); /* Puedes ajustar el color y la opacidad */
-color: white;
-padding: 10px 15px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-z-index: 1; /* Para que estén por encima de las miniaturas */
-}
-
-.scroll-button.left {
-left: 0;
-}
-
-.scroll-button.right {
-right: 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.thumbnails {
+    background: #ff000000;
+    position: relative;
     display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth; /* Para un desplazamiento suave */
-    background: #2b2b2b;
-    padding: 5px 55px 5px 55px;
+    height: 80px;
 }
+
 
 .scroll-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5); /* Color y opacidad del botón */
+    background-color: rgb(115 115 115 / 50%);
     color: white;
-    padding: 10px 15px;
+    padding: 15px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    z-index: 1; /* Para que estén por encima de las miniaturas */
+    z-index: 1;
+    margin: 0px 5px;
+    width: 40px;
+    flex-shrink: 0;
 }
 
 .scroll-button.left {
@@ -225,8 +369,40 @@ right: 0;
     right: 0;
 }
 
+.thumbnails {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    background: #2b2b2b;
+    padding: 0px 3px;
+    flex-grow: 1;
+    margin: 0 50px;
+    border-radius: 10px;
+}
 
+.thumbnails img {
+    width: 100px;
+    max-height: 60px;
+    min-width: 100px;
+    margin: 0px 5px;
+    border-radius: 5px;
+    position: relative;
+    object-fit: cover;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: 0.2s;
+}
 
+.thumbnails img:hover {
+    box-shadow: 0px 0px 0px 2px rgb(205 205 205);
+    filter: brightness(1.3);
+    transition: 0.2s;
+}
+
+.thumbnails img.active {
+    box-shadow: 0px 0px 0px 3px rgb(0 123 255);
+}
 
 
 .fullscreen-modal {
@@ -246,10 +422,15 @@ right: 0;
 .fullscreen-image {
     margin: auto;
     display: block;
-    width: 80%;
     max-width: 900px;
-    height: auto;
     max-height: 90%;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    cursor: zoom-in;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .close-fullscreen {
@@ -266,42 +447,21 @@ right: 0;
     cursor: pointer;
 }
 
-.nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #000;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    z-index: 10;
-}
 
-.nav-button.left {
-    left: 20px;
-}
-
-.nav-button.right {
-    right: 20px;
+@media (max-width: 900px) {
+    .modal-content {
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
 }
 
 
 
+@media (max-width: 700px) {
 
+    .main-image img {
+        max-height: 250px;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
