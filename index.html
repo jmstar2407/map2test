@@ -562,7 +562,7 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
         // Modificar la función createCarousel para generar imágenes dinámicamente
         function createCarousel(imageFolder, imageCount) {
-    let carousel = `<div class="carousel">`;
+    let carousel = `<div class="carousel" id="popupCarousel">`;
 
     // Limitar el bucle a un máximo de 7 imágenes
     const maxImagesToShow = Math.min(imageCount, 7); 
@@ -767,38 +767,6 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
                     mainImage.src = images[currentIndex];
                     updateActiveThumbnail(currentIndex);
                 });
-
-
-
-                // AQUÍ COLOCA EL CÓDIGO PARA LA NAVEGACIÓN TÁCTIL:
-
-let touchstartX, touchstartY;
-
-mainImage.addEventListener('touchstart', (e) => {
-    touchstartX = e.touches[0].clientX;
-    touchstartY = e.touches[0].clientY;
-});
-
-mainImage.addEventListener('touchend', (e) => {
-    const touchendX = e.changedTouches[0].clientX;
-    const touchendY = e.changedTouches[0].clientY;
-
-    const deltaX = touchendX - touchstartX;   
-
-    const deltaY = touchendY - touchstartY;   
-
-
-    // Verificar si el movimiento fue principalmente horizontal
-    if (Math.abs(deltaX) > Math.abs(deltaY)) {
-        if (deltaX > 0) {
-            // Deslizar hacia la derecha: imagen anterior
-            prevMainImageButton.click(); 
-        } else {
-            // Deslizar hacia la izquierda: imagen siguiente
-            nextMainImageButton.click(); 
-        }
-    }
-});
 
                 // Función para resaltar la miniatura activa
                 function updateActiveThumbnail(index) {
@@ -1512,6 +1480,39 @@ mainImage.addEventListener('touchend', (e) => {
                 thumbnails.scrollLeft += 150; // Ajusta la cantidad de desplazamiento
             });
         });
+
+
+        const popupCarousel = document.getElementById('popupCarousel');
+let touchStartX = 0;
+let currentTranslateX = 0;
+
+popupCarousel.addEventListener('touchstart', (event) => {
+    touchStartX = event.touches[0].clientX;
+});
+
+popupCarousel.addEventListener('touchmove', (event) => {
+    const touchCurrentX = event.touches[0].clientX;
+    const deltaX = touchCurrentX - touchStartX;
+
+    // Mueve las imágenes en función del desplazamiento del dedo
+    currentTranslateX = Math.max(-popupCarousel.offsetWidth, Math.min(0, currentTranslateX + deltaX));
+    popupCarousel.style.transform = `translateX(${currentTranslateX}px)`;
+
+    // Evita el comportamiento de desplazamiento predeterminado del navegador
+    event.preventDefault();
+});
+
+popupCarousel.addEventListener('touchend', () => {
+    // Ajusta la posición final al soltar el dedo (puedes agregar lógica para "encajar" en la siguiente/anterior imagen)
+    if (currentTranslateX < -popupCarousel.offsetWidth / 2) {
+        // Deslizar a la siguiente imagen
+        currentTranslateX = -popupCarousel.offsetWidth;
+    } else {
+        // Volver a la imagen actual
+        currentTranslateX = 0;
+    }
+    popupCarousel.style.transform = `translateX(${currentTranslateX}px)`;
+});
     </script>
 
 
