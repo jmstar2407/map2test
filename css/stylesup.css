@@ -1035,5 +1035,22 @@ border-radius: 50px;
 }
 
 
+.terminos-condiciones{
+    height: 60px;
+    width: 60px;
+    background: red;
+}
+
+
+
+#popupCarousel {
+    overflow: hidden; /* Para ocultar el contenido que se desborda */
+}
+
+#popupCarousel img {
+    transition: transform 0.3s ease-in-out; /* Transición suave para el movimiento */
+}
+
+
 
 
