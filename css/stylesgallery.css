@@ -376,7 +376,6 @@ font-family: sans-serif;
     flex-grow: 1;
     margin: 0 50px;
     border-radius: 10px;
-    overflow-x: auto;  /* Habilita el scroll horizontal */
     -webkit-overflow-scrolling: touch;
 }
 
@@ -403,7 +402,6 @@ font-family: sans-serif;
 .thumbnails img.active {
     box-shadow: 0px 0px 0px 3px rgb(0 123 255);
 }
-
 
 .fullscreen-modal {
     display: none;
@@ -447,7 +445,6 @@ font-family: sans-serif;
     cursor: pointer;
 }
 
-
 @media (max-width: 900px) {
     .modal-content {
         width: 100%;
@@ -455,8 +452,6 @@ font-family: sans-serif;
         border-radius: 0px;
     }
 }
-
-
 
 @media (max-width: 700px) {
 
