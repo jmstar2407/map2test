@@ -376,8 +376,13 @@ font-family: sans-serif;
     flex-grow: 1;
     margin: 0 50px;
     border-radius: 10px;
+    overflow-x: auto;  /* Habilita el scroll horizontal */
     -webkit-overflow-scrolling: touch;
 }
+
+.thumbnails::-webkit-scrollbar {
+    display: none; 
+  }
 
 .thumbnails img {
     width: 100px;
