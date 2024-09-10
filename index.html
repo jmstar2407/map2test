@@ -10,15 +10,16 @@
     <link rel="stylesheet" href="./css/stylesup.css" />
     <link rel="stylesheet" href="./css/stylefilter.css" />
     <link rel="stylesheet" href="./css/stylesgallery.css" />
+    <link rel="stylesheet" href="./css/stylesmenu.css" />
 </head>
 
 
 <body>
-    <div class="loader">
+    <!-- <div class="loader">
         <img src="./img/logo2.png" alt="Logo de carga">
         <img src="./img/logonombre1.png" alt="Logo de carga"
             style="margin-top: -45px; animation: loadernombre 5s forwards; ">
-    </div>
+    </div> -->
 
     <div class="boxmaster">
 
@@ -34,10 +35,10 @@
 
                 <div class="botonbox">
                     <div class="botonbox-in">
-                        <div class="boton1">Alquilar<a href="#" onclick="toggleMarkers('alquiler')"></a></div>
+                        <div class="boton1">Alquiler<a href="#" onclick="toggleMarkers('alquiler')"></a></div>
                     </div>
                     <div class="botonbox-in">
-                        <div class="boton1">Comprar<a href="#" onclick="toggleMarkers('venta')"></a></div>
+                        <div class="boton1">Venta<a href="#" onclick="toggleMarkers('venta')"></a></div>
                     </div>
                 </div>
             </div>
@@ -53,10 +54,10 @@
 
             <div class="botonbox2">
                 <div class="botonbox-in">
-                    <div class="boton1">Alquilar<a href="#" onclick="toggleMarkers('alquiler')"></a></div>
+                    <div class="boton1">Alquiler<a href="#" onclick="toggleMarkers('alquiler')"></a></div>
                 </div>
                 <div class="botonbox-in">
-                    <div class="boton1">Comprar<a href="#" onclick="toggleMarkers('venta')"></a></div>
+                    <div class="boton1">Venta<a href="#" onclick="toggleMarkers('venta')"></a></div>
                 </div>
                 <div class="cube-boton-filtro-respon"><button id="open-filter-button-respon"></button></div>
             </div>
@@ -94,6 +95,23 @@
                     <button id="openModalTerminosBtn">Términos</button>
                 </div> -->
                 <!-- Terminos FIN-->
+
+
+                <!-- Menú new -->
+                <div id="openBoxJmBtn" class="menu-all single-menu">
+                    <div class="menu-lines">
+                        <span class="line line1"></span>
+                        <span class="line line2"></span>
+                        <span class="line line3"></span>
+                    </div> 
+                </div>
+
+
+
+
+
+
+                <!-- Menú new FIN-->
             </div>
             <!-- Menu Right FIN -->
 
@@ -378,11 +396,24 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
         <!-- Filtros FIN -->
 
 
-
-
-
-
     </div>
+
+
+
+
+
+  <!-- Cuadro BoxJM1 -->
+  <div id="boxjm1" class="boxjm1">
+    <div class="boxjm1-content">
+      <span class="close2">&times;</span>
+      <p>Menu</p>
+    </div>
+  </div>
+
+
+
+
+
     </div>
 
 
@@ -562,7 +593,7 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
         // Modificar la función createCarousel para generar imágenes dinámicamente
         function createCarousel(imageFolder, imageCount) {
-    let carousel = `<div class="carousel" id="popupCarousel">`;
+    let carousel = `<div class="carousel">`;
 
     // Limitar el bucle a un máximo de 7 imágenes
     const maxImagesToShow = Math.min(imageCount, 7); 
@@ -1480,41 +1511,8 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
                 thumbnails.scrollLeft += 150; // Ajusta la cantidad de desplazamiento
             });
         });
-
-
-        const popupCarousel = document.getElementById('popupCarousel');
-let touchStartX = 0;
-let currentTranslateX = 0;
-
-popupCarousel.addEventListener('touchstart', (event) => {
-    touchStartX = event.touches[0].clientX;
-});
-
-popupCarousel.addEventListener('touchmove', (event) => {
-    const touchCurrentX = event.touches[0].clientX;
-    const deltaX = touchCurrentX - touchStartX;
-
-    // Mueve las imágenes en función del desplazamiento del dedo
-    currentTranslateX = Math.max(-popupCarousel.offsetWidth, Math.min(0, currentTranslateX + deltaX));
-    popupCarousel.style.transform = `translateX(${currentTranslateX}px)`;
-
-    // Evita el comportamiento de desplazamiento predeterminado del navegador
-    event.preventDefault();
-});
-
-popupCarousel.addEventListener('touchend', () => {
-    // Ajusta la posición final al soltar el dedo (puedes agregar lógica para "encajar" en la siguiente/anterior imagen)
-    if (currentTranslateX < -popupCarousel.offsetWidth / 2) {
-        // Deslizar a la siguiente imagen
-        currentTranslateX = -popupCarousel.offsetWidth;
-    } else {
-        // Volver a la imagen actual
-        currentTranslateX = 0;
-    }
-    popupCarousel.style.transform = `translateX(${currentTranslateX}px)`;
-});
     </script>
-
+<script src="./js/scriptmenu.js"></script>
 
 
 </body>
