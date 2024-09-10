@@ -184,13 +184,21 @@
 
     .boxjm1-content {
         background-color: #ffffff82;
-        backdrop-filter: blur(20px);
         height: 100%;
         width: 80%;
         border-radius: 0px;
         transform: translateX(110%);
+    
+        /* Aplica el blur en navegadores que lo soportan */
+        @supports (backdrop-filter: blur(1px)) {
+            backdrop-filter: blur(20px);
+        }
+    
+        /* Fondo gris para Safari */
+        @supports (-webkit-touch-callout: none) and (not (translate: none)) { 
+            background-color: rgb(68, 68, 68); 
+        }
     }
-
 
     .boxjm1 {
         /* ... tus otros estilos ... */
