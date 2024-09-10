@@ -103,7 +103,7 @@
                         <span class="line line1"></span>
                         <span class="line line2"></span>
                         <span class="line line3"></span>
-                    </div> 
+                    </div>
                 </div>
 
 
@@ -402,13 +402,28 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
 
 
-  <!-- Cuadro BoxJM1 -->
-  <div id="boxjm1" class="boxjm1">
-    <div class="boxjm1-content">
-      <span class="close2">&times;</span>
-      <p>Menu</p>
+    <!-- Cuadro BoxJM1 -->
+    <div id="boxjm1" class="boxjm1">
+        <div class="boxjm1-content">
+
+            <div class="boxjm1-titulo"><p>Menu</p>
+                <span class="close2">&times;</span>
+            </div>
+            <div class="boxjm1-body">
+
+
+            </div>
+            <div class="boxjm1-down">
+                <div class="modal-redes">
+                    <p>Síguenos en:</p>
+                    <img src="./img/icons/instagram1.png">
+                    <img src="./img/icons/facebook1.png">
+                    <img src="./img/icons/tiktok1.png">
+                    <img src="./img/icons/x1.png">
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
 
 
@@ -419,7 +434,7 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
 
 
-    
+
 
     <script>
 
@@ -593,24 +608,24 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
         // Modificar la función createCarousel para generar imágenes dinámicamente
         function createCarousel(imageFolder, imageCount) {
-    let carousel = `<div class="carousel">`;
+            let carousel = `<div class="carousel">`;
 
-    // Limitar el bucle a un máximo de 7 imágenes
-    const maxImagesToShow = Math.min(imageCount, 7); 
+            // Limitar el bucle a un máximo de 7 imágenes
+            const maxImagesToShow = Math.min(imageCount, 7);
 
-    for (let i = 1; i <= maxImagesToShow; i++) {
-        const imgSrc = `${imageFolder}${i}.jpg`;
-        carousel += `<img src="${imgSrc}" class="${i === 1 ? 'active' : ''}" onload="setCarouselHeight(this)">`;
-    }
-    carousel += `
+            for (let i = 1; i <= maxImagesToShow; i++) {
+                const imgSrc = `${imageFolder}${i}.jpg`;
+                carousel += `<img src="${imgSrc}" class="${i === 1 ? 'active' : ''}" onload="setCarouselHeight(this)">`;
+            }
+            carousel += `
         <button class="prev" onclick="changeImage(this, -1)">&#10094;</button>
         <button class="next" onclick="changeImage(this, 1)">&#10095;</button>
         <div class="indicators">
             ${Array.from({ length: maxImagesToShow }, (_, index) => `<span class="indicator ${index === 0 ? 'active' : ''}" onclick="setActiveImage(${index})"></span>`).join('')}
         </div>
     </div>`;
-    return carousel;
-}
+            return carousel;
+        }
 
 
 
@@ -1512,7 +1527,7 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
             });
         });
     </script>
-<script src="./js/scriptmenu.js"></script>
+    <script src="./js/scriptmenu.js"></script>
 
 
 </body>
