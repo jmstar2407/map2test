@@ -178,86 +178,85 @@
 @media (max-width: 700px) {
 
 
-    .close2{
+    .close2 {
         display: none;
     }
 
     .boxjm1-content {
-        background-color: #ffffff82;
+        background: #9faab6;
+        backdrop-filter: blur(20px);
         height: 100%;
         width: 80%;
         border-radius: 0px;
         transform: translateX(110%);
-    
-        /* Aplica el blur en navegadores que lo soportan */
-        @supports (backdrop-filter: blur(1px)) {
+    }
+
+    /* Si el navegador soporta backdrop-filter */
+    @supports (backdrop-filter: blur(20px)) {
+        .boxjm1-content {
+            background-color: #ffffff82;
             backdrop-filter: blur(20px);
         }
-    
-        /* Fondo gris para Safari */
-        @supports (-webkit-touch-callout: none) and (not (translate: none)) { 
-            background-color: rgb(68, 68, 68); 
-        }
     }
 
-    .boxjm1 {
-        /* ... tus otros estilos ... */
-        position: fixed;
-        top: 50px;
-        /* Ajusta el margen superior a 50px */
-        left: 0;
-        justify-content: flex-end;
-        width: 100%;
-        height: calc(100% - 50px);
-        /* Calcula la altura para llegar hasta abajo */
-        /* ... tus otros estilos ... */
+        .boxjm1 {
+            /* ... tus otros estilos ... */
+            position: fixed;
+            top: 50px;
+            /* Ajusta el margen superior a 50px */
+            left: 0;
+            justify-content: flex-end;
+            width: 100%;
+            height: calc(100% - 50px);
+            /* Calcula la altura para llegar hasta abajo */
+            /* ... tus otros estilos ... */
+        }
+
+
+        /* Animación de entrada */
+        @keyframes background-in-boxjm1 {
+            from {
+                background-color: rgb(0 0 0 / 0%);
+            }
+
+            to {
+                background-color: rgb(0 0 0 / 50%);
+            }
+        }
+
+        /* Animación de salida */
+        @keyframes background-out-boxjm1 {
+            from {
+                background-color: rgb(0 0 0 / 50%);
+            }
+
+            to {
+                background-color: rgb(0 0 0 / 0%);
+            }
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                transform: translateX(110%);
+            }
+
+            to {
+                transform: translateX(0%);
+            }
+        }
+
+
+        /* Animación de salida */
+        @keyframes fadeOut {
+            from {
+                transform: translateX(0%);
+            }
+
+            to {
+                transform: translateX(110%);
+            }
+        }
+
+
     }
-
-
-    /* Animación de entrada */
-    @keyframes background-in-boxjm1 {
-        from {
-            background-color: rgb(0 0 0 / 0%);
-        }
-
-        to {
-            background-color: rgb(0 0 0 / 50%);
-        }
-    }
-
-    /* Animación de salida */
-    @keyframes background-out-boxjm1 {
-        from {
-            background-color: rgb(0 0 0 / 50%);
-        }
-
-        to {
-            background-color: rgb(0 0 0 / 0%);
-        }
-    }
-
-
-    @keyframes fadeIn {
-        from {
-            transform: translateX(110%);
-        }
-
-        to {
-            transform: translateX(0%);
-        }
-    }
-
-
-    /* Animación de salida */
-    @keyframes fadeOut {
-        from {
-            transform: translateX(0%);
-        }
-
-        to {
-            transform: translateX(110%);
-        }
-    }
-
-
-}
