@@ -379,20 +379,15 @@
     }
 
     #open-filter-button-respon {
+        top: 5px;
         height: 35px;
         width: 35px;
         border-radius: 7px;
         margin: 0px 10px 0px 0px;
         background-image: url(../img/icons/filtro1.svg);
         background-size: 35px;
+        transition: 0s;
     }
-    
-    .botonbox2 {
-        position: relative;
-        display: inline-flex;
-        justify-content: center;
-    }
-
 
 
     .filter {
