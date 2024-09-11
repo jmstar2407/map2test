@@ -975,7 +975,12 @@ border-radius: 50px;
         background-size: 45px;
     }
 
+
+    
+
 }
+
+
 
 
 
@@ -995,13 +1000,13 @@ border-radius: 50px;
         height: 100px;
     }
 
-    .menumaster {
+    /*.menumaster {
         display: grid;
         height: 100px;
         border-radius: 14px;
         width: 96%;
         margin: 10px 10px;
-    }
+    }*/
 
     .menumaster-in-right {
         padding-right: 5px;
