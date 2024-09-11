@@ -182,6 +182,14 @@ scrollbar-color: #888 #f1f1f1;
 font-family: sans-serif;
 }
 
+.contactos{
+    display: block;
+}
+
+.contactos-res {
+    display: none;
+}
+
 .contactows{
     flex: 1;
     background: rgb(165, 238, 187);
@@ -451,11 +459,44 @@ font-family: sans-serif;
 }
 
 @media (max-width: 900px) {
+
+    .modal-end {
+        background: #ffffff;
+        border-top: 1px solid rgb(179 179 179);
+    }
+
+    .modal-redes{
+        display: none;
+    }
     .modal-content {
         width: 100%;
         height: 100%;
         border-radius: 0px;
     }
+
+    .modal-logo {
+        border-bottom: 1px solid rgb(193 193 193);
+    }
+
+    .contactos {
+        display: none;
+    }
+
+    .contactos-res {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .whatsapp-button {
+        width: 100%;
+        margin-top: 3px;
+    }
+
+    .modal-end p {
+        width: 273px;
+        text-align: left;
+    }
+
 }
 
 @media (max-width: 700px) {
