@@ -463,6 +463,8 @@ font-family: sans-serif;
     .modal-end {
         background: #ffffff;
         border-top: 1px solid rgb(179 179 179);
+        display: inline-flex;
+        justify-content: center;
     }
 
     .modal-redes{
@@ -483,13 +485,37 @@ font-family: sans-serif;
     }
 
     .contactos-res {
+        position: relative;
         display: inline-flex;
         align-items: center;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .whatsapp-button {
         width: 100%;
-        margin-top: 3px;
+        margin-top: 0px;
+        padding: 0px 10px 0px 5px;
+        max-width: 140px;
+    }
+
+    .whatsapp-button:hover {
+        background-color: #2EE59D;
+        box-shadow: 0px 0px 0px rgb(46 229 157 / 0%);
+        transform: translateY(0px);
+        transition: 0.3s;
+    }
+    
+
+    .whatsapp-button img {
+        top: 3px;
+        height: 34px;
+        margin: 5px;
+    }
+
+    .whatsapp-button span {
+        top: -11px;
+        font-size: 19px;
     }
 
     .modal-end p {
