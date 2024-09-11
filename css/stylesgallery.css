@@ -68,30 +68,6 @@ flex: 1;
 }
 
 
-/* Estilos para Chrome, Safari y Edge */
-.modal-in::-webkit-scrollbar {
-width: 8px; /* Ancho de la barra de desplazamiento */
-}
-
-.modal-in::-webkit-scrollbar-track {
-background: #f1f1f1; /* Color de fondo del track */
-}
-
-.modal-in::-webkit-scrollbar-thumb {
-background: #00000041; /* Color del pulgar (la parte que se arrastra) */
-border-radius: 4px; /* Bordes redondeados */
-}
-
-.modal-in::-webkit-scrollbar-thumb:hover {
-background: #555; /* Color del pulgar al pasar el mouse por encima */
-}
-
-/* Estilos para Firefox */
-/* .modal-in {
-scrollbar-width: thin;
-scrollbar-color: #888 #f1f1f1;
-} */
-
 .modal-footer {
     /*display: flex;*/
     justify-content: space-between;
@@ -457,6 +433,33 @@ font-family: sans-serif;
     /* font-weight: bold; */
     cursor: pointer;
 }
+
+@media (min-width: 900px) {
+    /* Estilos para Chrome, Safari y Edge */
+    .modal-in::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+    }
+    
+    .modal-in::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo del track */
+    }
+    
+    .modal-in::-webkit-scrollbar-thumb {
+    background: #00000041; /* Color del pulgar (la parte que se arrastra) */
+    border-radius: 4px; /* Bordes redondeados */
+    }
+    
+    .modal-in::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color del pulgar al pasar el mouse por encima */
+    }
+    
+    /* Estilos para Firefox */
+    /* .modal-in {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+    } */
+    }
+    
 
 @media (max-width: 900px) {
 
