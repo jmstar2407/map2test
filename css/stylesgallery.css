@@ -530,8 +530,14 @@ font-family: sans-serif;
 
 @media (max-width: 700px) {
 
+    .nav-button-img-p {
+        border-radius: 0px;
+        width: 60px;
+    }
+
     .main-image {
         max-height: 217px;
+        max-width: 95%;
     }
 
     .main-image img {
