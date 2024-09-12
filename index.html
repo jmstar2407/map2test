@@ -621,20 +621,30 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
         }
 
 
-        // Función de cómo llegar desde el modal
-        function comoLlegarDesdeModal() {
-            // Obtener latitud y longitud de la propiedad actualmente mostrada en el modal
-            const propertyId = parseInt(window.location.hash.substring('#id-'.length));
-            const property = [...alquileres, ...ventas].find(p => p.id === propertyId);
+// Función de cómo llegar desde el modal
+function comoLlegarDesdeModal() {
+    // Obtener latitud y longitud de la propiedad actualmente mostrada en el modal
+    const propertyId = parseInt(window.location.hash.substring('#id-'.length));
+    const property = [...alquileres, ...ventas].find(p => p.id === propertyId);
 
-            if (property) {
-                const lat = property.latLng ? property.latLng[0] : property.lat;
-                const lng = property.latLng ? property.latLng[1] : property.lng;
-                comoLlegar(lat, lng); 
-            } else {
-                console.error("No se pudo encontrar la propiedad para obtener las coordenadas.");
-            }
-        }
+    if (property) {
+        const lat = property.latLng ? property.latLng[0] : property.lat;
+        const lng = property.latLng ? property.latLng[1] : property.lng;
+
+        // URL base para el intent chooser
+        var url = `geo:${lat},${lng}?q=${lat},${lng}`;
+
+        // Agregar opciones de aplicaciones específicas si lo deseas
+        // (comenta las líneas que no necesites)
+        // url += `&package=com.google.android.apps.maps`;  // Google Maps
+        // url += `&package=com.waze`;                     // Waze
+        // url += `&package=com.ubercab`;                  // Uber
+
+        window.location.href = url; 
+    } else {
+        console.error("No se pudo encontrar la propiedad para obtener las coordenadas.");
+    }
+}
 
         function changeImage(button, direction) {
             const carousel = button.parentElement;
