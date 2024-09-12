@@ -49,7 +49,7 @@
 
 
 
-
+            
 
 
             <div class="botonbox2">
@@ -238,7 +238,7 @@
 
             <!-- Información general para todas las propiedades -->
             <div class="modal-end">
-<button id="comoLlegarButton" class="como-llegar-button">Cómo Llegar</button>
+                <button id="comoLlegarButton" class="como-llegar-button" onclick="comoLlegarDesdeModal()">Cómo llegar</button>
                 <div class="contactos-res">
                     <p>¿Te interesa esta propiedad?<br>
                         Escríbenos:
@@ -621,7 +621,20 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
         }
 
 
+        // Función de cómo llegar desde el modal
+        function comoLlegarDesdeModal() {
+            // Obtener latitud y longitud de la propiedad actualmente mostrada en el modal
+            const propertyId = parseInt(window.location.hash.substring('#id-'.length));
+            const property = [...alquileres, ...ventas].find(p => p.id === propertyId);
 
+            if (property) {
+                const lat = property.latLng ? property.latLng[0] : property.lat;
+                const lng = property.latLng ? property.latLng[1] : property.lng;
+                comoLlegar(lat, lng); 
+            } else {
+                console.error("No se pudo encontrar la propiedad para obtener las coordenadas.");
+            }
+        }
 
         function changeImage(button, direction) {
             const carousel = button.parentElement;
@@ -921,31 +934,6 @@ window.addEventListener('DOMContentLoaded', () => {
     scrollRightButton.addEventListener('click', () => {
         thumbnailsContainer.scrollLeft += 150;
     });
-});
-
-
-
-// Handle "Cómo Llegar" button click
-document.getElementById('comoLlegarButton').addEventListener('click', () => {
-  // Get the currently displayed property's coordinates
-  const currentProperty = JSON.parse(modalDetails.dataset.property); 
-  const lat = currentProperty.latLng ? currentProperty.latLng[0] : currentProperty.lat;
-  const lng = currentProperty.latLng ? currentProperty.latLng[1] : currentProperty.lng;
-
-  // Logic to ask the user which app they want to use (you'll need to implement this)
-  // For example, you might use a simple prompt or a more elaborate modal/popup
-  const userChoice = prompt("¿Qué app quieres usar? (Google Maps, Waze, Uber, etc.)");
-
-  // Handle the user's choice (you'll need to implement this based on the apps you support)
-  if (userChoice.toLowerCase() === 'google maps') {
-    window.open(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`, '_blank');
-  } else if (userChoice.toLowerCase() === 'waze') {
-    // ... handle Waze ...
-  } else if (userChoice.toLowerCase() === 'uber') {
-    // ... handle Uber ...
-  } else {
-    alert("App no soportada.");
-  }
 });
 
 
