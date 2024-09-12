@@ -1,0 +1,666 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-logo {
+    width: 100%;
+    background: rgba(255, 0, 0, 0);
+    height: 50px;
+    pointer-events: none;
+}
+
+.modal-logo-in {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background: #ff000000;
+    height: 50px;
+    width: 200px;
+}
+
+.modal-logo img {
+    position: absolute;
+    height: 50px;
+}
+
+.modal-logo-in p {
+    position: absolute;
+    font-size: 28px;
+    font-family: system-ui;
+    font-weight: bold;
+    margin-block-start: 7px;
+    margin-block-end: 0px;
+    margin-left: 60px;
+    color: #c70214;
+}
+
+.modal-logo-in span {
+    color: #0061a1;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    max-height: 1440px;
+    width: 80%;
+    max-width: 1080px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+}
+
+.modal-in {
+    background: rgba(255, 255, 255, 0);
+    overflow: auto;
+    flex: 1;
+}
+
+
+.modal-footer {
+    /*display: flex;*/
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-end {
+    background: #c5c5c5bd;
+    height: 70px;
+    width: 100%;
+    border-radius: 0px 0px 14px 14px;
+}
+
+.modal-end p {
+    font-family: system-ui;
+    font-weight: bold;
+    margin-block-start: 0px;
+    margin-block-end: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.modal-redes {
+    position: relative;
+    height: 35px;
+    background: #ff000000;
+    width: 185px;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-redes img {
+    height: 35px;
+    margin: 0px 4px;
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+.infocompleta {
+    display: flex;
+    margin: 0px 10px;
+}
+
+.modal-body {
+    position: relative;
+    flex: 3;
+    background: #00000000;
+}
+
+.modal-body p {
+    margin-block-start: 10px;
+    margin-block-end: 0px;
+    font-family: sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.modal-body h3 {
+    font-family: sans-serif;
+    background: #2f9eff;
+    color: white;
+    display: inline-flex;
+    font-size: 21px;
+    margin-block-start: 5px;
+    margin-block-end: 0px;
+    padding: 4px;
+    border-radius: 7px;
+}
+
+.modal-body h4 {
+    margin-block-start: 5px;
+    margin-block-end: 0px;
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
+.box-modal-googlemap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    box-sizing: border-box;
+}
+
+#comoLlegarButton {
+    display: none;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 155px;
+    height: 55px;
+    margin-top: 7px;
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 12px;
+    margin-right: 40px;
+}
+
+#comoLlegarButton img {
+    height: 31px;
+    position: relative;
+    top: 8px;
+}
+
+
+.detallesmodalicon {
+    display: flex;
+    /* Activamos Flexbox */
+    flex-wrap: wrap;
+    /* Permitimos que los elementos se dividan en varias líneas */
+    justify-content: space-around;
+    /* Distribuimos los elementos con espacio alrededor */
+    font-family: sans-serif;
+    background: #05377717;
+    border-radius: 11px;
+    padding-bottom: 10px;
+}
+
+.item {
+    display: flex;
+    /* También usamos Flexbox para cada elemento individual */
+    flex-direction: column;
+    /* Colocamos la imagen arriba y el texto abajo */
+    align-items: center;
+    /* Centramos verticalmente el contenido */
+    text-align: center;
+    /* Centramos el texto horizontalmente */
+    width: 23%;
+    /* Ajusta el ancho según sea necesario para que quepan 4 por línea */
+    margin: 14px 0px 0px 0px;
+}
+
+.item p {
+    font-size: 0.9rem;
+}
+
+.detallesmodalicon img {
+    height: 50px;
+}
+
+.detallesmodaltext {
+    font-family: sans-serif;
+}
+
+.contactos {
+    display: block;
+}
+
+.contactos-res {
+    display: none;
+}
+
+.contactows {
+    flex: 1;
+    background: rgb(165, 238, 187);
+}
+
+.close {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    color: #fffffff2;
+    font-family: math;
+    font-size: 31px;
+    font-weight: bold;
+    cursor: pointer;
+    background: red;
+    padding: 0px 10px 0px 10px;
+    border-radius: 12px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.gallery {
+    width: 100%;
+    max-height: 500px;
+    background: #000000;
+    border-radius: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.main-image {
+    position: relative;
+    max-height: 400px;
+    width: 100%;
+    max-width: 675px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #ff000000;
+    margin-bottom: 9px;
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+    cursor: zoom-in;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+
+
+#fullscreenView {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#fullscreenImageContainer {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    overflow: hidden;
+}
+
+#fullscreenImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    cursor: zoom-in;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#closeFullscreen {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    color: #000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav-button-img-p {
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 100px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.nav-button-img-p:hover {
+    background-color: rgba(0, 0, 0, 0.568);
+    transition: 0.3s;
+}
+
+.nav-button-img-p.left {
+    left: 0px;
+}
+
+.nav-button-img-p.right {
+    right: 0px;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 10;
+}
+
+.nav-button.left {
+    left: 20px;
+}
+
+.nav-button.right {
+    right: 20px;
+}
+
+.thumbnails-container {
+    background: #ff000000;
+    position: relative;
+    display: flex;
+    height: 70px;
+}
+
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(115 115 115 / 50%);
+    color: white;
+    padding: 15px 13px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1;
+    margin: 0px 9px;
+    flex-shrink: 0;
+}
+
+.scroll-button.left {
+    left: 0;
+}
+
+.scroll-button.right {
+    right: 0;
+}
+
+.thumbnails {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    background: #2b2b2b;
+    padding: 0px 3px;
+    flex-grow: 1;
+    margin: 0 50px;
+    border-radius: 10px;
+    overflow-x: auto;
+    /* Habilita el scroll horizontal */
+    -webkit-overflow-scrolling: touch;
+}
+
+.thumbnails::-webkit-scrollbar {
+    display: none;
+}
+
+.thumbnails img {
+    width: 100px;
+    max-height: 60px;
+    min-width: 100px;
+    margin: 0px 5px;
+    border-radius: 5px;
+    position: relative;
+    object-fit: cover;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.thumbnails img:hover {
+    box-shadow: 0px 0px 0px 2px rgb(205 205 205);
+    filter: brightness(1.3);
+    transition: 0.2s;
+}
+
+.thumbnails img.active {
+    box-shadow: 0px 0px 0px 3px rgb(0 123 255);
+}
+
+.fullscreen-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 93%);
+    backdrop-filter: blur(19px);
+    overflow: hidden;
+}
+
+.fullscreen-image {
+    margin: auto;
+    display: block;
+    max-width: 900px;
+    max-height: 90%;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    cursor: zoom-in;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close-fullscreen {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: #000000;
+    background: red;
+    padding: 0px 20px;
+    border-radius: 7px;
+    border-style: none;
+    font-size: 31px;
+    /* font-weight: bold; */
+    cursor: pointer;
+}
+
+@media (min-width: 900px) {
+
+    /* Estilos para Chrome, Safari y Edge */
+    .modal-in::-webkit-scrollbar {
+        width: 8px;
+        /* Ancho de la barra de desplazamiento */
+    }
+
+    .modal-in::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        /* Color de fondo del track */
+    }
+
+    .modal-in::-webkit-scrollbar-thumb {
+        background: #00000041;
+        /* Color del pulgar (la parte que se arrastra) */
+        border-radius: 4px;
+        /* Bordes redondeados */
+    }
+
+    .modal-in::-webkit-scrollbar-thumb:hover {
+        background: #555;
+        /* Color del pulgar al pasar el mouse por encima */
+    }
+
+    /* Estilos para Firefox */
+    /* .modal-in {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+    } */
+}
+
+
+@media (max-width: 900px) {
+
+    .modal-end {
+        background: #ffffff;
+        border-top: 1px solid rgb(179 179 179);
+        display: inline-flex;
+        justify-content: center;
+    }
+
+    .modal-redes {
+        display: none;
+    }
+
+    .modal-content {
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+
+    .modal-logo {
+        border-bottom: 1px solid rgb(193 193 193);
+    }
+
+    .contactos {
+        display: none;
+    }
+
+    .contactos-res {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .whatsapp-button {
+        width: 100%;
+        margin-top: 0px;
+        padding: 0px 10px 0px 5px;
+        max-width: 140px;
+    }
+
+    .whatsapp-button:hover {
+        background-color: #2EE59D;
+        box-shadow: 0px 0px 0px rgb(46 229 157 / 0%);
+        transform: translateY(0px);
+        transition: 0.3s;
+    }
+
+
+    .whatsapp-button img {
+        top: 3px;
+        height: 34px;
+        margin: 5px;
+    }
+
+    .whatsapp-button span {
+        top: -11px;
+        font-size: 19px;
+    }
+
+    .modal-end p {
+        width: 273px;
+        text-align: left;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .nav-button-img-p {
+        border-radius: 0px;
+        width: 60px;
+    }
+
+    .nav-button-img-p.left {
+        border-radius: 7px 0px 0px 7px;
+    }
+
+    .nav-button-img-p.right {
+        border-radius: 0px 7px 7px 0px;
+    }
+
+    .main-image {
+        max-height: 206px;
+    }
+
+    .main-image img {
+        max-height: 206px;
+    }
+
+    .thumbnails {
+        padding: 1px 3px 0px 3px;
+    }
+
+    .thumbnails-container {
+        height: 55px;
+    }
+
+    .thumbnails img {
+        max-height: 43px;
+        min-width: 73px;
+        margin: 0px 3px;
+
+    }
+
+    .thumbnails img:hover {
+        box-shadow: 0px 0px 0px 2px rgb(205 205 205);
+    }
+
+    .thumbnails img.active {
+        box-shadow: 0px 0px 0px 2px rgb(0 123 255);
+    }
+
+    .scroll-button {
+        padding: 12px 10px;
+        margin: 0px 11px;
+    }
+
+    .modal-body h4 {
+        margin-block-end: 10px;
+    }
+
+    .item {
+        width: 50%;
+        /* Ajusta el ancho según sea necesario para que quepan 4 por línea */
+    }
+
+
+    .detallesmodalicon img {
+        height: 32px;
+    }
+
+    #comoLlegarButton{
+        display: block;
+    }
+    
+
+}
