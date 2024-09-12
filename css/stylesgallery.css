@@ -111,7 +111,7 @@ flex: 1;
 
 .infocompleta {
     display: flex;
-    margin: 0px 24px;
+    margin: 0px 10px;
 }
 
 .modal-body {
@@ -121,7 +121,7 @@ flex: 1;
 }
 
 .modal-body p {
-    margin-block-start: 0px;
+    margin-block-start: 10px;
     margin-block-end: 0px;
     font-family: sans-serif;
     font-size: 1.4rem;
@@ -140,11 +140,21 @@ flex: 1;
     border-radius: 7px;
 }
 
+.modal-body h4 {
+    margin-block-start: 5px;
+    margin-block-end: 0px;
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
 .detallesmodalicon {
     display: flex; /* Activamos Flexbox */
     flex-wrap: wrap; /* Permitimos que los elementos se dividan en varias líneas */
     justify-content: space-around; /* Distribuimos los elementos con espacio alrededor */
     font-family: sans-serif;
+    background: #05377717;
+    border-radius: 11px;
+    padding-bottom: 10px;
 }
 
 .item {
@@ -154,6 +164,10 @@ flex: 1;
     text-align: center; /* Centramos el texto horizontalmente */
     width: 23%; /* Ajusta el ancho según sea necesario para que quepan 4 por línea */
     margin: 14px 0px 0px 0px;
+}
+
+.item p {
+    font-size: 0.9rem;
 }
 
 .detallesmodalicon img {
@@ -584,6 +598,19 @@ font-family: sans-serif;
     .scroll-button {
         padding: 12px 10px;
         margin: 0px 11px;
+    }
+
+    .modal-body h4 {
+        margin-block-end: 10px;
+    }
+
+    .item {
+        width: 50%; /* Ajusta el ancho según sea necesario para que quepan 4 por línea */
+    }
+    
+    
+    .detallesmodalicon img {
+        height: 32px;
     }
 
 }
