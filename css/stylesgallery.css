@@ -199,7 +199,8 @@ font-family: sans-serif;
     max-height: 500px;
     background: #000000;
     border-radius: 0px;
-    padding: 10px 0px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .main-image {
@@ -544,12 +545,11 @@ font-family: sans-serif;
     }
 
     .main-image {
-        max-height: 217px;
-        max-width: 95%;
+        max-height: 206px;
     }
 
     .main-image img {
-        max-height: 217px;
+        max-height: 206px;
     }
 
     .thumbnails {
