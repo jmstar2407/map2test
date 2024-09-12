@@ -22,6 +22,7 @@
     </div> -->
 
     <div class="boxmaster">
+        
 
         <div class="menumaster">
             <!-- Menu Left -->
@@ -169,7 +170,7 @@
 
             </div>
             <div class="modal-in">
-                <h2>Información de la Propiedad</h2>
+                <!-- <h2>Información de la Propiedad</h2> -->
 
 
 
@@ -215,11 +216,7 @@
                         </p>
                         <a href="#" id="whatsappButton" class="whatsapp-button" onclick="openWhatsApp()"><img
                                 src="./img/icons/whatsapp2.svg"><span>WhatsApp</span></a>
-
-
                     </div>
-
-
                 </div>
                 <!-- Aquí se inyectará la información de CADA propiedad FIN -->
 
@@ -253,7 +250,6 @@
 
 
 
-
         <!-- Modal para imágenes en pantalla completa -->
         <div id="fullscreenModal" class="fullscreen-modal">
             <button class="close-fullscreen" onclick="closeFullscreenModal()">&times;</button>
@@ -267,6 +263,9 @@
     </div>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+
+
 
     <!-- // Detectar cambios en el tema del sistema operativo
 const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -407,10 +406,7 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
                 <p>Menu</p>
                 <span class="close2">&times;</span>
             </div>
-            <div class="boxjm1-body">
-
-
-            </div>
+            <div class="boxjm1-body"></div>
             <div class="boxjm1-down">
                 <div class="modal-redes">
                     <p>Síguenos en:</p>
@@ -426,21 +422,7 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
 
 
-
-    </div>
-
-
-
-
-
-
     <script>
-
-
-
-
-
-
 
 
 
@@ -691,222 +673,6 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
         }
 
 
-
-
-
-
-        // Función para abrir el modal con la información de la propiedad
-        function openModal(property) {
-            const modal = document.getElementById('propertyModal');
-            const modalDetails = document.getElementById('modalPropertyDetails');
-
-            // Configurar el botón de WhatsApp
-            const whatsappButton = document.getElementById('whatsappButton');
-            const propertyLink = `https://tusitioweb.com/#id-${property.id}`; // Reemplaza con la URL real de tu sitio web
-            const whatsappMessage = `Me interesa saber más de esta propiedad con el ID ${property.id}: ${propertyLink}`;
-            const whatsappUrl = `https://api.whatsapp.com/send?phone=+18299605566&text=${encodeURIComponent(whatsappMessage)}`;
-
-            whatsappButton.href = whatsappUrl;
-
-
-            modalDetails.innerHTML = `
-         <p>Precio: RD$ ${formatNumber(property.price)}</p>
-     <h3>ID: ${property.id}</h3>
-        <h4>${property.title}</h4>
-
-
-
-    <div class="detallesmodalicon"> 
-        <div class="item">
-        <img src="${roomIcon}"><p> ${property.rooms} Habitaciones</p>
-        </div>
-        <div class="item">
-        <img src="${bathroomIcon}"><p>${property.bathrooms} Baños</p>
-</div>
-        <div class="item">
-        <img src="${parkingIcon}"><p>${property.parking} Parqueos</p>
-</div>
-        <div class="item">
-        <img src="${areaIcon}"><p>${property.area} m²</p>
-        </div>
-    </div>    
-    <div class="detallesmodaltext"> 
-        <p><strong>Caracteristicas:</strong> ${property.caracteristicas}</p>
-    </div>  
-    `;
-
-
-
-
-
-
-
-
-
-            // Función para actualizar la galería del modal
-            updateGallery(property.imageFolder, property.imageCount);
-
-            // Función para actualizar la galería del modal
-            function updateGallery(imageFolder, imageCount) {
-                // Obtener referencias a los elementos del DOM
-                const mainImage = document.getElementById('currentImage');
-                const thumbnailsContainer = document.querySelector('.thumbnails');
-
-                // Limpiar la galería antes de actualizar
-                mainImage.src = '';
-                thumbnailsContainer.innerHTML = '';
-
-                // Crear un array para almacenar las rutas de las imágenes
-                let images = [];
-
-                // Generar miniaturas y almacenar rutas de imágenes
-                for (let i = 1; i <= imageCount; i++) {
-                    const imgSrc = `${imageFolder}${i}.jpg`;
-                    images.push(imgSrc);
-
-                    const thumbnail = document.createElement('img');
-                    thumbnail.src = imgSrc;
-                    thumbnail.alt = `Thumbnail ${i}`;
-                    thumbnail.dataset.index = i - 1; // Almacenar el índice de la imagen para referencia posterior
-
-                    // Agregar evento click a la miniatura
-                    thumbnail.addEventListener('click', function () {
-                        // Cambiar la imagen principal al hacer clic en la miniatura
-                        mainImage.src = this.src;
-
-                        // Actualizar el índice de la imagen actual
-                        currentIndex = parseInt(this.dataset.index);
-
-                        // Resaltar la miniatura seleccionada y deseleccionar las demás
-                        updateActiveThumbnail(currentIndex);
-                    });
-
-                    // Agregar la miniatura al contenedor
-                    thumbnailsContainer.appendChild(thumbnail);
-                }
-
-                // Establecer la primera imagen como principal si hay imágenes
-                if (imageCount > 0) {
-                    mainImage.src = images[0];
-                    updateActiveThumbnail(0); // Resaltar la primera miniatura
-                }
-
-                // Índice de la imagen actual
-                let currentIndex = 0;
-
-                // Botones de navegación de la galería principal
-                const prevMainImageButton = document.getElementById('prevMainImage');
-                const nextMainImageButton = document.getElementById('nextMainImage');
-
-                // Manejador de eventos para el botón "Anterior"
-                prevMainImageButton.addEventListener('click', () => {
-                    currentIndex = (currentIndex - 1 + images.length) % images.length; // Circular hacia atrás
-                    mainImage.src = images[currentIndex];
-                    updateActiveThumbnail(currentIndex);
-                });
-
-                // Manejador de eventos para el botón "Siguiente"
-                nextMainImageButton.addEventListener('click', () => {
-                    currentIndex = (currentIndex + 1) % images.length; // Circular hacia adelante
-                    mainImage.src = images[currentIndex];
-                    updateActiveThumbnail(currentIndex);
-                });
-
-                // Función para resaltar la miniatura activa
-                function updateActiveThumbnail(index) {
-                    const allThumbnails = document.querySelectorAll('.thumbnails img');
-                    allThumbnails.forEach(img => img.classList.remove('active'));
-                    allThumbnails[index].classList.add('active');
-                }
-
-                // Funcionalidad de pantalla completa
-                let currentFullscreenIndex = 0;
-                let fullscreenImages = images; // Usar las mismas imágenes que en la galería
-
-                // Referencias a los elementos del modal de pantalla completa
-                const fullscreenModal = document.getElementById('fullscreenModal');
-                const fullscreenImage = document.getElementById('fullscreenModalImage');
-                const prevFullscreenImageButton = document.getElementById('prevFullscreenImage');
-                const nextFullscreenImageButton = document.getElementById('nextFullscreenImage');
-
-                // Abrir el modal en pantalla completa
-                function openFullscreenModal(index) {
-                    currentFullscreenIndex = index;
-                    fullscreenImage.src = fullscreenImages[currentFullscreenIndex];
-                    fullscreenModal.style.display = 'block';
-                }
-
-                // Cerrar el modal en pantalla completa
-                function closeFullscreenModal() {
-                    fullscreenModal.style.display = 'none';
-                }
-
-                // Eventos para cerrar el modal
-                const closeButton = document.querySelector('.close-fullscreen');
-                closeButton.addEventListener('click', closeFullscreenModal);
-
-                document.addEventListener('keydown', (event) => {
-                    if (event.key === "Escape") {
-                        closeFullscreenModal();
-                    }
-                });
-
-                // Manejadores de eventos para los botones de navegación en pantalla completa
-                prevFullscreenImageButton.addEventListener('click', () => {
-                    currentFullscreenIndex = (currentFullscreenIndex - 1 + fullscreenImages.length) % fullscreenImages.length;
-                    fullscreenImage.src = fullscreenImages[currentFullscreenIndex];
-                });
-
-                nextFullscreenImageButton.addEventListener('click', () => {
-                    currentFullscreenIndex = (currentFullscreenIndex + 1) % fullscreenImages.length;
-                    fullscreenImage.src = fullscreenImages[currentFullscreenIndex];
-                });
-
-                // Abrir pantalla completa al hacer clic en la imagen principal
-                mainImage.addEventListener('click', () => {
-                    openFullscreenModal(currentIndex);
-                });
-            }
-
-
-
-
-
-
-
-
-
-            history.pushState(null, '', `#id-${property.id}`);
-            modal.style.display = "block";
-        }
-
-        // Función para cerrar el modal
-        function closeModal() {
-            const modal = document.getElementById('propertyModal');
-            modal.style.display = "none";
-        }
-        // Asegúrate de que este script se ejecute después de que se haya cargado el contenido HTML
-        window.addEventListener('DOMContentLoaded', (event) => {
-        });
-
-
-        // LINK ID - Verificar si hay un ID en la URL al cargar la página
-        window.addEventListener('load', () => {
-            const hash = window.location.hash;
-            if (hash.startsWith('#id-')) { // Buscar "id-" en lugar de "property-"
-                const propertyId = parseInt(hash.substring('#id-'.length));
-
-                // LINK ID - Verificar si hay un ID en la URL al cargar la página FIN
-
-                // Buscar la propiedad correspondiente en alquileres o ventas
-                const allProperties = [...alquileres, ...ventas];
-                const property = allProperties.find(p => p.id === propertyId);
-
-                if (property) {
-                    openModal(property);
-                }
-            }
-        });
 
 
 
@@ -1510,21 +1276,8 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
     </script>
 
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const thumbnails = document.querySelector('.thumbnails');
-            const scrollLeftButton = document.querySelector('.scroll-button.left');
-            const scrollRightButton = document.querySelector('.scroll-button.right');
 
-            scrollLeftButton.addEventListener('click', () => {
-                thumbnails.scrollLeft -= 150; // Ajusta la cantidad de desplazamiento
-            });
-
-            scrollRightButton.addEventListener('click', () => {
-                thumbnails.scrollLeft += 150; // Ajusta la cantidad de desplazamiento
-            });
-        });
-    </script>
+    <script src="./js/scriptmodal.js"></script>
     <script src="./js/scriptmenu.js"></script>
 
 
