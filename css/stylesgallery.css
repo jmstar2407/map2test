@@ -459,7 +459,7 @@ font-family: sans-serif;
     scrollbar-color: #888 #f1f1f1;
     } */
     }
-    
+
 
 @media (max-width: 900px) {
 
@@ -531,11 +531,11 @@ font-family: sans-serif;
 @media (max-width: 700px) {
 
     .main-image {
-        max-height: 250px;
+        max-height: 225px;
     }
 
     .main-image img {
-        max-height: 250px;
+        max-height: 225px;
     }
 
     .thumbnails {
