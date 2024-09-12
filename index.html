@@ -760,7 +760,7 @@ function setupWhatsappButton(property) {
 
 // Actualizar detalles del modal
 function updateModalDetails(property) {
-    // Extraer latitud y longitud correctamente
+    // Extraer latitud y longitud correctamente para el <iframe>
     const lat = property.latLng ? property.latLng[0] : property.lat;
     const lng = property.latLng ? property.latLng[1] : property.lng;
 
@@ -777,13 +777,16 @@ function updateModalDetails(property) {
         <div class="detallesmodaltext"> 
             <p><strong>Características:</strong> ${property.caracteristicas}</p>
         </div>
-        <div style="width: 100%; height: 450px; margin-top: 20px;">
+        
+        <div style="width: 100%;aspect-ratio: 16 / 9; /* Establece la relación de aspecto */margin: 19px 0px;border-radius: 14px;box-sizing: border-box;padding: 14px;">
+            
             <iframe 
                 src="https://maps.google.com/maps?q=${lat},${lng}&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                 frameborder="0" 
                 scrolling="no" 
-                style="width: 100%; height: 100%;">
+                style="width: 100%;height: 100%;box-shadow: 0px 0px 0px 2px rgb(0 0 0 / 0%);border-radius: 12px;">
             </iframe>
+
         </div>
     `;
 }
