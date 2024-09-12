@@ -481,6 +481,14 @@
 
 
 
+@media (min-width: 700px) {
+    .body-filter {
+        max-width: 345px;
+    }
+
+}
+
+
 
 
 @media (max-width: 500px) {
@@ -494,6 +502,7 @@
         height: 100%;
         border-radius: 15px 15px 0px 0px;
         overflow: hidden;
+        z-index: 9999;
     }
 
     .filter {
@@ -531,18 +540,6 @@
     }
 
 }
-
-
-
-
-@media (min-width: 700px) {
-    .body-filter {
-        max-width: 345px;
-    }
-
-}
-
-
 
 
 

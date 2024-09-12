@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -6,7 +7,7 @@ html, body {
 }
 
 .boxmaster {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
 }
@@ -66,7 +67,7 @@ html, body {
     left: 0px;
     height: 100%;
     width: 100%;
-    }
+}
 
 .menumaster-in-left {
     position: relative;
@@ -88,7 +89,7 @@ html, body {
     border-radius: 0px 0px 0px 19px;
 }
 
-.Menu-contacto-redes{
+.Menu-contacto-redes {
     display: none;
 }
 
@@ -226,10 +227,11 @@ html, body {
 
 
 @keyframes capagiro {
-    0%{
+    0% {
         background-position-x: 0px;
     }
-    100%{
+
+    100% {
         background-position-x: 165px;
     }
 }
@@ -247,7 +249,8 @@ html, body {
 
 
 
-.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
     border: 1px solid rgb(129 129 129);
     border-radius: 6px;
     background-clip: padding-box;
@@ -327,52 +330,52 @@ html, body {
 
 
 
-    .price-text {
-        font-weight: bold;
-        color: rgb(0, 0, 0);
-        font-size: 14px;
-        /* Agrega más estilos según lo necesites */
-    }
+.price-text {
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    /* Agrega más estilos según lo necesites */
+}
 
 
 
 
-    .barcontacto {
-        position: absolute;
-        height: 93px;
-        width: 165px;
-        background: #ffffff00;
-        top: 0px;
-        right: 0px;
-        z-index: 1000;
-        /* border-radius: 0px 0px 0px 19px; */
-        /* box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 7%); */
-    }
+.barcontacto {
+    position: absolute;
+    height: 93px;
+    width: 165px;
+    background: #ffffff00;
+    top: 0px;
+    right: 0px;
+    z-index: 1000;
+    /* border-radius: 0px 0px 0px 19px; */
+    /* box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 7%); */
+}
 
-    .barcontactobtn {
-        position: relative;
-        /* left: 93px; */
-        margin-top: 7px;
-        height: 34px;
-        width: 110px;
-        background: #000000;
-        border-radius: 30px;
-        font-family: system-ui;
-        font-weight: bold;
-        font-size: 23px;
-        padding: 0px 10px 2px 15px;
-        color: #ffffff;
-    }
+.barcontactobtn {
+    position: relative;
+    /* left: 93px; */
+    margin-top: 7px;
+    height: 34px;
+    width: 110px;
+    background: #000000;
+    border-radius: 30px;
+    font-family: system-ui;
+    font-weight: bold;
+    font-size: 23px;
+    padding: 0px 10px 2px 15px;
+    color: #ffffff;
+}
 
-    .barredesbtn {
-        margin-top: 3px;
-        margin-left: 7px;
-        height: 32px;
-        width: 32px;
-        background: red;
-        border-radius: 32px;
-        display: inline-flex;
-    }
+.barredesbtn {
+    margin-top: 3px;
+    margin-left: 7px;
+    height: 32px;
+    width: 32px;
+    background: red;
+    border-radius: 32px;
+    display: inline-flex;
+}
 
 
 
@@ -381,15 +384,15 @@ html, body {
 
 
 .boton1 {
-position: relative;
-background: #18c8ff;
-color: aliceblue;
-font-family: system-ui;
-font-weight: bold;
-font-size: 24px;
-padding: 0px 14px 5px 14px;
-border-radius: 9px;
-margin-top: 11px;
+    position: relative;
+    background: #18c8ff;
+    color: aliceblue;
+    font-family: system-ui;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 0px 14px 5px 14px;
+    border-radius: 9px;
+    margin-top: 11px;
 }
 
 
@@ -433,13 +436,13 @@ margin-top: 11px;
 
 @keyframes gradientMove {
     0% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
 
     100% {
-      background-position: 66% 50%;
+        background-position: 66% 50%;
     }
-  }
+}
 
 .logo1 {
     position: relative;
@@ -450,105 +453,118 @@ margin-top: 11px;
     background-image: url(../img/logo2.svg);
     background-size: 57px;
     background-repeat: no-repeat;
-    transform-style: preserve-3d; /* Necesario para que la rotación 3D funcione correctamente */
+    transform-style: preserve-3d;
+    /* Necesario para que la rotación 3D funcione correctamente */
     /* animation: girarYcambiar 10s infinite; */
 }
 
 @keyframes girarYcambiar {
-    0%, 5% { 
-        background-image: url(../img/logo2.svg); 
-        transform: rotateY(90deg); 
+
+    0%,
+    5% {
+        background-image: url(../img/logo2.svg);
+        transform: rotateY(90deg);
     }
-    5%, 45% { 
-        background-image: url(../img/logo2.svg); 
-        transform: rotateY(0deg); 
+
+    5%,
+    45% {
+        background-image: url(../img/logo2.svg);
+        transform: rotateY(0deg);
     }
-    50% { 
-        background-image: url(../img/logo2.svg); 
-        transform: rotateY(90deg); 
+
+    50% {
+        background-image: url(../img/logo2.svg);
+        transform: rotateY(90deg);
     }
-    51% { 
-        background-image: url(../img/logoletra1r.png); 
-        transform: rotateY(90deg); 
+
+    51% {
+        background-image: url(../img/logoletra1r.png);
+        transform: rotateY(90deg);
     }
-    56%, 95% { 
-        background-image: url(../img/logoletra1r.png); 
-        transform: rotateY(180deg); 
+
+    56%,
+    95% {
+        background-image: url(../img/logoletra1r.png);
+        transform: rotateY(180deg);
     }
-    100% { 
-        background-image: url(../img/logoletra1r.png); 
-        transform: rotateY(270deg); 
+
+    100% {
+        background-image: url(../img/logoletra1r.png);
+        transform: rotateY(270deg);
     }
 }
 
 
 
-    
-            /* Sobrescribir estilos de Leaflet */
-            .leaflet-div-icon {
-        background: none !important;
-        border: none !important;
-    }
 
-    .leaflet-popup-tip-container {
-        width: 0;
-height: 0;
-border-left: 10px solid transparent;
-border-right: 10px solid transparent;
-border-top: 10px solid #00000000;
-position: relative;
-margin-left: auto;
-margin-right: auto;
-left: 0;
-top: 0;
+/* Sobrescribir estilos de Leaflet */
+.leaflet-div-icon {
+    background: none !important;
+    border: none !important;
+}
+
+.leaflet-popup-tip-container {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #00000000;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    top: 0;
 }
 
 .price-tip {
-border: 7px solid transparent;
+    border: 7px solid transparent;
 }
 
 
 
 .leaflet-marker-icon span,
-    .leaflet-marker-icon img{
-        transition: 0.2s;
-    }
+.leaflet-marker-icon img {
+    transition: 0.2s;
+}
 
-    .leaflet-marker-icon:hover span{
-        transition: 0.2s;
-        transform: scale(1.24);
-    }
+.leaflet-marker-icon:hover span {
+    transition: 0.2s;
+    transform: scale(1.24);
+}
 
-    .leaflet-marker-icon:hover img{
-        transition: 0.2s;
-        transform: scale(1.24);
-        background: white;
-    }
-
-
+.leaflet-marker-icon:hover img {
+    transition: 0.2s;
+    transform: scale(1.24);
+    background: white;
+}
 
 
-    .carousel {
-position: relative;
-width: 100%;
-overflow: hidden;
-text-align: center;
-height: 190px; /* Establece la altura fija aquí */
-pointer-events: none;
+
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    height: 190px;
+    /* Establece la altura fija aquí */
+    pointer-events: none;
 }
 
 .carousel img {
-width: 100%;
-height: 100%; /* Asegúrate de que las imágenes ocupen todo el alto del carrusel */
-object-fit: cover; /* Esta propiedad es clave para el efecto "background-cover" */
-display: none;
-max-width: 100%;
-max-height: 190px;
-border-radius: 14px 14px 0px 0px;
+    width: 100%;
+    height: 100%;
+    /* Asegúrate de que las imágenes ocupen todo el alto del carrusel */
+    object-fit: cover;
+    /* Esta propiedad es clave para el efecto "background-cover" */
+    display: none;
+    max-width: 100%;
+    max-height: 190px;
+    border-radius: 14px 14px 0px 0px;
 }
 
 .carousel img.active {
-display: block;
+    display: block;
 }
 
 .carousel button {
@@ -562,99 +578,100 @@ display: block;
     pointer-events: auto;
 }
 
-    .carousel button.prev {
-        left: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        border-radius: 10px 4px 4px 10px;
-        transition: 0.3s;
-    }
-    .carousel button.next {
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        border-radius: 4px 10px 10px 4px;
-        transition: 0.3s;
-    }
+.carousel button.prev {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px 4px 4px 10px;
+    transition: 0.3s;
+}
 
-    .carousel button.prev:hover,
-    .carousel button.next:hover {
-        transform: translateY(-50%) scale(1.2);
-        transition: 0.3s;
-    }
+.carousel button.next {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 4px 10px 10px 4px;
+    transition: 0.3s;
+}
 
-    .carousel button.prev:active,
-    .carousel button.next:active {
-        background-color: #adadad;
+.carousel button.prev:hover,
+.carousel button.next:hover {
+    transform: translateY(-50%) scale(1.2);
+    transition: 0.3s;
+}
+
+.carousel button.prev:active,
+.carousel button.next:active {
+    background-color: #adadad;
 
 }
 
-    .carousel .indicators {
-        text-align: center;
-        margin-top: 10px;
-    }
+.carousel .indicators {
+    text-align: center;
+    margin-top: 10px;
+}
 
-    .carousel .indicators {
-position: relative;
-text-align: center;
-margin-top: -21px;
-background: #00000057;
-backdrop-filter: blur(8px);
-width: 91px;
-border-radius: 8px;
-margin-left: auto;
-margin-right: auto;
-padding: 3px;
+.carousel .indicators {
+    position: relative;
+    text-align: center;
+    margin-top: -21px;
+    background: #00000057;
+    backdrop-filter: blur(8px);
+    width: 91px;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px;
 }
 
 
 .carousel .indicator {
-position: relative;
-top: -1px;
-display: inline-block;
-width: 8px;
-height: 8px;
-background-color: #a9a9a9a8;
-border-radius: 50%;
-margin: 0 2px;
-cursor: pointer;
-pointer-events: auto;
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #a9a9a9a8;
+    border-radius: 50%;
+    margin: 0 2px;
+    cursor: pointer;
+    pointer-events: auto;
 }
 
 .carousel .indicator.active {
-background-color: #fff;
-width: 10px;
-height: 10px;
-top: 0px;
-margin: 0px 1px;
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    top: 0px;
+    margin: 0px 1px;
 }
 
 
-    .leaflet-popup-content {
-margin: 0;
-line-height: 0;
+.leaflet-popup-content {
+    margin: 0;
+    line-height: 0;
 }
 
 .informacion-basica {
-line-height: 1.4;
-height: 100px;
-padding: 0px 14px 0px 14px;
+    line-height: 1.4;
+    height: 100px;
+    padding: 0px 14px 0px 14px;
 }
 
 .price-text {
-font-family: system-ui;
-font-weight: bold;
-color: rgb(0, 0, 0);
-font-size: 20px;
+    font-family: system-ui;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
 }
 
 .detalles-basicos {
-position: relative;
-top: 10px;
-background: #ff000000;
-font-size: 15px;
-font-family: system-ui;
-font-weight: bold;
+    position: relative;
+    top: 10px;
+    background: #ff000000;
+    font-size: 15px;
+    font-family: system-ui;
+    font-weight: bold;
 }
 
 #vermodal {
@@ -693,32 +710,35 @@ font-weight: bold;
 }
 
 .informacion-basica button {
-cursor: pointer;
+    cursor: pointer;
 }
 
 .leaflet-popup-content {
-        margin: 0;
-        line-height: 0;
-        width: 350px; 
-        max-height: 300px; 
-        overflow-y: auto; 
-    }
+    margin: 0;
+    line-height: 0;
+    width: 350px;
+    max-height: 300px;
+    overflow-y: auto;
+}
 
-    .leaflet-popup-content .carousel button {
-        opacity: 0; /* Inicialmente ocultos */
-        transition: opacity 0.5s ease; /* Transición suave para la opacidad */
-      }
-      
-      .leaflet-popup-content:hover .carousel button {
-        opacity: 1; /* Visibles al pasar el ratón */
-        transition: 0.3s;
-      }
+.leaflet-popup-content .carousel button {
+    opacity: 0;
+    /* Inicialmente ocultos */
+    transition: opacity 0.5s ease;
+    /* Transición suave para la opacidad */
+}
 
-    .leaflet-popup-content-wrapper {
-padding: 0;
-text-align: left;
-border-radius: 14px;
-transition: 0.3s;
+.leaflet-popup-content:hover .carousel button {
+    opacity: 1;
+    /* Visibles al pasar el ratón */
+    transition: 0.3s;
+}
+
+.leaflet-popup-content-wrapper {
+    padding: 0;
+    text-align: left;
+    border-radius: 14px;
+    transition: 0.3s;
 }
 
 
@@ -729,21 +749,21 @@ transition: 0.3s;
 }
 
 .leaflet-container a.leaflet-popup-close-button {
-position: absolute;
-top: 0;
-right: 0;
-padding: 0;
-margin: 7px;
-border: none;
-text-align: center;
-width: 35px;
-height: 35px;
-font: 24px / 35px math;
-color: #3f3f3f;
-text-decoration: none;
-font-weight: bold;
-background: white;
-border-radius: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    margin: 7px;
+    border: none;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    font: 24px / 35px math;
+    color: #3f3f3f;
+    text-decoration: none;
+    font-weight: bold;
+    background: white;
+    border-radius: 50px;
 }
 
 
@@ -751,31 +771,36 @@ border-radius: 50px;
 
 
 
-    .loader {
-        position: fixed; /* Para que ocupe toda la pantalla */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: white; /* Color de fondo de la pantalla de carga */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999; /* Asegúrate de que esté por encima de todo */
-        flex-direction: column;
-    }
-    
-    .content {
-        display: none; /* Oculta el contenido inicialmente */
-    }
-    
-    /* Puedes agregar más estilos para personalizar la apariencia del logo */
-    .loader img {
-        width: 100%;
-        max-width: 555px;
-        height: auto;
-    }
-    /*@media (prefers-color-scheme: dark) {
+.loader {
+    position: fixed;
+    /* Para que ocupe toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    /* Color de fondo de la pantalla de carga */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* Asegúrate de que esté por encima de todo */
+    flex-direction: column;
+}
+
+.content {
+    display: none;
+    /* Oculta el contenido inicialmente */
+}
+
+/* Puedes agregar más estilos para personalizar la apariencia del logo */
+.loader img {
+    width: 100%;
+    max-width: 555px;
+    height: auto;
+}
+
+/*@media (prefers-color-scheme: dark) {
         .loader {
             background-color: #222222; color de fondo de pantalla de cargar para los temas
         }
@@ -783,88 +808,97 @@ border-radius: 50px;
 */
 
 
-    .loader {
-        animation: loaderFadeOut 3s forwards; 
-    }
-    
-    .loader img {
-        animation: loaderScale 3s forwards; 
-    }
-    
-    @keyframes loaderFadeOut {
-        0% {
-            opacity: 1; 
-        }
-        80% {
-            opacity: 1; 
-        }
-        90% {
-            opacity: 0; 
-        }
-        100% {
-            opacity: 0; 
-        }
-    }
-    
-    @keyframes loaderScale {
-        0% {
-            transform: scale(0); 
-        }
-        40% {
-            transform: scale(1); 
-        }
-        80% {
-            transform: scale(1);
-        }
-        100% {
-            transform: scale(5); 
-        }
+.loader {
+    animation: loaderFadeOut 3s forwards;
+}
+
+.loader img {
+    animation: loaderScale 3s forwards;
+}
+
+@keyframes loaderFadeOut {
+    0% {
+        opacity: 1;
     }
 
-    @keyframes loadernombre {
-        0% {
-            opacity: 0; 
-        }
-        30% {
-            opacity: 0; 
-        }
-        40% {
-            opacity: 1; 
-        }
-        100% {
-            opacity: 1; 
-        }
+    80% {
+        opacity: 1;
     }
 
-
-    .contactos p {
-        font-family: system-ui;
-        font-size: 18px;
-        font-weight: bold;
-        text-align: center;
-        color: black;
-        margin-block-start: 19px;
-        margin-block-end: 3px;
+    90% {
+        opacity: 0;
     }
 
-    .whatsapp-button {
-        display: block;
-        background-color: #25D366;
-        padding: 0px 10px 10px 2px;
-        font-size: 28px;
-        font-family: system-ui;
-        font-weight: bold;
-        color: white;
-        text-decoration: none;
-        border-radius: 7px;
-        max-width: 180px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 12px;
-        transition: 0.3s;
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes loaderScale {
+    0% {
+        transform: scale(0);
     }
 
-    .whatsapp-button:hover {
+    40% {
+        transform: scale(1);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(5);
+    }
+}
+
+@keyframes loadernombre {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.contactos p {
+    font-family: system-ui;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    margin-block-start: 19px;
+    margin-block-end: 3px;
+}
+
+.whatsapp-button {
+    display: block;
+    background-color: #25D366;
+    padding: 0px 10px 10px 2px;
+    font-size: 28px;
+    font-family: system-ui;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    max-width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 12px;
+    transition: 0.3s;
+}
+
+.whatsapp-button:hover {
     background-color: #2EE59D;
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color: #fff;
@@ -879,92 +913,92 @@ border-radius: 50px;
     margin: 5px;
 }
 
-    .whatsapp-button span {
-        position: relative;
-        top: -7px;
-        color: white;
-        font-family: system-ui;
-        font-weight: bold;
-        font-size: 26px;
-    }
+.whatsapp-button span {
+    position: relative;
+    top: -7px;
+    color: white;
+    font-family: system-ui;
+    font-weight: bold;
+    font-size: 26px;
+}
 
 
-    .bar-redes {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        height: 100%;
-        width: 60px;
-        background: #00000000;
-        z-index: 1000;
-        pointer-events: none;
-    }
+.bar-redes {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 60px;
+    background: #00000000;
+    z-index: 1000;
+    pointer-events: none;
+}
 
-    .bar-redes-in {
-        position: relative;
-        margin-right: auto;
-        margin-left: auto;
-        border-radius: 12px;
-        width: 50px;
-        background: #0000008c;
-        backdrop-filter: blur(9px);
-        top: 50%;
-        transform: translate(0%, -50%);
-        padding: 33px 0px 1px 0px;
-    }
+.bar-redes-in {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 12px;
+    width: 50px;
+    background: #0000008c;
+    backdrop-filter: blur(9px);
+    top: 50%;
+    transform: translate(0%, -50%);
+    padding: 33px 0px 1px 0px;
+}
 
-    .button-redes {
-        height: 39px;
-        width: 40px;
-        background: #0c0c0c5c;
-        /* backdrop-filter: blur(6px); */
-        margin-right: auto;
-        margin-left: auto;
-        margin-bottom: 10px;
-        border-radius: 14px;
-        pointer-events: auto;
-    }
+.button-redes {
+    height: 39px;
+    width: 40px;
+    background: #0c0c0c5c;
+    /* backdrop-filter: blur(6px); */
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    border-radius: 14px;
+    pointer-events: auto;
+}
 
-.thumbnails-in{
+.thumbnails-in {
     height: 60px;
     width: 90%;
     background: red;
 }
 
 
-    @media screen and (max-width: 900px) {
-        .menumaster {
-            background: #ffffff;
-            box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 7%);
-        }
-
-        .redes-box {
-            display: none;
-        }
-
-        .menumaster-in-left {
-            box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0);
-        }
-
-        .menumaster-in-right {
-            padding-right: 5px;
-            box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 0%);
-        }
-
+@media screen and (max-width: 900px) {
+    .menumaster {
+        background: #ffffff;
+        box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 7%);
     }
 
-    @media (max-width: 860px) {
-        .alquilar-vender-box-In {
-            word-break: break-all;
-            height: 26px;
-            overflow: hidden;
-        }
+    .redes-box {
+        display: none;
     }
 
-    
+    .menumaster-in-left {
+        box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0);
+    }
+
+    .menumaster-in-right {
+        padding-right: 5px;
+        box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 0%);
+    }
+
+}
+
+@media (max-width: 860px) {
+    .alquilar-vender-box-In {
+        word-break: break-all;
+        height: 26px;
+        overflow: hidden;
+    }
+}
 
 
-    @media screen and (max-width: 790px) {
+
+
+@media screen and (max-width: 790px) {
     .alquilar-vender-box {
         display: none;
     }
@@ -976,7 +1010,7 @@ border-radius: 50px;
     }
 
 
-    
+
 
 }
 
@@ -1020,7 +1054,7 @@ border-radius: 50px;
         display: inline-flex;
         justify-content: center;
     }
-    
+
     .menumaster-in-left {
         width: 100%;
         border-radius: 0px;
@@ -1064,7 +1098,7 @@ border-radius: 50px;
     .leaflet-left {
         bottom: 120px;
     }
-    
+
     #locateButton {
         bottom: 210px;
     }
@@ -1079,21 +1113,8 @@ border-radius: 50px;
 
 
 
-.terminos-condiciones{
+.terminos-condiciones {
     height: 60px;
     width: 60px;
     background: red;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
