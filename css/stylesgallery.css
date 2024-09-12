@@ -531,11 +531,11 @@ font-family: sans-serif;
 @media (max-width: 700px) {
 
     .main-image {
-        max-height: 225px;
+        max-height: 217px;
     }
 
     .main-image img {
-        max-height: 225px;
+        max-height: 217px;
     }
 
     .thumbnails {
