@@ -238,11 +238,11 @@
 
             <!-- Información general para todas las propiedades -->
             <div class="modal-end">
-                <button id="comoLlegarButton" class="como-llegar-button" onclick="comoLlegarDesdeModal()">Cómo llegar</button>
+                <button id="comoLlegarButton" class="como-llegar-button" onclick="comoLlegarDesdeModal()"><img src="./img/icons/location1.svg"> Cómo llegar</button>
                 <div class="contactos-res">
-                    <p>¿Te interesa esta propiedad?<br>
+                    <!-- <p>¿Te interesa esta propiedad?<br>
                         Escríbenos:
-                    </p>
+                    </p> -->
                     <a href="#" id="whatsappButton2" class="whatsapp-button" onclick="openWhatsApp()"><img
                             src="./img/icons/whatsapp2.svg"><span>WhatsApp</span></a>
 
@@ -621,6 +621,13 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
         }
 
 
+
+
+
+
+
+
+
 // Función de cómo llegar desde el modal
 function comoLlegarDesdeModal() {
     // Obtener latitud y longitud de la propiedad actualmente mostrada en el modal
@@ -638,13 +645,23 @@ function comoLlegarDesdeModal() {
         // (comenta las líneas que no necesites)
         // url += `&package=com.google.android.apps.maps`;  // Google Maps
         // url += `&package=com.waze`;                     // Waze
-        url += `&package=com.ubercab`;                  // Uber
+        // url += `&package=com.ubercab`;                  // Uber
 
         window.location.href = url; 
     } else {
         console.error("No se pudo encontrar la propiedad para obtener las coordenadas.");
     }
 }
+
+
+
+
+
+
+
+
+
+
 
         function changeImage(button, direction) {
             const carousel = button.parentElement;
