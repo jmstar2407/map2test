@@ -535,6 +535,14 @@ font-family: sans-serif;
         width: 60px;
     }
 
+    .nav-button-img-p.left {
+        border-radius: 7px 0px 0px 7px;
+    }
+
+    .nav-button-img-p.right {
+        border-radius: 0px 7px 7px 0px;
+    }
+
     .main-image {
         max-height: 217px;
         max-width: 95%;
