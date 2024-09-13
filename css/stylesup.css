@@ -298,6 +298,7 @@ body {
 
 
 #locateButton {
+    display: none;
     position: absolute;
     top: auto;
     bottom: 236px;
@@ -909,6 +910,13 @@ body {
     pointer-events: auto;
 }
 
+.custom-tooltip {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
 
 
 @media screen and (max-width: 900px) {
@@ -928,6 +936,10 @@ body {
     .menumaster-in-right {
         padding-right: 5px;
         box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 0%);
+    }
+
+    #locateButton{
+        display: block;
     }
 
 }
@@ -1054,12 +1066,34 @@ body {
 
 
 
-
-
-
-
-.terminos-condiciones {
-    height: 60px;
-    width: 60px;
-    background: red;
+@media screen and (max-height: 335px) {
+    #locateButton{
+        display: none;
+    }
 }
+
+@media screen and (max-height: 290px) {
+.leaflet-left {
+    display: none;
+}
+}
+
+@media screen and (max-height: 205px) {
+    #changeLayerButton {
+        display: none;
+    }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

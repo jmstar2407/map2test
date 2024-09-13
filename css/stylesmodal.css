@@ -162,11 +162,12 @@
     border-radius: 0px 0px 7px 7px;
     cursor: pointer;
     box-shadow: 0px 0px 0px 1px rgb(47 158 255);
-    padding: 11px;
+    padding: 5px 10px 4px 10px;
 }
 
 .share-button img {
-    height: 26px;
+    height: 22px;
+    filter: contrast(0.5);
 }
   
 

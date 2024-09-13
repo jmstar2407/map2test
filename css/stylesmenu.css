@@ -26,10 +26,18 @@
 /* Botón cerrar estilo */
 .close2 {
     position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 20px;
+    top: 0px;
+    right: 0px;
+    border: none;
+    background: #ff394e;
+    color: white;
+    padding: 7px 17px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: 0.3s;
+    margin: 6px 6px 0px 0px;
+    font-family: math;
+    font-size: 15px;
 }
 
 #openBoxJmBtn {
@@ -37,13 +45,19 @@
 }
 
 .boxjm1-titulo {
-    height: 35px;
+    height: 45px;
     width: 100%;
     font-family: sans-serif;
     font-size: 22px;
     font-weight: bold;
     color: #000000;
     text-align: center;
+    border-bottom: 1px solid hsl(0deg 0% 0% / 20%);
+}
+
+.boxjm1-titulo p {
+    margin-block-start: 12px;
+    margin-block-end: 0;
 }
 
 .boxjm1-body {
