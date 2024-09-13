@@ -153,27 +153,113 @@
     box-sizing: border-box;
 }
 
+
+
+.contactos p {
+    font-family: system-ui;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    margin-block-start: 19px;
+    margin-block-end: 3px;
+}
+
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    height: 55px;
+    width: 155px;
+    background-color: #25D366;
+    border: none;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.whatsapp-button:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+    transition: 0.3s;
+}
+
+.whatsapp-button img {
+    height: 32px;
+    width: auto;
+}
+
+.whatsapp-button  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.whatsapp-button h3 {
+    position: relative;
+    color: white;
+    font-size: 19px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    font-family: sans-serif;
+}
+
+.whatsapp-button span {
+    font-size: 10px;
+    font-weight: normal;
+    color: #ffffff;
+}
+
 #comoLlegarButton {
     display: none;
     background: black;
-    color: white;
     border-radius: 10px;
     border: none;
     width: 155px;
     height: 55px;
-    margin-top: 7px;
-    font-size: 18px;
-    font-weight: bold;
-    padding-bottom: 12px;
-    margin-right: 40px;
+    padding-inline: 4px;
+    transition: 0.2s;
+    position: relative;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 25px;
+}
+
+#comoLlegarButton:hover {
+background: #232323;
+cursor: pointer;
+transition: 0.2s;
 }
 
 #comoLlegarButton img {
-    height: 31px;
-    position: relative;
-    top: 8px;
+    height: 32px;
+    width: auto;
 }
 
+#comoLlegarButton div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+}
+
+#comoLlegarButton h3 {
+    position: relative;
+    color: white;
+    font-size: 19px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    font-family: sans-serif;
+}
+
+#comoLlegarButton span {
+    font-size: 10px;
+    font-weight: normal;
+    color: #e5e5e5;
+}
 
 .detallesmodalicon {
     display: flex;
@@ -560,13 +646,6 @@
         transform: translateY(-50%);
     }
 
-    .whatsapp-button {
-        width: 100%;
-        margin-top: 0px;
-        padding: 0px 10px 0px 5px;
-        max-width: 140px;
-    }
-
     .whatsapp-button:hover {
         background-color: #2EE59D;
         box-shadow: 0px 0px 0px rgb(46 229 157 / 0%);
@@ -574,17 +653,6 @@
         transition: 0.3s;
     }
 
-
-    .whatsapp-button img {
-        top: 3px;
-        height: 34px;
-        margin: 5px;
-    }
-
-    .whatsapp-button span {
-        top: -11px;
-        font-size: 19px;
-    }
 
     .modal-end p {
         width: 273px;
@@ -658,9 +726,9 @@
         height: 32px;
     }
 
-    #comoLlegarButton{
-        display: block;
+    #comoLlegarButton {
+        display: inline-flex;
     }
-    
+
 
 }
