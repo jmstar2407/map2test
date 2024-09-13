@@ -49,9 +49,6 @@
 
 
 
-            
-
-
             <div class="botonbox2">
                 <div class="botonbox-in">
                     <div class="boton1">Alquiler<a href="#" onclick="toggleMarkers('alquiler')"></a></div>
@@ -490,29 +487,77 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
 
 
-        // Botón de mi ubicación
-        const locateButton = document.getElementById('locateButton');
+        
 
-        // Evento click para centrar el mapa en la ubicación del usuario
-        locateButton.addEventListener('click', () => {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition((position) => {
-                    const lat = position.coords.latitude;
-                    const lng = position.coords.longitude;
 
-                    // Centrar el mapa en la ubicación del usuario
-                    map.setView([lat, lng], 17);
+// Definir el ícono personalizado
+const customIcon = L.icon({
+    iconUrl: './img/icons/location2.gif', // Reemplaza con la ruta de tu imagen personalizada
+    iconSize: [38, 38], // Tamaño del ícono [ancho, alto]
+    iconAnchor: [19, 38], // Punto de anclaje del ícono (mitad del ancho, base del marcador)
+});
 
-                    // Agregar un marcador en la ubicación del usuario sin popup
-                    L.marker([lat, lng]).addTo(map);
-                }, () => {
-                    console.error("No se pudo obtener la ubicación.");
-                });
-            } else {
-                console.error("La geolocalización no es soportada por este navegador.");
+// Variable para almacenar el marcador
+let userMarker;
+let tooltip;
+
+// Botón de mi ubicación
+const locateButton = document.getElementById('locateButton');
+
+// Evento click para centrar el mapa en la ubicación del usuario
+locateButton.addEventListener('click', () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+
+            // Centrar el mapa en la ubicación del usuario
+            map.setView([lat, lng], 17);
+
+            // Si ya existe un marcador, elimínalo
+            if (userMarker) {
+                map.removeLayer(userMarker);
             }
+
+            // Agregar un marcador en la ubicación del usuario con el ícono personalizado
+            userMarker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
+
+            // Agregar un tooltip con el mensaje de ubicación estimada
+            tooltip = userMarker.bindTooltip("La ubicación es solo un estimado.", {
+                permanent: true, // Hace que el tooltip siempre esté visible
+                direction: 'top', // Coloca el tooltip encima del marcador
+                offset: [0, -40], // Ajusta la posición del tooltip con respecto al ícono
+                className: 'custom-tooltip' // Clase personalizada para el tooltip
+            }).openTooltip();
+
+            // Función para ocultar suavemente el tooltip
+            function hideTooltip() {
+                const tooltipElement = document.querySelector('.custom-tooltip');
+                if (tooltipElement) {
+                    tooltipElement.style.transition = 'opacity 0.3s ease';
+                    tooltipElement.style.opacity = '0'; // Desvanecer el tooltip
+                    setTimeout(() => {
+                        if (userMarker && tooltip) {
+                            userMarker.unbindTooltip(); // Eliminar el tooltip después de la animación
+                        }
+                    }, 300); // Tiempo de espera para la animación de 0.3s
+                }
+            }
+
+            // Ocultar el tooltip cuando el usuario haga clic en el mapa
+            map.on('click', hideTooltip);
+
+            // Ocultar el tooltip cuando el usuario arrastre el mapa
+            map.on('dragstart', hideTooltip);
+        }, () => {
+            console.error("No se pudo obtener la ubicación.");
         });
-        // Botón de mi ubicación FIN
+    } else {
+        console.error("La geolocalización no es soportada por este navegador.");
+    }
+});
+
+
 
 
 
@@ -651,7 +696,7 @@ function comoLlegarDesdeModal() {
 //boton compartir
 function shareProperty() {
   const propertyId = parseInt(window.location.hash.substring('#id-'.length));
-  const propertyLink = `https://tusitioweb.com/#id-${propertyId}`; // Asegúrate de reemplazar 'tusitioweb.com' con tu dominio real
+  const propertyLink = `https://arribate.com/#id-${propertyId}`; // Asegúrate de reemplazar 'tusitioweb.com' con tu dominio real
   const message = `¡Mira esta propiedad en ArríbaTe!`;
 
   if (navigator.share) { // Verificar si la API Web Share está disponible
@@ -714,6 +759,24 @@ function shareProperty() {
                 // Crear el carrusel si hay una carpeta de imágenes disponible
                 var carousel = location.imageFolder ? createCarousel(location.imageFolder, location.imageCount) : '';
 
+
+
+
+
+
+
+                        // Agregar condicionalmente "/mes" al precio si es un alquiler
+        var priceText = `RD$ ${formatNumber(location.price)}.00`;
+        if (markersArray === alquilerMarkers) {
+            priceText += '/mes';
+        }
+
+
+
+
+
+
+        
                 marker.bindPopup(
                     `<button id="vermodal" onclick="openModal(${JSON.stringify(location).replace(/"/g, '&quot;')})"></button>
             ${carousel}
@@ -722,7 +785,7 @@ function shareProperty() {
              <button id="btncomollegar" onclick="comoLlegar(${location.lat}, ${location.lng})"><img src="./img/icons/location1.svg">Cómo llegar</button>
 
 
-            <span class="price-text">RD$ ${formatNumber(location.price)}</span><br>
+            <span class="price-text">${priceText}</span><br>
             
             <b>${location.title}</b><br>
             <div class="detalles-basicos"> 
@@ -804,7 +867,7 @@ function closeModal() {
 
 // Configurar botón de WhatsApp
 function setupWhatsappButton(property) {
-    const propertyLink = `https://tusitioweb.com/#id-${property.id}`;
+    const propertyLink = `https://arribate.com/#id-${property.id}`;
     const whatsappMessage = `Me interesa saber más de esta propiedad con el ID ${property.id}: ${propertyLink}`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=+18299605566&text=${encodeURIComponent(whatsappMessage)}`;
     whatsappButton.href = whatsappUrl;
@@ -816,6 +879,8 @@ function updateModalDetails(property) {
     const lat = property.latLng ? property.latLng[0] : property.lat;
     const lng = property.latLng ? property.latLng[1] : property.lng;
 
+
+    
     modalDetails.innerHTML = `
         <p>RD$ ${formatNumber(property.price)}.00</p>
             <div class="share-button-container">
