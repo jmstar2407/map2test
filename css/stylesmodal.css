@@ -147,13 +147,38 @@
     font-size: 1rem;
 }
 
+/* Estilos para el botón de compartir */
+.share-button-container {
+    display: none; /* Ocultar por defecto en pantallas grandes */
+  }
+  
+  @media (max-width: 768px) { /* Mostrar solo en pantallas pequeñas */
+    .share-button-container {
+      display: block;
+      margin-top: 20px; /* Ajusta el margen según sea necesario */
+    }
+  
+    .share-button {
+      background-color: #4CAF50; /* Color de fondo verde */
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius:   
+   5px;
+      cursor: pointer;
+    }
+  }
+  
+
 .box-modal-googlemap {
     width: 100%;
     aspect-ratio: 16 / 9;
     box-sizing: border-box;
 }
-
-
 
 .contactos p {
     font-family: system-ui;
