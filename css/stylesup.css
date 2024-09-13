@@ -871,56 +871,6 @@ body {
 }
 
 
-.contactos p {
-    font-family: system-ui;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    color: black;
-    margin-block-start: 19px;
-    margin-block-end: 3px;
-}
-
-.whatsapp-button {
-    display: block;
-    background-color: #25D366;
-    padding: 0px 10px 10px 2px;
-    font-size: 28px;
-    font-family: system-ui;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    border-radius: 7px;
-    max-width: 180px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 12px;
-    transition: 0.3s;
-}
-
-.whatsapp-button:hover {
-    background-color: #2EE59D;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-    color: #fff;
-    transform: translateY(-7px);
-    transition: 0.3s;
-}
-
-.whatsapp-button img {
-    position: relative;
-    top: 8px;
-    height: 40px;
-    margin: 5px;
-}
-
-.whatsapp-button span {
-    position: relative;
-    top: -7px;
-    color: white;
-    font-family: system-ui;
-    font-weight: bold;
-    font-size: 26px;
-}
 
 
 .bar-redes {
@@ -959,11 +909,6 @@ body {
     pointer-events: auto;
 }
 
-.thumbnails-in {
-    height: 60px;
-    width: 90%;
-    background: red;
-}
 
 
 @media screen and (max-width: 900px) {
