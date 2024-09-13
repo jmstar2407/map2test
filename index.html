@@ -205,11 +205,13 @@
 
                 <!-- Aquí se inyectará la información de CADA propiedad -->
                 <div class="infocompleta">
-                    <div class="modal-body" id="modalPropertyDetails"></div>
+                    <!-- Modal body -->
+                    <div class="modal-body" id="modalPropertyDetails">
 
-                    <div class="share-button-container">
-                        <button id="shareButton" class="share-button" onclick="shareProperty()">Compartir</button>
-                      </div>
+                    </div>
+                    <!-- Modal body FIN -->
+
+
 
                     <div class="contactos">
 
@@ -621,72 +623,6 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
 
 
-
-
-
-
-// Función de cómo llegar desde el modal
-function comoLlegarDesdeModal() {
-    // Obtener latitud y longitud de la propiedad actualmente mostrada en el modal
-    const propertyId = parseInt(window.location.hash.substring('#id-'.length));
-    const property = [...alquileres, ...ventas].find(p => p.id === propertyId);
-
-    if (property) {
-        const lat = property.latLng ? property.latLng[0] : property.lat;
-        const lng = property.latLng ? property.latLng[1] : property.lng;
-
-        // URL base para el intent chooser
-        var url = `geo:${lat},${lng}?q=${lat},${lng}`;
-
-        // Agregar opciones de aplicaciones específicas si lo deseas
-        // (comenta las líneas que no necesites)
-        // url += `&package=com.google.android.apps.maps`;  // Google Maps
-        // url += `&package=com.waze`;                     // Waze
-        // url += `&package=com.ubercab`;                  // Uber
-
-        window.location.href = url; 
-    } else {
-        console.error("No se pudo encontrar la propiedad para obtener las coordenadas.");
-    }
-}
-
-
-
-
-//boton compartir
-function shareProperty() {
-  const propertyId = parseInt(window.location.hash.substring('#id-'.length));
-  const propertyLink = `https://tusitioweb.com/#id-${propertyId}`; // Asegúrate de reemplazar 'tusitioweb.com' con tu dominio real
-  const message = `¡Mira esta propiedad en ArribaTe! ${propertyLink}`;
-
-  if (navigator.share) { // Verificar si la API Web Share está disponible
-    navigator.share({
-      title: 'Compartir Propiedad',
-      text: message,
-      url: propertyLink
-    })
-    .then(() => console.log('Contenido compartido exitosamente'))
-    .catch(error => console.error('Error al compartir:', error));
-  } else {
-    // Si la API Web Share no está disponible, puedes copiar el enlace al portapapeles o mostrar un mensaje
-    alert("La función de compartir no está disponible en este navegador. Puedes copiar el enlace manualmente.");
-    // Código para copiar al portapapeles (opcional):
-    // const tempInput = document.createElement('input');
-    // tempInput.value = propertyLink;
-    // document.body.appendChild(tempInput);
-    // tempInput.select();
-    // document.execCommand('copy');
-    // document.body.removeChild(tempInput);
-  }
-}
-
-
-
-
-
-
-
-
         function changeImage(button, direction) {
             const carousel = button.parentElement;
             const images = carousel.querySelectorAll('img');
@@ -828,6 +764,10 @@ function updateModalDetails(property) {
 
     modalDetails.innerHTML = `
         <p>RD$ ${formatNumber(property.price)}.00</p>
+            <div class="share-button-container">
+                <button id="shareButton" class="share-button" onclick="shareProperty()"><img src="./img/icons/compartir1.svg"></button>
+             </div>
+                          
         <h3>ID: ${property.id}</h3>
         <h4>${property.title}</h4>
         <div class="detallesmodalicon"> 
