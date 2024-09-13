@@ -207,6 +207,10 @@
                 <div class="infocompleta">
                     <div class="modal-body" id="modalPropertyDetails"></div>
 
+                    <div class="share-button-container">
+                        <button id="shareButton" class="share-button" onclick="shareProperty()">Compartir</button>
+                      </div>
+
                     <div class="contactos">
 
                         <p>¿Te interesa esta propiedad?<br>
@@ -217,16 +221,6 @@
                     </div>
                 </div>
                 <!-- Aquí se inyectará la información de CADA propiedad FIN -->
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -658,6 +652,33 @@ function comoLlegarDesdeModal() {
 
 
 
+
+//boton compartir
+function shareProperty() {
+  const propertyId = parseInt(window.location.hash.substring('#id-'.length));
+  const propertyLink = `https://tusitioweb.com/#id-${propertyId}`; // Asegúrate de reemplazar 'tusitioweb.com' con tu dominio real
+  const message = `¡Mira esta propiedad en ArribaTe! ${propertyLink}`;
+
+  if (navigator.share) { // Verificar si la API Web Share está disponible
+    navigator.share({
+      title: 'Compartir Propiedad',
+      text: message,
+      url: propertyLink
+    })
+    .then(() => console.log('Contenido compartido exitosamente'))
+    .catch(error => console.error('Error al compartir:', error));
+  } else {
+    // Si la API Web Share no está disponible, puedes copiar el enlace al portapapeles o mostrar un mensaje
+    alert("La función de compartir no está disponible en este navegador. Puedes copiar el enlace manualmente.");
+    // Código para copiar al portapapeles (opcional):
+    // const tempInput = document.createElement('input');
+    // tempInput.value = propertyLink;
+    // document.body.appendChild(tempInput);
+    // tempInput.select();
+    // document.execCommand('copy');
+    // document.body.removeChild(tempInput);
+  }
+}
 
 
 
