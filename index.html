@@ -35,14 +35,14 @@
                 </div>
                 <div class="linediv"></div>
 
-                <div class="botonbox">
-                    <div class="botonbox-in">
-                        <div class="boton1">Alquiler<a href="#" onclick="toggleMarkers('alquiler')"></a></div>
-                    </div>
-                    <div class="botonbox-in">
-                        <div class="boton1">Venta<a href="#" onclick="toggleMarkers('venta')"></a></div>
-                    </div>
+                <div class="botonbox"> 
+
+                        <button id="alquilerButton" class="toggle-button active">Alquiler</button>
+                        <button id="ventaButton" class="toggle-button">Venta</button>
+                    
                 </div>
+
+                
             </div>
             <!-- Menu Left FIN -->
 
@@ -50,12 +50,7 @@
 
 
             <div class="botonbox2">
-                <div class="botonbox-in">
-                    <div class="boton1">Alquiler<a href="#" onclick="toggleMarkers('alquiler')"></a></div>
-                </div>
-                <div class="botonbox-in">
-                    <div class="boton1">Venta<a href="#" onclick="toggleMarkers('venta')"></a></div>
-                </div>
+
                 <div class="cube-boton-filtro-respon"><button id="open-filter-button-respon"></button></div>
             </div>
 
@@ -396,6 +391,15 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
         <div class="footer-filter">
             <div class="filtro-divisor2">
+
+
+
+                <div class="toggle-buttons2">
+                    <button id="rentaButton" class="toggle-button active">Renta</button>
+                    <button id="compraButton" class="toggle-button">Compra</button>
+                </div>
+
+                
             </div>
         </div>
         <!-- Filtros FIN -->
@@ -492,13 +496,14 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
 // Definir el ícono personalizado
 const customIcon = L.icon({
-    iconUrl: './img/icons/location2.gif', // Reemplaza con la ruta de tu imagen personalizada
+    iconUrl: './img/icons/location5.png', // Reemplaza con la ruta de tu imagen personalizada
     iconSize: [38, 38], // Tamaño del ícono [ancho, alto]
-    iconAnchor: [19, 38], // Punto de anclaje del ícono (mitad del ancho, base del marcador)
+    iconAnchor: [19, 19], // Punto de anclaje en el centro del ícono
 });
 
-// Variable para almacenar el marcador
+// Variables para almacenar el marcador y el círculo
 let userMarker;
+let userCircle;
 let tooltip;
 
 // Botón de mi ubicación
@@ -519,8 +524,21 @@ locateButton.addEventListener('click', () => {
                 map.removeLayer(userMarker);
             }
 
+            // Si ya existe un círculo, elimínalo
+            if (userCircle) {
+                map.removeLayer(userCircle);
+            }
+
             // Agregar un marcador en la ubicación del usuario con el ícono personalizado
             userMarker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
+
+            // Agregar un círculo alrededor del marcador con un radio de 50 metros
+            userCircle = L.circle([lat, lng], {
+                color: '#ffffff00', // Color del borde del círculo
+                fillColor: 'rgb(0 142 255)', // Color del interior del círculo (azul con opacidad)
+                fillOpacity: 0.3, // Opacidad del interior del círculo
+                radius: 350 // Radio en metros (50 metros)
+            }).addTo(map);
 
             // Agregar un tooltip con el mensaje de ubicación estimada
             tooltip = userMarker.bindTooltip("La ubicación es solo un estimado.", {
@@ -564,6 +582,7 @@ locateButton.addEventListener('click', () => {
 
 
 
+
         // Función para formatear números con comas como separadores de miles
         function formatNumber(num) {
             return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -589,28 +608,25 @@ locateButton.addEventListener('click', () => {
 
 
         // Creación de íconos personalizados con precio y color según el tipo de propiedad
-        function createIcon(iconUrl, price) {
-            var backgroundColor = getBackgroundColor(iconUrl); // Obtener color de fondo
-            return L.divIcon({
-                html: `<div style="position: relative; display: flex; flex-direction: column; align-items: center;">
-                    <img src="${iconUrl}" style="margin-top: -26px;
-                    width: 32px; height: 32px; background: #0f1931; border-radius: 31px; border-style: solid; border-color: ${backgroundColor};; border-width: 3px;" />
-                    <span style="background: ${backgroundColor}; 
+        function createIcon(iconUrl, price, isAlquiler) {
+    var backgroundColor = getBackgroundColor(iconUrl); // Obtener color de fondo
+    // Si es un alquiler, añade "/mes" al final del precio
+    var priceText = `RD$${formatNumber(price)}` + (isAlquiler ? "/mes" : "");
 
-                    font-family: system-ui;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-                    
-                    
-                    padding: 2px 4px; border-radius: 3px; margin-top: -8px;">RD$${formatNumber(price)}</span>
-                    <div class="price-tip" style="border-top-color: ${backgroundColor};"></div>
-                </div>`,
-                iconSize: [32, 32],
-                iconAnchor: [16, 32],
-                popupAnchor: [0, -32]
-            });
-        }
+    return L.divIcon({
+        html: `<div style="position: relative; display: flex; flex-direction: column; align-items: center;">
+            <img src="${iconUrl}" style="margin-top: -26px;
+            width: 32px; height: 32px; background: #0f1931; border-radius: 31px; border-style: solid; border-color: ${backgroundColor}; border-width: 3px;" />
+            <span style="background: ${backgroundColor}; 
+            font-family: system-ui;color: white;font-size: 12px;font-weight: bold;
+            padding: 2px 4px; border-radius: 3px; margin-top: -8px;">${priceText}</span>
+            <div class="price-tip" style="border-top-color: ${backgroundColor};"></div>
+        </div>`,
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+    });
+}
 
         // Íconos para referencia
         var roomIcon = './img/icons/habitacion1.svg'; // ícono para habitaciones
@@ -625,20 +641,20 @@ locateButton.addEventListener('click', () => {
 
         // Definición de ubicaciones con información adicional
         var alquileres = [
-            { id: 224506, lat: 18.4861, lng: -69.9312, title: 'Casa en Alquiler en Santo Domingo', price: 1200, icon: houseIcon, rooms: 3, bathrooms: 2, parking: 1, area: 120, imageFolder: './img/properties/224506/', imageCount: 5 },
-            { id: 224507, latLng: [18.81260613062721, -70.5605276914127], title: 'Edificio Santo Domingo', price: 8000000, icon: buildingIcon, rooms: 15, bathrooms: 12, parking: 8, area: 800, imageFolder: './img/properties/224507/', imageCount: 5 },
-            { id: 224508, lat: 19.7570, lng: -70.7667, title: 'Casa en Alquiler en Santiago', price: 1000, icon: houseIcon, rooms: 2, bathrooms: 1, parking: 1, area: 80, imageFolder: './img/properties/224508/', imageCount: 5 }
+            { id: 224506, lat: 18.4861, lng: -69.9312, title: 'Casa en Alquiler en Santo Domingo', price: 18000, icon: houseIcon, rooms: 3, bathrooms: 2, parking: 1, area: 120, imageFolder: './img/properties/224506/', imageCount: 5 },
+            { id: 224507, latLng: [18.81260613062721, -70.5605276914127], title: 'Edificio Santo Domingo', price: 35000, icon: buildingIcon, rooms: 15, bathrooms: 12, parking: 8, area: 800, imageFolder: './img/properties/224507/', imageCount: 5 },
+            { id: 224508, lat: 19.7570, lng: -70.7667, title: 'Casa en Alquiler en Santiago', price: 12000, icon: houseIcon, rooms: 2, bathrooms: 1, parking: 1, area: 80, imageFolder: './img/properties/224508/', imageCount: 5 }
         ];
 
         var ventas = [
             {
-                id: 224501, lat: 18.533976342086266, lng: -69.84789351675421, title: 'Casa en Venta en Don Oscar', price: 250000, icon: houseIcon, rooms: 3, bathrooms: 2, parking: 1, area: 100,
+                id: 224501, lat: 18.533976342086266, lng: -69.84789351675421, title: 'Casa en Venta en Don Oscar', price: 4500000, icon: houseIcon, rooms: 3, bathrooms: 2, parking: 1, area: 100,
                 caracteristicas: 'El lugar donde puedes disfrutar del estilo de vida de tus sueños. Un entorno excepcional y un estilo de vida inigualable para nuestros residentes. <p>Un conjunto de apartamentos con una amplia gama de comodidades y exclusivas amenidades.',
                 imageFolder: './img/properties/224501/', imageCount: 14
             },
             { id: 224502, latLng: [18.465055290827987, -69.81047256391996], title: 'Solar Santo Domingo', price: 5000000, icon: landIcon, rooms: 0, bathrooms: 0, parking: 0, area: 1000, imageFolder: './img/properties/224502/', imageCount: 5 },
-            { id: 224503, latLng: [18.515361605411158, -69.79580351613811], title: 'Edificio Santo Domingo', price: 7000000, icon: buildingIcon, rooms: 12, bathrooms: 10, parking: 6, area: 700, imageFolder: './img/properties/224503/', imageCount: 5 },
-            { id: 224504, latLng: [18.534530697687792, -69.84886578381361], title: 'Casa calle Santo Domingo', price: 230000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 2, area: 150, imageFolder: './img/properties/224504/', imageCount: 7 }
+            { id: 224503, latLng: [18.515361605411158, -69.79580351613811], title: 'Edificio Santo Domingo', price: 70000000, icon: buildingIcon, rooms: 12, bathrooms: 10, parking: 6, area: 700, imageFolder: './img/properties/224503/', imageCount: 5 },
+            { id: 224504, latLng: [18.534530697687792, -69.84886578381361], title: 'Casa calle Santo Domingo', price: 3800000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 2, area: 150, imageFolder: './img/properties/224504/', imageCount: 7 }
         ];
 
         //Carousel
@@ -751,22 +767,20 @@ function shareProperty() {
 
 
         // PopUP
-        function createMarkers(locations, markersArray) {
-            locations.forEach(function (location) {
-                location = normalizeLocation(location);
-                var marker = L.marker([location.lat, location.lng], { icon: createIcon(location.icon, location.price) });
+function createMarkers(locations, markersArray) {
+    locations.forEach(function (location) {
+        location = normalizeLocation(location);
+        var isAlquiler = markersArray === alquilerMarkers;  // Verifica si es alquiler
+        var marker = L.marker([location.lat, location.lng], { icon: createIcon(location.icon, location.price, isAlquiler) });
 
-                // Crear el carrusel si hay una carpeta de imágenes disponible
-                var carousel = location.imageFolder ? createCarousel(location.imageFolder, location.imageCount) : '';
-
-
-
+        // Crear el carrusel si hay una carpeta de imágenes disponible
+        var carousel = location.imageFolder ? createCarousel(location.imageFolder, location.imageCount) : '';
 
 
 
 
                         // Agregar condicionalmente "/mes" al precio si es un alquiler
-        var priceText = `RD$ ${formatNumber(location.price)}.00`;
+        var priceText = `RD$ ${formatNumber(location.price)}`;
         if (markersArray === alquilerMarkers) {
             priceText += '/mes';
         }
@@ -837,6 +851,60 @@ function shareProperty() {
             filterMarkers(); // Filtrar los marcadores después de cambiar el tipo
         }
 
+
+
+
+
+// Event listeners para los botones de Alquiler y Venta
+document.getElementById('alquilerButton').addEventListener('click', () => {
+  toggleMarkers('alquiler');
+  document.getElementById('alquilerButton').classList.add('active');
+  document.getElementById('ventaButton').classList.remove('active');
+
+  // Activar el botón correspondiente (Renta)
+  document.getElementById('rentaButton').classList.add('active');
+  document.getElementById('compraButton').classList.remove('active');
+});
+
+document.getElementById('ventaButton').addEventListener('click', () => {
+  toggleMarkers('venta');
+  document.getElementById('ventaButton').classList.add('active');
+  document.getElementById('alquilerButton').classList.remove('active');
+
+  // Activar el botón correspondiente (Compra)
+  document.getElementById('compraButton').classList.add('active');
+  document.getElementById('rentaButton').classList.remove('active');
+});
+
+// Event listeners para los nuevos botones (Renta y Compra)
+document.getElementById('rentaButton').addEventListener('click', () => {
+  toggleMarkers('alquiler'); 
+  document.getElementById('rentaButton').classList.add('active');
+  document.getElementById('compraButton').classList.remove('active');
+
+  // Activar el botón correspondiente (Alquiler)
+  document.getElementById('alquilerButton').classList.add('active');
+  document.getElementById('ventaButton').classList.remove('active');
+});
+
+document.getElementById('compraButton').addEventListener('click', () => {
+  toggleMarkers('venta');
+  document.getElementById('compraButton').classList.add('active');
+  document.getElementById('rentaButton').classList.remove('active');
+
+  // Activar el botón correspondiente (Venta)
+  document.getElementById('ventaButton').classList.add('active');
+  document.getElementById('alquilerButton').classList.remove('active');
+});
+
+
+
+
+
+
+
+
+
         // Inicialmente mostrar solo los alquileres
         toggleMarkers('alquiler');
     </script>
@@ -873,16 +941,24 @@ function setupWhatsappButton(property) {
     whatsappButton.href = whatsappUrl;
 }
 
+
+
+
+
 // Actualizar detalles del modal
 function updateModalDetails(property) {
+    // Verifica si la propiedad está en la lista de alquileres
+    const isAlquiler = alquileres.some(alquiler => alquiler.id === property.id);
+
     // Extraer latitud y longitud correctamente para el <iframe>
     const lat = property.latLng ? property.latLng[0] : property.lat;
     const lng = property.latLng ? property.latLng[1] : property.lng;
 
+    // Formatear el precio y agregar "/mes" si es un alquiler
+    const priceText = `RD$ ${formatNumber(property.price)}${isAlquiler ? "/mes" : ""}`;
 
-    
     modalDetails.innerHTML = `
-        <p>RD$ ${formatNumber(property.price)}.00</p>
+        <p>${priceText}</p>
             <div class="share-button-container">
                 <button id="shareButton" class="share-button" onclick="shareProperty()"><img src="./img/icons/compartir1.svg"></button>
              </div>
@@ -911,6 +987,7 @@ function updateModalDetails(property) {
         </div>
     `;
 }
+
 
 
 // Crear un ítem de icono para los detalles
