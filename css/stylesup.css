@@ -919,11 +919,6 @@ body {
 }
 
 
-
-
-
-
-
 .botonbox button {
     position: relative;
     height: 40px;
@@ -949,19 +944,14 @@ body {
     box-shadow: 0px 28px 0px -18px rgb(24 200 255);
 }
 
-#ventaButton.active{
+#ventaButton.active {
     /* background: rgb(141, 9, 145); */
     box-shadow: 0px 28px 0px -18px rgb(24 200 255);
 }
 
-#rentaButton.active{
-    background: rgb(141, 9, 145);
-}
 
 
-#compraButton.active{
-    background: rgb(141, 9, 145);
-}
+
 
 
 
@@ -984,7 +974,7 @@ body {
         box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 0%);
     }
 
-    #locateButton{
+    #locateButton {
         display: block;
     }
 
@@ -1034,28 +1024,7 @@ body {
 
     .menumaster {
         display: grid;
-        height: 100px;
-    }
-
-    /*.menumaster {
-        display: grid;
-        height: 100px;
-        border-radius: 14px;
-        width: 96%;
-        margin: 10px 10px;
-    }*/
-
-    .menumaster-in-right {
-        padding-right: 5px;
-        position: absolute;
-        right: 0px;
-        background: #ffffff00;
-    }
-
-    .botonbox2 {
-        position: relative;
-        display: inline-flex;
-        justify-content: center;
+        height: auto;
     }
 
     .menumaster-in-left {
@@ -1063,7 +1032,7 @@ body {
         border-radius: 0px;
         border-bottom: 1px solid hsl(0deg 0% 0% / 20%);
         height: 50px;
-        background: #ffffff00;
+        background: #ffffff;
     }
 
     .logonombre {
@@ -1078,10 +1047,59 @@ body {
         transform: scale(0.9);
     }
 
-
-    .boton1 {
-        top: -5px;
+    .menumaster-in-right {
+        padding-right: 5px;
+        position: absolute;
+        right: 0px;
+        background: #ffffff00;
     }
+
+    .botonbox2 {
+        position: relative;
+        display: inline-flex;
+        /*justify-content: center;*/
+        height: 40px;
+        background: #ffffff;
+    }
+
+    #alquilerButton-rpsv,
+    #ventaButton-rpsv {
+        display: inline-flex;
+        background: #9f9f9f00;
+        border: none;
+        width: 100px;
+        height: 40px;
+        padding-inline: 4px;
+        margin-left: 10px;
+        transition: 0.4s;
+        position: relative;
+        align-items: center;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+    #alquilerButton-rpsv h3,
+    #ventaButton-rpsv h3 {
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+        width: 100%;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+
+
+    #alquilerButton-rpsv.active {
+        box-shadow: 0px -5px 0px 0px rgb(24 200 255) inset;
+    }
+
+    #ventaButton-rpsv.active {
+        /* background: rgb(141, 9, 145); */
+        box-shadow: 0px -5px 0px 0px rgb(24 200 255) inset;
+    }
+
+
 
     .Menu-contacto-redes-respon {
         display: block;
@@ -1113,33 +1131,19 @@ body {
 
 
 @media screen and (max-height: 335px) {
-    #locateButton{
+    #locateButton {
         display: none;
     }
 }
 
 @media screen and (max-height: 290px) {
-.leaflet-left {
-    display: none;
-}
+    .leaflet-left {
+        display: none;
+    }
 }
 
 @media screen and (max-height: 205px) {
     #changeLayerButton {
         display: none;
     }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
