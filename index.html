@@ -949,7 +949,7 @@ function updateModalDetails(property) {
     modalDetails.innerHTML = `
         <h2>${priceText}</h2>
             <div class="share-button-container">
-                <button id="shareButton" class="share-button" onclick="shareProperty()"><img src="./img/icons/compartir1.svg"></button>
+                <button id="shareButton" class="share-button" onclick="shareProperty()"><img src="./img/icons/compartir2.png"></button>
              </div>
                           
         <h3>ID: ${property.id}</h3>
@@ -975,11 +975,23 @@ function updateModalDetails(property) {
         </div>
 
         <div class="info-bottom-modal">
+
+            <img src="./img/logo2.svg">
             
         <p>&#169; ArríbaTe 2024</p>
 
         <div class="info-mini-bottom-modal"><p>ArríbaTe se compromote a garantizar la accesibilida digital para que personas con discapacidades. trabajamos continuamente para mejorar la accesibilidad de nuestra experiencia web para todos.</p></div>
             
+        <div class="info-mini-bottom-modal"><p><strong>Aviso:</strong> La información presentada es de carácter informativo y está sujeta a cambios sin previo aviso.<br>
+            Al utilizar nuestra plataforma, reconoces y aceptas cumplir con nuestros <a href="#">Condiciones de Uso</a> y <a href="#">Política de Privacidad.</a></p>
+        </div>
+
+        <div class="info-mini-redes"><h3>Siguenos:</h3>
+                
+        </div>
+
+        <div class="modal-down-background"></div>
+
         </div>
     `;
 }
