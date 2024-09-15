@@ -27,19 +27,16 @@
         <div class="menumaster">
             <!-- Menu Left -->
             <div class="menumaster-in-left">
-                <!-- <div class="logoicon"><img src="./img/logo2.png"></div> -->
                 <div class="logonombre">
                     <div class="logo1"></div>
-                    <!-- <h1>Arríba<span>Te</span></h1> -->
                     <h1>ArríbaTe</h1>
                 </div>
+
                 <div class="linediv"></div>
 
                 <div class="botonbox"> 
-
                         <button id="alquilerButton" class="toggle-button active">Alquiler</button>
                         <button id="ventaButton" class="toggle-button">Venta</button>
-                    
                 </div>
 
                 
@@ -48,12 +45,15 @@
 
 
 
-
+            <!-- Menu respon -->
             <div class="botonbox2">
+
+                <button id="alquilerButton-rpsv" class="toggle-button"><h3>Alquiler</h3></button> 
+                <button id="ventaButton-rpsv" class="toggle-button"><h3>Venta</h3></button> 
 
                 <div class="cube-boton-filtro-respon"><button id="open-filter-button-respon"></button></div>
             </div>
-
+            <!-- Menu respon FIN -->
 
 
             <div class="cube-boton-filtro"><button id="open-filter-button">Filtros</button></div>
@@ -390,20 +390,15 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
         <div class="footer-filter">
 
-
-
-
                 <div class="toggle-buttons2">
-                    <button id="rentaButton" class="toggle-button active"><img src="./img/icons/refresh1.png">
+                    <button id="alquilerButton-filter" class="toggle-button active"><img src="./img/icons/refresh1.png">
                         <h3>Alquiler</h3>
                     </button>
-                    <button id="compraButton" class="toggle-button"><img src="./img/icons/refresh1.png">
+                    <button id="ventaButton-filter" class="toggle-button"><img src="./img/icons/refresh1.png">
                         <h3>Venta</h3>
                     </button>
-
-
-                
             </div>
+
         </div>
         <!-- Filtros FIN -->
 
@@ -857,48 +852,39 @@ function createMarkers(locations, markersArray) {
 
 
 
+// Botones alquiler-venta con su .active
+const buttonGroups = {
+  alquiler: ['alquilerButton', 'alquilerButton-filter', 'alquilerButton-rpsv'],
+  venta: ['ventaButton', 'ventaButton-filter', 'ventaButton-rpsv']
+};
 
-// Event listeners para los botones de Alquiler y Venta
-document.getElementById('alquilerButton').addEventListener('click', () => {
-  toggleMarkers('alquiler');
-  document.getElementById('alquilerButton').classList.add('active');
-  document.getElementById('ventaButton').classList.remove('active');
+function activateGroup(group) {
+  for (const buttonId in buttonGroups) {
+    const buttons = buttonGroups[buttonId];
+    buttons.forEach(id => {
+      const button = document.getElementById(id);
+      if (buttonId === group) {
+        button.classList.add('active');
+      } else {
+        button.classList.remove('active');
+      }
+    });
+  }
+  toggleMarkers(group); 
+}
 
-  // Activar el botón correspondiente (Renta)
-  document.getElementById('rentaButton').classList.add('active');
-  document.getElementById('compraButton').classList.remove('active');
-});
+// Event listeners para todos los botones
+for (const group in buttonGroups) {
+  buttonGroups[group].forEach(id => {
+    document.getElementById(id).addEventListener('click', () => activateGroup(group));
+  });
+}
 
-document.getElementById('ventaButton').addEventListener('click', () => {
-  toggleMarkers('venta');
-  document.getElementById('ventaButton').classList.add('active');
-  document.getElementById('alquilerButton').classList.remove('active');
+// Asegurar que 'alquilerButton-rpsv' esté activo al cargar la página
+activateGroup('alquiler');
 
-  // Activar el botón correspondiente (Compra)
-  document.getElementById('compraButton').classList.add('active');
-  document.getElementById('rentaButton').classList.remove('active');
-});
+// Botones alquiler-venta con su .active FIN
 
-// Event listeners para los nuevos botones (Renta y Compra)
-document.getElementById('rentaButton').addEventListener('click', () => {
-  toggleMarkers('alquiler'); 
-  document.getElementById('rentaButton').classList.add('active');
-  document.getElementById('compraButton').classList.remove('active');
-
-  // Activar el botón correspondiente (Alquiler)
-  document.getElementById('alquilerButton').classList.add('active');
-  document.getElementById('ventaButton').classList.remove('active');
-});
-
-document.getElementById('compraButton').addEventListener('click', () => {
-  toggleMarkers('venta');
-  document.getElementById('compraButton').classList.add('active');
-  document.getElementById('rentaButton').classList.remove('active');
-
-  // Activar el botón correspondiente (Venta)
-  document.getElementById('ventaButton').classList.add('active');
-  document.getElementById('alquilerButton').classList.remove('active');
-});
 
 
 
