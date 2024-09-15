@@ -526,7 +526,7 @@
     }
 
     .header-filter img {
-        display: none;
+        display: block;
     }
     
     .filter {
