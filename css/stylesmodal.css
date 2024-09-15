@@ -188,15 +188,18 @@
 }
 
 .info-bottom-modal {
-    margin: 30px 0px 20px 0px;
+    margin: 30px 0px 5px 0px;
     padding-top: 10px;
     border-top: 1px solid rgb(179 179 179);
 }
+
 
 .info-bottom-modal p {
     text-align: center;
     font-family: sans-serif;
     font-size: 1em;
+    margin-block-start: 0.2em;
+    margin-block-end: 1em;
 }
 
 .info-mini-bottom-modal p {
@@ -207,6 +210,24 @@
     margin-block-start: 10px;
     margin-block-end: 10px;
 }
+
+.info-bottom-modal img {
+    height: 55px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.modal-down-background {
+    background: #ffffff00;
+    background-image: url(../img/modal-down-background1.png);
+    height: auto;
+    width: 100%;
+    aspect-ratio: 16 / 8;
+    background-size: 100%;
+}
+
+
 
 .contactos p {
     font-family: system-ui;
