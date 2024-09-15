@@ -59,10 +59,15 @@
 .filter h1 {
     font-family: system-ui;
     font-size: 22px;
-    margin-block-start: 5px;
-    margin-block-end: 5px;
+    margin: 0; /* Elimina todos los márgenes */
     text-align: center;
     color: #000000;
+
+    /* Centrado vertical y horizontal */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .filter h2 {
