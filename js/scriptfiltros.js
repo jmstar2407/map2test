@@ -19,7 +19,7 @@ document.getElementById('open-filter-button').addEventListener('click', function
         openFilterButton.classList.remove('active');
     } else {
         // Si está cerrado, lo abrimos
-        filterPanel.style.display = 'block'; // Asegura que el panel sea visible
+        filterPanel.style.display = 'flex'; // Asegura que el panel sea visible
         filterPanel.classList.add('open-filter');
         filterPanel.classList.remove('close-filter');
 
@@ -52,7 +52,7 @@ openFilterButtonRespon.addEventListener('click', function () {
         openFilterButton.classList.remove('active');
     } else {
         // Si está cerrado, lo abrimos
-        filterPanel.style.display = 'block';
+        filterPanel.style.display = 'flex';
         filterPanel.classList.add('open-filter');
         filterPanel.classList.remove('close-filter');
 
