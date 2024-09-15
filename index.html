@@ -647,7 +647,7 @@ locateButton.addEventListener('click', () => {
         var ventas = [
             {
                 id: 224501, lat: 18.533976342086266, lng: -69.84789351675421, title: 'Casa en Venta en Don Oscar', price: 4500000, icon: houseIcon, rooms: 3, bathrooms: 2, parking: 1, area: 100,
-                caracteristicas: 'El lugar donde puedes disfrutar del estilo de vida de tus sueños. Un entorno excepcional y un estilo de vida inigualable para nuestros residentes. <p>Un conjunto de apartamentos con una amplia gama de comodidades y exclusivas amenidades.',
+                caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>',
                 imageFolder: './img/properties/224501/', imageCount: 14
             },
             { id: 224502, latLng: [18.465055290827987, -69.81047256391996], title: 'Solar Santo Domingo', price: 5000000, icon: landIcon, rooms: 0, bathrooms: 0, parking: 0, area: 1000, imageFolder: './img/properties/224502/', imageCount: 5 },
@@ -947,7 +947,7 @@ function updateModalDetails(property) {
     const priceText = `RD$ ${formatNumber(property.price)}${isAlquiler ? "/mes" : ""}`;
 
     modalDetails.innerHTML = `
-        <p>${priceText}</p>
+        <h2>${priceText}</h2>
             <div class="share-button-container">
                 <button id="shareButton" class="share-button" onclick="shareProperty()"><img src="./img/icons/compartir1.svg"></button>
              </div>
@@ -963,16 +963,23 @@ function updateModalDetails(property) {
         <div class="detallesmodaltext"> 
             <p><strong>Características:</strong> ${property.caracteristicas}</p>
         </div>
+
         
-        <div class="box-modal-googlemap">
-            
+        <div class="box-modal-googlemap"><p>Ubicación</p>
             <iframe 
                 src="https://maps.google.com/maps?q=${lat},${lng}&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                 frameborder="0" 
                 scrolling="no" 
                 style="width: 100%;height: 100%;box-shadow: 0px 0px 0px 2px rgb(0 0 0 / 0%);border-radius: 12px;">
             </iframe>
+        </div>
 
+        <div class="info-bottom-modal">
+            
+        <p>&#169; ArríbaTe 2024</p>
+
+        <div class="info-mini-bottom-modal"><p>ArríbaTe se compromote a garantizar la accesibilida digital para que personas con discapacidades. trabajamos continuamente para mejorar la accesibilidad de nuestra experiencia web para todos.</p></div>
+            
         </div>
     `;
 }
