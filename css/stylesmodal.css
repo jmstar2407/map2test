@@ -788,5 +788,9 @@ text-align: justify;
         display: inline-flex;
     }
 
+    .box-modal-googlemap {
+        aspect-ratio: 16 / 12;
+    }
+
 
 }
