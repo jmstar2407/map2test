@@ -281,6 +281,8 @@
     text-decoration: none;
     border-radius: 10px;
     transition: 0.3s;
+    box-sizing: border-box;
+    padding: 0px 5px;
 }
 
 .whatsapp-button:hover {
@@ -412,11 +414,19 @@ text-align: justify;
 }
 
 .contactos {
-    display: block;
+    display: none;
 }
 
 .contactos-res {
     display: none;
+}
+
+.contactos-res button {
+    border: none;
+    background: #ff000000;
+    position: relative;
+    left: 0px;
+    padding-inline: 0px;
 }
 
 .contactows {
@@ -612,7 +622,7 @@ text-align: justify;
     background: #2b2b2b;
     padding: 0px 3px;
     flex-grow: 1;
-    margin: 0 30px;
+    margin: 0 60px;
     border-radius: 10px;
     overflow-x: auto;
     /* Habilita el scroll horizontal */
@@ -797,6 +807,7 @@ text-align: justify;
 
     .thumbnails {
         padding: 1px 3px 0px 3px;
+            margin: 0 30px;
     }
 
     .thumbnails-container {
@@ -808,6 +819,11 @@ text-align: justify;
         min-width: 73px;
         margin: 0px 3px;
 
+    }
+
+    .close-fullscreen {
+        padding: 0px 20px;
+        font-size: 24px;
     }
 
     .thumbnails img:hover {
