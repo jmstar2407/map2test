@@ -167,7 +167,7 @@
 
 .share-button img {
     height: 22px;
-    filter: contrast(0.5);
+    filter: contrast(0);
 }
   
 
@@ -211,7 +211,39 @@
     margin-block-end: 10px;
 }
 
-.info-bottom-modal img {
+.info-mini-redes h6 {
+    font-family: sans-serif;
+    font-weight: 100;
+    color: #000000;
+    margin-block-start: 25px;
+    margin-block-end: 5px;
+    font-size: 14px;
+    padding: 4px;
+    border-radius: 7px;
+    width: 100%;
+    text-align: center;
+    display: flow;
+}
+
+.info-mini-redes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-mini-redes div {
+    display: flex;
+}
+
+.info-mini-redes img {
+    height: 32px;
+    margin: 0px 10px;
+    display: inline-flex;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+#logo-down-modal {
     height: 55px;
     display: block;
     margin: 0 auto;
