@@ -790,6 +790,8 @@ body {
     z-index: 9999;
     /* Asegúrate de que esté por encima de todo */
     flex-direction: column;
+    padding: 70px;
+    box-sizing: border-box;
 }
 
 .content {
@@ -1016,14 +1018,6 @@ body {
 
 
 @media (max-width: 700px) {
-
-
-    .loader img {
-        width: 100%;
-        max-width: 400px;
-        height: auto;
-    }
-    
 
     .botonbox {
         display: none;
