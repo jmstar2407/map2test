@@ -470,8 +470,14 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
 
 
-        // Inicialización del mapa con un maxZoom aumentado
-        var map = L.map('map').setView([18.7357, -70.1627], 8);
+// Inicialización del mapa con un maxZoom aumentado
+var map; // Declare map outside the if statement to make it accessible later
+
+if (window.innerWidth <= 700) { // Adjust the breakpoint if necessary
+    map = L.map('map').setView([18.7357, -70.1627], 7); 
+} else {
+    map = L.map('map').setView([18.7357, -70.1627], 8); 
+}
 
         // Capas de mapa
         var baseMaps = {
@@ -518,6 +524,7 @@ const customIcon = L.icon({
     iconUrl: './img/icons/location5.png', // Reemplaza con la ruta de tu imagen personalizada
     iconSize: [38, 38], // Tamaño del ícono [ancho, alto]
     iconAnchor: [19, 19], // Punto de anclaje en el centro del ícono
+    className: 'custom-icon',
 });
 
 // Variables para almacenar el marcador y el círculo
@@ -554,8 +561,8 @@ locateButton.addEventListener('click', () => {
             // Agregar un círculo alrededor del marcador con un radio de 50 metros
             userCircle = L.circle([lat, lng], {
                 color: '#ffffff00', // Color del borde del círculo
-                fillColor: 'rgb(0 142 255)', // Color del interior del círculo (azul con opacidad)
-                fillOpacity: 0.3, // Opacidad del interior del círculo
+                fillColor: 'rgb(0 142 255 / 16%)', // Color del interior del círculo (azul con opacidad)
+                fillOpacity: 1, // Opacidad del interior del círculo
                 radius: 350 // Radio en metros (50 metros)
             }).addTo(map);
 
@@ -563,7 +570,7 @@ locateButton.addEventListener('click', () => {
             tooltip = userMarker.bindTooltip("La ubicación es solo un estimado.", {
                 permanent: true, // Hace que el tooltip siempre esté visible
                 direction: 'top', // Coloca el tooltip encima del marcador
-                offset: [0, -40], // Ajusta la posición del tooltip con respecto al ícono
+                offset: [0, -25], // Ajusta la posición del tooltip con respecto al ícono
                 className: 'custom-tooltip' // Clase personalizada para el tooltip
             }).openTooltip();
 
@@ -1083,10 +1090,10 @@ function updateModalDetails(property) {
             
         <p>&#169; ArríbaTe 2024</p>
 
-        <div class="info-mini-bottom-modal"><p>ArríbaTe se compromote a garantizar la accesibilida digital para que personas con discapacidades. trabajamos continuamente para mejorar la accesibilidad de nuestra experiencia web para todos.</p></div>
+        <div class="info-mini-bottom-modal"><p>ArríbaTe se compromete a garantizar la accesibilidad digital para que personas con discapacidades.<br> Trabajamos continuamente para mejorar la accesibilidad de nuestra experiencia web para todos.</p></div>
             
         <div class="info-mini-bottom-modal"><p><strong>Aviso:</strong> La información presentada es de carácter informativo y está sujeta a cambios sin previo aviso.<br>
-            Al utilizar nuestra plataforma, reconoces y aceptas cumplir con nuestros <a href="#">Condiciones de Uso</a> y <a href="#">Política de Privacidad.</a></p>
+            Al utilizar nuestra plataforma, reconoces y aceptas cumplir con nuestras <a href="#">Condiciones de Uso</a> y <a href="#">Política de Privacidad.</a></p>
         </div>
 
         <div class="info-mini-redes"><h6>Síguenos:</h6><div><img src="./img/icons/instagram2.png"><img src="./img/icons/facebook2.png"><img src="./img/icons/x2.png"></div>
