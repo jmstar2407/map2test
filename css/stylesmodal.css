@@ -75,10 +75,13 @@
 }
 
 .modal-end {
-    background: #c5c5c5bd;
     height: 70px;
     width: 100%;
     border-radius: 0px 0px 14px 14px;
+        background: #ffffff;
+        border-top: 1px solid rgb(179 179 179);
+        display: inline-flex;
+        justify-content: center;
 }
 
 .modal-end p {
@@ -91,6 +94,7 @@
 }
 
 .modal-redes {
+    display: none;
     position: relative;
     height: 35px;
     background: #ff000000;
@@ -420,7 +424,11 @@ text-align: justify;
 }
 
 .contactos-res {
-    display: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .contactos-res button {
@@ -736,12 +744,7 @@ text-align: justify;
 
 @media (max-width: 900px) {
 
-    .modal-end {
-        background: #ffffff;
-        border-top: 1px solid rgb(179 179 179);
-        display: inline-flex;
-        justify-content: center;
-    }
+
 
     .modal-redes {
         display: none;
