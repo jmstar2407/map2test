@@ -118,6 +118,8 @@
     position: relative;
     flex: 3;
     background: #00000000;
+    padding: 0px 100px;
+    box-sizing: border-box;
 }
 
 .modal-body h2 {
@@ -783,6 +785,10 @@ text-align: justify;
 }
 
 @media (max-width: 700px) {
+
+    .modal-body {
+        padding: 0px 0px;
+    }
 
     .nav-button-img-p {
         border-radius: 0px;
