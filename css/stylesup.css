@@ -799,7 +799,7 @@ body {
 
 /* Puedes agregar más estilos para personalizar la apariencia del logo */
 .loader img {
-    width: 80%;
+    width: 100%;
     max-width: 555px;
     height: auto;
 }
