@@ -583,6 +583,21 @@ body {
     transition: 0.3s;
 }
 
+.botonmaximizar {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 35px;
+    height: 35px;
+    border-radius: 60px;
+    margin: 7px;
+    background: #ffffff;
+    background-image: url(../img/icons/maximizar3.png);
+    background-size: 25px;
+    background-position: 5px 5px;
+}
+
+
 .leaflet-popup-content:hover .carousel button {
     background-color: rgba(255, 255, 255, 0.911);
     color: #000000;
