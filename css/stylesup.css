@@ -595,6 +595,7 @@ body {
     background-image: url(../img/icons/maximizar3.png);
     background-size: 25px;
     background-position: 5px 5px;
+    background-repeat: no-repeat;
 }
 
 
