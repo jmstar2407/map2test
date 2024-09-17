@@ -717,7 +717,7 @@ locateButton.addEventListener('click', () => {
 
         // Modificar la función createCarousel para generar imágenes dinámicamente
         function createCarousel(imageFolder, imageCount) {
-            let carousel = `<div class="carousel">`;
+            let carousel = `<div class="carousel"><div class="botonmaximizar"></div>`;
 
             // Limitar el bucle a un máximo de 7 imágenes
             const maxImagesToShow = Math.min(imageCount, 7);
@@ -833,33 +833,22 @@ function createMarkers(locations, markersArray) {
         var carousel = location.imageFolder ? createCarousel(location.imageFolder, location.imageCount) : '';
 
 
-
-
                         // Agregar condicionalmente "/mes" al precio si es un alquiler
         var priceText = `RD$ ${formatNumber(location.price)}`;
         if (markersArray === alquilerMarkers) {
             priceText += '/mes';
         }
 
-
-
-
-
-
-        
                 marker.bindPopup(
                     `<button id="vermodal" onclick="openModal(${JSON.stringify(location).replace(/"/g, '&quot;')})"></button>
             ${carousel}
             <div class="informacion-basica"> 
 
              <button id="btncomollegar" onclick="comoLlegar(${location.lat}, ${location.lng})"><img src="./img/icons/location1.svg">Cómo llegar</button>
-
-
             <span class="price-text">${priceText}</span><br>
-            
             <b>${location.title}</b><br>
+
             <div class="detalles-basicos"> 
-                
             <tittle><img src="${roomIcon}" style="width: 26px; height: 26px;"/> ${location.rooms}
             <img src="${bathroomIcon}" style="width: 26px; height: 26px; margin-left: 10px;"/> ${location.bathrooms}
             <img src="${parkingIcon}" style="width: 26px; height: 26px; margin-left: 10px;"/> ${location.parking}
