@@ -19,7 +19,7 @@ openBoxBtn.onclick = () => {
     } else { 
         box.style.display = 'flex';
         box.style.animation = 'background-in-boxjm1 0.3s forwards';
-        box.querySelector('.boxjm1-content').style.animation = 'fadeIn 0.3s 0.1s forwards';
+        box.querySelector('.boxjm1-content').style.animation = 'fadeIn 0.3s forwards';
         lines.forEach(line => line.classList.add('active'));
     }
 };
