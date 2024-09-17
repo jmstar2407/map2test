@@ -6,7 +6,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -15,7 +15,9 @@
     background: rgba(255, 0, 0, 0);
     height: 50px;
     pointer-events: none;
+    border-bottom: 1px solid rgb(193 193 193);
 }
+
 
 .modal-logo-in {
     position: relative;
@@ -78,10 +80,10 @@
     height: 70px;
     width: 100%;
     border-radius: 0px 0px 14px 14px;
-        background: #ffffff;
-        border-top: 1px solid rgb(179 179 179);
-        display: inline-flex;
-        justify-content: center;
+    background: #ffffff;
+    border-top: 1px solid rgb(179 179 179);
+    display: inline-flex;
+    justify-content: center;
 }
 
 .modal-end p {
@@ -155,14 +157,15 @@
 
 /* Estilos para el botón de compartir */
 .share-button-container {
-    display: block; /* Ocultar por defecto en pantallas grandes */
-  }
-  
+    display: block;
+    /* Ocultar por defecto en pantallas grandes */
+}
 
-  .share-button {
+
+.share-button {
     position: absolute;
     top: 1px;
-    right: 14px;
+    right: 100px;
     background-color: #e7ecf2;
     border: none;
     border-radius: 0px 0px 7px 7px;
@@ -175,7 +178,7 @@
     height: 22px;
     filter: contrast(0);
 }
-  
+
 
 .box-modal-googlemap {
     width: 100%;
@@ -212,7 +215,7 @@
     text-align: center;
     font-family: sans-serif;
     margin: 30px 0px 20px 0px;
-    font-size: 0.5em;
+    font-size: 0.7em;
     margin-block-start: 10px;
     margin-block-end: 10px;
 }
@@ -304,7 +307,7 @@
     width: auto;
 }
 
-.whatsapp-button  div {
+.whatsapp-button div {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -343,9 +346,9 @@
 }
 
 #comoLlegarButton:hover {
-background: #232323;
-cursor: pointer;
-transition: 0.2s;
+    background: #232323;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 #comoLlegarButton img {
@@ -415,8 +418,8 @@ transition: 0.2s;
 }
 
 .detallesmodaltext p {
-padding: 0px 15px;
-text-align: justify;
+    padding: 0px 15px;
+    text-align: justify;
 }
 
 .contactos {
@@ -709,6 +712,15 @@ text-align: justify;
     cursor: pointer;
 }
 
+@media (max-height: 950px) {
+    .modal-content {
+        height: 100%;
+        border-radius: 0px;
+    }
+}
+
+
+
 @media (min-width: 900px) {
 
     /* Estilos para Chrome, Safari y Edge */
@@ -756,10 +768,6 @@ text-align: justify;
         border-radius: 0px;
     }
 
-    .modal-logo {
-        border-bottom: 1px solid rgb(193 193 193);
-    }
-
     .contactos {
         display: none;
     }
@@ -783,6 +791,18 @@ text-align: justify;
     .modal-end p {
         width: 273px;
         text-align: left;
+    }
+
+}
+
+@media (max-height: 715px) {
+    .main-image {
+        max-height: 300px;
+    }
+
+    .main-image img {
+        max-height: 303px;
+
     }
 
 }
@@ -816,7 +836,7 @@ text-align: justify;
 
     .thumbnails {
         padding: 1px 3px 0px 3px;
-            margin: 0 30px;
+        margin: 0 30px;
     }
 
     .thumbnails-container {
@@ -870,5 +890,148 @@ text-align: justify;
         aspect-ratio: 16 / 12;
     }
 
+    .info-mini-bottom-modal p {
+        font-size: 0.5em;
+    }
 
+    .share-button {
+        right: 15px;
+    }
+}
+
+
+@media (max-height: 555px) {
+.nav-button-img-p {
+    border-radius: 0px;
+    width: 60px;
+}
+
+.nav-button-img-p.left {
+    border-radius: 7px 0px 0px 7px;
+}
+
+.nav-button-img-p.right {
+    border-radius: 0px 7px 7px 0px;
+}
+
+.main-image {
+    max-height: 206px;
+}
+
+.main-image img {
+    max-height: 206px;
+}
+
+.thumbnails {
+    padding: 1px 3px 0px 3px;
+    margin: 0 30px;
+}
+
+.thumbnails-container {
+    height: 55px;
+}
+
+.thumbnails img {
+    max-height: 43px;
+    min-width: 73px;
+    max-width: 80px;
+    margin: 0px 3px;
+}
+
+.close-fullscreen {
+    padding: 0px 20px;
+    font-size: 24px;
+}
+
+.thumbnails img:hover {
+    box-shadow: 0px 0px 0px 2px rgb(205 205 205);
+}
+
+.thumbnails img.active {
+    box-shadow: 0px 0px 0px 2px rgb(0 123 255);
+}
+
+.scroll-button {
+    padding: 13px 8px;
+    margin: 0px 0px;
+}
+
+.modal-body h4 {
+    margin-block-end: 10px;
+}
+
+.item {
+    width: 50%;
+    /* Ajusta el ancho según sea necesario para que quepan 4 por línea */
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Animación de entrada para el modal */
+.modal.modal-in-anim {
+    animation: modalIn 0.3s ease-in-out;
+}
+
+@keyframes modalIn {
+    from {
+        background-color: rgb(0 0 0 / 0%);
+    }
+
+    to {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Animación de salida para el modal */
+.modal.modal-out-anim {
+    animation: modalOut 0.4s ease-in-out;
+}
+
+@keyframes modalOut {
+    from {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    to {
+        background-color: rgb(0 0 0 / 0%);
+    }
+}
+
+/* Animación de entrada para el contenido del modal */
+.modal-content.modal-content-in-anim {
+    animation: modalContentIn 0.3s ease-in-out;
+}
+
+@keyframes modalContentIn {
+    from {
+        transform: translate(-50%, 100%);
+    }
+
+    to {
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Animación de salida para el contenido del modal */
+.modal-content.modal-content-out-anim {
+    animation: modalContentOut 0.3s ease-in-out;
+}
+
+@keyframes modalContentOut {
+    from {
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        transform: translate(-50%, 100%);
+    }
 }
