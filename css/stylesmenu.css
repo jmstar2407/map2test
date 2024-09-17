@@ -293,12 +293,12 @@
     .boxjm1 {
         /* ... tus otros estilos ... */
         position: fixed;
-        top: 50px;
+        top: 51px;
         /* Ajusta el margen superior a 50px */
         left: 0;
         justify-content: flex-end;
         width: 100%;
-        height: calc(100% - 50px);
+        height: calc(100% - 51px);
         /* Calcula la altura para llegar hasta abajo */
         /* ... tus otros estilos ... */
     }
