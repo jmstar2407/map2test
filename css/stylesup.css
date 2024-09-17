@@ -573,15 +573,21 @@ body {
 
 .carousel button {
     position: absolute;
-    background-color: rgb(255 255 255);
-    color: #000000;
+    background-color: rgba(255, 255, 255, 0);
+    color: #e9e9e9d0;
     font-weight: bold;
     border: none;
     padding: 15px 10px 15px 10px;
     cursor: pointer;
     pointer-events: auto;
+    transition: 0.3s;
 }
 
+.leaflet-popup-content:hover .carousel button {
+    background-color: rgba(255, 255, 255, 0.911);
+    color: #000000;
+    transition: 0.3s;
+}
 .carousel button.prev {
     left: 10px;
     top: 50%;
@@ -607,8 +613,11 @@ body {
 .carousel button.prev:active,
 .carousel button.next:active {
     background-color: #adadad;
-
 }
+
+
+
+
 
 .carousel .indicators {
     text-align: center;
@@ -725,18 +734,7 @@ body {
     overflow-y: auto;
 }
 
-.leaflet-popup-content .carousel button {
-    opacity: 0;
-    /* Inicialmente ocultos */
-    transition: opacity 0.5s ease;
-    /* Transición suave para la opacidad */
-}
 
-.leaflet-popup-content:hover .carousel button {
-    opacity: 1;
-    /* Visibles al pasar el ratón */
-    transition: 0.3s;
-}
 
 .leaflet-popup-content-wrapper {
     padding: 0;
@@ -1153,4 +1151,16 @@ body {
     #changeLayerButton {
         display: none;
     }
+}
+
+
+
+.center-button{
+    display: block;
+    height: 50px;
+    width: 50px;
+    top: 250px;
+    position: absolute;
+    z-index: 99999;
+
 }
