@@ -15,11 +15,11 @@
 
 
 <body>
-     <div class="loader">
+     <!-- <div class="loader">
         <img src="./img/logo2.svg" alt="Logo de carga">
         <img src="./img/logonombre2.png" alt="Logo de carga"
             style="animation: loadernombre 5s forwards; ">
-    </div> 
+    </div>  -->
 
     <div class="boxmaster">
         
@@ -144,7 +144,14 @@
             <button id="locateButton">
                 <img src="./img/mi-ubicacion1.png" alt="Mostrar mi ubicación">
             </button>
+
+               <!-- Boton centrar en RD -->
+            <button id="centerButton" class="center-button" style="display: none;">
+                <img src="./img/icons/dominican-republic.png" alt="Centrar en RD">
+              </button> 
+               <!-- Boton centrar en RD FIN -->
             <!-- Botones capas, location FIN -->
+
         </div>
     </div>
     <!-- MAPA Fin-->
@@ -458,7 +465,7 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
 
 
-        // Ocultar la pantalla de carga y mostrar el contenido después de 5 segundos
+        // Ocultar la pantalla de carga y mostrar el contenido después de 2.7 segundos
         setTimeout(function () {
             document.querySelector('.loader').style.display = 'none';
             document.querySelector('.content').style.display = 'block';
@@ -471,9 +478,9 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
 
 // Inicialización del mapa con un maxZoom aumentado
-var map; // Declare map outside the if statement to make it accessible later
+var map;
 
-if (window.innerWidth <= 700) { // Adjust the breakpoint if necessary
+if (window.innerWidth <= 700) { // ajuste responsive
     map = L.map('map').setView([18.7357, -70.1627], 7); 
 } else {
     map = L.map('map').setView([18.7357, -70.1627], 8); 
@@ -609,6 +616,10 @@ locateButton.addEventListener('click', () => {
 
 
 
+
+
+
+
         // Función para formatear números con comas como separadores de miles
         function formatNumber(num) {
             return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -665,103 +676,40 @@ locateButton.addEventListener('click', () => {
             return location.latLng ? { ...location, lat: location.latLng[0], lng: location.latLng[1] } : location;
         }
 
+        
+
         // Definición de ubicaciones con información adicional
         var alquileres = [
             {id: 334501, latLng: [18.47434844864751, -69.81027832640669], title: 'Los frailes Casa', price: 25000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 6, area: 329, imageFolder: './properties/alquiler/334501/img/', imageCount: 10,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
+            caracteristicas: ''},
             
-            {id: 334502, latLng: [18.496380801995404, -69.78331793946651], title: 'San Isidro Casa', price: 32000, icon: houseIcon, rooms: 4, bathrooms: 5, parking: 4, area: 400, imageFolder: './properties/alquiler/334502/img/', imageCount: 15,
+            {id: 334502, latLng: [18.53407239836236, -69.84790422950549], title: 'Casa Res. Don Oscar', price: 32000, icon: houseIcon, rooms: 4, bathrooms: 5, parking: 4, area: 400, imageFolder: './properties/alquiler/334502/img/', imageCount: 15,
             caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
             
             {id: 334503, latLng: [18.49683473654844, -69.80295189696278], title: 'San Isidro Apartamento', price: 25500, icon: buildingIcon, rooms: 3, bathrooms: 2, parking: 2, area: 150, imageFolder: './properties/alquiler/334503/img/', imageCount: 14,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
-            
-            {id: 334504, latLng: [18.459363090065256, -69.91291961043149], title: 'zona universitaria Apartamento', price: 40000, icon: buildingIcon, rooms: 2, bathrooms: 2, parking: 2, area: 116, imageFolder: './properties/alquiler/334504/img/', imageCount: 7,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
+            caracteristicas: ''},
             
             {id: 334505, latLng: [19.476010256988793, -70.66142702687121], title: 'Casa Santiago', price: 37000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 2, area: 982, imageFolder: './properties/alquiler/334505/img/', imageCount: 15,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
+            caracteristicas: ''},
             
-
-
-
-            {id: 334506, latLng: [18.526581879842798, -69.8470343447281], title: 'entrada del cachon Casa', price: 18000, icon: houseIcon, rooms: 3, bathrooms: 2, parking: 3, area: 290, imageFolder: './properties/alquiler/334501/img/', imageCount: 10,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
-            
-            {id: 334507, latLng: [18.52931147873791, -69.82759677001323], title: 'el tamarindo Casa', price: 27000, icon: houseIcon, rooms: 2, bathrooms: 2, parking: 1, area: 200, imageFolder: './properties/alquiler/334502/img/', imageCount: 15,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
-            
-            {id: 334508, latLng: [18.505550927221893, -69.86813191544985], title: 'Los rieles', price: 30000, icon: buildingIcon, rooms: 3, bathrooms: 3, parking: 2, area: 170, imageFolder: './properties/alquiler/334503/img/', imageCount: 14,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
-            
-            {id: 334509, latLng: [18.49123042493674, -69.85795064300999], title: 'C. Bonaire', price: 37000, icon: buildingIcon, rooms: 4, bathrooms: 3, parking: 2, area: 210, imageFolder: './properties/alquiler/334504/img/', imageCount: 7,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
-            
-
-
-            {id: 3345010, latLng: [18.498406858795953, -69.89350938268433], title: 'entrada del cachon Casa', price: 42000, icon: houseIcon, rooms: 3, bathrooms: 2, parking: 3, area: 220, imageFolder: './properties/alquiler/334501/img/', imageCount: 10,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
-            
-            {id: 3345011, latLng: [18.472806048440262, -69.95314232053835], title: 'el tamarindo Casa', price: 38000, icon: houseIcon, rooms: 4, bathrooms: 4, parking: 3, area: 2900, imageFolder: './properties/alquiler/334502/img/', imageCount: 15,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
-            
-            {id: 3345012, latLng: [18.463915814961904, -69.95430580948603], title: 'Los rieles', price: 35000, icon: buildingIcon, rooms: 3, bathrooms: 3, parking: 2, area: 170, imageFolder: './properties/alquiler/334503/img/', imageCount: 14,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
-            
-            {id: 3345013, latLng: [18.435057754988573, -69.96450162169799], title: 'C. Bonaire', price: 50000, icon: buildingIcon, rooms: 4, bathrooms: 2, parking: 2, area: 210, imageFolder: './properties/alquiler/334504/img/', imageCount: 7,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
-            
-
-
-            {id: 3345014, latLng: [18.582630593427616, -68.3886762733415], title: 'Los frailes Casa', price: 45000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 6, area: 329, imageFolder: './properties/alquiler/334501/img/', imageCount: 10,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
-           
-            {id: 3345015, latLng: [18.71065599037033, -68.45511341269106], title: 'San Isidro Casa', price: 52000, icon: houseIcon, rooms: 4, bathrooms: 5, parking: 4, area: 400, imageFolder: './properties/alquiler/334502/img/', imageCount: 15,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
-            
-
 
         ];
 
         var ventas = [
-            {id: 224501, latLng: [18.495882592039205, -69.78136548091369], title: 'San Isidro Casa', price: 17300000, icon: houseIcon, rooms: 4, bathrooms: 5, parking: 4, area: 400, imageFolder: './properties/venta/224502/img/', imageCount: 15,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
+
+            {id: 224502, latLng: [18.471514679233934, -69.807869359044], title: 'los frailes Casa', price: 14750000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 6, area: 329, imageFolder: './properties/venta/224502/img/', imageCount: 10, caracteristicas: ''},
             
-            {id: 224502, latLng: [18.471514679233934, -69.807869359044], title: 'los frailes Casa', price: 14750000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 6, area: 329, imageFolder: './properties/venta/224502/img/', imageCount: 10,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
+            {id: 224504, latLng: [18.457316096553225, -69.91592487067537], title: 'zona universitaria Apartamento', price: 10500000, icon: buildingIcon, rooms: 2, bathrooms: 2, parking: 2, area: 116, imageFolder: './properties/venta/224504/img/', imageCount: 7, caracteristicas: ''},
             
-            {id: 224503, latLng: [18.501641400594615, -69.79494370002239], title: 'San Isidro Apartamento', price: 8800000, icon: buildingIcon, rooms: 3, bathrooms: 2, parking: 2, area: 150, imageFolder: './properties/venta/224503/img/', imageCount: 14,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
+            {id: 224505, latLng: [19.464670827305877, -70.67438212014031], title: 'Casa Santiago', price: 21181000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 2, area: 982, imageFolder: './properties/venta/224505/img/', imageCount: 15, caracteristicas: ''},
             
-            {id: 224504, latLng: [18.457316096553225, -69.91592487067537], title: 'zona universitaria Apartamento', price: 10500000, icon: buildingIcon, rooms: 2, bathrooms: 2, parking: 2, area: 116, imageFolder: './properties/venta/224504/img/', imageCount: 7,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
+            {id: 224511, latLng: [19.748816219700327, -70.65440623939426], title: 'Solar, muñoz, puerto plata', price: 13400000, icon: landIcon, rooms: 0, bathrooms: 0, parking: 0, area: 908, imageFolder: './properties/venta/224511/img/', imageCount: 7, caracteristicas: ''},
             
-            {id: 224505, latLng: [19.464670827305877, -70.67438212014031], title: 'Casa Santiago', price: 21181000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 2, area: 982, imageFolder: './properties/venta/224505/img/', imageCount: 15,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
+            {id: 224513, latLng: [18.780254470682426, -68.54500166578522], title: 'Solar Macao, Punta cana', price: 6500000, icon: landIcon, rooms: 0, bathrooms: 0, parking: 0, area: 500, imageFolder: './properties/venta/224513/img/', imageCount: 11, caracteristicas: ''},
             
+            { id: 224503, latLng: [18.515361605411158, -69.79580351613811], title: 'Edificio Santo Domingo', price: 70000000, icon: buildingIcon, rooms: 12, bathrooms: 10, parking: 6, area: 700, imageFolder: './img/properties/224503/', imageCount: 5, caracteristicas: ''},
 
-
-
-
-
-
-            {id: 224511, latLng: [19.748816219700327, -70.65440623939426], title: 'Solar, muñoz, puerto plata', price: 13400000, icon: landIcon, rooms: 0, bathrooms: 0, parking: 0, area: 908, imageFolder: './properties/venta/224511/img/', imageCount: 7,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
-            
-            {id: 224512, latLng: [18.474279972451672, -69.7941753988591], title: 'Solar, los frailes', price: 7557000, icon: landIcon, rooms: 0, bathrooms: 0, parking: 0, area: 508.83, imageFolder: './properties/venta/224512/img/', imageCount: 7,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
-            
-            {id: 224513, latLng: [18.780254470682426, -68.54500166578522], title: 'Solar Macao, Punta cana', price: 6500000, icon: landIcon, rooms: 0, bathrooms: 0, parking: 0, area: 500, imageFolder: './properties/venta/224513/img/', imageCount: 11,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
-            
-
-
-
-
-            { id: 224503, latLng: [18.515361605411158, -69.79580351613811], title: 'Edificio Santo Domingo', price: 70000000, icon: buildingIcon, rooms: 12, bathrooms: 10, parking: 6, area: 700, imageFolder: './img/properties/224503/', imageCount: 5,
-            caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'},
-
-            { id: 224504, latLng: [18.534530697687792, -69.84886578381361], title: 'Casa calle Santo Domingo', price: 3800000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 2, area: 150, imageFolder: './img/properties/224504/', imageCount: 7,
+            { id: 224506, latLng: [18.534530697687792, -69.84886578381361], title: 'Casa calle Santo Domingo', price: 3800000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 2, area: 150, imageFolder: './img/properties/224504/', imageCount: 7,
              caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'}
         ];
 
@@ -1008,241 +956,6 @@ activateGroup('alquiler');
         toggleMarkers('alquiler');
     </script>
 
-    <script>
-
-        // Variables globales
-const modal = document.getElementById('propertyModal');
-const modalDetails = document.getElementById('modalPropertyDetails');
-const whatsappButton = document.getElementById('whatsappButton');
-const mainImage = document.getElementById('currentImage');
-const thumbnailsContainer = document.querySelector('.thumbnails');
-
-// Abrir modal con la propiedad
-function openModal(property) {
-    setupWhatsappButton(property);
-    updateModalDetails(property);
-    updateGallery(property.imageFolder, property.imageCount);
-    history.pushState(null, '', `#id-${property.id}`);
-    modal.style.display = "block";
-}
-
-// Cerrar modal
-function closeModal() {
-    modal.style.display = "none";
-    history.pushState(null, '', window.location.pathname); // Add this line
-}
-
-// Configurar botón de WhatsApp
-function setupWhatsappButton(property) {
-    const propertyLink = `https://arribate.com/#id-${property.id}`;
-    const whatsappMessage = `Me interesa saber más de esta propiedad con el ID ${property.id}: ${propertyLink}`;
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=+18299605566&text=${encodeURIComponent(whatsappMessage)}`;
-    whatsappButton.href = whatsappUrl;
-}
-
-
-
-
-
-// Actualizar detalles del modal
-function updateModalDetails(property) {
-    // Verifica si la propiedad está en la lista de alquileres
-    const isAlquiler = alquileres.some(alquiler => alquiler.id === property.id);
-
-    // Extraer latitud y longitud correctamente para el <iframe>
-    const lat = property.latLng ? property.latLng[0] : property.lat;
-    const lng = property.latLng ? property.latLng[1] : property.lng;
-
-    // Formatear el precio y agregar "/mes" si es un alquiler
-    const priceText = `RD$ ${formatNumber(property.price)}${isAlquiler ? "/mes" : ""}`;
-
-    modalDetails.innerHTML = `
-        <h2>${priceText}</h2>
-            <div class="share-button-container">
-                <button id="shareButton" class="share-button" onclick="shareProperty()"><img src="./img/icons/compartir3.png"></button>
-             </div>
-                          
-        <h3>ID: ${property.id}</h3>
-        <h4>${property.title}</h4>
-        <div class="detallesmodalicon"> 
-            ${createIconItem(roomIcon, `${property.rooms} Habitaciones`)}
-            ${createIconItem(bathroomIcon, `${property.bathrooms} Baños`)}
-            ${createIconItem(parkingIcon, `${property.parking} Parqueos`)}
-            ${createIconItem(areaIcon, `${property.area} m²`)}
-        </div>
-        <div class="detallesmodaltext"> 
-            <p><strong>Características:</strong> ${property.caracteristicas}</p>
-        </div>
-
-        
-        <div class="box-modal-googlemap"><p>Ubicación</p>
-            <iframe 
-                src="https://maps.google.com/maps?q=${lat},${lng}&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                frameborder="0" 
-                scrolling="no" 
-                style="width: 100%;height: 100%;box-shadow: 0px 0px 0px 2px rgb(0 0 0 / 0%);border-radius: 12px;">
-            </iframe>
-        </div>
-
-        <div class="info-bottom-modal">
-
-            <img id="logo-down-modal" src="./img/logo2.svg">
-            
-        <p>&#169; ArríbaTe 2024</p>
-
-        <div class="info-mini-bottom-modal"><p>ArríbaTe se compromete a garantizar la accesibilidad digital para que personas con discapacidades.<br> Trabajamos continuamente para mejorar la accesibilidad de nuestra experiencia web para todos.</p></div>
-            
-        <div class="info-mini-bottom-modal"><p><strong>Aviso:</strong> La información presentada es de carácter informativo y está sujeta a cambios sin previo aviso.<br>
-            Al utilizar nuestra plataforma, reconoces y aceptas cumplir con nuestras <a href="#">Condiciones de Uso</a> y <a href="#">Política de Privacidad.</a></p>
-        </div>
-
-        <div class="info-mini-redes"><h6>Síguenos:</h6><div><img src="./img/icons/instagram2.png"><img src="./img/icons/facebook2.png"><img src="./img/icons/x2.png"></div>
-                
-        </div>
-
-        <div class="modal-down-background"></div>
-
-        </div>
-    `;
-}
-
-
-
-// Crear un ítem de icono para los detalles
-function createIconItem(icon, text) {
-    return `
-        <div class="item">
-            <img src="${icon}"><p>${text}</p>
-        </div>`;
-}
-
-// Actualizar galería
-function updateGallery(imageFolder, imageCount) {
-    let images = createImageArray(imageFolder, imageCount);
-    clearGallery();
-    addThumbnails(images);
-    if (images.length > 0) {
-        mainImage.src = images[0];
-        updateActiveThumbnail(0);
-    }
-    setupGalleryNavigation(images);
-    setupFullscreen(images);
-}
-
-// Crear array de imágenes
-function createImageArray(imageFolder, imageCount) {
-    return Array.from({ length: imageCount }, (_, i) => `${imageFolder}${i + 1}.jpg`);
-}
-
-// Limpiar galería
-function clearGallery() {
-    mainImage.src = '';
-    thumbnailsContainer.innerHTML = '';
-}
-
-// Agregar miniaturas a la galería
-function addThumbnails(images) {
-    images.forEach((imgSrc, index) => {
-        const thumbnail = document.createElement('img');
-        thumbnail.src = imgSrc;
-        thumbnail.alt = `Thumbnail ${index + 1}`;
-        thumbnail.dataset.index = index;
-        thumbnail.addEventListener('click', () => {
-            mainImage.src = imgSrc;
-            updateActiveThumbnail(index);
-        });
-        thumbnailsContainer.appendChild(thumbnail);
-    });
-}
-
-// Actualizar miniatura activa
-function updateActiveThumbnail(index) {
-    document.querySelectorAll('.thumbnails img').forEach((img, i) => {
-        img.classList.toggle('active', i === index);
-    });
-}
-
-// Navegación de la galería
-function setupGalleryNavigation(images) {
-    let currentIndex = 0;
-
-    document.getElementById('prevMainImage').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        mainImage.src = images[currentIndex];
-        updateActiveThumbnail(currentIndex);
-    });
-
-    document.getElementById('nextMainImage').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        mainImage.src = images[currentIndex];
-        updateActiveThumbnail(currentIndex);
-    });
-}
-
-// Pantalla completa
-function setupFullscreen(images) {
-    const fullscreenModal = document.getElementById('fullscreenModal');
-    const fullscreenImage = document.getElementById('fullscreenModalImage');
-    let currentFullscreenIndex = 0;
-
-    function openFullscreenModal(index) {
-        currentFullscreenIndex = index;
-        fullscreenImage.src = images[currentFullscreenIndex];
-        fullscreenModal.style.display = 'block';
-    }
-
-    function closeFullscreenModal() {
-        fullscreenModal.style.display = 'none';
-    }
-
-    document.querySelector('.close-fullscreen').addEventListener('click', closeFullscreenModal);
-    document.addEventListener('keydown', (event) => {
-        if (event.key === "Escape") {
-            closeFullscreenModal();
-        }
-    });
-
-    document.getElementById('prevFullscreenImage').addEventListener('click', () => {
-        currentFullscreenIndex = (currentFullscreenIndex - 1 + images.length) % images.length;
-        fullscreenImage.src = images[currentFullscreenIndex];
-    });
-
-    document.getElementById('nextFullscreenImage').addEventListener('click', () => {
-        currentFullscreenIndex = (currentFullscreenIndex + 1) % images.length;
-        fullscreenImage.src = images[currentFullscreenIndex];
-    });
-
-    mainImage.addEventListener('click', () => openFullscreenModal(currentFullscreenIndex));
-}
-
-// Verificar ID en la URL al cargar
-window.addEventListener('load', () => {
-    const hash = window.location.hash;
-    if (hash.startsWith('#id-')) {
-        const propertyId = parseInt(hash.substring('#id-'.length));
-        const property = [...alquileres, ...ventas].find(p => p.id === propertyId);
-        if (property) {
-            openModal(property);
-        }
-    }
-});
-
-// Desplazamiento de thumbnails
-window.addEventListener('DOMContentLoaded', () => {
-    const scrollLeftButton = document.querySelector('.scroll-button.left');
-    const scrollRightButton = document.querySelector('.scroll-button.right');
-
-    scrollLeftButton.addEventListener('click', () => {
-        thumbnailsContainer.scrollLeft -= 150;
-    });
-
-    scrollRightButton.addEventListener('click', () => {
-        thumbnailsContainer.scrollLeft += 150;
-    });
-});
-
-
-    </script>
 
     <script src="./js/scriptfiltros.js"></script>
     <script src="./js/scriptmodal.js"></script>
