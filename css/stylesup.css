@@ -8,17 +8,6 @@ body {
     padding: 0;
 }
 
-/* Estilo para cuando estamos en pantalla completa */
-:fullscreen {
-    /* Ajusta el padding-top para dejar espacio para la barra de notificaciones */
-    padding-top: env(safe-area-inset-top); 
-  }
-  
-  /* Evita que el contenido se superponga con la barra de notificaciones */
-  body {
-    padding-top: env(safe-area-inset-top); /* Para cuando NO estamos en pantalla completa */
-  }
-
 .boxmaster {
     position: fixed;
     height: 100%;
@@ -264,10 +253,10 @@ body {
 
 .leaflet-touch .leaflet-control-layers,
 .leaflet-touch .leaflet-bar {
-    border: 1px solid rgb(129 129 129);
-    border-radius: 6px;
-    background-clip: padding-box;
-    box-shadow: 2px 2px 3px 0px rgb(0 0 0 / 21%);
+    background: #ff000000;
+    margin-left: 0px;
+    margin-top: 0px;
+    border: none;
 }
 
 
@@ -283,30 +272,39 @@ body {
 
 .leaflet-left {
     top: auto;
-    bottom: 145px;
-    height: 88px;
-    background: rgb(0 17 255 / 0%);
+    bottom: 159px;
+    height: auto;
+    width: auto;
+    background: rgb(0 11 171 / 0%);
     position: absolute;
-    width: 56px;
-    right: 7px;
+    right: 20px;
     left: auto;
     display: block;
 }
 
 .leaflet-touch .leaflet-bar a:first-child {
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    border-radius: 14px;
+    position: relative;
+    padding: 9px;
+    top: 0px;
+    margin-bottom: 14px;
+    background: #ffffffe8;
 }
 
 .leaflet-touch .leaflet-bar a:last-child {
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-radius: 14px;
+    position: relative;
+    padding: 9px;
+    top: 0px;
+    background: #ffffffe8;
 }
 
 .leaflet-touch .leaflet-bar a {
-    width: 34px;
-    height: 34px;
+    width: none;
+    height: none;
     line-height: 30px;
+    border-bottom: none;
+    box-shadow: 1px 1px 3px 2px rgb(0 0 0 / 13%);
 }
 
 
@@ -314,17 +312,16 @@ body {
     display: none;
     position: absolute;
     top: auto;
-    bottom: 236px;
-    height: 35px;
-    width: 35px;
+    bottom: 285px;
+    height: 52px;
+    width: 52px;
     right: 18px;
-    background-color: #ffffff;
+    background: #ffffffe8;
+    box-shadow: 1px 1px 3px 2px rgb(0 0 0 / 13%);
     border: none;
     cursor: pointer;
     z-index: 1000;
-    border-radius: 8px;
-    border: 1px solid rgb(129 129 129);
-    box-shadow: 2px 2px 3px 0px rgb(0 0 0 / 21%);
+    border-radius: 36px;
     transition: 0.3s;
 }
 
@@ -333,6 +330,7 @@ body {
     top: 0px;
     left: 0px;
     height: 100%;
+    transform: scale(0.7);
 }
 
 #locateButton:hover {
@@ -1143,8 +1141,11 @@ body {
     }
 
     .layer-button {
-        height: 80px;
-        width: 80px;
+        height: 70px;
+        width: 70px;
+        right: 10px;
+        overflow: hidden;
+        border-radius: 50px;
     }
 
     .leaflet-left {
@@ -1152,7 +1153,8 @@ body {
     }
 
     #locateButton {
-        bottom: 210px;
+        bottom: 244px;
+        padding: 9px;
     }
 
 
@@ -1188,7 +1190,7 @@ body {
     top: 250px;
     position: absolute;
     z-index: 99999;
-
+     
 }
 
 
@@ -1217,67 +1219,3 @@ body {
 
 
 
-
-
-
-.carousel {
-    position: relative;
-    width: 100%; /* Ajusta según el contenedor */
-    overflow: hidden;
-}
-
-
-.carousel-inner {
-    display: flex;
-    width: 100%;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel img {
-    width: 100%; /* Ajusta según el tamaño deseado */
-    display: block;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-inner img {
-    min-width: 100%; /* Para asegurarte de que cada imagen ocupe el 100% del contenedor */
-}
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-.indicators {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.indicator {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: #ccc;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.indicator.active {
-    background-color: #333;
-}
