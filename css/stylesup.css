@@ -259,7 +259,9 @@ body {
     z-index: 999;
 }
 
-
+#fullscreenButton.active {
+    background-image: url(../img/icons/fullscreen2.png);
+}
 
 
 
