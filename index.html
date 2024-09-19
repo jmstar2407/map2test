@@ -143,9 +143,7 @@
                 <img src="./img/capasatelite2.png" alt="Cambiar capa" id="layerIcon">
             </button>
 
-            <button id="locateButton">
-                <img src="./img/mi-ubicacion1.png" alt="Mostrar mi ubicación">
-            </button>
+            <button id="locateButton"></button>
 
                <!-- Boton centrar en RD -->
             <button id="centerButton" class="center-button" style="display: none;">
@@ -570,7 +568,7 @@ locateButton.addEventListener('click', () => {
             // Agregar un círculo alrededor del marcador con un radio de 50 metros
             userCircle = L.circle([lat, lng], {
                 color: '#ffffff00', // Color del borde del círculo
-                fillColor: 'rgb(0 142 255 / 16%)', // Color del interior del círculo (azul con opacidad)
+                fillColor: 'rgb(0 142 255 / 0%)', // Color del interior del círculo (azul con opacidad)
                 fillOpacity: 1, // Opacidad del interior del círculo
                 radius: 350 // Radio en metros (50 metros)
             }).addTo(map);
