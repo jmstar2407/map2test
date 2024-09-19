@@ -243,7 +243,21 @@ body {
 
 
 
-
+#fullscreenButton {
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    border: none;
+    background: rgb(155 46 46 / 0%);
+    background-image: url(../img/icons/fullscreen1.png);
+    background-size: contain;
+    background-position: center;
+    top: auto;
+    bottom: 45px;
+    left: 10px;
+    cursor: pointer;
+    z-index: 999;
+}
 
 
 
