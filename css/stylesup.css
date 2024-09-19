@@ -180,7 +180,7 @@ body {
 .layer-button {
     position: absolute;
     top: auto;
-    bottom: 50px;
+    bottom: 37px;
     right: 19px;
     height: 100px;
     width: 100px;
@@ -272,7 +272,7 @@ body {
 
 .leaflet-left {
     top: auto;
-    bottom: 175px;
+    bottom: 160px;
     height: auto;
     width: auto;
     background: rgb(0 11 171 / 0%);
@@ -1169,11 +1169,11 @@ body {
     }
 
     .leaflet-left {
-        bottom: 135px;
+        bottom: 124px;
     }
 
     #locateButton {
-        bottom: 258px;
+        bottom: 250px;
         padding: 9px;
     }
 
