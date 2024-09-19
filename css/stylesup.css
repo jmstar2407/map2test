@@ -180,7 +180,7 @@ body {
 .layer-button {
     position: absolute;
     top: auto;
-    bottom: 35px;
+    bottom: 50px;
     right: 19px;
     height: 100px;
     width: 100px;
@@ -272,7 +272,7 @@ body {
 
 .leaflet-left {
     top: auto;
-    bottom: 159px;
+    bottom: 175px;
     height: auto;
     width: auto;
     background: rgb(0 11 171 / 0%);
@@ -289,6 +289,10 @@ body {
     top: 0px;
     margin-bottom: 14px;
     background: #ffffffe8;
+    background-image: url('../img/icons/zoom-in.svg');
+    background-size: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .leaflet-touch .leaflet-bar a:last-child {
@@ -297,6 +301,10 @@ body {
     padding: 9px;
     top: 0px;
     background: #ffffffe8;
+    background-image: url('../img/icons/zoom-out.svg');
+    background-size: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .leaflet-touch .leaflet-bar a {
@@ -305,6 +313,12 @@ body {
     line-height: 30px;
     border-bottom: none;
     box-shadow: 1px 1px 3px 2px rgb(0 0 0 / 13%);
+    color: #00000000;
+}
+
+
+.leaflet-control-zoom a {
+    font-size: 0;
 }
 
 
@@ -312,12 +326,17 @@ body {
     display: none;
     position: absolute;
     top: auto;
-    bottom: 285px;
+    bottom: 300px;
     height: 52px;
     width: 52px;
     right: 18px;
     background: #ffffffe8;
     box-shadow: 1px 1px 3px 2px rgb(0 0 0 / 13%);
+    background-image: url(../img/icons/location6.png);
+    filter: grayscale(1);
+    background-size: 27px;
+    background-position: center;
+    background-repeat: no-repeat;
     border: none;
     cursor: pointer;
     z-index: 1000;
@@ -334,9 +353,10 @@ body {
 }
 
 #locateButton:hover {
-    background-color: #d1d1d1;
+    background-color: #ffffffe8;
     transform: scale(0.95);
     transition: 0.3s;
+    filter: none;
 }
 
 
@@ -1149,33 +1169,32 @@ body {
     }
 
     .leaflet-left {
-        bottom: 120px;
+        bottom: 135px;
     }
 
     #locateButton {
-        bottom: 244px;
+        bottom: 258px;
         padding: 9px;
     }
-
 
 }
 
 
 
 
-@media screen and (max-height: 335px) {
+@media screen and (max-height: 420px) {
     #locateButton {
         display: none;
     }
 }
 
-@media screen and (max-height: 290px) {
+@media screen and (max-height: 350px) {
     .leaflet-left {
         display: none;
     }
 }
 
-@media screen and (max-height: 205px) {
+@media screen and (max-height: 220px) {
     #changeLayerButton {
         display: none;
     }
