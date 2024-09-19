@@ -139,7 +139,7 @@
 
             <button id="fullscreenButton"></button>
 
-            
+
             <!-- Botones capas, location -->
             <button id="changeLayerButton" class="layer-button">
                 <img src="./img/capasatelite2.png" alt="Cambiar capa" id="layerIcon">
@@ -948,18 +948,26 @@ activateGroup('alquiler');
     </script>
 
 <script>
-    const fullscreenButton = document.getElementById('fullscreenButton');
+const fullscreenButton = document.getElementById('fullscreenButton');
 
 fullscreenButton.addEventListener('click', () => {
   if (document.fullscreenElement) {
     document.exitFullscreen();   
-
+ 
   } else {
     document.documentElement.requestFullscreen();   
-
+ 
   }
 });
 
+// Evento para detectar cambios en el estado de pantalla completa
+document.addEventListener('fullscreenchange', () => {
+  if (document.fullscreenElement) {
+    fullscreenButton.classList.add('active'); // Agregar clase 'active'
+  } else {
+    fullscreenButton.classList.remove('active'); // Quitar clase 'active'
+  }
+});
 </script>
 
     <script src="./js/scriptfiltros.js"></script>
