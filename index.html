@@ -996,10 +996,29 @@ const fullscreenButton = document.getElementById('fullscreenButton');
 fullscreenButton.addEventListener('click', () => {
   const docElem = document.documentElement;
 
-  if (docElem.webkitDisplayingFullscreen) {
-    docElem.webkitExitFullscreen();
+  if (docElem.requestFullscreen) {
+    // Otros navegadores
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    } else {
+      docElem.requestFullscreen();
+    }
+  } else if (docElem.webkitRequestFullscreen) {
+    // iOS Safari
+    if (docElem.webkitDisplayingFullscreen) {
+      docElem.webkitExitFullscreen();
+    } else {
+      docElem.webkitRequestFullscreen();
+    }
+  }
+});
+
+// Evento para detectar cambios en el estado de pantalla completa
+document.addEventListener('fullscreenchange', () => {
+  if (document.fullscreenElement) {
+    fullscreenButton.classList.add('active');
   } else {
-    docElem.webkitRequestFullscreen();
+    fullscreenButton.classList.remove('active');
   }
 });
 
