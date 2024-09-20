@@ -793,20 +793,44 @@ function comoLlegarDesdeModal() {
         const lat = property.latLng ? property.latLng[0] : property.lat;
         const lng = property.latLng ? property.latLng[1] : property.lng;
 
-        // URL base para el intent chooser
-        var url = `geo:${lat},${lng}?q=${lat},${lng}`;
+        // Verificar si estamos en un dispositivo iOS o Android
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        
+        let url;
+        
+        if (isIOS) {
+            // Para iOS, abrir con Apple Maps por defecto
+            url = `maps://?q=${lat},${lng}`;
+            
+            // Si prefieres Google Maps en iOS y está instalada:
+            // url = `comgooglemaps://?q=${lat},${lng}&center=${lat},${lng}`;
+            
+            // Para Waze en iOS, si está instalada:
+            // url = `waze://?ll=${lat},${lng}&navigate=yes`;
 
-        // Agregar opciones de aplicaciones específicas si lo deseas
-        // (comenta las líneas que no necesites)
-        // url += `&package=com.google.android.apps.maps`;  // Google Maps
-        // url += `&package=com.waze`;                     // Waze
-        // url += `&package=com.ubercab`;                  // Uber
+            // Para Uber en iOS:
+            // Esta URL abrirá Uber para solicitar un viaje con las coordenadas dadas
+            // Nota: el esquema uber:// solo funciona si Uber está instalada
+            // Aquí seleccionamos Uber si lo prefieres:
+            // url = `uber://?action=setPickup&dropoff[latitude]=${lat}&dropoff[longitude]=${lng}`;
+        } else {
+            // Para Android, usar geo URI scheme
+            url = `geo:${lat},${lng}?q=${lat},${lng}`;
 
-        window.location.href = url; 
+            // Agregar opciones de aplicaciones específicas si lo deseas
+            // (comenta las líneas que no necesites)
+            // url += `&package=com.google.android.apps.maps`;  // Google Maps
+            // url += `&package=com.waze`;                     // Waze
+            // url += `&package=com.ubercab`;                  // Uber
+        }
+
+        // Redirigir a la URL construida
+        window.location.href = url;
     } else {
         console.error("No se pudo encontrar la propiedad para obtener las coordenadas.");
     }
 }
+
 
 
 
