@@ -152,7 +152,6 @@
 
                <!-- Boton centrar en RD -->
             <button id="centerButton" class="center-button" style="display: none;">
-                <img src="./img/icons/dominican-republic.png" alt="Centrar en RD">
               </button> 
                <!-- Boton centrar en RD FIN -->
             <!-- Botones capas, location FIN -->
@@ -617,8 +616,47 @@ locateButton.addEventListener('click', () => {
 
 
 
+const bounds = [
+      [19.9205, -72.0155], 
+      [17.5649, -71.8584], 
+      [18.5104, -68.3821], 
+      [20.0059, -68.6463]  
+    ];
 
+    L.rectangle(bounds, { color: "transparent", weight: 1 }).addTo(map);
+    map.fitBounds(bounds);
 
+    map.on('moveend', function() {
+      const centerButton = document.getElementById('centerButton');
+      if (map.getBounds().intersects(bounds)) { 
+        centerButton.style.display = 'none';
+      } else {
+        centerButton.style.display = 'block';
+      }
+    });
+
+    // Nivel de zoom por defecto
+    let zoomLevel = 8;
+
+    // Ajustar el nivel de zoom según el tamaño de la pantalla
+    function adjustZoomLevel() {
+      if (window.innerWidth <= 700) {
+        zoomLevel = 7; 
+      } else {
+        zoomLevel = 8; 
+      }
+    }
+
+    // Llamar a la función al cargar la página y al cambiar el tamaño de la ventana
+    adjustZoomLevel();
+    window.addEventListener('resize', adjustZoomLevel);
+
+    document.getElementById('centerButton').addEventListener('click', function() {
+      map.flyToBounds(bounds, { 
+        duration: 1.5, 
+        maxZoom: zoomLevel 
+      });
+    });
 
 
 
