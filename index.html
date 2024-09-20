@@ -991,48 +991,37 @@ activateGroup('alquiler');
     </script>
 
 <script>
-const fullscreenButton = document.getElementById('fullscreenButton');
-
-fullscreenButton.addEventListener('click', () => {
-  const docElem = document.documentElement;
-
-  if (docElem.requestFullscreen) {
-    // Otros navegadores
-    if (document.fullscreenElement) {
-      document.exitFullscreen();
+    // Detecta si el navegador es Safari en iOS
+    const isIOSSafari = navigator.userAgent.match(/iPad|iPhone|iPod/) && navigator.userAgent.match(/WebKit/) && !navigator.userAgent.match(/CriOS|FxiOS/);
+    
+    // Obtiene el botón de pantalla completa
+    const fullscreenButton = document.getElementById('fullscreenButton');
+    
+    // Si es iOS Safari, oculta el botón
+    if (isIOSSafari) {
+      fullscreenButton.style.display = 'none';
     } else {
-      docElem.requestFullscreen();
+      // Si no es iOS Safari, configura el evento de clic
+      fullscreenButton.addEventListener('click', () => {
+        if (document.fullscreenElement) {
+          document.exitFullscreen();   
+    
+        } else {
+          document.documentElement.requestFullscreen();   
+    
+        }
+      });
+    
+      // Evento para detectar cambios en el estado de pantalla completa
+      document.addEventListener('fullscreenchange', () => {
+        if (document.fullscreenElement) {
+          fullscreenButton.classList.add('active'); // Agregar clase 'active'
+        } else {
+          fullscreenButton.classList.remove('active'); // Quitar clase 'active'
+        }
+      });
     }
-  } else if (docElem.webkitRequestFullscreen) {
-    // iOS Safari
-    if (docElem.webkitDisplayingFullscreen) {
-      docElem.webkitExitFullscreen();
-    } else {
-      docElem.webkitRequestFullscreen();
-    }
-  }
-});
-
-// Evento para detectar cambios en el estado de pantalla completa
-document.addEventListener('fullscreenchange', () => {
-  if (document.fullscreenElement) {
-    fullscreenButton.classList.add('active');
-  } else {
-    fullscreenButton.classList.remove('active');
-  }
-});
-
-// Evento para detectar cambios en el estado de pantalla completa (WebKit)
-document.addEventListener('webkitfullscreenchange', () => {
-  const docElem = document.documentElement;
-
-  if (docElem.webkitDisplayingFullscreen) {
-    fullscreenButton.classList.add('active');
-  } else {
-    fullscreenButton.classList.remove('active');
-  }
-});
-</script>
+    </script>
 
     <script src="./js/scriptfiltros.js"></script>
     <script src="./js/scriptmodal.js"></script>
