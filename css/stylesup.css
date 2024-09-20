@@ -296,7 +296,7 @@ body {
     width: auto;
     background: rgb(0 11 171 / 0%);
     position: absolute;
-    right: 20px;
+    right: 25px;
     left: auto;
     display: block;
 }
@@ -304,12 +304,12 @@ body {
 .leaflet-touch .leaflet-bar a:first-child {
     border-radius: 14px;
     position: relative;
-    padding: 9px;
+    padding: 5px;
     top: 0px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
     background: #ffffffe8;
-    background-image: url('../img/icons/zoom-in.svg');
-    background-size: 35px;
+    background-image: url(../img/icons/zoom-in.svg);
+    background-size: 25px;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -317,11 +317,11 @@ body {
 .leaflet-touch .leaflet-bar a:last-child {
     border-radius: 14px;
     position: relative;
-    padding: 9px;
+    padding: 5px;
     top: 0px;
     background: #ffffffe8;
-    background-image: url('../img/icons/zoom-out.svg');
-    background-size: 35px;
+    background-image: url(../img/icons/zoom-out.svg);
+    background-size: 25px;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -346,9 +346,9 @@ body {
     position: absolute;
     top: auto;
     bottom: 300px;
-    height: 52px;
-    width: 52px;
-    right: 18px;
+    height: 50px;
+    width: 50px;
+    right: 20px;
     background: #ffffffe8;
     box-shadow: 1px 1px 3px 2px rgb(0 0 0 / 13%);
     background-image: url(../img/icons/location6.png);
@@ -1096,9 +1096,9 @@ body {
     .menumaster-in-left {
         width: 100%;
         border-radius: 0px;
-        border-bottom: 1px solid hsl(0deg 0% 0% / 20%);
+        border-bottom: 1px solid hsl(234.55deg 22.45% 90.39%);
         height: 50px;
-        background: #ffffff;
+        background: #faf9fd;
     }
 
     .logonombre {
@@ -1125,7 +1125,7 @@ body {
         display: inline-flex;
         justify-content: center;
         height: 40px;
-        background: #ffffff;
+        background: #faf9fd;
     }
 
     #alquilerButton-rpsv,
@@ -1192,8 +1192,7 @@ body {
     }
 
     #locateButton {
-        bottom: 250px;
-        padding: 9px;
+        bottom: 227px;
     }
 
 }
