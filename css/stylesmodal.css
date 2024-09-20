@@ -1039,7 +1039,7 @@
 
 /* Estilos del modal específico para la selección de mapas en iOS */
 .modal-map-ios {
-    display: block; /* El modal está oculto por defecto */
+    display: none; /* El modal está oculto por defecto */
     position: fixed;
     z-index: 999999;
     left: 0;
@@ -1081,10 +1081,14 @@
 
 #appleMapsBtn{
     background-image: url(../img/icons/ios-applemaps1.png);
+    width: 130px;
+    height: 50px;
 }
 
 #googleMapsBtn{
     background-image: url(../img/icons/ios-googlemap1.png);
+    width: 130px;
+    height: 50px;
 }
 
 #wazeBtn{
