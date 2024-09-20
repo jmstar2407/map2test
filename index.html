@@ -824,36 +824,57 @@ function comoLlegarDesdeModal() {
             const wazeUrl = `waze://?ll=${lat},${lng}&navigate=yes`;
             const uberUrl = `uber://?action=setPickup&dropoff[latitude]=${lat}&dropoff[longitude]=${lng}`;
 
+            // Fallback URLs para la App Store
+            const googleMapsFallback = "https://apps.apple.com/us/app/google-maps/id585027354";
+            const wazeFallback = "https://apps.apple.com/us/app/waze-navigation-live-traffic/id323229106";
+            const uberFallback = "https://apps.apple.com/us/app/uber/id368677368";
+
             // Mostrar el modal
             const modal = document.getElementById('modal-map-ios');
             modal.style.display = 'block';
 
-            // Función para intentar abrir la app y mostrar mensaje si no está instalada
-            function tryOpenApp(url) {
-                // Marcar el tiempo antes de intentar abrir la app
+            // Función para intentar abrir la app y redirigir al fallback si no está instalada
+            function tryOpenApp(url, fallbackUrl) {
+                let isAppOpened = false;
+
+                // Intentar abrir la app
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none'; // Ocultar el iframe
+                iframe.src = url;
+
+                document.body.appendChild(iframe);
+
+                // Establecer timeout para verificar si la app no abrió en 2 segundos
                 const timeout = setTimeout(() => {
-                    alert('Aplicación no instalada');
-                }, 1500);  // Esperar 1.5 segundos para verificar si la app no está instalada
+                    if (!isAppOpened) {
+                        window.location.href = fallbackUrl; // Redirigir a la App Store si no está instalada
+                    }
+                }, 2000);
 
-                // Intentar redirigir a la aplicación
-                window.location.href = url;
+                // Si la página cambia o se oculta, asumimos que la app se abrió
+                window.addEventListener('pagehide', () => {
+                    isAppOpened = true;
+                    clearTimeout(timeout);
+                });
 
-                // Cancelar el timeout si la redirección tiene éxito
-                window.addEventListener('pagehide', () => clearTimeout(timeout), { once: true });
+                // Limpiar el iframe después de usarlo
+                setTimeout(() => {
+                    document.body.removeChild(iframe);
+                }, 3000); // Remover iframe después de 3 segundos
             }
 
-            // Obtener los botones y asociar las URLs
+            // Obtener los botones y asociar las URLs con fallback
             document.getElementById('appleMapsBtn').onclick = function() {
-                tryOpenApp(appleMapsUrl);
+                window.location.href = appleMapsUrl; // No necesita fallback porque Apple Maps siempre está instalado
             };
             document.getElementById('googleMapsBtn').onclick = function() {
-                tryOpenApp(googleMapsUrl);
+                tryOpenApp(googleMapsUrl, googleMapsFallback);
             };
             document.getElementById('wazeBtn').onclick = function() {
-                tryOpenApp(wazeUrl);
+                tryOpenApp(wazeUrl, wazeFallback);
             };
             document.getElementById('uberBtn').onclick = function() {
-                tryOpenApp(uberUrl);
+                tryOpenApp(uberUrl, uberFallback);
             };
 
             // Cerrar el modal cuando se hace clic en la "X"
@@ -876,6 +897,7 @@ function comoLlegarDesdeModal() {
         console.error("No se pudo encontrar la propiedad para obtener las coordenadas.");
     }
 }
+
 
 
 
