@@ -459,29 +459,37 @@ body {
     margin-top: 0px;
     margin-left: 32px;
     margin-right: 13px;
-}
-
-.logonombre span {
-    color: #096caf
+    align-items: center;
 }
 
 .logonombre h1 {
     font-family: system-ui;
+    position: relative;
+    top: 2px;
     font-size: 30px;
-    margin-block-start: 11px;
+    margin-block-start: 0px;
     margin-block-end: 0px;
-    margin-left: 10px;
-}
-
-.logonombre h1 {
-    font-family: system-ui;
-    font-size: 30px;
     font-weight: bold;
     background: linear-gradient(90deg, #096caf, #096caf, #096caf, #096caf, #096caf, #096caf, #096caf, #096caf, #ffffff, #cd1025, #cd1025, #cd1025, #cd1025, #cd1025, #cd1025, #cd1025, #cd1025, #ffffff, #096caf, #096caf, #096caf, #096caf, #096caf, #096caf, #096caf, #096caf);
     background-size: 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientMove linear 7s infinite;
+}
+
+.logonombre span {
+    position: relative;
+    top: -3px;
+    font-size: 10px;
+    color: #777777;
+    text-align: center;
+}
+
+.logonombre div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
 }
 
 
@@ -497,7 +505,7 @@ body {
 
 .logo1 {
     position: relative;
-    margin-top: 1px;
+    margin-top: 0px;
     height: 57px;
     width: 57px;
     background: #ff000000;
@@ -1104,13 +1112,9 @@ body {
     .logonombre {
         margin-left: auto;
         margin-right: auto;
-    }
-
-    .logonombre {
-        margin-left: auto;
-        margin-right: auto;
-        top: -4px;
+        top: 0px;
         transform: scale(0.9);
+        height: 49px;
     }
 
     .menumaster-in-right {
