@@ -796,40 +796,49 @@ function comoLlegarDesdeModal() {
         // Verificar si estamos en un dispositivo iOS o Android
         const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         
-        let url;
-        
         if (isIOS) {
-            // Para iOS, abrir con Apple Maps por defecto
-            url = `comgooglemaps://?q=${lat},${lng}&center=${lat},${lng}`;
-            
-            // Si prefieres Google Maps en iOS y está instalada:
-            // url = `comgooglemaps://?q=${lat},${lng}&center=${lat},${lng}`;
-            
-            // Para Waze en iOS, si está instalada:
-            // url = `waze://?ll=${lat},${lng}&navigate=yes`;
+            // Crear enlaces personalizados para cada aplicación en iOS
+            const appleMapsUrl = `maps://?q=${lat},${lng}`;
+            const googleMapsUrl = `comgooglemaps://?q=${lat},${lng}&center=${lat},${lng}`;
+            const wazeUrl = `waze://?ll=${lat},${lng}&navigate=yes`;
+            const uberUrl = `uber://?action=setPickup&dropoff[latitude]=${lat}&dropoff[longitude]=${lng}`;
 
-            // Para Uber en iOS:
-            // Esta URL abrirá Uber para solicitar un viaje con las coordenadas dadas
-            // Nota: el esquema uber:// solo funciona si Uber está instalada
-            // Aquí seleccionamos Uber si lo prefieres:
-            // url = `uber://?action=setPickup&dropoff[latitude]=${lat}&dropoff[longitude]=${lng}`;
+            // Mostrar las opciones al usuario (puedes hacer esto como un modal o una lista de botones)
+            const choice = prompt(
+                "¿Con qué aplicación quieres abrir las coordenadas?\n1. Apple Maps\n2. Google Maps\n3. Waze\n4. Uber"
+            );
+
+            let url;
+            switch (choice) {
+                case "1":
+                    url = appleMapsUrl;
+                    break;
+                case "2":
+                    url = googleMapsUrl;
+                    break;
+                case "3":
+                    url = wazeUrl;
+                    break;
+                case "4":
+                    url = uberUrl;
+                    break;
+                default:
+                    alert("Opción no válida");
+                    return;
+            }
+
+            // Redirigir al enlace seleccionado
+            window.location.href = url;
         } else {
             // Para Android, usar geo URI scheme
-            url = `geo:${lat},${lng}?q=${lat},${lng}`;
-
-            // Agregar opciones de aplicaciones específicas si lo deseas
-            // (comenta las líneas que no necesites)
-            // url += `&package=com.google.android.apps.maps`;  // Google Maps
-            // url += `&package=com.waze`;                     // Waze
-            // url += `&package=com.ubercab`;                  // Uber
+            const url = `geo:${lat},${lng}?q=${lat},${lng}`;
+            window.location.href = url;
         }
-
-        // Redirigir a la URL construida
-        window.location.href = url;
     } else {
         console.error("No se pudo encontrar la propiedad para obtener las coordenadas.");
     }
 }
+
 
 
 
