@@ -800,7 +800,7 @@ function comoLlegarDesdeModal() {
         
         if (isIOS) {
             // Para iOS, abrir con Apple Maps por defecto
-            url = `maps://?q=${lat},${lng}`;
+            url = `comgooglemaps://?q=${lat},${lng}&center=${lat},${lng}`;
             
             // Si prefieres Google Maps en iOS y está instalada:
             // url = `comgooglemaps://?q=${lat},${lng}&center=${lat},${lng}`;
