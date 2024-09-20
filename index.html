@@ -991,24 +991,22 @@ activateGroup('alquiler');
     </script>
 
 <script>
-    // Detecta si el navegador es Safari en iOS
-    const isIOSSafari = navigator.userAgent.match(/iPad|iPhone|iPod/) && navigator.userAgent.match(/WebKit/) && !navigator.userAgent.match(/CriOS|FxiOS/);
+    // Función para detectar si el dispositivo es iOS
+    function isIOS() {
+      return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    }
     
-    // Obtiene el botón de pantalla completa
     const fullscreenButton = document.getElementById('fullscreenButton');
     
-    // Si es iOS Safari, oculta el botón
-    if (isIOSSafari) {
-      fullscreenButton.style.display = 'none';
+    // Ocultar el botón de pantalla completa si es iOS
+    if (isIOS()) {
+      fullscreenButton.style.display = 'none'; // Oculta el botón
     } else {
-      // Si no es iOS Safari, configura el evento de clic
       fullscreenButton.addEventListener('click', () => {
         if (document.fullscreenElement) {
-          document.exitFullscreen();   
-    
+          document.exitFullscreen();
         } else {
-          document.documentElement.requestFullscreen();   
-    
+          document.documentElement.requestFullscreen();
         }
       });
     
