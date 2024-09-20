@@ -215,6 +215,28 @@
                     <div class="modal-body" id="modalPropertyDetails">
 
                     </div>
+
+
+
+<!-- Modal para selección de aplicaciones de mapas -->
+<div id="modal-map-ios" class="modal-map-ios">
+    <div class="modal-map-ios-content">
+      <span class="close-modal-map-ios">&times;</span>
+      <h2>¿Con qué aplicación quieres abrir las coordenadas?</h2>
+      <button id="appleMapsBtn">Apple Maps</button>
+      <button id="googleMapsBtn">Google Maps</button>
+      <button id="wazeBtn">Waze</button>
+      <button id="uberBtn">Uber</button>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
                     <!-- Modal body FIN -->
 
 
@@ -782,7 +804,6 @@ const bounds = [
         }
 
 
-
 // Función de cómo llegar desde el modal
 function comoLlegarDesdeModal() {
     // Obtener latitud y longitud de la propiedad actualmente mostrada en el modal
@@ -795,7 +816,7 @@ function comoLlegarDesdeModal() {
 
         // Verificar si estamos en un dispositivo iOS o Android
         const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        
+
         if (isIOS) {
             // Crear enlaces personalizados para cada aplicación en iOS
             const appleMapsUrl = `maps://?q=${lat},${lng}`;
@@ -803,32 +824,35 @@ function comoLlegarDesdeModal() {
             const wazeUrl = `waze://?ll=${lat},${lng}&navigate=yes`;
             const uberUrl = `uber://?action=setPickup&dropoff[latitude]=${lat}&dropoff[longitude]=${lng}`;
 
-            // Mostrar las opciones al usuario (puedes hacer esto como un modal o una lista de botones)
-            const choice = prompt(
-                "¿Con qué aplicación quieres abrir las coordenadas?\n1. Apple Maps\n2. Google Maps\n3. Waze\n4. Uber"
-            );
+            // Mostrar el modal
+            const modal = document.getElementById('modal-map-ios');
+            modal.style.display = 'block';
 
-            let url;
-            switch (choice) {
-                case "1":
-                    url = appleMapsUrl;
-                    break;
-                case "2":
-                    url = googleMapsUrl;
-                    break;
-                case "3":
-                    url = wazeUrl;
-                    break;
-                case "4":
-                    url = uberUrl;
-                    break;
-                default:
-                    alert("Opción no válida");
-                    return;
-            }
+            // Obtener los botones y asociar las URLs
+            document.getElementById('appleMapsBtn').onclick = function() {
+                window.location.href = appleMapsUrl;
+            };
+            document.getElementById('googleMapsBtn').onclick = function() {
+                window.location.href = googleMapsUrl;
+            };
+            document.getElementById('wazeBtn').onclick = function() {
+                window.location.href = wazeUrl;
+            };
+            document.getElementById('uberBtn').onclick = function() {
+                window.location.href = uberUrl;
+            };
 
-            // Redirigir al enlace seleccionado
-            window.location.href = url;
+            // Cerrar el modal cuando se hace clic en la "X"
+            document.querySelector('.close-modal-map-ios').onclick = function() {
+                modal.style.display = 'none';
+            };
+
+            // Cerrar el modal si el usuario hace clic fuera del contenido del modal
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            };
         } else {
             // Para Android, usar geo URI scheme
             const url = `geo:${lat},${lng}?q=${lat},${lng}`;
