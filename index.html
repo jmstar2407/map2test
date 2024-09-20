@@ -42,7 +42,7 @@
                         <button id="ventaButton" class="toggle-button">Venta</button>
                 </div>
 
-
+               
                 
             </div>
             <!-- Menu Left FIN -->
@@ -55,7 +55,8 @@
                 <button id="alquilerButton-rpsv" class="toggle-button"><h3>Alquiler</h3></button> 
                 <button id="ventaButton-rpsv" class="toggle-button"><h3>Venta</h3></button> 
 
-                <div class="cube-boton-filtro-respon"><button id="open-filter-button-respon"></button></div>
+                <div class="alquilar-vender-box-In-resp"><h3>Publíca<span style="color: #cd1025;">Te</span></h3></div>
+                <!-- <div class="cube-boton-filtro-respon"><button id="open-filter-button-respon"></button></div> old-->
             </div>
             <!-- Menu respon FIN -->
 
@@ -65,12 +66,13 @@
 
 
             <!-- Menu Right -->
-            <div class="menumaster-in-right">
+            <div class="menumaster-in-right"> 
+                <div class="cube-boton-filtro-respon"><button id="open-filter-button-respon"></button></div>
                 <!-- Alquilar/vender -->
 
                 <!-- <div class="Menu-contacto-redes-respon"></div> -->
                 <div class="alquilar-vender-box">
-                    <div class="alquilar-vender-box-In">Alquilar/Vender</div>
+                    <!-- <div class="alquilar-vender-box-In">Publíca<span style="color: #cd1025;">Te</span></div> -->
                 </div>
                 <!-- Alquilar/vender FIN-->
                 <!-- Redes -->
@@ -615,7 +617,7 @@ locateButton.addEventListener('click', () => {
 
 
 
-
+// centrar
 const bounds = [
       [19.9205, -72.0155], 
       [17.5649, -71.8584], 
@@ -653,11 +655,11 @@ const bounds = [
 
     document.getElementById('centerButton').addEventListener('click', function() {
       map.flyToBounds(bounds, { 
-        duration: 1.5, 
+        duration: 1, 
         maxZoom: zoomLevel 
       });
     });
-
+// centrar Fin
 
 
 
