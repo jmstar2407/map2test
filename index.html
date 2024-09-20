@@ -994,21 +994,23 @@ activateGroup('alquiler');
 const fullscreenButton = document.getElementById('fullscreenButton');
 
 fullscreenButton.addEventListener('click', () => {
-  if (document.fullscreenElement) {
-    document.exitFullscreen();   
- 
+  const docElem = document.documentElement;
+
+  if (docElem.webkitDisplayingFullscreen) {
+    docElem.webkitExitFullscreen();
   } else {
-    document.documentElement.requestFullscreen();   
- 
+    docElem.webkitRequestFullscreen();
   }
 });
 
-// Evento para detectar cambios en el estado de pantalla completa
-document.addEventListener('fullscreenchange', () => {
-  if (document.fullscreenElement) {
-    fullscreenButton.classList.add('active'); // Agregar clase 'active'
+// Evento para detectar cambios en el estado de pantalla completa (WebKit)
+document.addEventListener('webkitfullscreenchange', () => {
+  const docElem = document.documentElement;
+
+  if (docElem.webkitDisplayingFullscreen) {
+    fullscreenButton.classList.add('active');
   } else {
-    fullscreenButton.classList.remove('active'); // Quitar clase 'active'
+    fullscreenButton.classList.remove('active');
   }
 });
 </script>
