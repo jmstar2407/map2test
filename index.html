@@ -804,6 +804,15 @@ const bounds = [
         }
 
 
+
+
+
+
+
+
+
+
+
 // Función de cómo llegar desde el modal
 function comoLlegarDesdeModal() {
     // Obtener latitud y longitud de la propiedad actualmente mostrada en el modal
@@ -828,32 +837,18 @@ function comoLlegarDesdeModal() {
             const modal = document.getElementById('modal-map-ios');
             modal.style.display = 'block';
 
-            // Función para intentar abrir la app y mostrar mensaje si no está instalada
-            function tryOpenApp(url) {
-                // Marcar el tiempo antes de intentar abrir la app
-                const timeout = setTimeout(() => {
-                    alert('Aplicación no instalada');
-                }, 1500);  // Esperar 1.5 segundos para verificar si la app no está instalada
-
-                // Intentar redirigir a la aplicación
-                window.location.href = url;
-
-                // Cancelar el timeout si la redirección tiene éxito
-                window.addEventListener('pagehide', () => clearTimeout(timeout), { once: true });
-            }
-
             // Obtener los botones y asociar las URLs
             document.getElementById('appleMapsBtn').onclick = function() {
-                tryOpenApp(appleMapsUrl);
+                window.location.href = appleMapsUrl;
             };
             document.getElementById('googleMapsBtn').onclick = function() {
-                tryOpenApp(googleMapsUrl);
+                window.location.href = googleMapsUrl;
             };
             document.getElementById('wazeBtn').onclick = function() {
-                tryOpenApp(wazeUrl);
+                window.location.href = wazeUrl;
             };
             document.getElementById('uberBtn').onclick = function() {
-                tryOpenApp(uberUrl);
+                window.location.href = uberUrl;
             };
 
             // Cerrar el modal cuando se hace clic en la "X"
@@ -876,6 +871,7 @@ function comoLlegarDesdeModal() {
         console.error("No se pudo encontrar la propiedad para obtener las coordenadas.");
     }
 }
+
 
 
 
