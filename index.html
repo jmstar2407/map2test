@@ -848,15 +848,30 @@ function comoLlegarDesdeModal() {
                     let timeoutId = setTimeout(() => {
                         resolve(false); // Aplicación no instalada (timeout)
                         document.body.removeChild(iframe);
-                    }, 1000); // Ajusta el tiempo según sea necesario
+                    }, 2000); // Aumentar el tiempo de espera a 2 segundos
 
-                    document.addEventListener('visibilitychange', () => {
-                        if (document.hidden) {
-                            clearTimeout(timeoutId);
-                            resolve(true); // Aplicación instalada (documento oculto)
-                            document.body.removeChild(iframe);
-                        }
-                    }, { once: true }); 
+                    // Introducir un pequeño retraso antes de comprobar document.hidden
+                    setTimeout(() => {
+                        let visibilityChangeHandled = false; // Bandera para controlar si ya se manejó el evento
+
+                        document.addEventListener('visibilitychange', () => {
+                            if (!visibilityChangeHandled && document.hidden) {
+                                visibilityChangeHandled = true; 
+                                clearTimeout(timeoutId);
+                                resolve(true); // Aplicación instalada (documento oculto)
+                                document.body.removeChild(iframe);
+                            }
+                        }, { once: true }); 
+
+                        // Temporizador de respaldo en caso de que visibilitychange no se dispare
+                        setTimeout(() => {
+                            if (!visibilityChangeHandled) {
+                                visibilityChangeHandled = true;
+                                resolve(false); // Aplicación no instalada (timeout de respaldo)
+                                document.body.removeChild(iframe);
+                            }
+                        }, 1500); // Ajusta este tiempo según sea necesario
+                    }, 200); // Retraso de 200ms (ajusta si es necesario)
                 });
             }
 
