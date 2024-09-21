@@ -837,18 +837,60 @@ function comoLlegarDesdeModal() {
             const modal = document.getElementById('modal-map-ios');
             modal.style.display = 'block';
 
-            // Obtener los botones y asociar las URLs
-            document.getElementById('appleMapsBtn').onclick = function() {
-                window.location.href = appleMapsUrl;
+            // Función para verificar si una app está instalada
+            function checkAppInstalled(urlScheme) {
+                return new Promise((resolve) => {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = urlScheme;
+                    iframe.style.display = 'none';
+                    document.body.appendChild(iframe);
+
+                    let timeoutId = setTimeout(() => {
+                        resolve(false); // Aplicación no instalada (timeout)
+                        document.body.removeChild(iframe);
+                    }, 1000); // Ajusta el tiempo según sea necesario
+
+                    document.addEventListener('visibilitychange', () => {
+                        if (document.hidden) {
+                            clearTimeout(timeoutId);
+                            resolve(true); // Aplicación instalada (documento oculto)
+                            document.body.removeChild(iframe);
+                        }
+                    }, { once: true }); 
+                });
+            }
+
+            // Obtener los botones y asociar las URLs con manejo de errores
+            document.getElementById('appleMapsBtn').onclick = async function() {
+                if (await checkAppInstalled(appleMapsUrl)) {
+                    window.location.href = appleMapsUrl;
+                } else {
+                    alert("Aplicación no instalada"); 
+                }
             };
-            document.getElementById('googleMapsBtn').onclick = function() {
-                window.location.href = googleMapsUrl;
+
+            document.getElementById('googleMapsBtn').onclick = async function() {
+                if (await checkAppInstalled(googleMapsUrl)) {
+                    window.location.href = googleMapsUrl;
+                } else {
+                    alert("Aplicación no instalada"); 
+                }
             };
-            document.getElementById('wazeBtn').onclick = function() {
-                window.location.href = wazeUrl;
+
+            document.getElementById('wazeBtn').onclick = async function() {
+                if (await checkAppInstalled(wazeUrl)) {
+                    window.location.href = wazeUrl;
+                } else {
+                    alert("Aplicación no instalada"); 
+                }
             };
-            document.getElementById('uberBtn').onclick = function() {
-                window.location.href = uberUrl;
+
+            document.getElementById('uberBtn').onclick = async function() {
+                if (await checkAppInstalled(uberUrl)) {
+                    window.location.href = uberUrl;
+                } else {
+                    alert("Aplicación no instalada"); 
+                }
             };
 
             // Cerrar el modal cuando se hace clic en la "X"
@@ -862,6 +904,7 @@ function comoLlegarDesdeModal() {
                     modal.style.display = 'none';
                 }
             };
+
         } else {
             // Para Android, usar geo URI scheme
             const url = `geo:${lat},${lng}?q=${lat},${lng}`;
