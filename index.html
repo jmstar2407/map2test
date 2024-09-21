@@ -837,75 +837,18 @@ function comoLlegarDesdeModal() {
             const modal = document.getElementById('modal-map-ios');
             modal.style.display = 'block';
 
-            // Función para verificar si una app está instalada
-            function checkAppInstalled(urlScheme) {
-                return new Promise((resolve) => {
-                    const iframe = document.createElement('iframe');
-                    iframe.src = urlScheme;
-                    iframe.style.display = 'none';
-                    document.body.appendChild(iframe);
-
-                    let timeoutId = setTimeout(() => {
-                        resolve(false); // Aplicación no instalada (timeout)
-                        document.body.removeChild(iframe);
-                    }, 2000); // Aumentar el tiempo de espera a 2 segundos
-
-                    // Introducir un pequeño retraso antes de comprobar document.hidden
-                    setTimeout(() => {
-                        let visibilityChangeHandled = false; // Bandera para controlar si ya se manejó el evento
-
-                        document.addEventListener('visibilitychange', () => {
-                            if (!visibilityChangeHandled && document.hidden) {
-                                visibilityChangeHandled = true; 
-                                clearTimeout(timeoutId);
-                                resolve(true); // Aplicación instalada (documento oculto)
-                                document.body.removeChild(iframe);
-                            }
-                        }, { once: true }); 
-
-                        // Temporizador de respaldo en caso de que visibilitychange no se dispare
-                        setTimeout(() => {
-                            if (!visibilityChangeHandled) {
-                                visibilityChangeHandled = true;
-                                resolve(false); // Aplicación no instalada (timeout de respaldo)
-                                document.body.removeChild(iframe);
-                            }
-                        }, 1500); // Ajusta este tiempo según sea necesario
-                    }, 200); // Retraso de 200ms (ajusta si es necesario)
-                });
-            }
-
-            // Obtener los botones y asociar las URLs con manejo de errores
-            document.getElementById('appleMapsBtn').onclick = async function() {
-                if (await checkAppInstalled(appleMapsUrl)) {
-                    window.location.href = appleMapsUrl;
-                } else {
-                    alert("Aplicación no instalada"); 
-                }
+            // Obtener los botones y asociar las URLs
+            document.getElementById('appleMapsBtn').onclick = function() {
+                window.location.href = appleMapsUrl;
             };
-
-            document.getElementById('googleMapsBtn').onclick = async function() {
-                if (await checkAppInstalled(googleMapsUrl)) {
-                    window.location.href = googleMapsUrl;
-                } else {
-                    alert("Aplicación no instalada"); 
-                }
+            document.getElementById('googleMapsBtn').onclick = function() {
+                window.location.href = googleMapsUrl;
             };
-
-            document.getElementById('wazeBtn').onclick = async function() {
-                if (await checkAppInstalled(wazeUrl)) {
-                    window.location.href = wazeUrl;
-                } else {
-                    alert("Aplicación no instalada"); 
-                }
+            document.getElementById('wazeBtn').onclick = function() {
+                window.location.href = wazeUrl;
             };
-
-            document.getElementById('uberBtn').onclick = async function() {
-                if (await checkAppInstalled(uberUrl)) {
-                    window.location.href = uberUrl;
-                } else {
-                    alert("Aplicación no instalada"); 
-                }
+            document.getElementById('uberBtn').onclick = function() {
+                window.location.href = uberUrl;
             };
 
             // Cerrar el modal cuando se hace clic en la "X"
@@ -919,7 +862,6 @@ function comoLlegarDesdeModal() {
                     modal.style.display = 'none';
                 }
             };
-
         } else {
             // Para Android, usar geo URI scheme
             const url = `geo:${lat},${lng}?q=${lat},${lng}`;
