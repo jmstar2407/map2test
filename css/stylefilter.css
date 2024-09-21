@@ -362,17 +362,14 @@
         }
 
         #open-filter-button-respon {
-            position: absolute;
             background: #00000000;
-            right: 0px;
             border: none;
             font-weight: bold;
             cursor: pointer;
-            height: 50px;
-            width: 50px;
+            height: 40px;
+            width: 40px;
             border-radius: 0px;
-            margin: 0px 14px 0px 0px;
-            background-image: url(../img/icons/filtro1.svg);
+            background-image: url(../img/icons/filtro1.png);
             background-position: center;
             background-size: 40px;
             background-repeat: no-repeat;
@@ -383,6 +380,9 @@
 
         .cube-boton-filtro-respon {
             display: none;
+            height: 40px;
+            width: 40px;
+            background: #00000000;
         }
 
 
