@@ -812,8 +812,7 @@ const bounds = [
 
 
 
-// Función de cómo llegar desde el modal
-function comoLlegarDesdeModal() {
+        function comoLlegarDesdeModal() {
     // Obtener latitud y longitud de la propiedad actualmente mostrada en el modal
     const propertyId = parseInt(window.location.hash.substring('#id-'.length));
     const property = [...alquileres, ...ventas].find(p => p.id === propertyId);
@@ -822,7 +821,7 @@ function comoLlegarDesdeModal() {
         const lat = property.latLng ? property.latLng[0] : property.lat;
         const lng = property.latLng ? property.latLng[1] : property.lng;
 
-        // Verificar si estamos en un dispositivo iOS o Android
+        // Verificar si estamos en un dispositivo iOS
         const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
         if (isIOS) {
@@ -832,39 +831,35 @@ function comoLlegarDesdeModal() {
             const wazeUrl = `waze://?ll=${lat},${lng}&navigate=yes`;
             const uberUrl = `uber://?action=setPickup&dropoff[latitude]=${lat}&dropoff[longitude]=${lng}`;
 
-            // Función auxiliar para abrir URLs y mostrar mensaje de error si la app no está instalada
-            function openAppWithFallback(url, fallbackMessage) {
-                let timeout;
-                const start = Date.now();
-                
-                // Intentar abrir la aplicación
+            // Función para intentar abrir la URL y mostrar un mensaje si no está instalada
+            function tryOpenUrl(url, fallbackMessage) {
+                const timeout = setTimeout(() => {
+                    alert(fallbackMessage); // Mostrar el mensaje personalizado
+                }, 1500); // 1.5 segundos de espera
+
                 window.location.href = url;
 
-                // Verificar después de un pequeño delay si la app no se abrió
-                timeout = setTimeout(() => {
-                    const elapsed = Date.now() - start;
-                    if (elapsed < 1500) {
-                        alert(fallbackMessage);  // Mostrar mensaje personalizado
-                    }
-                }, 1000); // Se puede ajustar este valor dependiendo del tiempo de respuesta
+                window.addEventListener('blur', () => {
+                    clearTimeout(timeout); // Si la app se abre, cancelar el timeout
+                });
             }
 
             // Mostrar el modal
             const modal = document.getElementById('modal-map-ios');
             modal.style.display = 'block';
 
-            // Obtener los botones y asociar las URLs con función de fallback
+            // Obtener los botones y asociar las URLs con la función tryOpenUrl
             document.getElementById('appleMapsBtn').onclick = function() {
-                openAppWithFallback(appleMapsUrl, "Apple Maps no está instalado.");
+                tryOpenUrl(appleMapsUrl, 'Apple Maps no está instalada en este dispositivo.');
             };
             document.getElementById('googleMapsBtn').onclick = function() {
-                openAppWithFallback(googleMapsUrl, "Google Maps no está instalado.");
+                tryOpenUrl(googleMapsUrl, 'Google Maps no está instalada en este dispositivo.');
             };
             document.getElementById('wazeBtn').onclick = function() {
-                openAppWithFallback(wazeUrl, "Waze no está instalado.");
+                tryOpenUrl(wazeUrl, 'Waze no está instalada en este dispositivo.');
             };
             document.getElementById('uberBtn').onclick = function() {
-                openAppWithFallback(uberUrl, "Uber no está instalado.");
+                tryOpenUrl(uberUrl, 'Uber no está instalada en este dispositivo.');
             };
 
             // Cerrar el modal cuando se hace clic en la "X"
@@ -887,8 +882,6 @@ function comoLlegarDesdeModal() {
         console.error("No se pudo encontrar la propiedad para obtener las coordenadas.");
     }
 }
-
-
 
 
 
