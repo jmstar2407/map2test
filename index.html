@@ -11,15 +11,16 @@
     <link rel="stylesheet" href="./css/stylefilter.css" />
     <link rel="stylesheet" href="./css/stylesmodal.css" />
     <link rel="stylesheet" href="./css/stylesmenu.css" />
+
 </head>
 
 
 <body>
-     <div class="loader">
+     <!-- <div class="loader">
         <img src="./img/logo2.svg" alt="Logo de carga">
         <img src="./img/logonombre2.png" alt="Logo de carga"
             style="animation: loadernombre 3s forwards; ">
-    </div>
+    </div> -->
 
     <div class="boxmaster">
 
@@ -62,7 +63,7 @@
              <div id="publicate-filter-rpsv">
                  <div class="publicate-rpsv ">
                     <!-- <h3>Publíca<span style="color: #cd1025;">Te</span></h3> -->
-                    <button id="open-publicate-button-respon"></button>
+                    <button id="open-publicate-respon"></button>                                        <!--  -------------   -->
                 </div>
                 <div class="cube-boton-filtro-respon"><button id="open-filter-button-respon"></button></div>
                </div>
@@ -81,7 +82,7 @@
 
                 <!-- <div class="Menu-contacto-redes-respon"></div> -->
                 <div class="alquilar-vender-box">
-                    <!-- <div class="alquilar-vender-box-In">Publíca<span style="color: #cd1025;">Te</span></div> -->
+                    <div class="alquilar-vender-box-In" id="open-publicate">Publíca<span style="color: #cd1025;">Te</span></div>       <!--  -------------   -->
                 </div>
                 <!-- Alquilar/vender FIN-->
                 <!-- Redes -->
@@ -511,7 +512,20 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
                 </div>
             </div>
         </div>
+    </div>
 
+
+
+
+    <div id="background-publicate-modal" class="modal-background">
+        <div id="publicate-modal" class="modal-publicate">
+            <div class="publicate-titulo"><p>Publíca<span style="color: #cd1025;">Te</span></p>
+                   <button id="close-publicate-modal">X</button>
+            </div>
+        </div>
+      </div>
+
+    
 
 
 
@@ -1139,6 +1153,7 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
         <script src="./js/scriptfiltros.js"></script>
         <script src="./js/scriptmodal.js"></script>
         <script src="./js/scriptmenu.js"></script>
+        <script src="./js/scriptpublicate.js"></script>
 
 
 </body>
