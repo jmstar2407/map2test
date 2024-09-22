@@ -139,19 +139,6 @@ body {
     background-size: 30px;
 }
 
-.Menu-contacto-redes-respon {
-    display: none;
-    margin: 7px 25px 0px 0px;
-    height: 45px;
-    width: 45px;
-    border-radius: 10px;
-    background: #18c8ff00;
-    box-shadow: 0px 0px 0px 1px rgb(24 200 255);
-}
-
-.alquilar-vender-box {
-    display: block;
-}
 
 
 .alquilar-vender-box-In {
@@ -172,6 +159,8 @@ body {
 }
 
 .alquilar-vender-box-In:hover {
+    cursor: pointer;
+    box-shadow: 0px 41px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233);
     transition: 0.3s;
 }
 
@@ -193,7 +182,7 @@ body {
     color: #096caf;
 }
 
-#open-publicate-button-respon {
+#open-publicate-respon {
     height: 40px;
     width: 40px;
     background: rgba(255, 0, 0, 0);
@@ -203,6 +192,13 @@ body {
     background-repeat: no-repeat;
     border: none;
     margin-right: 7px;
+    transition: 0.2s;
+}
+
+#open-publicate-respon:hover {
+    background-image: url(../img/icons/publicate2.2.png);
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 .layer-button {
@@ -1059,6 +1055,9 @@ body {
     .alquilar-vender-box-In {
         box-shadow: 0px 50px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233), 0px 0px 0px 1px rgb(151 151 151);
     }
+    .alquilar-vender-box-In:hover {
+        box-shadow: 0px 41px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233), 0px 0px 0px 1px rgb(9 108 175);
+    }
     }
     
 
@@ -1088,6 +1087,13 @@ body {
         display: block;
     }
 
+    .alquilar-vender-box-In {
+        box-shadow: 0px 50px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233);
+    }
+    .alquilar-vender-box-In:hover {
+        box-shadow: 0px 41px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233);
+    }
+
 }
 
 @media (max-width: 860px) {
@@ -1099,26 +1105,14 @@ body {
 }
 
 
-
-
-@media screen and (max-width: 790px) {
-    .alquilar-vender-box {
-        display: none;
+@media (max-width: 815px) {
+    .alquilar-vender-box-In {
+        box-shadow: 0px 50px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233), 0px 0px 0px 1px rgb(151 151 151);
     }
-
-    .Menu-contacto-redes-respon {
-        display: block;
-        background-image: url(../img/icons/menu1.svg);
-        background-size: 45px;
+    .alquilar-vender-box-In:hover {
+        box-shadow: 0px 41px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233), 0px 0px 0px 1px rgb(9 108 175);
     }
-
-
-
-
 }
-
-
-
 
 
 
@@ -1143,6 +1137,10 @@ body {
         border-bottom: 1px solid hsl(234.55deg 22.45% 90.39%);
         height: 50px;
         background: #faf9fd;
+    }
+
+    .alquilar-vender-box {
+        display: none;
     }
 
     .logonombre {
@@ -1222,17 +1220,6 @@ body {
         color: #096caf;
     }
 
-
-
-    .Menu-contacto-redes-respon {
-        display: block;
-        height: 35px;
-        width: 35px;
-        margin: 8px 5px 0px 0px;
-        border-radius: 7px;
-        background-image: url(../img/icons/menu1.svg);
-        background-size: 35px;
-    }
 
     .layer-button {
         height: 70px;
@@ -1336,15 +1323,167 @@ body {
 
 
 
+#background-publicate-modal {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(0 0 0 / 31%);
+    height: 100%;
+    width: 100%;
+    border-radius: 0px;
+}
 
 
 
 
+/* Estilos base para el fondo y el modal */
+.modal-background {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+  }
+  
+  .modal-publicate {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 65%;
+    height: 66%;
+}
+
+.publicate-modal{
+    transform: translatey(0%);
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 65%;
+    height: 66%;
+}
+  
+
+  #open-publicate.active {
+    box-shadow: 0px 41px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233);
+  }
+
+  #open-publicate-respon.active{
+    background-image: url(../img/icons/publicate2.2.png);
+  }
+
+
+
+  
+  /* Animaciones */
+  @keyframes background-publicate-in {
+    from { background:#00000000; }
+    to { background:#0000004f; }
+  }
+  
+  @keyframes background-publicate-out {
+    from { background:#0000004f; }
+    to { background:#00000000; }
+  }
+  
+  @keyframes publicate-in {
+    from { transform: translatey(105%); }
+    to { transform: translatey(0%); }
+  }
+  
+  @keyframes publicate-out {
+    from { transform: translatey(0%); }
+    to { transform: translatey(105%); }
+  }
+  
+  .modal-background.show {
+    display: block;
+    animation: background-publicate-in 0.3s ease;
+  }
+  
+  .modal-background.hide {
+    animation: background-publicate-out 0.3s ease;
+  }
+  
+  .modal-publicate.show {
+    display: block;
+    animation: publicate-in 0.3s ease;
+  }
+  
+  .modal-publicate.hide {
+    animation: publicate-out 0.3s ease;
+  }
 
 
 
 
+  @media (max-width: 500px) {
+    .modal-publicate {
+        display: none;
+        position: fixed;
+        background-color: #faf9fd;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        top: 150px;
+        height: calc(100% - 150px);
+        border-radius: 20px 20px 0px 0px;
+        left: auto;
+        transform: none;
+        padding: 0px;
+    }
+  }
 
 
+
+  .publicate-titulo {
+    height: 40px;
+    width: 100%;
+    background: #5438a700;
+    border-bottom: 1px solid hsl(234.55deg 22.45% 90.39%);
+    border-radius: 20px 20px 0px 0px;
+}
+
+.publicate-titulo p {
+    width: 100%;
+    text-align: center;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    color: #096caf;
+    font-size: 25px;
+    font-family: sans-serif;
+    font-weight: bold;
+    height: 100%;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.publicate-titulo button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: #ffffff;
+    font-size: 19px;
+    background: red;
+    padding: 4px 15px;
+    border-radius: 5px 16px 5px 6px;
+    margin: 5px 5px 0px 0px;
+    transition: 0.2s;
+    border: none;
+    cursor: pointer;
+}
 
 
