@@ -16,11 +16,12 @@
 
 
 <body>
-     <!-- <div class="loader">
-        <img src="./img/logo2.svg" alt="Logo de carga">
+    <div class="loader">
+        <div class="loader-logo"></div>
+        <!-- <img src="./img/logo2.svg" id="loader-img" alt="Logo de carga"> -->
         <img src="./img/logonombre2.png" alt="Logo de carga"
             style="animation: loadernombre 3s forwards; ">
-    </div> -->
+    </div>
 
     <div class="boxmaster">
 
@@ -54,19 +55,20 @@
             <div class="botonbox2">
 
                 <div><button id="alquilerButton-rpsv" class="toggle-button">
-                    <h3>Alquiler</h3>
-                </button>
-                <button id="ventaButton-rpsv" class="toggle-button">
-                    <h3>Venta</h3>
-                </button></div>
-
-             <div id="publicate-filter-rpsv">
-                 <div class="publicate-rpsv ">
-                    <!-- <h3>Publíca<span style="color: #cd1025;">Te</span></h3> -->
-                    <button id="open-publicate-respon"></button>                                        <!--  -------------   -->
+                        <h3>Alquiler</h3>
+                    </button>
+                    <button id="ventaButton-rpsv" class="toggle-button">
+                        <h3>Venta</h3>
+                    </button>
                 </div>
-                <div class="cube-boton-filtro-respon"><button id="open-filter-button-respon"></button></div>
-               </div>
+
+                <div id="publicate-filter-rpsv">
+                    <div class="publicate-rpsv ">
+                        <!-- <h3>Publíca<span style="color: #cd1025;">Te</span></h3> -->
+                        <button id="open-publicate-respon"></button> <!--  -------------   -->
+                    </div>
+                    <div class="cube-boton-filtro-respon"><button id="open-filter-button-respon"></button></div>
+                </div>
             </div>
             <!-- Menu respon FIN -->
 
@@ -82,7 +84,8 @@
 
                 <!-- <div class="Menu-contacto-redes-respon"></div> -->
                 <div class="alquilar-vender-box">
-                    <div class="alquilar-vender-box-In" id="open-publicate">Publíca<span style="color: #cd1025;">Te</span></div>       <!--  -------------   -->
+                    <div class="alquilar-vender-box-In" id="open-publicate">Publíca<span
+                            style="color: #cd1025;">Te</span></div> <!--  -------------   -->
                 </div>
                 <!-- Alquilar/vender FIN-->
                 <!-- Redes -->
@@ -516,102 +519,107 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
 
 
-
+    <!-- PublicaTE -->
     <div id="background-publicate-modal" class="modal-background">
         <div id="publicate-modal" class="modal-publicate">
-            <div class="publicate-titulo"><p>Publíca<span style="color: #cd1025;">Te</span></p>
-                   <button id="close-publicate-modal">X</button>
+            <div class="publicate-titulo">
+                <p>Publíca<span style="color: #cd1025;">Te</span></p>
+                <button id="close-publicate-modal">X</button>
             </div>
             <div class="publicate-body">
-                <p style="font-size: 14px;">¿Quieres <span style="color: #096caf;">alquilar</span> o <span style="color: #cd1025;">vender</span> tu propiedad?<br>
-                <span style="font-size: 13px;">Comunícate con nosotros y nosotros nos encargamos del resto.</span></p>
-                <p style="font-weight: 100;color: #1e1e1e;font-size: 12px;text-align: left;">Como administradores de propiedades, facilitamos el proceso y nos ocupamos de todo para que tú no tengas que preocuparte.</p>
+                <p style="font-size: 14px;">¿Quieres <span style="color: #096caf;">alquilar</span> o <span
+                        style="color: #cd1025;">vender</span> tu propiedad?<br>
+                    <span style="font-size: 13px;">Comunícate con nosotros y nosotros nos encargamos del resto.</span>
+                </p>
+                <p style="font-weight: 100;color: #1e1e1e;font-size: 12px;text-align: left;">Como administradores de
+                    propiedades, facilitamos el proceso y nos ocupamos de todo para que tú no tengas que preocuparte.
+                </p>
 
                 <p>Beneficios:</p>
-                    Atención personalizada.<br>
-                    Proceso sencillo y sin complicaciones.<br>
-                    Experiencia en el mercado inmobiliario.<br>
-                    Asesoría para la mejor valorización de la propiedad.
+                Atención personalizada.<br>
+                Proceso sencillo y sin complicaciones.<br>
+                Experiencia en el mercado inmobiliario.<br>
+                Asesoría para la mejor valorización de la propiedad.
 
-                    <div class="publicate-btns">
-                        <button id="publicate-btn-alquilar"><img src="./img/icons/whatsapp2.svg">
-                           <div>
-                              <h3>ALQUILAR</h3><span>una propiedad</span>
-                           </div>
-                        </button>
+                <div class="publicate-btns">
+                    <button id="publicate-btn-alquilar"><img src="./img/icons/whatsapp2.svg">
+                        <div>
+                            <h3>ALQUILAR</h3><span>una propiedad</span>
+                        </div>
+                    </button>
 
-                        <button id="publicate-btn-alquilar" style="margin-right: 0px;"><img src="./img/icons/whatsapp2.svg">
-                            <div>
-                               <h3>VENDER</h3><span>una propiedad</span>
-                            </div>
-                        </button>
-                    </div>
+                    <button id="publicate-btn-alquilar" style="margin-right: 0px;"><img src="./img/icons/whatsapp2.svg">
+                        <div>
+                            <h3>VENDER</h3><span>una propiedad</span>
+                        </div>
+                    </button>
+                </div>
 
             </div>
         </div>
-      </div>
-
-    
-
-
-
-        <script>
-
-
-
-            // Ocultar la pantalla de carga y mostrar el contenido después de 2.7 segundos
-            setTimeout(function () {
-                document.querySelector('.loader').style.display = 'none';
-                document.querySelector('.content').style.display = 'block';
-
-            }, 2700);
+    </div>
+    <!-- PublicaTE FIN -->
 
 
 
 
+    <script>
 
 
-            // Inicialización del mapa con un maxZoom aumentado
-            var map;
 
-            if (window.innerWidth <= 700) { // ajuste responsive
-                map = L.map('map').setView([18.7357, -70.1627], 7);
+        // Ocultar la pantalla de carga y mostrar el contenido después de 2.7 segundos
+        setTimeout(function () {
+            document.querySelector('.loader').style.display = 'none';
+            document.querySelector('.content').style.display = 'block';
+
+        }, 2700);
+
+
+
+
+
+
+        // Inicialización del mapa con un maxZoom aumentado
+        var map;
+
+        if (window.innerWidth <= 700) { // ajuste responsive
+            map = L.map('map').setView([18.7357, -70.1627], 7);
+        } else {
+            map = L.map('map').setView([18.7357, -70.1627], 8);
+        }
+
+        // Capas de mapa
+        var baseMaps = {
+            "Claro": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }).addTo(map),
+            "Vista Satelital": L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+                maxZoom: 19
+            })
+        };
+
+        // Referencia al botón de cambio de capa
+        const changeLayerButton = document.getElementById('changeLayerButton');
+        let isSatelliteView = false;  // Estado inicial
+
+        changeLayerButton.addEventListener('click', () => {
+            if (isSatelliteView) {
+                // Cambiar a capa de mapa
+                map.removeLayer(baseMaps["Vista Satelital"]);
+                baseMaps["Claro"].addTo(map);
+                changeLayerButton.querySelector('img').src = './img/capasatelite2.png'; // Cambiar imagen a satélite
+                changeLayerButton.querySelector('img').alt = 'Cambiar a Satélite';
             } else {
-                map = L.map('map').setView([18.7357, -70.1627], 8);
+                // Cambiar a capa satelital
+                map.removeLayer(baseMaps["Claro"]);
+                baseMaps["Vista Satelital"].addTo(map);
+                changeLayerButton.querySelector('img').src = './img/capamapa2.png'; // Cambiar imagen a mapa
+                changeLayerButton.querySelector('img').alt = 'Cambiar a Mapa';
             }
-
-            // Capas de mapa
-            var baseMaps = {
-                "Claro": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-                    maxZoom: 19
-                }).addTo(map),
-                "Vista Satelital": L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-                    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
-                    maxZoom: 19
-                })
-            };
-
-            // Referencia al botón de cambio de capa
-            const changeLayerButton = document.getElementById('changeLayerButton');
-            let isSatelliteView = false;  // Estado inicial
-
-            changeLayerButton.addEventListener('click', () => {
-                if (isSatelliteView) {
-                    // Cambiar a capa de mapa
-                    map.removeLayer(baseMaps["Vista Satelital"]);
-                    baseMaps["Claro"].addTo(map);
-                    changeLayerButton.querySelector('img').src = './img/capasatelite2.png'; // Cambiar imagen a satélite
-                    changeLayerButton.querySelector('img').alt = 'Cambiar a Satélite';
-                } else {
-                    // Cambiar a capa satelital
-                    map.removeLayer(baseMaps["Claro"]);
-                    baseMaps["Vista Satelital"].addTo(map);
-                    changeLayerButton.querySelector('img').src = './img/capamapa2.png'; // Cambiar imagen a mapa
-                    changeLayerButton.querySelector('img').alt = 'Cambiar a Mapa';
-                }
-                isSatelliteView = !isSatelliteView; // Alternar estado
-            });
+            isSatelliteView = !isSatelliteView; // Alternar estado
+        });
 
 
 
@@ -620,171 +628,171 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
 
 
-            // Definir el ícono personalizado
-            const customIcon = L.icon({
-                iconUrl: './img/icons/location5.png', // Reemplaza con la ruta de tu imagen personalizada
-                iconSize: [38, 38], // Tamaño del ícono [ancho, alto]
-                iconAnchor: [19, 19], // Punto de anclaje en el centro del ícono
-                className: 'custom-icon',
-            });
+        // Definir el ícono personalizado
+        const customIcon = L.icon({
+            iconUrl: './img/icons/location5.png', // Reemplaza con la ruta de tu imagen personalizada
+            iconSize: [38, 38], // Tamaño del ícono [ancho, alto]
+            iconAnchor: [19, 19], // Punto de anclaje en el centro del ícono
+            className: 'custom-icon',
+        });
 
-            // Variables para almacenar el marcador y el círculo
-            let userMarker;
-            let userCircle;
-            let tooltip;
+        // Variables para almacenar el marcador y el círculo
+        let userMarker;
+        let userCircle;
+        let tooltip;
 
-            // Botón de mi ubicación
-            const locateButton = document.getElementById('locateButton');
+        // Botón de mi ubicación
+        const locateButton = document.getElementById('locateButton');
 
-            // Evento click para centrar el mapa en la ubicación del usuario
-            locateButton.addEventListener('click', () => {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition((position) => {
-                        const lat = position.coords.latitude;
-                        const lng = position.coords.longitude;
+        // Evento click para centrar el mapa en la ubicación del usuario
+        locateButton.addEventListener('click', () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
 
-                        // Centrar el mapa en la ubicación del usuario
-                        map.setView([lat, lng], 17);
+                    // Centrar el mapa en la ubicación del usuario
+                    map.setView([lat, lng], 17);
 
-                        // Si ya existe un marcador, elimínalo
-                        if (userMarker) {
-                            map.removeLayer(userMarker);
+                    // Si ya existe un marcador, elimínalo
+                    if (userMarker) {
+                        map.removeLayer(userMarker);
+                    }
+
+                    // Si ya existe un círculo, elimínalo
+                    if (userCircle) {
+                        map.removeLayer(userCircle);
+                    }
+
+                    // Agregar un marcador en la ubicación del usuario con el ícono personalizado
+                    userMarker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
+
+                    // Agregar un círculo alrededor del marcador con un radio de 50 metros
+                    userCircle = L.circle([lat, lng], {
+                        color: '#ffffff00', // Color del borde del círculo
+                        fillColor: 'rgb(0 142 255 / 0%)', // Color del interior del círculo (azul con opacidad)
+                        fillOpacity: 1, // Opacidad del interior del círculo
+                        radius: 350 // Radio en metros (50 metros)
+                    }).addTo(map);
+
+                    // Agregar un tooltip con el mensaje de ubicación estimada
+                    tooltip = userMarker.bindTooltip("La ubicación es solo un estimado.", {
+                        permanent: true, // Hace que el tooltip siempre esté visible
+                        direction: 'top', // Coloca el tooltip encima del marcador
+                        offset: [0, -25], // Ajusta la posición del tooltip con respecto al ícono
+                        className: 'custom-tooltip' // Clase personalizada para el tooltip
+                    }).openTooltip();
+
+                    // Función para ocultar suavemente el tooltip
+                    function hideTooltip() {
+                        const tooltipElement = document.querySelector('.custom-tooltip');
+                        if (tooltipElement) {
+                            tooltipElement.style.transition = 'opacity 0.3s ease';
+                            tooltipElement.style.opacity = '0'; // Desvanecer el tooltip
+                            setTimeout(() => {
+                                if (userMarker && tooltip) {
+                                    userMarker.unbindTooltip(); // Eliminar el tooltip después de la animación
+                                }
+                            }, 300); // Tiempo de espera para la animación de 0.3s
                         }
+                    }
 
-                        // Si ya existe un círculo, elimínalo
-                        if (userCircle) {
-                            map.removeLayer(userCircle);
-                        }
+                    // Ocultar el tooltip cuando el usuario haga clic en el mapa
+                    map.on('click', hideTooltip);
 
-                        // Agregar un marcador en la ubicación del usuario con el ícono personalizado
-                        userMarker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
-
-                        // Agregar un círculo alrededor del marcador con un radio de 50 metros
-                        userCircle = L.circle([lat, lng], {
-                            color: '#ffffff00', // Color del borde del círculo
-                            fillColor: 'rgb(0 142 255 / 0%)', // Color del interior del círculo (azul con opacidad)
-                            fillOpacity: 1, // Opacidad del interior del círculo
-                            radius: 350 // Radio en metros (50 metros)
-                        }).addTo(map);
-
-                        // Agregar un tooltip con el mensaje de ubicación estimada
-                        tooltip = userMarker.bindTooltip("La ubicación es solo un estimado.", {
-                            permanent: true, // Hace que el tooltip siempre esté visible
-                            direction: 'top', // Coloca el tooltip encima del marcador
-                            offset: [0, -25], // Ajusta la posición del tooltip con respecto al ícono
-                            className: 'custom-tooltip' // Clase personalizada para el tooltip
-                        }).openTooltip();
-
-                        // Función para ocultar suavemente el tooltip
-                        function hideTooltip() {
-                            const tooltipElement = document.querySelector('.custom-tooltip');
-                            if (tooltipElement) {
-                                tooltipElement.style.transition = 'opacity 0.3s ease';
-                                tooltipElement.style.opacity = '0'; // Desvanecer el tooltip
-                                setTimeout(() => {
-                                    if (userMarker && tooltip) {
-                                        userMarker.unbindTooltip(); // Eliminar el tooltip después de la animación
-                                    }
-                                }, 300); // Tiempo de espera para la animación de 0.3s
-                            }
-                        }
-
-                        // Ocultar el tooltip cuando el usuario haga clic en el mapa
-                        map.on('click', hideTooltip);
-
-                        // Ocultar el tooltip cuando el usuario arrastre el mapa
-                        map.on('dragstart', hideTooltip);
-                    }, () => {
-                        console.error("No se pudo obtener la ubicación.");
-                    });
-                } else {
-                    console.error("La geolocalización no es soportada por este navegador.");
-                }
-            });
-
-
-
-
-            // centrar
-            const bounds = [
-                [19.9205, -72.0155],
-                [17.5649, -71.8584],
-                [18.5104, -68.3821],
-                [20.0059, -68.6463]
-            ];
-
-            L.rectangle(bounds, { color: "transparent", weight: 1 }).addTo(map);
-            map.fitBounds(bounds);
-
-            map.on('moveend', function () {
-                const centerButton = document.getElementById('centerButton');
-                if (map.getBounds().intersects(bounds)) {
-                    centerButton.style.display = 'none';
-                } else {
-                    centerButton.style.display = 'block';
-                }
-            });
-
-            // Nivel de zoom por defecto
-            let zoomLevel = 8;
-
-            // Ajustar el nivel de zoom según el tamaño de la pantalla
-            function adjustZoomLevel() {
-                if (window.innerWidth <= 700) {
-                    zoomLevel = 7;
-                } else {
-                    zoomLevel = 8;
-                }
-            }
-
-            // Llamar a la función al cargar la página y al cambiar el tamaño de la ventana
-            adjustZoomLevel();
-            window.addEventListener('resize', adjustZoomLevel);
-
-            document.getElementById('centerButton').addEventListener('click', function () {
-                map.flyToBounds(bounds, {
-                    duration: 1,
-                    maxZoom: zoomLevel
+                    // Ocultar el tooltip cuando el usuario arrastre el mapa
+                    map.on('dragstart', hideTooltip);
+                }, () => {
+                    console.error("No se pudo obtener la ubicación.");
                 });
+            } else {
+                console.error("La geolocalización no es soportada por este navegador.");
+            }
+        });
+
+
+
+
+        // centrar
+        const bounds = [
+            [19.9205, -72.0155],
+            [17.5649, -71.8584],
+            [18.5104, -68.3821],
+            [20.0059, -68.6463]
+        ];
+
+        L.rectangle(bounds, { color: "transparent", weight: 1 }).addTo(map);
+        map.fitBounds(bounds);
+
+        map.on('moveend', function () {
+            const centerButton = document.getElementById('centerButton');
+            if (map.getBounds().intersects(bounds)) {
+                centerButton.style.display = 'none';
+            } else {
+                centerButton.style.display = 'block';
+            }
+        });
+
+        // Nivel de zoom por defecto
+        let zoomLevel = 8;
+
+        // Ajustar el nivel de zoom según el tamaño de la pantalla
+        function adjustZoomLevel() {
+            if (window.innerWidth <= 700) {
+                zoomLevel = 7;
+            } else {
+                zoomLevel = 8;
+            }
+        }
+
+        // Llamar a la función al cargar la página y al cambiar el tamaño de la ventana
+        adjustZoomLevel();
+        window.addEventListener('resize', adjustZoomLevel);
+
+        document.getElementById('centerButton').addEventListener('click', function () {
+            map.flyToBounds(bounds, {
+                duration: 1,
+                maxZoom: zoomLevel
             });
-            // centrar Fin
+        });
+        // centrar Fin
 
 
 
 
 
-            // Función para formatear números con comas como separadores de miles
-            function formatNumber(num) {
-                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        // Función para formatear números con comas como separadores de miles
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        // Variables de iconos
+        var houseIcon = './img/casa4.png';
+        var buildingIcon = './img/apartamento2.png';
+        var landIcon = './img/solar2.png';
+
+        // Función para obtener el color del fondo del span según el tipo de propiedad
+        function getBackgroundColor(iconUrl) {
+            if (iconUrl === houseIcon) {
+                return '#e17477'; // Color para casas
+            } else if (iconUrl === buildingIcon) {
+                return '#52bae8'; // Color para apartamentos
+            } else if (iconUrl === landIcon) {
+                return '#59a739'; // Color para solares
+            } else {
+                return 'white'; // Color por defecto
             }
-
-            // Variables de iconos
-            var houseIcon = './img/casa4.png';
-            var buildingIcon = './img/apartamento2.png';
-            var landIcon = './img/solar2.png';
-
-            // Función para obtener el color del fondo del span según el tipo de propiedad
-            function getBackgroundColor(iconUrl) {
-                if (iconUrl === houseIcon) {
-                    return '#e17477'; // Color para casas
-                } else if (iconUrl === buildingIcon) {
-                    return '#52bae8'; // Color para apartamentos
-                } else if (iconUrl === landIcon) {
-                    return '#59a739'; // Color para solares
-                } else {
-                    return 'white'; // Color por defecto
-                }
-            }
+        }
 
 
-            // Creación de íconos personalizados con precio y color según el tipo de propiedad
-            function createIcon(iconUrl, price, isAlquiler) {
-                var backgroundColor = getBackgroundColor(iconUrl); // Obtener color de fondo
-                // Si es un alquiler, añade "/mes" al final del precio
-                var priceText = `RD$${formatNumber(price)}` + (isAlquiler ? "/mes" : "");
+        // Creación de íconos personalizados con precio y color según el tipo de propiedad
+        function createIcon(iconUrl, price, isAlquiler) {
+            var backgroundColor = getBackgroundColor(iconUrl); // Obtener color de fondo
+            // Si es un alquiler, añade "/mes" al final del precio
+            var priceText = `RD$${formatNumber(price)}` + (isAlquiler ? "/mes" : "");
 
-                return L.divIcon({
-                    html: `<div style="position: relative; display: flex; flex-direction: column; align-items: center;">
+            return L.divIcon({
+                html: `<div style="position: relative; display: flex; flex-direction: column; align-items: center;">
             <img src="${iconUrl}" style="margin-top: -26px;
             width: 32px; height: 32px; background: #0f1931; border-radius: 31px; border-style: solid; border-color: ${backgroundColor}; border-width: 3px;" />
             <span style="background: ${backgroundColor}; 
@@ -792,92 +800,92 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
             padding: 2px 4px; border-radius: 3px; margin-top: -8px;">${priceText}</span>
             <div class="price-tip" style="border-top-color: ${backgroundColor};"></div>
         </div>`,
-                    iconSize: [32, 32],
-                    iconAnchor: [16, 32],
-                    popupAnchor: [0, -32]
-                });
+                iconSize: [32, 32],
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
+            });
+        }
+
+        // Íconos para referencia
+        var roomIcon = './img/icons/habitacion1.svg'; // ícono para habitaciones
+        var bathroomIcon = './img/icons/baño1.svg'; // ícono para baños
+        var parkingIcon = './img/icons/parqueo1.svg'; // ícono para parqueo
+        var areaIcon = './img/icons/area1.svg'; // ícono para área
+
+        // Normalización de ubicaciones
+        function normalizeLocation(location) {
+            return location.latLng ? { ...location, lat: location.latLng[0], lng: location.latLng[1] } : location;
+        }
+
+
+
+        // Definición de ubicaciones con información adicional
+        var alquileres = [
+            {
+                id: 334501, latLng: [18.47434844864751, -69.81027832640669], title: 'Los frailes Casa', price: 25000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 6, area: 329, imageFolder: './properties/alquiler/334501/img/', imageCount: 10,
+                caracteristicas: ''
+            },
+
+            {
+                id: 334502, latLng: [18.53407239836236, -69.84790422950549], title: 'Casa Res. Don Oscar', price: 32000, icon: houseIcon, rooms: 4, bathrooms: 5, parking: 4, area: 400, imageFolder: './properties/alquiler/334502/img/', imageCount: 15,
+                caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'
+            },
+
+            {
+                id: 334503, latLng: [18.49683473654844, -69.80295189696278], title: 'San Isidro Apartamento', price: 25500, icon: buildingIcon, rooms: 3, bathrooms: 2, parking: 2, area: 150, imageFolder: './properties/alquiler/334503/img/', imageCount: 14,
+                caracteristicas: ''
+            },
+
+            {
+                id: 334505, latLng: [19.476010256988793, -70.66142702687121], title: 'Casa Santiago', price: 37000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 2, area: 982, imageFolder: './properties/alquiler/334505/img/', imageCount: 15,
+                caracteristicas: ''
+            },
+
+
+        ];
+
+        var ventas = [
+
+            { id: 224502, latLng: [18.471514679233934, -69.807869359044], title: 'los frailes Casa', price: 14750000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 6, area: 329, imageFolder: './properties/venta/224502/img/', imageCount: 10, caracteristicas: '' },
+
+            { id: 224504, latLng: [18.457316096553225, -69.91592487067537], title: 'zona universitaria Apartamento', price: 10500000, icon: buildingIcon, rooms: 2, bathrooms: 2, parking: 2, area: 116, imageFolder: './properties/venta/224504/img/', imageCount: 7, caracteristicas: '' },
+
+            { id: 224505, latLng: [19.464670827305877, -70.67438212014031], title: 'Casa Santiago', price: 21181000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 2, area: 982, imageFolder: './properties/venta/224505/img/', imageCount: 15, caracteristicas: '' },
+
+            { id: 224511, latLng: [19.748816219700327, -70.65440623939426], title: 'Solar, muñoz, puerto plata', price: 13400000, icon: landIcon, rooms: 0, bathrooms: 0, parking: 0, area: 908, imageFolder: './properties/venta/224511/img/', imageCount: 7, caracteristicas: '' },
+
+            { id: 224513, latLng: [18.780254470682426, -68.54500166578522], title: 'Solar Macao, Punta cana', price: 6500000, icon: landIcon, rooms: 0, bathrooms: 0, parking: 0, area: 500, imageFolder: './properties/venta/224513/img/', imageCount: 11, caracteristicas: '' },
+
+            { id: 224503, latLng: [18.515361605411158, -69.79580351613811], title: 'Edificio Santo Domingo', price: 70000000, icon: buildingIcon, rooms: 12, bathrooms: 10, parking: 6, area: 700, imageFolder: './img/properties/224503/', imageCount: 5, caracteristicas: '' },
+
+            {
+                id: 224506, latLng: [18.534530697687792, -69.84886578381361], title: 'Casa calle Santo Domingo', price: 3800000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 2, area: 150, imageFolder: './img/properties/224504/', imageCount: 7,
+                caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'
             }
+        ];
 
-            // Íconos para referencia
-            var roomIcon = './img/icons/habitacion1.svg'; // ícono para habitaciones
-            var bathroomIcon = './img/icons/baño1.svg'; // ícono para baños
-            var parkingIcon = './img/icons/parqueo1.svg'; // ícono para parqueo
-            var areaIcon = './img/icons/area1.svg'; // ícono para área
+        //Carousel
 
-            // Normalización de ubicaciones
-            function normalizeLocation(location) {
-                return location.latLng ? { ...location, lat: location.latLng[0], lng: location.latLng[1] } : location;
+        // Modificar la función createCarousel para generar imágenes dinámicamente
+        function createCarousel(imageFolder, imageCount) {
+            let carousel = `<div class="carousel"><div class="botonmaximizar"></div>`;
+
+            // Limitar el bucle a un máximo de 7 imágenes
+            const maxImagesToShow = Math.min(imageCount, 7);
+
+            for (let i = 1; i <= maxImagesToShow; i++) {
+                const imgSrc = `${imageFolder}${i}.jpg`;
+                carousel += `<img src="${imgSrc}" class="${i === 1 ? 'active' : ''}" onload="setCarouselHeight(this)">`;
             }
-
-
-
-            // Definición de ubicaciones con información adicional
-            var alquileres = [
-                {
-                    id: 334501, latLng: [18.47434844864751, -69.81027832640669], title: 'Los frailes Casa', price: 25000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 6, area: 329, imageFolder: './properties/alquiler/334501/img/', imageCount: 10,
-                    caracteristicas: ''
-                },
-
-                {
-                    id: 334502, latLng: [18.53407239836236, -69.84790422950549], title: 'Casa Res. Don Oscar', price: 32000, icon: houseIcon, rooms: 4, bathrooms: 5, parking: 4, area: 400, imageFolder: './properties/alquiler/334502/img/', imageCount: 15,
-                    caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'
-                },
-
-                {
-                    id: 334503, latLng: [18.49683473654844, -69.80295189696278], title: 'San Isidro Apartamento', price: 25500, icon: buildingIcon, rooms: 3, bathrooms: 2, parking: 2, area: 150, imageFolder: './properties/alquiler/334503/img/', imageCount: 14,
-                    caracteristicas: ''
-                },
-
-                {
-                    id: 334505, latLng: [19.476010256988793, -70.66142702687121], title: 'Casa Santiago', price: 37000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 2, area: 982, imageFolder: './properties/alquiler/334505/img/', imageCount: 15,
-                    caracteristicas: ''
-                },
-
-
-            ];
-
-            var ventas = [
-
-                { id: 224502, latLng: [18.471514679233934, -69.807869359044], title: 'los frailes Casa', price: 14750000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 6, area: 329, imageFolder: './properties/venta/224502/img/', imageCount: 10, caracteristicas: '' },
-
-                { id: 224504, latLng: [18.457316096553225, -69.91592487067537], title: 'zona universitaria Apartamento', price: 10500000, icon: buildingIcon, rooms: 2, bathrooms: 2, parking: 2, area: 116, imageFolder: './properties/venta/224504/img/', imageCount: 7, caracteristicas: '' },
-
-                { id: 224505, latLng: [19.464670827305877, -70.67438212014031], title: 'Casa Santiago', price: 21181000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 2, area: 982, imageFolder: './properties/venta/224505/img/', imageCount: 15, caracteristicas: '' },
-
-                { id: 224511, latLng: [19.748816219700327, -70.65440623939426], title: 'Solar, muñoz, puerto plata', price: 13400000, icon: landIcon, rooms: 0, bathrooms: 0, parking: 0, area: 908, imageFolder: './properties/venta/224511/img/', imageCount: 7, caracteristicas: '' },
-
-                { id: 224513, latLng: [18.780254470682426, -68.54500166578522], title: 'Solar Macao, Punta cana', price: 6500000, icon: landIcon, rooms: 0, bathrooms: 0, parking: 0, area: 500, imageFolder: './properties/venta/224513/img/', imageCount: 11, caracteristicas: '' },
-
-                { id: 224503, latLng: [18.515361605411158, -69.79580351613811], title: 'Edificio Santo Domingo', price: 70000000, icon: buildingIcon, rooms: 12, bathrooms: 10, parking: 6, area: 700, imageFolder: './img/properties/224503/', imageCount: 5, caracteristicas: '' },
-
-                {
-                    id: 224506, latLng: [18.534530697687792, -69.84886578381361], title: 'Casa calle Santo Domingo', price: 3800000, icon: houseIcon, rooms: 4, bathrooms: 3, parking: 2, area: 150, imageFolder: './img/properties/224504/', imageCount: 7,
-                    caracteristicas: '<p>Esta espectacular propiedad cuenta con detalles únicos que la hacen verdaderamente especial. Dispone de una elegante piscina con sistema de iluminación nocturna, ideal para disfrutar de un ambiente relajado bajo las estrellas. Además, la casa incluye un cine privado completamente equipado, perfecto para disfrutar de películas en la comodidad de tu hogar. Los pisos de mármol en todas las áreas comunes aportan un toque de lujo, diseñado con acabados de primera calidad, y una terraza con vista panorámica, ideal para recibir invitados o simplemente relajarse.</p><ul><li><strong>Habitaciones:</strong> 3 amplias habitaciones con iluminación natural.</li></p><li><strong>Baños:</strong> 3 baños completos, equipados con modernos acabados y agua caliente.</li></p><li><strong>Piscina:</strong> Piscina privada de tamaño mediano, perfecta para relajarse en días calurosos.</li></p><li><strong>Patio:</strong> Espacioso patio trasero ideal para reuniones familiares, jardinería o actividades al aire libre.</li></p><li><strong>Frente:</strong> Fachada moderna con jardín decorativo, proporcionando un aspecto atractivo y acogedor.</li></p><li><strong>Ubicación:</strong> Excelente ubicación en un vecindario tranquilo, con acceso cercano a supermercados, escuelas y transporte público.</li></p><li><strong>Cocina:</strong> Cocina equipada con electrodomésticos de alta calidad, gabinetes espaciosos y una isla central.</li></p><li><strong>Sala:</strong> Sala de estar amplia, con ventanales que permiten una vista despejada al jardín.</li></p><li><strong>Comedor:</strong> Comedor separado con espacio para una mesa grande, perfecto para cenas familiares.</li></p><li><strong>Parqueo:</strong> Garaje techado con espacio para dos vehículos.</li></p><li><strong>Seguridad:</strong> Sistema de seguridad integrado con cámaras y alarmas.</p><li><strong>Extras:</strong> Terraza techada, cuarto de servicio, aire acondicionado en todas las habitaciones.</li></p></ul>'
-                }
-            ];
-
-            //Carousel
-
-            // Modificar la función createCarousel para generar imágenes dinámicamente
-            function createCarousel(imageFolder, imageCount) {
-                let carousel = `<div class="carousel"><div class="botonmaximizar"></div>`;
-
-                // Limitar el bucle a un máximo de 7 imágenes
-                const maxImagesToShow = Math.min(imageCount, 7);
-
-                for (let i = 1; i <= maxImagesToShow; i++) {
-                    const imgSrc = `${imageFolder}${i}.jpg`;
-                    carousel += `<img src="${imgSrc}" class="${i === 1 ? 'active' : ''}" onload="setCarouselHeight(this)">`;
-                }
-                carousel += `
+            carousel += `
         <button class="prev" onclick="changeImage(this, -1)">&#10094;</button>
         <button class="next" onclick="changeImage(this, 1)">&#10095;</button>
         <div class="indicators">
             ${Array.from({ length: maxImagesToShow }, (_, index) => `<span class="indicator ${index === 0 ? 'active' : ''}" onclick="setActiveImage(${index})"></span>`).join('')}
         </div>
     </div>`;
-                return carousel;
-            }
+            return carousel;
+        }
 
 
 
@@ -888,76 +896,76 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
 
 
-            function comoLlegarDesdeModal() {
-                // Obtener latitud y longitud de la propiedad actualmente mostrada en el modal
-                const propertyId = parseInt(window.location.hash.substring('#id-'.length));
-                const property = [...alquileres, ...ventas].find(p => p.id === propertyId);
+        function comoLlegarDesdeModal() {
+            // Obtener latitud y longitud de la propiedad actualmente mostrada en el modal
+            const propertyId = parseInt(window.location.hash.substring('#id-'.length));
+            const property = [...alquileres, ...ventas].find(p => p.id === propertyId);
 
-                if (property) {
-                    const lat = property.latLng ? property.latLng[0] : property.lat;
-                    const lng = property.latLng ? property.latLng[1] : property.lng;
+            if (property) {
+                const lat = property.latLng ? property.latLng[0] : property.lat;
+                const lng = property.latLng ? property.latLng[1] : property.lng;
 
-                    // Verificar si estamos en un dispositivo iOS
-                    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+                // Verificar si estamos en un dispositivo iOS
+                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-                    if (isIOS) {
-                        // Crear enlaces personalizados para cada aplicación en iOS
-                        const appleMapsUrl = `maps://?q=${lat},${lng}`;
-                        const googleMapsUrl = `comgooglemaps://?q=${lat},${lng}&center=${lat},${lng}`;
-                        const wazeUrl = `waze://?ll=${lat},${lng}&navigate=yes`;
-                        const uberUrl = `uber://?action=setPickup&dropoff[latitude]=${lat}&dropoff[longitude]=${lng}`;
+                if (isIOS) {
+                    // Crear enlaces personalizados para cada aplicación en iOS
+                    const appleMapsUrl = `maps://?q=${lat},${lng}`;
+                    const googleMapsUrl = `comgooglemaps://?q=${lat},${lng}&center=${lat},${lng}`;
+                    const wazeUrl = `waze://?ll=${lat},${lng}&navigate=yes`;
+                    const uberUrl = `uber://?action=setPickup&dropoff[latitude]=${lat}&dropoff[longitude]=${lng}`;
 
-                        // Función para intentar abrir la URL y mostrar un mensaje si no está instalada
-                        function tryOpenUrl(url, fallbackMessage) {
-                            const timeout = setTimeout(() => {
-                                alert(fallbackMessage); // Mostrar el mensaje personalizado
-                            }, 1500); // 1.5 segundos de espera
+                    // Función para intentar abrir la URL y mostrar un mensaje si no está instalada
+                    function tryOpenUrl(url, fallbackMessage) {
+                        const timeout = setTimeout(() => {
+                            alert(fallbackMessage); // Mostrar el mensaje personalizado
+                        }, 1500); // 1.5 segundos de espera
 
-                            window.location.href = url;
-
-                            window.addEventListener('blur', () => {
-                                clearTimeout(timeout); // Si la app se abre, cancelar el timeout
-                            });
-                        }
-
-                        // Mostrar el modal
-                        const modal = document.getElementById('modal-map-ios');
-                        modal.style.display = 'block';
-
-                        // Obtener los botones y asociar las URLs con la función tryOpenUrl
-                        document.getElementById('appleMapsBtn').onclick = function () {
-                            tryOpenUrl(appleMapsUrl, 'Apple Maps no está instalada en este dispositivo.');
-                        };
-                        document.getElementById('googleMapsBtn').onclick = function () {
-                            tryOpenUrl(googleMapsUrl, 'Google Maps no está instalada en este dispositivo.');
-                        };
-                        document.getElementById('wazeBtn').onclick = function () {
-                            tryOpenUrl(wazeUrl, 'Waze no está instalada en este dispositivo.');
-                        };
-                        document.getElementById('uberBtn').onclick = function () {
-                            tryOpenUrl(uberUrl, 'Uber no está instalada en este dispositivo.');
-                        };
-
-                        // Cerrar el modal cuando se hace clic en la "X"
-                        document.querySelector('.close-modal-map-ios').onclick = function () {
-                            modal.style.display = 'none';
-                        };
-
-                        // Cerrar el modal si el usuario hace clic fuera del contenido del modal
-                        window.onclick = function (event) {
-                            if (event.target == modal) {
-                                modal.style.display = 'none';
-                            }
-                        };
-                    } else {
-                        // Para Android, usar geo URI scheme
-                        const url = `geo:${lat},${lng}?q=${lat},${lng}`;
                         window.location.href = url;
+
+                        window.addEventListener('blur', () => {
+                            clearTimeout(timeout); // Si la app se abre, cancelar el timeout
+                        });
                     }
+
+                    // Mostrar el modal
+                    const modal = document.getElementById('modal-map-ios');
+                    modal.style.display = 'block';
+
+                    // Obtener los botones y asociar las URLs con la función tryOpenUrl
+                    document.getElementById('appleMapsBtn').onclick = function () {
+                        tryOpenUrl(appleMapsUrl, 'Apple Maps no está instalada en este dispositivo.');
+                    };
+                    document.getElementById('googleMapsBtn').onclick = function () {
+                        tryOpenUrl(googleMapsUrl, 'Google Maps no está instalada en este dispositivo.');
+                    };
+                    document.getElementById('wazeBtn').onclick = function () {
+                        tryOpenUrl(wazeUrl, 'Waze no está instalada en este dispositivo.');
+                    };
+                    document.getElementById('uberBtn').onclick = function () {
+                        tryOpenUrl(uberUrl, 'Uber no está instalada en este dispositivo.');
+                    };
+
+                    // Cerrar el modal cuando se hace clic en la "X"
+                    document.querySelector('.close-modal-map-ios').onclick = function () {
+                        modal.style.display = 'none';
+                    };
+
+                    // Cerrar el modal si el usuario hace clic fuera del contenido del modal
+                    window.onclick = function (event) {
+                        if (event.target == modal) {
+                            modal.style.display = 'none';
+                        }
+                    };
                 } else {
-                    console.error("No se pudo encontrar la propiedad para obtener las coordenadas.");
+                    // Para Android, usar geo URI scheme
+                    const url = `geo:${lat},${lng}?q=${lat},${lng}`;
+                    window.location.href = url;
                 }
+            } else {
+                console.error("No se pudo encontrar la propiedad para obtener las coordenadas.");
             }
+        }
 
 
 
@@ -965,82 +973,82 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
 
 
-            //boton compartir
-            function shareProperty() {
-                const propertyId = parseInt(window.location.hash.substring('#id-'.length));
-                const propertyLink = `https://arribate.com/#id-${propertyId}`; // Asegúrate de reemplazar 'tusitioweb.com' con tu dominio real
-                const message = `¡Mira esta propiedad en ArríbaTe!`;
+        //boton compartir
+        function shareProperty() {
+            const propertyId = parseInt(window.location.hash.substring('#id-'.length));
+            const propertyLink = `https://arribate.com/#id-${propertyId}`; // Asegúrate de reemplazar 'tusitioweb.com' con tu dominio real
+            const message = `¡Mira esta propiedad en ArríbaTe!`;
 
-                if (navigator.share) { // Verificar si la API Web Share está disponible
-                    navigator.share({
-                        title: 'Compartir Propiedad',
-                        text: message,
-                        url: propertyLink
-                    })
-                        .then(() => console.log('Contenido compartido exitosamente'))
-                        .catch(error => console.error('Error al compartir:', error));
-                } else {
-                    // Si la API Web Share no está disponible, puedes copiar el enlace al portapapeles o mostrar un mensaje
-                    alert("La función de compartir no está disponible en este navegador. Puedes copiar el enlace manualmente.");
-                    // Código para copiar al portapapeles (opcional):
-                    // const tempInput = document.createElement('input');
-                    // tempInput.value = propertyLink;
-                    // document.body.appendChild(tempInput);
-                    // tempInput.select();
-                    // document.execCommand('copy');
-                    // document.body.removeChild(tempInput);
-                }
+            if (navigator.share) { // Verificar si la API Web Share está disponible
+                navigator.share({
+                    title: 'Compartir Propiedad',
+                    text: message,
+                    url: propertyLink
+                })
+                    .then(() => console.log('Contenido compartido exitosamente'))
+                    .catch(error => console.error('Error al compartir:', error));
+            } else {
+                // Si la API Web Share no está disponible, puedes copiar el enlace al portapapeles o mostrar un mensaje
+                alert("La función de compartir no está disponible en este navegador. Puedes copiar el enlace manualmente.");
+                // Código para copiar al portapapeles (opcional):
+                // const tempInput = document.createElement('input');
+                // tempInput.value = propertyLink;
+                // document.body.appendChild(tempInput);
+                // tempInput.select();
+                // document.execCommand('copy');
+                // document.body.removeChild(tempInput);
             }
+        }
 
 
 
-            function changeImage(button, direction) {
-                const carousel = button.parentElement;
+        function changeImage(button, direction) {
+            const carousel = button.parentElement;
+            const images = carousel.querySelectorAll('img');
+            const indicators = carousel.querySelectorAll('.indicator');
+            let currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+            images[currentIndex].classList.remove('active');
+            indicators[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            images[currentIndex].classList.add('active');
+            indicators[currentIndex].classList.add('active');
+        }
+
+        function setActiveImage(index) {
+            const carousels = document.querySelectorAll('.carousel');
+            carousels.forEach(carousel => {
                 const images = carousel.querySelectorAll('img');
                 const indicators = carousel.querySelectorAll('.indicator');
-                let currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
-                images[currentIndex].classList.remove('active');
-                indicators[currentIndex].classList.remove('active');
-                currentIndex = (currentIndex + direction + images.length) % images.length;
-                images[currentIndex].classList.add('active');
-                indicators[currentIndex].classList.add('active');
-            }
+                images.forEach(img => img.classList.remove('active'));
+                indicators.forEach(ind => ind.classList.remove('active'));
+                images[index].classList.add('active');
+                indicators[index].classList.add('active');
+            });
+        }
 
-            function setActiveImage(index) {
-                const carousels = document.querySelectorAll('.carousel');
-                carousels.forEach(carousel => {
-                    const images = carousel.querySelectorAll('img');
-                    const indicators = carousel.querySelectorAll('.indicator');
-                    images.forEach(img => img.classList.remove('active'));
-                    indicators.forEach(ind => ind.classList.remove('active'));
-                    images[index].classList.add('active');
-                    indicators[index].classList.add('active');
-                });
-            }
-
-            //Carousel FIN
+        //Carousel FIN
 
 
 
-            // PopUP
-            function createMarkers(locations, markersArray) {
-                locations.forEach(function (location) {
-                    location = normalizeLocation(location);
-                    var isAlquiler = markersArray === alquilerMarkers;  // Verifica si es alquiler
-                    var marker = L.marker([location.lat, location.lng], { icon: createIcon(location.icon, location.price, isAlquiler) });
+        // PopUP
+        function createMarkers(locations, markersArray) {
+            locations.forEach(function (location) {
+                location = normalizeLocation(location);
+                var isAlquiler = markersArray === alquilerMarkers;  // Verifica si es alquiler
+                var marker = L.marker([location.lat, location.lng], { icon: createIcon(location.icon, location.price, isAlquiler) });
 
-                    // Crear el carrusel si hay una carpeta de imágenes disponible
-                    var carousel = location.imageFolder ? createCarousel(location.imageFolder, location.imageCount) : '';
+                // Crear el carrusel si hay una carpeta de imágenes disponible
+                var carousel = location.imageFolder ? createCarousel(location.imageFolder, location.imageCount) : '';
 
 
-                    // Agregar condicionalmente "/mes" al precio si es un alquiler
-                    var priceText = `RD$ ${formatNumber(location.price)}`;
-                    if (markersArray === alquilerMarkers) {
-                        priceText += '/mes';
-                    }
+                // Agregar condicionalmente "/mes" al precio si es un alquiler
+                var priceText = `RD$ ${formatNumber(location.price)}`;
+                if (markersArray === alquilerMarkers) {
+                    priceText += '/mes';
+                }
 
-                    marker.bindPopup(
-                        `<button id="vermodal" onclick="openModal(${JSON.stringify(location).replace(/"/g, '&quot;')})"></button>
+                marker.bindPopup(
+                    `<button id="vermodal" onclick="openModal(${JSON.stringify(location).replace(/"/g, '&quot;')})"></button>
             ${carousel}
             <div class="informacion-basica"> 
 
@@ -1055,131 +1063,131 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
             <img src="${areaIcon}" style="width: 26px; height: 26px; margin-left: 10px;"/><title="Haz clic para obtener indicaciones de cómo llegar"> ${location.area} m²
             </div>
             </div>`
-                    ).addTo(map);
+                ).addTo(map);
 
-                    markersArray.push(marker);
+                markersArray.push(marker);
+            });
+        }
+
+
+
+
+
+        // Función de cómo llegar
+        function comoLlegar(lat, lng) {
+            var url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+            window.open(url, '_blank');
+        }
+
+
+
+
+        var alquilerMarkers = [];
+        var ventaMarkers = [];
+
+        createMarkers(alquileres, alquilerMarkers);
+        createMarkers(ventas, ventaMarkers);
+
+        // Variable para mantener el tipo activo
+        var activeType = 'alquiler';
+
+        // Funciones para mostrar/ocultar marcadores
+        function toggleMarkers(type) {
+            activeType = type; // Actualizar el tipo activo
+
+            var showMarkers = type === 'alquiler' ? alquilerMarkers : ventaMarkers;
+            var hideMarkers = type === 'alquiler' ? ventaMarkers : alquilerMarkers;
+
+            showMarkers.forEach(marker => marker.addTo(map));
+            hideMarkers.forEach(marker => map.removeLayer(marker));
+
+            filterMarkers(); // Filtrar los marcadores después de cambiar el tipo
+        }
+
+
+
+
+        // Botones alquiler-venta con su .active
+        const buttonGroups = {
+            alquiler: ['alquilerButton', 'alquilerButton-filter', 'alquilerButton-rpsv'],
+            venta: ['ventaButton', 'ventaButton-filter', 'ventaButton-rpsv']
+        };
+
+        function activateGroup(group) {
+            for (const buttonId in buttonGroups) {
+                const buttons = buttonGroups[buttonId];
+                buttons.forEach(id => {
+                    const button = document.getElementById(id);
+                    if (buttonId === group) {
+                        button.classList.add('active');
+                    } else {
+                        button.classList.remove('active');
+                    }
                 });
             }
+            toggleMarkers(group);
+        }
+
+        // Event listeners para todos los botones
+        for (const group in buttonGroups) {
+            buttonGroups[group].forEach(id => {
+                document.getElementById(id).addEventListener('click', () => activateGroup(group));
+            });
+        }
+
+        // Asegurar que 'alquilerButton-rpsv' esté activo al cargar la página
+        activateGroup('alquiler');
+
+        // Botones alquiler-venta con su .active FIN
 
 
 
 
 
-            // Función de cómo llegar
-            function comoLlegar(lat, lng) {
-                var url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
-                window.open(url, '_blank');
-            }
 
 
 
 
-            var alquilerMarkers = [];
-            var ventaMarkers = [];
 
-            createMarkers(alquileres, alquilerMarkers);
-            createMarkers(ventas, ventaMarkers);
+        // Inicialmente mostrar solo los alquileres
+        toggleMarkers('alquiler');
+    </script>
 
-            // Variable para mantener el tipo activo
-            var activeType = 'alquiler';
+    <script>
+        // Función para detectar si el dispositivo es iOS
+        function isIOS() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        }
 
-            // Funciones para mostrar/ocultar marcadores
-            function toggleMarkers(type) {
-                activeType = type; // Actualizar el tipo activo
+        const fullscreenButton = document.getElementById('fullscreenButton');
 
-                var showMarkers = type === 'alquiler' ? alquilerMarkers : ventaMarkers;
-                var hideMarkers = type === 'alquiler' ? ventaMarkers : alquilerMarkers;
-
-                showMarkers.forEach(marker => marker.addTo(map));
-                hideMarkers.forEach(marker => map.removeLayer(marker));
-
-                filterMarkers(); // Filtrar los marcadores después de cambiar el tipo
-            }
-
-
-
-
-            // Botones alquiler-venta con su .active
-            const buttonGroups = {
-                alquiler: ['alquilerButton', 'alquilerButton-filter', 'alquilerButton-rpsv'],
-                venta: ['ventaButton', 'ventaButton-filter', 'ventaButton-rpsv']
-            };
-
-            function activateGroup(group) {
-                for (const buttonId in buttonGroups) {
-                    const buttons = buttonGroups[buttonId];
-                    buttons.forEach(id => {
-                        const button = document.getElementById(id);
-                        if (buttonId === group) {
-                            button.classList.add('active');
-                        } else {
-                            button.classList.remove('active');
-                        }
-                    });
+        // Ocultar el botón de pantalla completa si es iOS
+        if (isIOS()) {
+            fullscreenButton.style.display = 'none'; // Oculta el botón
+        } else {
+            fullscreenButton.addEventListener('click', () => {
+                if (document.fullscreenElement) {
+                    document.exitFullscreen();
+                } else {
+                    document.documentElement.requestFullscreen();
                 }
-                toggleMarkers(group);
-            }
+            });
 
-            // Event listeners para todos los botones
-            for (const group in buttonGroups) {
-                buttonGroups[group].forEach(id => {
-                    document.getElementById(id).addEventListener('click', () => activateGroup(group));
-                });
-            }
+            // Evento para detectar cambios en el estado de pantalla completa
+            document.addEventListener('fullscreenchange', () => {
+                if (document.fullscreenElement) {
+                    fullscreenButton.classList.add('active'); // Agregar clase 'active'
+                } else {
+                    fullscreenButton.classList.remove('active'); // Quitar clase 'active'
+                }
+            });
+        }
+    </script>
 
-            // Asegurar que 'alquilerButton-rpsv' esté activo al cargar la página
-            activateGroup('alquiler');
-
-            // Botones alquiler-venta con su .active FIN
-
-
-
-
-
-
-
-
-
-
-            // Inicialmente mostrar solo los alquileres
-            toggleMarkers('alquiler');
-        </script>
-
-        <script>
-            // Función para detectar si el dispositivo es iOS
-            function isIOS() {
-                return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            }
-
-            const fullscreenButton = document.getElementById('fullscreenButton');
-
-            // Ocultar el botón de pantalla completa si es iOS
-            if (isIOS()) {
-                fullscreenButton.style.display = 'none'; // Oculta el botón
-            } else {
-                fullscreenButton.addEventListener('click', () => {
-                    if (document.fullscreenElement) {
-                        document.exitFullscreen();
-                    } else {
-                        document.documentElement.requestFullscreen();
-                    }
-                });
-
-                // Evento para detectar cambios en el estado de pantalla completa
-                document.addEventListener('fullscreenchange', () => {
-                    if (document.fullscreenElement) {
-                        fullscreenButton.classList.add('active'); // Agregar clase 'active'
-                    } else {
-                        fullscreenButton.classList.remove('active'); // Quitar clase 'active'
-                    }
-                });
-            }
-        </script>
-
-        <script src="./js/scriptfiltros.js"></script>
-        <script src="./js/scriptmodal.js"></script>
-        <script src="./js/scriptmenu.js"></script>
-        <script src="./js/scriptpublicate.js"></script>
+    <script src="./js/scriptfiltros.js"></script>
+    <script src="./js/scriptmodal.js"></script>
+    <script src="./js/scriptmenu.js"></script>
+    <script src="./js/scriptpublicate.js"></script>
 
 
 </body>
