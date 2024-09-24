@@ -83,13 +83,13 @@ function closeModal() {
         
                 
                 <div class="box-modal-googlemap"><p>Ubicación</p>
-                    <iframe 
-                        src="https://maps.google.com/maps?q=${lat},${lng}&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                        frameborder="0" 
-                        scrolling="no"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        style="width: 100%;height: 100%;box-shadow: 0px 0px 0px 2px rgb(0 0 0 / 0%);border-radius: 12px;">
-                    </iframe>
+<iframe 
+    src="https://maps.google.com/maps?q=${lat},${lng}&t=&z=15&ie=UTF8&iwloc=&output=embed&gestureHandling=greedy" 
+    frameborder="0" 
+    scrolling="no"
+    style="width: 100%;height: 100%;box-shadow: 0px 0px 0px 2px rgb(0 0 0 / 0%);border-radius: 12px;">
+</iframe>
+
                 </div>
         
                 <div class="info-bottom-modal">
