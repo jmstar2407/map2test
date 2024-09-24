@@ -37,7 +37,7 @@ body {
 /* Puedes agregar más estilos para personalizar la apariencia del logo */
 .loader img {
     width: 100%;
-    max-width: 555px;
+    max-width: 400px;
     height: auto;
     animation: loaderScale 3s forwards;
 
@@ -59,6 +59,7 @@ body {
     margin-top: 0px;
     height: auto;
     width: 100%;
+    max-width: 400px;
     aspect-ratio: 1 / 1;
     background: #95282800;
     background-image: url(../img/logo2.svg);
@@ -1208,8 +1209,16 @@ body {
         transform: translateY(-50%);
         cursor: pointer;
         color: #00000085;
-        box-shadow: 0px -7px 0px -2px rgb(233 233 233) inset;
+        /*box-shadow: 0px -7px 0px -2px rgb(233 233 233) inset;*/
     }
+
+    #alquilerButton-rpsv{
+        box-shadow: 0px 35px 0px 0px rgb(250 249 253) inset, 100px 0px 0px 0px #e9e9e9 inset, 100px 0px 0px 0px #cd1025 inset;
+    }
+
+#ventaButton-rpsv{
+    box-shadow: 0px 35px 0px 0px rgb(250 249 253) inset, -100px 0px 0px 0px #e9e9e9 inset, 100px 0px 0px 0px #cd1025 inset;
+}
 
     #alquilerButton-rpsv h3,
     #ventaButton-rpsv h3 {
@@ -1223,12 +1232,12 @@ body {
 
 
     #alquilerButton-rpsv.active {
-        box-shadow: 0px -7px 0px -2px rgb(205 16 37) inset;
+        box-shadow: 0px 35px 0px 0px rgb(250 249 253) inset, 0px 0px 0px 0px #e9e9e9 inset, 100px 0px 0px 0px #cd1025 inset;
         color: #096caf;
     }
 
     #ventaButton-rpsv.active {
-        box-shadow: 0px -5px 0px 0px rgb(205 16 37) inset;
+        box-shadow: 0px 35px 0px 0px rgb(250 249 253) inset, 0px 0px 0px 0px #e9e9e9 inset, 100px 0px 0px 0px #cd1025 inset;
         color: #096caf;
     }
 
