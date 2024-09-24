@@ -301,66 +301,6 @@ body {
 
 
 
-.alquilar-vender-box-In {
-    margin-top: 12px;
-    margin-left: 14px;
-    margin-right: 22px;
-    font-size: 25px;
-    font-family: sans-serif;
-    font-weight: bold;
-    padding: 4px 13px;
-    border-radius: 3px;
-    color: #096caf;
-    transition: 0.3s;
-    word-break: break-all;
-    height: 26px;
-    overflow: hidden;
-    box-shadow: 0px 50px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233);
-}
-
-.alquilar-vender-box-In:hover {
-    cursor: pointer;
-    box-shadow: 0px 41px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233);
-    transition: 0.3s;
-}
-
-.publicate-rpsv {
-    background: #9f9f9f00;
-    border: none;
-    transition: 0.4s;
-    cursor: pointer;
-    position: relative;
-}
-
-.publicate-rpsv h3 {
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-    width: 100%;
-    text-align: center;
-    font-size: 1.2rem;
-    font-family: sans-serif;
-    color: #096caf;
-}
-
-#open-publicate-respon {
-    height: 40px;
-    width: 40px;
-    background: rgba(255, 0, 0, 0);
-    background-image: url(../img/icons/publicate2.1.png);
-    background-size: 32px;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: none;
-    margin-right: 7px;
-    transition: 0.2s;
-}
-
-#open-publicate-respon:hover {
-    background-image: url(../img/icons/publicate2.2.png);
-    cursor: pointer;
-    transition: 0.2s;
-}
-
 .layer-button {
     position: absolute;
     top: auto;
@@ -376,6 +316,7 @@ body {
     border-style: none;
     box-shadow: 0px 0px 0px 3px rgb(255 255 255), 2px 2px 4px 3px rgb(0 0 0 / 45%);
     transition: 0.3s;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .layer-button:hover {
@@ -1071,18 +1012,6 @@ body {
 
 
 
-@media (max-width: 950px) {
-    .alquilar-vender-box-In {
-        box-shadow: 0px 50px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233), 0px 0px 0px 1px rgb(151 151 151);
-    }
-
-    .alquilar-vender-box-In:hover {
-        box-shadow: 0px 41px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233), 0px 0px 0px 1px rgb(9 108 175);
-    }
-}
-
-
-
 @media screen and (max-width: 900px) {
     .menumaster {
         background: #faf9fd;
@@ -1107,36 +1036,7 @@ body {
     #locateButton {
         display: block;
     }
-
-    .alquilar-vender-box-In {
-        box-shadow: 0px 50px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233);
-    }
-
-    .alquilar-vender-box-In:hover {
-        box-shadow: 0px 41px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233);
-    }
-
 }
-
-@media (max-width: 860px) {
-    .alquilar-vender-box-In {
-        word-break: break-all;
-        height: 26px;
-        overflow: hidden;
-    }
-}
-
-
-@media (max-width: 815px) {
-    .alquilar-vender-box-In {
-        box-shadow: 0px 50px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233), 0px 0px 0px 1px rgb(151 151 151);
-    }
-
-    .alquilar-vender-box-In:hover {
-        box-shadow: 0px 41px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233), 0px 0px 0px 1px rgb(9 108 175);
-    }
-}
-
 
 
 @media (max-width: 700px) {
@@ -1160,10 +1060,6 @@ body {
         border-bottom: 1px solid hsl(234.55deg 22.45% 90.39%);
         height: 50px;
         background: #faf9fd;
-    }
-
-    .alquilar-vender-box {
-        display: none;
     }
 
     .logonombre {
@@ -1194,14 +1090,6 @@ body {
         background: #faf9fd00;
         margin-left: 8px;
     }
-
-    #publicate-filter-rpsv {
-        position: relative;
-        display: inline-flex;
-        margin-right: 10px;
-    }
-
-
 
     #alquilerButton-rpsv,
     #ventaButton-rpsv {
