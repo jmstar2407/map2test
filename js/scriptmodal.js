@@ -42,7 +42,7 @@ function closeModal() {
         // Configurar botón de WhatsApp
         function setupWhatsappButton(property) {
             const propertyLink = `https://arribate.com/#id-${property.id}`;
-            const whatsappMessage = `Me interesa saber más de esta propiedad con el ID ${property.id}: ${propertyLink}`;
+            const whatsappMessage = `Me interesa saber más información sobre la propiedad con el ID ${property.id}: ${propertyLink}`;
             const whatsappUrl = `https://api.whatsapp.com/send?phone=+18299605566&text=${encodeURIComponent(whatsappMessage)}`;
             whatsappButton.href = whatsappUrl;
         }
@@ -86,7 +86,8 @@ function closeModal() {
                     <iframe 
                         src="https://maps.google.com/maps?q=${lat},${lng}&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                         frameborder="0" 
-                        scrolling="no" 
+                        scrolling="no"
+                        referrerpolicy="no-referrer-when-downgrade"
                         style="width: 100%;height: 100%;box-shadow: 0px 0px 0px 2px rgb(0 0 0 / 0%);border-radius: 12px;">
                     </iframe>
                 </div>
