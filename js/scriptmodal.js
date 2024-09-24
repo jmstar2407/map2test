@@ -83,13 +83,12 @@ function closeModal() {
         
                 
                 <div class="box-modal-googlemap"><p>Ubicación</p>
-<iframe 
-    src="https://maps.google.com/maps?q=${lat},${lng}&t=&z=15&ie=UTF8&iwloc=&output=embed&gestureHandling=greedy" 
-    frameborder="0" 
-    scrolling="no"
-    style="width: 100%;height: 100%;box-shadow: 0px 0px 0px 2px rgb(0 0 0 / 0%);border-radius: 12px;">
-</iframe>
-
+                    <iframe 
+                        src="https://maps.google.com/maps?q=${lat},${lng}&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        frameborder="0" 
+                        scrolling="no"
+                        style="width: 100%;height: 100%;box-shadow: 0px 0px 0px 2px rgb(0 0 0 / 0%);border-radius: 12px;">
+                    </iframe>
                 </div>
         
                 <div class="info-bottom-modal">
@@ -115,7 +114,39 @@ function closeModal() {
         }
         
         
-        
+        const mapOverlay = document.createElement('div');
+mapOverlay.style.position = 'absolute';
+mapOverlay.style.top = '0';
+mapOverlay.style.left = '0';
+mapOverlay.style.width = '100%';
+mapOverlay.style.height = '100%';
+mapOverlay.style.zIndex = '1000'; // Asegúrate de que esté por encima del iframe
+
+const mapIframe = document.querySelector('iframe[src^="https://maps.google.com/maps"]');
+mapIframe.parentNode.insertBefore(mapOverlay, mapIframe);
+
+let startX, startY;
+
+mapOverlay.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
+});
+
+mapOverlay.addEventListener('touchmove', (e) => {
+  const deltaX = e.touches[0].clientX - startX;
+  const deltaY = e.touches[0].clientY - startY;
+
+  const map = mapIframe.contentWindow.google.maps.Map; // Obtén la instancia del mapa
+  const center = map.getCenter();
+  const newCenter = new google.maps.LatLng(
+    center.lat() - deltaY * 0.0001, // Ajusta el factor según la sensibilidad deseada
+    center.lng() + deltaX * 0.0001
+  );
+  map.setCenter(newCenter);
+
+  startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
+});
         // Crear un ítem de icono para los detalles
         function createIconItem(icon, text) {
             return `
