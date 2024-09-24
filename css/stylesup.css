@@ -8,6 +8,159 @@ body {
     padding: 0;
 }
 
+
+.loader {
+    position: fixed;
+    /* Para que ocupe toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    /* Color de fondo de la pantalla de carga */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* Asegúrate de que esté por encima de todo */
+    flex-direction: column;
+    padding: 70px;
+    box-sizing: border-box;
+    animation: loaderFadeOut 3s forwards;
+}
+
+.content {
+    display: none;
+    /* Oculta el contenido inicialmente */
+}
+
+/* Puedes agregar más estilos para personalizar la apariencia del logo */
+.loader img {
+    width: 100%;
+    max-width: 555px;
+    height: auto;
+    animation: loaderScale 3s forwards;
+
+}
+
+/*@media (prefers-color-scheme: dark) {
+        .loader {
+            background-color: #222222; color de fondo de pantalla de cargar para los temas
+        }
+    }
+*/
+
+
+
+
+
+.loader-logo {
+    position: relative;
+    margin-top: 0px;
+    height: auto;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #95282800;
+    background-image: url(../img/logo2.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    animation: loaderScale 3s 1;
+}
+
+/* Reflejo */
+.loader-logo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -105%; /* Inicia fuera del contenedor, a la izquierda */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3)); /* Simula un reflejo */
+    transform: skewX(-20deg); /* Aplica un ángulo al reflejo */
+    animation: shine 1s 1.3s forwards;
+}
+
+/* Animación de movimiento */
+@keyframes shine {
+    0% {
+        left: -100%; /* Comienza fuera del contenedor, a la izquierda */
+    }
+    100% {
+        left: 100%; /* Termina fuera del contenedor, a la derecha */
+    }
+}
+
+
+
+
+
+
+
+
+
+@keyframes loaderFadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes loaderScale {
+    0% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(5);
+    }
+}
+
+@keyframes loadernombre {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
 .boxmaster {
     position: fixed;
     height: 100%;
@@ -536,48 +689,7 @@ body {
     background-image: url(../img/logo2.svg);
     background-size: 57px;
     background-repeat: no-repeat;
-    transform-style: preserve-3d;
-    /* Necesario para que la rotación 3D funcione correctamente */
-    /* animation: girarYcambiar 10s infinite; */
 }
-
-@keyframes girarYcambiar {
-
-    0%,
-    5% {
-        background-image: url(../img/logo2.svg);
-        transform: rotateY(90deg);
-    }
-
-    5%,
-    45% {
-        background-image: url(../img/logo2.svg);
-        transform: rotateY(0deg);
-    }
-
-    50% {
-        background-image: url(../img/logo2.svg);
-        transform: rotateY(90deg);
-    }
-
-    51% {
-        background-image: url(../img/logoletra1r.png);
-        transform: rotateY(90deg);
-    }
-
-    56%,
-    95% {
-        background-image: url(../img/logoletra1r.png);
-        transform: rotateY(180deg);
-    }
-
-    100% {
-        background-image: url(../img/logoletra1r.png);
-        transform: rotateY(270deg);
-    }
-}
-
-
 
 
 /* Sobrescribir estilos de Leaflet */
@@ -868,106 +980,6 @@ body {
 
 
 
-.loader {
-    position: fixed;
-    /* Para que ocupe toda la pantalla */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    /* Color de fondo de la pantalla de carga */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    /* Asegúrate de que esté por encima de todo */
-    flex-direction: column;
-    padding: 70px;
-    box-sizing: border-box;
-}
-
-.content {
-    display: none;
-    /* Oculta el contenido inicialmente */
-}
-
-/* Puedes agregar más estilos para personalizar la apariencia del logo */
-.loader img {
-    width: 100%;
-    max-width: 555px;
-    height: auto;
-}
-
-/*@media (prefers-color-scheme: dark) {
-        .loader {
-            background-color: #222222; color de fondo de pantalla de cargar para los temas
-        }
-    }
-*/
-
-
-.loader {
-    animation: loaderFadeOut 3s forwards;
-}
-
-.loader img {
-    animation: loaderScale 3s forwards;
-}
-
-@keyframes loaderFadeOut {
-    0% {
-        opacity: 1;
-    }
-
-    80% {
-        opacity: 1;
-    }
-
-    90% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes loaderScale {
-    0% {
-        transform: scale(0);
-    }
-
-    40% {
-        transform: scale(1);
-    }
-
-    80% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(5);
-    }
-}
-
-@keyframes loadernombre {
-    0% {
-        opacity: 0;
-    }
-
-    30% {
-        opacity: 0;
-    }
-
-    40% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
 
 
 
