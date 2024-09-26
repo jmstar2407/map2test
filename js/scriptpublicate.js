@@ -23,7 +23,7 @@ function closeModalPublicate() {
   setTimeout(() => {
     backgroundPublicateModal.classList.remove('show', 'hide'); // Ocultar el fondo y resetear las clases de animación
     publicateModal.classList.remove('show', 'hide'); // Ocultar el modal y resetear las clases de animación
-  }, 700); // 300ms es la duración de las animaciones de salida definidas en el CSS
+  }, 300); // 300ms es la duración de las animaciones de salida definidas en el CSS
 }
 
 // Asignar eventos a los activadores y al botón de cerrar
