@@ -178,6 +178,17 @@
     filter: contrast(0);
 }
 
+#boton-terminos-modal {
+    border: none;
+    background: #00000000;
+    padding-block: 0px;
+    padding-inline: 0px;
+    font-size: 11px;
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 
 .box-modal-googlemap {
     width: 100%;
