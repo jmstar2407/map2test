@@ -396,7 +396,7 @@
   }
   
   .modal-background.hide {
-    animation: background-publicate-out 0.7s ease forwards;
+    animation: background-publicate-out 0.3s ease forwards;
   }
   
   .modal-publicate.show {
@@ -405,7 +405,7 @@
   }
   
   .modal-publicate.hide {
-    animation: publicate-out 0.7s ease forwards;
+    animation: publicate-out 0.3s ease forwards;
   }
 
 
