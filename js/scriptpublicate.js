@@ -23,7 +23,7 @@ function closeModalPublicate() {
   setTimeout(() => {
     backgroundPublicateModal.classList.remove('show', 'hide'); // Ocultar el fondo y resetear las clases de animación
     publicateModal.classList.remove('show', 'hide'); // Ocultar el modal y resetear las clases de animación
-  }, 300); // 300ms es la duración de las animaciones de salida definidas en el CSS
+  }, 700); // 300ms es la duración de las animaciones de salida definidas en el CSS
 }
 
 // Asignar eventos a los activadores y al botón de cerrar
@@ -36,4 +36,34 @@ backgroundPublicateModal.addEventListener('click', (event) => {
   if (event.target === backgroundPublicateModal) {
     closeModalPublicate();
   }
+});
+
+
+
+// Obtén los botones por su ID
+const btnAlquilar = document.getElementById('publicate-btn-alquilar');
+const btnVender = document.getElementById('publicate-btn-vender');
+
+// Define tu número de WhatsApp (reemplaza con tu número real)
+const numeroWhatsApp = '+18299605566';
+
+// Define los mensajes predeterminados (puedes cambiarlos fácilmente aquí)
+const mensajeAlquilar = 'Hola, tengo interés en poner en alquiler una propiedad.';
+const mensajeVender = 'Hola, tengo interés en vender una propiedad.';
+
+// Agrega un evento de clic a cada botón
+btnAlquilar.addEventListener('click', () => {
+  // Crea el enlace de WhatsApp con el mensaje predeterminado
+  const enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensajeAlquilar)}`;
+
+  // Abre el enlace en una nueva pestaña o ventana
+  window.open(enlaceWhatsApp, '_blank');
+});
+
+btnVender.addEventListener('click', () => {
+  // Crea el enlace de WhatsApp con el mensaje predeterminado
+  const enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensajeVender)}`;
+
+  // Abre el enlace en una nueva pestaña o ventana
+  window.open(enlaceWhatsApp, '_blank');
 });

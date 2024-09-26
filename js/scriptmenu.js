@@ -37,3 +37,15 @@ closeBox.onclick = () => {
         box.querySelector('.boxjm1-content').style.animation = '';
     }, 300); 
 };
+
+
+
+
+
+
+
+
+
+
+
+

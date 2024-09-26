@@ -100,7 +100,7 @@ function closeModal() {
                 <div class="info-mini-bottom-modal"><p>ArríbaTe se compromete a garantizar la accesibilidad digital para personas con discapacidades.<br> Trabajamos continuamente para mejorar la accesibilidad de nuestra experiencia web para todos.</p></div>
                     
                 <div class="info-mini-bottom-modal"><p><strong>Aviso:</strong> La información presentada es de carácter informativo y está sujeta a cambios sin previo aviso.<br>
-                    Al utilizar nuestra plataforma, reconoces y aceptas cumplir con nuestras <a href="#">Condiciones de Uso</a> y <a href="#">Política de Privacidad.</a></p>
+                    Al utilizar nuestra plataforma, reconoces y aceptas cumplir con nuestras <button id="boton-terminos-modal" data-seccion="terminos-de-uso">Condiciones de uso</button> y <button id="boton-terminos-modal" data-seccion="politicas-de-privacidad">Políticas de privacidad</button></p>
                 </div>
         
                 <div class="info-mini-redes"><h6>Síguenos:</h6><div><img src="./img/icons/instagram2.png"><img src="./img/icons/facebook2.png"><img src="./img/icons/x2.png"></div>
