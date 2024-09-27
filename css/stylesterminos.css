@@ -38,6 +38,13 @@
   font-size: 25px;
   background: #ffffff;
   color: #000000;
+  transition: 0.2s;
+}
+
+.cerrar-cuadro:hover {
+  cursor: pointer;
+  color: red;
+  transition: 0.2s;
 }
 
 .terminos-politica-titulo {

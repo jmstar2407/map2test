@@ -8,6 +8,9 @@ body {
     padding: 0;
 }
 
+.leaflet-interactive {
+    cursor: grab;
+}
 
 .loader {
     position: fixed;
@@ -470,7 +473,7 @@ body {
     display: none;
     position: absolute;
     top: auto;
-    bottom: 300px;
+    bottom: 270px;
     height: 50px;
     width: 50px;
     right: 20px;
@@ -1212,4 +1215,74 @@ body {
     z-index: 1000;
     border-radius: 36px;
     transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+.coordinate-box {
+    position: absolute;
+    background-color: rgb(255 255 255);
+    padding: 10px;
+    border-radius: 16px;
+    z-index: 1000;
+    box-shadow: 5px 5px 14px rgb(0 0 0 / 27%);
+}
+  
+  .coordinate-box button {
+    background-color: #6892bb; /* Color de fondo verde */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .coordinate-box button:hover {
+    background-color: #456b8f;
+    transition: 0.3s;
+  }
+
+  .coordinate-popup .leaflet-popup-close-button {
+    display: none; 
+}
+
+#coordinateBox-cerrar {
+    background: #cfcfcf;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 22px;
+    height: 30px;
+    width: 30px;
+    color: #2d2d2d;
+    margin: 0px;
+    background-image: url(../img/icons/cerrar1.svg);
+    background-size: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+}
+
+#coordinateBox-cerrar:hover {
+    background: #bdbdbd;
+    background-image: url(../img/icons/cerrar1.svg);
+    background-size: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+}
+
+#coordinateBox-copiar {
+    width: 85px;
 }
