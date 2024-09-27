@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UP - Eleva tu búsqueda</title>
+    <title>ArríbaTe</title>
     <link rel="shortcut icon" href="./img/logo4.svg">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="./css/stylesup.css" />
@@ -573,7 +573,9 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
                 <div class="display-info-all"></div>
             </div>
-            <div class="terminos-politica-end"><p>Copyright © 2024 ArríbaTe S.A.</p></div>
+            <div class="terminos-politica-end">
+                <p>Copyright © 2024 ArríbaTe S.A.</p>
+            </div>
         </div>
     </div>
 
@@ -1208,6 +1210,53 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
     <script src="./js/scriptmenu.js"></script>
     <script src="./js/scriptpublicate.js"></script>
     <script src="./js/scriptterminos.js"></script>
+
+
+    <script>
+        map.on('contextmenu', function (e) {
+            // Crea el cuadro de coordenadas
+            const coordinateBox = L.DomUtil.create('div', 'coordinate-box');
+            coordinateBox.innerHTML = `
+            <p>Latitud: ${e.latlng.lat.toFixed(6)}</p>
+            <p>Longitud: ${e.latlng.lng.toFixed(6)}</p>
+            <button id="coordinateBox-copiar" onclick="copyCoordinates(${e.latlng.lat.toFixed(6)}, ${e.latlng.lng.toFixed(6)})">Copiar</button>
+            <button onclick="openGoogleMaps(${e.latlng.lat.toFixed(6)}, ${e.latlng.lng.toFixed(6)})">Abrir en Google Maps</button>
+            <button id="coordinateBox-cerrar" onclick="closeCoordinateBox()"></button> 
+          `;
+
+            // Posiciona el cuadro en el lugar del clic
+            L.popup({ className: 'coordinate-popup' }) // Agrega la clase 'coordinate-popup'
+                .setLatLng(e.latlng)
+                .setContent(coordinateBox)
+                .openOn(map);
+        });
+
+        function copyCoordinates(lat, lng) {
+            const coordinates = `${lat}, ${lng}`;
+            navigator.clipboard.writeText(coordinates)
+                .then(() => {
+                    const copyButton = document.querySelector('.coordinate-box button:first-of-type'); // Selecciona el primer botón (copiar)
+                    const originalText = copyButton.textContent; // Guarda el texto original del botón
+                    copyButton.textContent = 'Copiado!'; // Cambia el texto a "Copiado"
+
+                    setTimeout(() => {
+                        copyButton.textContent = originalText; // Restaura el texto original después de 3 segundos
+                    }, 3000);
+                })
+                .catch(err => {
+                    console.error('Error al copiar coordenadas: ', err);
+                });
+        }
+
+        function openGoogleMaps(lat, lng) {
+            const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+            window.open(url, '_blank');
+        }
+
+        function closeCoordinateBox() {
+            map.closePopup(); // Cierra el popup que contiene el cuadro de coordenadas
+        }
+    </script>
 
 </body>
 
