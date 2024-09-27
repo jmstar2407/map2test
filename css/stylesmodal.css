@@ -178,7 +178,7 @@
     filter: contrast(0);
 }
 
-#boton-terminos-modal {
+.boton-terminos-modal {
     border: none;
     background: #00000000;
     padding-block: 0px;
@@ -279,16 +279,6 @@
 }
 
 
-
-.contactos p {
-    font-family: system-ui;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    color: black;
-    margin-block-start: 19px;
-    margin-block-end: 3px;
-}
 
 .whatsapp-button {
     display: inline-flex;
@@ -432,9 +422,6 @@
     text-align: justify;
 }
 
-.contactos {
-    display: none;
-}
 
 .contactos-res {
     position: relative;
@@ -778,9 +765,7 @@
         border-radius: 0px;
     }
 
-    .contactos {
-        display: none;
-    }
+
 
     .contactos-res {
         position: relative;
