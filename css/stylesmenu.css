@@ -87,7 +87,7 @@
     font-weight: bold;
     color: #000000;
     text-align: center;
-    border-bottom: 1px solid hsl(0deg 0% 0% / 20%);
+    border-bottom: 1px solid hsl(207.86deg 43.75% 87.45%);
 }
 
 .boxjm1-titulo p {
@@ -118,9 +118,10 @@
 }
 
 .boxjm1-down {
-    height: 60px;
+    height: 26px;
     width: 100%;
-    background: #3d3d3d38;
+    background: #faf9fd;
+    border-top: 1px solid hsl(208.13deg 44.59% 87.48%);
 }
 
 .boxjm1-down p {
@@ -139,8 +140,8 @@
     font-family: sans-serif;
     font-weight: 100;
     color: #000000;
-    margin-block-start: 3px;
-    margin-block-end: 3px;
+    margin-block-start: 5px;
+    margin-block-end: 5px;
     font-size: 14px;
     padding: 0px;
     border-radius: 7px;
