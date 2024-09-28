@@ -71,14 +71,22 @@
 }
 
 .terminos-botones-box {
-  background: #0029ffbd;
+  background: #00aef0;
   height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-block-start: 0px;
   margin-block-end: 0px;
   font-family: sans-serif;
+  display: flex;
+  overflow-x: auto;
+  display: flex;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding: 0px 15px;
+}
+
+.terminos-botones-box::-webkit-scrollbar { 
+  display: none; /* Chrome, Safari and Opera */
 }
 
 .terminos-botones-box button {
@@ -86,6 +94,9 @@
   background: #00000000;
   font-size: 15px;
   margin: 0px 5px;
+  white-space: nowrap;
+  margin: 5px;
+  flex: 0 0 auto;
 }
 
 .terminos-botones-box button:hover {
