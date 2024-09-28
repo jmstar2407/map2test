@@ -1281,15 +1281,35 @@ botones.forEach(boton => {
 
     <script>
 
+// Seleccionamos todos los botones vibrar y los botones de zoom de Leaflet
 const vibrarButtons = document.querySelectorAll(".vibrar-button, .leaflet-control-zoom-in, .leaflet-control-zoom-out");
+const vibracionToggle = document.getElementById("vibracionToggle"); 
+
+let vibracionActivada = true; // Variable para controlar si la vibración está activada o no
+
+// Valores de duración e intensidad que puedes ajustar según tus necesidades
+const duracionVibracion = 150; // En milisegundos
+const intensidadVibracion = 0.5; // Entre 0 y 1
 
 vibrarButtons.forEach(button => {
-  button.addEventListener("click", vibrar);
+  button.addEventListener("click", () => {
+    if (vibracionActivada) {
+      vibrar(duracionVibracion, intensidadVibracion);
+    }
+  });
 });
 
-function vibrar() {
+vibracionToggle.addEventListener("click", () => {
+  vibracionActivada = !vibracionActivada;
+  vibracionToggle.textContent = vibracionActivada ? "Apagar Vibración" : "Encender Vibración";
+});
+
+function vibrar(duracion, intensidad) {
   if ("vibrate" in navigator) {
-    navigator.vibrate(100); 
+    // Verificamos que la intensidad esté entre 0 y 1
+    const intensidadAjustada = Math.max(0, Math.min(1, intensidad));
+
+    navigator.vibrate([duracion * intensidadAjustada]); 
   } 
 }
 
