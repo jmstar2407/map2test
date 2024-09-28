@@ -206,6 +206,7 @@
     box-shadow: 0px 0px 0px 1px rgba(0, 174, 255, 0) inset;
     background: #f8f8f8;
     border-radius: 7px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .filter-button img {
@@ -292,6 +293,7 @@
     position: relative;
     left: 14px;
     z-index: 10;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .filter-counter button:hover {

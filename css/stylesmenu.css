@@ -204,6 +204,7 @@
     color: #fff;
     display: flex;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .menu-lines {
