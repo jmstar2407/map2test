@@ -81,7 +81,7 @@
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  padding: 0px 20px;
+  padding: 0px 10px;
 }
 
 .terminos-botones-box::-webkit-scrollbar { 
@@ -93,13 +93,13 @@
   font-size: 15px;
   white-space: nowrap;
   flex: 0 0 auto;
-  padding-inline: 20px;
+  padding-inline: 15px;
   height: 40px;
   margin: 10px 10px;
   border-radius: 10px;
   background: #d7dbe6;
   color: rgb(0, 0, 0);
-  box-shadow: -3px -3px 7px 2px rgb(243 243 243), 4px 4px 12px -4px rgb(43 71 115);
+  box-shadow: -2px -2px 8px 2px rgb(243 243 243), 3px 3px 10px -4px rgb(43 71 115);
 }
 
 
@@ -110,7 +110,7 @@
 .terminos-botones-box button.active {
   color: #000000;
   background: #d5d9e3;
-  box-shadow: -3px -3px 7px 2px rgb(243 243 243) inset, 4px 4px 12px -4px rgb(43 71 115) inset;
+  box-shadow: -3px -3px 7px 2px rgb(243 243 243) inset, 4px 4px 12px -4px rgb(43 71 115 / 94%) inset;
   text-shadow: 1px 1px 2px #5e6a89;
 }
 
@@ -122,8 +122,8 @@
 .terminos-politica-end {
   height: 25px;
   width: 100%;
-  background: #ffffff;
-  border-top: 1px solid rgb(179 179 179);
+  background: #d7dbe6;
+  border-top: 1px solid rgb(189 196 213);
   display: inline-flex;
   justify-content: center;
 }
