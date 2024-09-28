@@ -1279,6 +1279,23 @@ botones.forEach(boton => {
 
     </script>
 
+    <script>
+
+const alquilerButton = document.getElementById("alquilerButton-rpsv");
+const ventaButton = document.getElementById("ventaButton-rpsv");
+
+alquilerButton.addEventListener("click", vibrar);
+ventaButton.addEventListener("click", vibrar);
+
+function vibrar() {
+  if ("vibrate" in navigator) { // Verificar si el dispositivo soporta vibración
+    navigator.vibrate(200); // Vibrar durante 200 milisegundos
+  } 
+}
+
+
+    </script>
+
 </body>
 
 </html>
