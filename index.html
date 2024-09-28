@@ -40,8 +40,8 @@
                 <div class="linediv"></div>
 
                 <div class="botonbox">
-                    <button id="alquilerButton" class="toggle-button active">Alquiler</button>
-                    <button id="ventaButton" class="toggle-button">Venta</button>
+                    <button id="alquilerButton" class="toggle-button active vibrar-button">Alquiler</button>
+                    <button id="ventaButton" class="toggle-button vibrar-button">Venta</button>
                 </div>
 
 
@@ -54,26 +54,26 @@
             <!-- Menu respon -->
             <div class="botonbox2">
 
-                <div><button id="alquilerButton-rpsv" class="toggle-button">
+                <div><button id="alquilerButton-rpsv" class="toggle-button vibrar-button">
                         <h3>Alquiler</h3>
                     </button>
-                    <button id="ventaButton-rpsv" class="toggle-button">
+                    <button id="ventaButton-rpsv" class="toggle-button vibrar-button">
                         <h3>Venta</h3>
                     </button>
                 </div>
 
-                <div id="publicate-filter-rpsv">
-                    <div class="publicate-rpsv ">
+                <div id="publicate-filter-rpsv" class="vibrar-button">
+                    <div class="publicate-rpsv" class="vibrar-button">
                         <!-- <h3>Publíca<span style="color: #cd1025;">Te</span></h3> -->
-                        <button id="open-publicate-respon"></button> <!--  -------------   -->
+                        <button id="open-publicate-respon" class="vibrar-button"></button> <!--  -------------   -->
                     </div>
-                    <div class="cube-boton-filtro-respon"><button id="open-filter-button-respon"></button></div>
+                    <div class="cube-boton-filtro-respon"><button id="open-filter-button-respon" class="vibrar-button"></button></div>
                 </div>
             </div>
             <!-- Menu respon FIN -->
 
 
-            <div class="cube-boton-filtro"><button id="open-filter-button">Filtros</button></div>
+            <div class="cube-boton-filtro"><button id="open-filter-button" class="vibrar-button">Filtros</button></div>
 
 
 
@@ -1281,18 +1281,17 @@ botones.forEach(boton => {
 
     <script>
 
-const alquilerButton = document.getElementById("alquilerButton-rpsv");
-const ventaButton = document.getElementById("ventaButton-rpsv");
+const vibrarButtons = document.querySelectorAll(".vibrar-button");
 
-alquilerButton.addEventListener("click", vibrar);
-ventaButton.addEventListener("click", vibrar);
+vibrarButtons.forEach(button => {
+  button.addEventListener("click", vibrar);
+});
 
 function vibrar() {
-  if ("vibrate" in navigator) { // Verificar si el dispositivo soporta vibración
-    navigator.vibrate(200); // Vibrar durante 200 milisegundos
+  if ("vibrate" in navigator) {
+    navigator.vibrate(200); 
   } 
 }
-
 
     </script>
 
