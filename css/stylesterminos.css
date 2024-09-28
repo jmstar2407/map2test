@@ -36,7 +36,7 @@
   width: 40px;
   border: none;
   font-size: 25px;
-  background: #ffffff;
+  background: #ffffff00;
   color: #000000;
   transition: 0.2s;
 }
@@ -49,13 +49,12 @@
 
 .terminos-politica-titulo {
   width: 100%;
-  background: rgb(255 255 255);
-  height: 80px;
-  border-bottom: 1px solid rgb(193 193 193);
+  background: #d7dbe6;
+  height: 115px;
 }
 
 .terminos-politica-titulo h1 {
-  height: 40px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,14 +64,14 @@
 }
 
 .terminos-politica-body {
-  background: rgb(255 255 255);
+  background: #d7dbe6;
   overflow: auto;
   flex: 1;
 }
 
 .terminos-botones-box {
-  background: #00aef0;
-  height: 40px;
+  background: #d7dbe6;
+  height: 65px;
   margin-block-start: 0px;
   margin-block-end: 0px;
   font-family: sans-serif;
@@ -91,29 +90,28 @@
 
 .terminos-botones-box button {
   border: none;
-  background: #00aef0;
   font-size: 15px;
   white-space: nowrap;
   flex: 0 0 auto;
-  color: white;
-  border-right: 1px solid hsl(196.5deg 100% 71.84%);
   padding-inline: 20px;
+  height: 40px;
+  margin: 10px 10px;
+  border-radius: 10px;
+  background: #d7dbe6;
+  color: rgb(0, 0, 0);
+  box-shadow: -3px -3px 7px 2px rgb(243 243 243), 4px 4px 12px -4px rgb(43 71 115);
 }
 
-.terminos-botones-box button:first-child {
-  border-left: 1px solid hsl(196.5deg 100% 71.84%); /* Añade un borde izquierdo al primer botón */
-}
-
-.terminos-botones-box button:last-child {
-  border-right: 1px solid hsl(196.5deg 100% 71.84%); /* Mantiene el borde derecho en el último botón */
-}
 
 .terminos-botones-box button:hover {
   cursor: pointer;
 }
 
 .terminos-botones-box button.active {
-  color: white;
+  color: #000000;
+  background: #d5d9e3;
+  box-shadow: -3px -3px 7px 2px rgb(243 243 243) inset, 4px 4px 12px -4px rgb(43 71 115) inset;
+  text-shadow: 1px 1px 2px #5e6a89;
 }
 
 .terminos-politica-body h2 {
@@ -151,7 +149,7 @@
 }
 
 .display-info-all {
-  background: #ffffff;
+  background: #d7dbe6;
   padding: 25px;
   margin: 25px;
   border-radius: 12px;
