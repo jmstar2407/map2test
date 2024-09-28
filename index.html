@@ -111,7 +111,7 @@
 
 
                 <!-- Menú new -->
-                <div id="openBoxJmBtn" class="menu-all single-menu">
+                <div id="openBoxJmBtn" class="menu-all single-menu vibrar-button">
                     <div class="menu-lines">
                         <span class="line line1"></span>
                         <span class="line line2"></span>
@@ -157,18 +157,18 @@
         <div class="mapbox" style="position: fixed;top: 0px;left: 0px;">
             <div id="map" style="background: #aad3df;height: 100%;width: 100%;"></div>
 
-            <button id="fullscreenButton"></button>
+            <button id="fullscreenButton" class="vibrar-button"></button>
 
 
             <!-- Botones capas, location -->
-            <button id="changeLayerButton" class="layer-button">
+            <button id="changeLayerButton" class="layer-button vibrar-button">
                 <img src="./img/capasatelite2.png" alt="Cambiar capa" id="layerIcon">
             </button>
 
-            <button id="locateButton"></button>
+            <button id="locateButton" class="vibrar-button"></button>
 
             <!-- Boton centrar en RD -->
-            <button id="centerButton" class="center-button" style="display: none;">
+            <button id="centerButton" class="center-button vibrar-button" style="display: none;">
             </button>
             <!-- Boton centrar en RD FIN -->
             <!-- Botones capas, location FIN -->
@@ -344,7 +344,7 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
         <div class="header-filter"><img src="./img/logo2.svg">
             <h1>Filtros</h1>
-            <button id="close-filter-button">X</button>
+            <button id="close-filter-button" class="vibrar-button">X</button>
         </div>
 
 
@@ -470,7 +470,7 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
                         <li>
                             <h3>Conócenos:</h3>
 
-                            <button data-seccion="sobre-nosotros">
+                            <button data-seccion="sobre-nosotros" class="vibrar-button">
                                 <p>ArríbaTe, S.A.</p>
                             </button>
 
@@ -484,10 +484,10 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
                         </li>
                         <li>
                             <h3>Infórmate:</h3>
-                            <button data-seccion="terminos-de-uso">
+                            <button data-seccion="terminos-de-uso" class="vibrar-button">
                                 <p>Condiciones de uso</p>
                             </button>
-                            <button data-seccion="politicas-de-privacidad">
+                            <button data-seccion="politicas-de-privacidad" class="vibrar-button">
                                 <p>Políticas de privacidad</p>
                             </button>
                         </li>
@@ -516,7 +516,7 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
         <div id="publicate-modal" class="modal-publicate">
             <div class="publicate-titulo">
                 <p>Publíca<span style="color: #cd1025;">Te</span></p>
-                <button id="close-publicate-modal">X</button>
+                <button id="close-publicate-modal" class="vibrar-button">X</button>
             </div>
             <div class="publicate-body">
                 <p style="font-size: 14px;">¿Quieres <span style="color: #096caf;">alquilar</span> o <span
@@ -563,9 +563,9 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
                 <button class="cerrar-cuadro">X</button>
 
                 <div class="terminos-botones-box">
-                    <button data-seccion="sobre-nosotros">Sobre Nosotros</button>
-                    <button data-seccion="terminos-de-uso">Condiciones de Uso</button>
-                    <button data-seccion="politicas-de-privacidad">Políticas de privacidad</button>
+                    <button data-seccion="sobre-nosotros" class="vibrar-button">Sobre Nosotros</button>
+                    <button data-seccion="terminos-de-uso" class="vibrar-button">Condiciones de Uso</button>
+                    <button data-seccion="politicas-de-privacidad" class="vibrar-button">Políticas de privacidad</button>
                 </div>
             </div>
 
@@ -1281,7 +1281,7 @@ botones.forEach(boton => {
 
     <script>
 
-const vibrarButtons = document.querySelectorAll(".vibrar-button");
+const vibrarButtons = document.querySelectorAll(".vibrar-button, .leaflet-control-zoom-in, .leaflet-control-zoom-out");
 
 vibrarButtons.forEach(button => {
   button.addEventListener("click", vibrar);
