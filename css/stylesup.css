@@ -291,7 +291,7 @@ body {
 .redes-button {
     width: 30px;
     height: 30px;
-    background-color: #18c8ff;
+    background-color: #ffffff;
     color: white;
     display: flex;
     justify-content: center;
@@ -388,6 +388,7 @@ body {
     left: 14px;
     cursor: pointer;
     z-index: 999;
+    -webkit-tap-highlight-color: transparent;
 }
 
 #fullscreenButton.active {
@@ -440,6 +441,7 @@ body {
     background-size: 25px;
     background-position: center;
     background-repeat: no-repeat;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .leaflet-touch .leaflet-bar a:last-child {
@@ -452,6 +454,7 @@ body {
     background-size: 25px;
     background-position: center;
     background-repeat: no-repeat;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .leaflet-touch .leaflet-bar a {
@@ -489,6 +492,7 @@ body {
     z-index: 1000;
     border-radius: 36px;
     transition: 0.3s;
+    -webkit-tap-highlight-color: transparent;
 }
 
 #locateButton img {
@@ -1215,6 +1219,7 @@ body {
     z-index: 1000;
     border-radius: 36px;
     transition: 0.3s;
+    -webkit-tap-highlight-color: transparent;
 }
 
 

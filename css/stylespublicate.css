@@ -50,6 +50,7 @@
   border: none;
   margin-right: 7px;
   transition: 0.2s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #open-publicate-respon:hover {
@@ -160,6 +161,29 @@
   transition: 0.2s;
   border: none;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+#close-publicate-modal{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: #ffffff;
+  font-size: 19px;
+  background: red;
+  padding: 4px 15px;
+  border-radius: 5px 16px 5px 6px;
+  margin: 5px 5px 0px 0px;
+  transition: 0.2s;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#close-publicate-modal:hover{
+  cursor: pointer;
+  background: rgb(182, 0, 0);
+  transition: 0.3s;
 }
 
 .publicate-body {
