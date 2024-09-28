@@ -82,7 +82,7 @@
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  padding: 0px 15px;
+  padding: 0px 20px;
 }
 
 .terminos-botones-box::-webkit-scrollbar { 
@@ -91,12 +91,21 @@
 
 .terminos-botones-box button {
   border: none;
-  background: #00000000;
+  background: #00aef0;
   font-size: 15px;
-  margin: 0px 5px;
   white-space: nowrap;
-  margin: 5px;
   flex: 0 0 auto;
+  color: white;
+  border-right: 1px solid hsl(196.5deg 100% 71.84%);
+  padding-inline: 20px;
+}
+
+.terminos-botones-box button:first-child {
+  border-left: 1px solid hsl(196.5deg 100% 71.84%); /* Añade un borde izquierdo al primer botón */
+}
+
+.terminos-botones-box button:last-child {
+  border-right: 1px solid hsl(196.5deg 100% 71.84%); /* Mantiene el borde derecho en el último botón */
 }
 
 .terminos-botones-box button:hover {
