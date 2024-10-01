@@ -624,7 +624,6 @@ body {
     flex: 1;
 }
 
-
 @keyframes gradientMove {
     0% {
         background-position: 0% 50%;
@@ -645,7 +644,6 @@ body {
     background-size: 57px;
     background-repeat: no-repeat;
 }
-
 
 /* Sobrescribir estilos de Leaflet */
 .leaflet-div-icon {
@@ -670,8 +668,6 @@ body {
     border: 7px solid transparent;
 }
 
-
-
 .leaflet-marker-icon span,
 .leaflet-marker-icon img {
     transition: 0.2s;
@@ -688,34 +684,6 @@ body {
     background: white;
 }
 
-
-
-
-.carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    text-align: center;
-    height: 190px;
-    /* Establece la altura fija aquí */
-    pointer-events: none;
-}
-
-.carousel img {
-    width: 100%;
-    height: 100%;
-    /* Asegúrate de que las imágenes ocupen todo el alto del carrusel */
-    object-fit: cover;
-    /* Esta propiedad es clave para el efecto "background-cover" */
-    display: none;
-    max-width: 100%;
-    max-height: 190px;
-    border-radius: 14px 14px 0px 0px;
-}
-
-.carousel img.active {
-    display: block;
-}
 
 .carousel button {
     position: absolute;
@@ -743,7 +711,6 @@ body {
     background-position: 5px 5px;
     background-repeat: no-repeat;
 }
-
 
 .leaflet-popup-content:hover .carousel button {
     background-color: rgba(255, 255, 255, 0.911);
@@ -778,10 +745,6 @@ body {
     background-color: #adadad;
 }
 
-
-
-
-
 .carousel .indicators {
     text-align: center;
     margin-top: 10px;
@@ -799,7 +762,6 @@ body {
     margin-right: auto;
     padding: 3px;
 }
-
 
 .carousel .indicator {
     position: relative;
@@ -821,7 +783,6 @@ body {
     top: 0px;
     margin: 0px 1px;
 }
-
 
 .leaflet-popup-content {
     margin: 0;
@@ -848,6 +809,7 @@ body {
     font-size: 15px;
     font-family: system-ui;
     font-weight: bold;
+    pointer-events: none;
 }
 
 #vermodal {
@@ -897,16 +859,12 @@ body {
     overflow-y: auto;
 }
 
-
-
 .leaflet-popup-content-wrapper {
     padding: 0;
     text-align: left;
     border-radius: 14px;
     transition: 0.3s;
 }
-
-
 
 .leaflet-popup:hover {
     transform: scale(1.04);
@@ -930,15 +888,6 @@ body {
     background: white;
     border-radius: 50px;
 }
-
-
-
-
-
-
-
-
-
 
 .bar-redes {
     position: absolute;
@@ -1018,6 +967,97 @@ body {
 
 
 
+.center-button {
+    position: absolute;
+    top: auto;
+    bottom: 270px;
+    height: 50px;
+    width: 50px;
+    right: 20px;
+    background: #ffffffe8;
+    box-shadow: 1px 1px 3px 2px rgb(0 0 0 / 13%);
+    background-image: url(../img/icons/botoncenter1.svg);
+    background-size: 34px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 36px;
+    transition: 0.3s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+
+
+
+
+
+
+.coordinate-box {
+    position: absolute;
+    background-color: rgb(255 255 255);
+    padding: 10px;
+    border-radius: 16px;
+    z-index: 1000;
+    box-shadow: 5px 5px 14px rgb(0 0 0 / 27%);
+}
+  
+  .coordinate-box button {
+    background-color: #6892bb; /* Color de fondo verde */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .coordinate-box button:hover {
+    background-color: #456b8f;
+    transition: 0.3s;
+  }
+
+  .coordinate-popup .leaflet-popup-close-button {
+    display: none; 
+}
+
+#coordinateBox-cerrar {
+    background: #cfcfcf;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 22px;
+    height: 30px;
+    width: 30px;
+    color: #2d2d2d;
+    margin: 0px;
+    background-image: url(../img/icons/cerrar1.svg);
+    background-size: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+}
+
+#coordinateBox-cerrar:hover {
+    background: #bdbdbd;
+    background-image: url(../img/icons/cerrar1.svg);
+    background-size: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+}
+
+#coordinateBox-copiar {
+    width: 85px;
+}
+
 
 @media screen and (max-width: 900px) {
     .menumaster {
@@ -1043,6 +1083,10 @@ body {
     #locateButton {
         display: block;
     }
+    
+    .center-button {
+        bottom: 335px;
+    }  
 }
 
 
@@ -1162,6 +1206,9 @@ body {
         bottom: 227px;
     }
 
+    .center-button {
+        bottom: 288px;
+    }
 }
 
 
@@ -1199,95 +1246,3 @@ body {
 
 
 
-
-
-.center-button {
-    position: absolute;
-    top: auto;
-    bottom: 291px;
-    height: 50px;
-    width: 50px;
-    right: 20px;
-    background: #ffffffe8;
-    box-shadow: 1px 1px 3px 2px rgb(0 0 0 / 13%);
-    background-image: url(../img/icons/botoncenter1.svg);
-    background-size: 34px;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    z-index: 1000;
-    border-radius: 36px;
-    transition: 0.3s;
-    -webkit-tap-highlight-color: transparent;
-}
-
-
-
-
-
-
-
-
-.coordinate-box {
-    position: absolute;
-    background-color: rgb(255 255 255);
-    padding: 10px;
-    border-radius: 16px;
-    z-index: 1000;
-    box-shadow: 5px 5px 14px rgb(0 0 0 / 27%);
-}
-  
-  .coordinate-box button {
-    background-color: #6892bb; /* Color de fondo verde */
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
-  }
-  
-  .coordinate-box button:hover {
-    background-color: #456b8f;
-    transition: 0.3s;
-  }
-
-  .coordinate-popup .leaflet-popup-close-button {
-    display: none; 
-}
-
-#coordinateBox-cerrar {
-    background: #cfcfcf;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    border-radius: 22px;
-    height: 30px;
-    width: 30px;
-    color: #2d2d2d;
-    margin: 0px;
-    background-image: url(../img/icons/cerrar1.svg);
-    background-size: 14px;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: 0.3s;
-}
-
-#coordinateBox-cerrar:hover {
-    background: #bdbdbd;
-    background-image: url(../img/icons/cerrar1.svg);
-    background-size: 14px;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: 0.3s;
-}
-
-#coordinateBox-copiar {
-    width: 85px;
-}
