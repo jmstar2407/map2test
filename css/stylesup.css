@@ -743,6 +743,7 @@ body {
     background-size: 25px;
     background-position: 5px 5px;
     background-repeat: no-repeat;
+    z-index: 7;
 }
 
 .leaflet-popup-content:hover .carousel button {
