@@ -302,8 +302,6 @@ body {
     background-size: 30px;
 }
 
-
-
 .layer-button {
     position: absolute;
     top: auto;
@@ -333,7 +331,6 @@ body {
     border-radius: 14px;
 }
 
-
 .capasimgs {
     height: 100%;
     width: 100%;
@@ -355,7 +352,6 @@ body {
     box-shadow: 7px 7px 11px -2px rgb(79 172 207 / 54%) inset, -7px -6px 21px 5px rgb(0 0 0 / 90%) inset;
 }
 
-
 @keyframes capagiro {
     0% {
         background-position-x: 0px;
@@ -365,11 +361,6 @@ body {
         background-position-x: 165px;
     }
 }
-
-
-
-
-
 
 #fullscreenButton {
     position: absolute;
@@ -394,10 +385,6 @@ body {
 #fullscreenButton.active {
     background-image: url(../img/icons/fullscreen2.svg);
 }
-
-
-
-
 
 .leaflet-touch .leaflet-control-layers,
 .leaflet-touch .leaflet-bar {
@@ -466,11 +453,9 @@ body {
     color: #00000000;
 }
 
-
 .leaflet-control-zoom a {
     font-size: 0;
 }
-
 
 #locateButton {
     display: none;
@@ -510,18 +495,12 @@ body {
     filter: none;
 }
 
-
-
-
 .price-text {
     font-weight: bold;
     color: rgb(0, 0, 0);
     font-size: 14px;
     /* Agrega más estilos según lo necesites */
 }
-
-
-
 
 .barcontacto {
     position: absolute;
@@ -560,12 +539,6 @@ body {
     display: inline-flex;
 }
 
-
-
-
-
-
-
 .boton1 {
     position: relative;
     background: #18c8ff;
@@ -577,8 +550,6 @@ body {
     border-radius: 9px;
     margin-top: 11px;
 }
-
-
 
 .logonombre {
     position: relative;
@@ -684,6 +655,68 @@ body {
     background: white;
 }
 
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    height: 190px;
+    border-radius: 14px 14px 0px 0px;
+}
+
+.carousel-inner {
+    display: flex;
+    /* Mostramos las imágenes en una línea horizontal */
+    transition: transform 0.3s ease-in-out;
+    /* Agregamos una transición suave */
+    width: 100%;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.carousel .indicators {
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    background: #00000057;
+    border-radius: 8px;
+    padding: 3px;
+}
+
+.carousel .indicator {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #a9a9a9a8;
+    border-radius: 50%;
+    margin: 0 2px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.carousel .indicator.active {
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    top: 0px;
+}
+
+.carousel .indicators {
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
 
 .carousel button {
     position: absolute;
@@ -745,44 +778,6 @@ body {
     background-color: #adadad;
 }
 
-.carousel .indicators {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.carousel .indicators {
-    position: relative;
-    text-align: center;
-    margin-top: -21px;
-    background: #00000057;
-    backdrop-filter: blur(8px);
-    width: 91px;
-    border-radius: 8px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 3px;
-}
-
-.carousel .indicator {
-    position: relative;
-    top: -1px;
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: #a9a9a9a8;
-    border-radius: 50%;
-    margin: 0 2px;
-    cursor: pointer;
-    pointer-events: auto;
-}
-
-.carousel .indicator.active {
-    background-color: #fff;
-    width: 10px;
-    height: 10px;
-    top: 0px;
-    margin: 0px 1px;
-}
 
 .leaflet-popup-content {
     margin: 0;
@@ -958,14 +953,11 @@ body {
     color: #096caf;
 }
 
-
 #alquilerButton.active,
 #ventaButton.active {
     box-shadow: 0px 43px 0px 0px rgb(205 16 37), 0px 43px 0px 0px rgb(233 233 233);
     color: #096caf;
 }
-
-
 
 .center-button {
     position: absolute;
@@ -987,13 +979,6 @@ body {
     transition: 0.3s;
     -webkit-tap-highlight-color: transparent;
 }
-
-
-
-
-
-
-
 
 .coordinate-box {
     position: absolute;
@@ -1057,7 +1042,6 @@ body {
 #coordinateBox-copiar {
     width: 85px;
 }
-
 
 @media screen and (max-width: 900px) {
     .menumaster {
