@@ -598,8 +598,7 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
 
 
-
-
+        
         // Inicialización del mapa con un maxZoom aumentado
         var map;
 
@@ -891,8 +890,8 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
         // Función para crear el carrusel
         function createCarousel(imageFolder, imageCount) {
             let carousel = `<div class="carousel">
-                                <div class="carousel-inner">
-                                <div class="botonmaximizar"></div>`;
+                              <div class="botonmaximizar"></div>
+                                <div class="carousel-inner">`;
 
             const maxImagesToShow = Math.min(imageCount, 7);
 
@@ -1058,12 +1057,7 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
             var url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
             window.open(url, '_blank');
         }
-        
         // PopUP FIN
-
-
-
-
 
 
 
