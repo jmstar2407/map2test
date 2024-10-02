@@ -884,31 +884,34 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
             }
         ];
 
-        //Carousel
+
        // Carousel
 
         // Función para crear el carrusel
         function createCarousel(imageFolder, imageCount) {
-            let carousel = `<div class="carousel">
-                              <div class="botonmaximizar"></div>
-                                <div class="carousel-inner">`;
+  let carousel = `<div class="carousel">
+                    <div class="botonmaximizar"></div>
+                    <div class="carousel-inner">`;
 
-            const maxImagesToShow = Math.min(imageCount, 7);
+  const maxImagesToShow = Math.min(imageCount, 7);
 
-            for (let i = 1; i <= maxImagesToShow; i++) {
-                const imgSrc = `${imageFolder}${i}.jpg`;
-                carousel += `<img src="${imgSrc}" class="${i === 1 ? 'active' : ''}" alt="Imagen ${i}">`;
-            }
-            carousel += `
-                                </div>
-                                <button class="prev">&#10094;</button>
-                                <button class="next">&#10095;</button>
-                                <div class="indicators">
-                                  ${Array.from({ length: maxImagesToShow }, (_, index) => `<span class="indicator ${index === 0 ? 'active' : ''}" data-index="${index}"></span>`).join('')}
-                                </div>
-                              </div>`;
-            return carousel;
-        }
+  for (let i = 1; i <= maxImagesToShow; i++) {
+    const imgSrc = `${imageFolder}${i}.jpg`;
+    carousel += `
+      <div class="placeholder" style="background-color: #f0f0f0;"> 
+        <img src="${imgSrc}" class="${i === 1 ? 'active' : ''}" alt="Imagen ${i}" loading="lazy" onload="this.parentNode.style.backgroundImage = 'none'"> 
+      </div>`; 
+  }
+  carousel += `
+                    </div>
+                    <button class="prev">❮</button>
+                    <button class="next">❯</button>
+                    <div class="indicators">
+                      ${Array.from({ length: maxImagesToShow }, (_, index) => `<span class="indicator ${index === 0 ? 'active' : ''}" data-index="${index}"></span>`).join('')}
+                    </div>
+                  </div>`;
+  return carousel;
+}
 
         // Función para cambiar la imagen
         function changeImage(carousel, direction) {
