@@ -43,7 +43,7 @@
   height: 40px;
   width: 40px;
   background: rgba(255, 0, 0, 0);
-  background-image: url(../img/icons/publicate2.1.png);
+  background-image: url(../img/icons/publicate2.2.png);
   background-size: 32px;
   background-position: center;
   background-repeat: no-repeat;
@@ -51,13 +51,22 @@
   margin-right: 7px;
   transition: 0.2s;
   -webkit-tap-highlight-color: transparent;
+  filter: brightness(0);
+  opacity: 0.41;
 }
 
 #open-publicate-respon:hover {
-  background-image: url(../img/icons/publicate2.2.png);
+  filter: brightness(1);
+  opacity: 1;
   cursor: pointer;
   transition: 0.2s;
 }
+
+#open-publicate-respon.active {
+  filter: brightness(1);
+  opacity: 1;
+}
+
 
 #background-publicate-modal {
   position: fixed;
@@ -116,13 +125,6 @@
 #open-publicate.active {
   box-shadow: 0px 41px 0px 0px rgb(205 16 37), 0px 41px 0px 0px rgb(233 233 233);
 }
-
-#open-publicate-respon.active {
-  background-image: url(../img/icons/publicate2.2.png);
-}
-
-
-
 
 
 .publicate-titulo {
