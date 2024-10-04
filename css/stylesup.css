@@ -32,11 +32,6 @@ body {
     animation: loaderFadeOut 3s forwards;
 }
 
-.content {
-    display: none;
-    /* Oculta el contenido inicialmente */
-}
-
 /* Puedes agregar más estilos para personalizar la apariencia del logo */
 .loader img {
     width: 100%;
@@ -54,8 +49,10 @@ body {
 */
 
 
-
-
+.content {
+    display: none;
+    /* Oculta el contenido inicialmente */
+}
 
 .loader-logo {
     position: relative;
@@ -86,6 +83,9 @@ body {
     transform: skewX(-20deg);
     /* Aplica un ángulo al reflejo */
     animation: shine 1s 1.3s forwards;
+    will-change: transform; 
+    transform: skewX(-20deg) translateZ(0);
+    animation: shine 0.8s 1s forwards; 
 }
 
 /* Animación de movimiento */
@@ -100,14 +100,6 @@ body {
         /* Termina fuera del contenedor, a la derecha */
     }
 }
-
-
-
-
-
-
-
-
 
 @keyframes loaderFadeOut {
     0% {
