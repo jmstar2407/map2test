@@ -10,6 +10,7 @@
     align-items: center;
     animation: bakcground-in-boxjm1 0.3s forwards;
     z-index: 9999;
+    will-change: transform; 
 }
 
 .boxjm1-content {
@@ -324,7 +325,6 @@
     }
 
     .boxjm1 {
-        /* ... tus otros estilos ... */
         position: fixed;
         top: 51px;
         /* Ajusta el margen superior a 50px */
@@ -333,7 +333,8 @@
         width: 100%;
         height: calc(100% - 51px);
         /* Calcula la altura para llegar hasta abajo */
-        /* ... tus otros estilos ... */
+        will-change: transform;
+        transform: translateX(110%) translateZ(0);
     }
 
 
@@ -359,29 +360,28 @@
         }
     }
 
+
     @keyframes fadeIn {
         from {
-            transform: translate3d(110%, 0, 0); /* Añadido translate3d */
+            transform: translateX(110%) translateZ(0);
         }
-    
+
         to {
-            transform: translate3d(0%, 0, 0);  /* Añadido translate3d */
+            transform: translateX(0%) translateZ(0);
         }
     }
-    
-    
+
+
     /* Animación de salida */
     @keyframes fadeOut {
         from {
-            transform: translate3d(0%, 0, 0);  /* Añadido translate3d */
+            transform: translateX(0%) translateZ(0);
         }
-    
+
         to {
-            transform: translate3d(110%, 0, 0); /* Añadido translate3d */
+            transform: translateX(110%) translateZ(0);
         }
     }
-
-
 }
 
 
