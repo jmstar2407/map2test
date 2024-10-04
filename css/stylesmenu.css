@@ -334,7 +334,6 @@
         height: calc(100% - 51px);
         /* Calcula la altura para llegar hasta abajo */
         will-change: transform;
-        transform: translateX(110%) translateZ(0);
     }
 
 
