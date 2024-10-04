@@ -434,7 +434,7 @@ body {
 
 .leaflet-touch .leaflet-bar a:first-child:active,
 .leaflet-touch .leaflet-bar a:last-child:active {
-    filter: brightness(0.8);
+    transform: scale(0.92);
 }
 
 .leaflet-touch .leaflet-bar a {
