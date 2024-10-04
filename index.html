@@ -794,9 +794,9 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
         // Función para obtener el color del fondo del span según el tipo de propiedad
         function getBackgroundColor(iconUrl) {
             if (iconUrl === houseIcon) {
-                return '#e17477'; // Color para casas
+                return '#ff5f64'; // Color para casas
             } else if (iconUrl === buildingIcon) {
-                return '#52bae8'; // Color para apartamentos
+                return '#1090e7'; // Color para apartamentos
             } else if (iconUrl === landIcon) {
                 return '#59a739'; // Color para solares
             } else {
@@ -990,6 +990,8 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
             }
         }
 
+        
+
         // Añadimos los event listeners a cada carrusel después de crearlo
         function initializeCarouselEvents() {
             const carousels = document.querySelectorAll('.carousel');
@@ -1173,15 +1175,6 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
 
 
-
-
-
-
-
-
-
-
-
         var alquilerMarkers = [];
         var ventaMarkers = [];
 
@@ -1296,6 +1289,7 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
             // Crea el cuadro de coordenadas
             const coordinateBox = L.DomUtil.create('div', 'coordinate-box');
             coordinateBox.innerHTML = `
+            <h2>Coordenadas</h2>
             <p>Latitud: ${e.latlng.lat.toFixed(6)}</p>
             <p>Longitud: ${e.latlng.lng.toFixed(6)}</p>
             <button id="coordinateBox-copiar" onclick="copyCoordinates(${e.latlng.lat.toFixed(6)}, ${e.latlng.lng.toFixed(6)})">Copiar</button>
