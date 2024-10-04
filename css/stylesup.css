@@ -81,7 +81,6 @@ body {
     animation: shine 1s 1.3s forwards;
     will-change: transform; 
     transform: skewX(-20deg) translateZ(0);
-    animation: shine 0.8s 1s forwards; 
 }
 
 /* Animación de movimiento */
