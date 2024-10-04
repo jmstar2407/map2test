@@ -434,7 +434,7 @@ body {
 
 .leaflet-touch .leaflet-bar a:first-child:active,
 .leaflet-touch .leaflet-bar a:last-child:active {
-    transform: scale(0.92);
+    transform: scale(0.95);
 }
 
 .leaflet-touch .leaflet-bar a {
