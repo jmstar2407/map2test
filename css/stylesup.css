@@ -1088,6 +1088,12 @@ body {
     }  
 }
 
+@media (min-width: 750px) {
+#fullscreenButton {
+    bottom: 30px;
+}
+}
+
 
 @media (max-width: 700px) {
 
@@ -1231,13 +1237,20 @@ body {
     }
 }
 
-@media (max-height: 350px) {
+@media (max-height: 320px) {
     .leaflet-left {
         display: none;
     }
 }
 
-@media (max-height: 220px) {
+@media (max-height: 300px) {
+    #changeLayerButton {
+        height: 70px;
+        width: 70px;
+    }
+}
+
+@media (max-height: 210px) {
     #changeLayerButton {
         display: none;
     }
