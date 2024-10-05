@@ -735,14 +735,17 @@ colorSchemeQuery.addEventListener('change', handleColorSchemeChange); -->
 
         // centrar
         const bounds = [
-            [19.9205, -72.0155],
-            [17.5649, -71.8584],
-            [18.5104, -68.3821],
-            [20.0059, -68.6463]
+            [18.979026, -71.586914], //Oeste
+            [18.29195, -70.19165], //Sureste
+            [18.64104, -68.686523], //Este
+            [19.733098, -70.587158]  //Norte
         ];
 
-        L.rectangle(bounds, { color: "transparent", weight: 1 }).addTo(map);
-        map.fitBounds(bounds);
+        const rectangle = L.rectangle(bounds, { color: "transparent", weight: 1 }).addTo(map);
+map.fitBounds(bounds);
+
+// Accede a la capa del rectángulo y establece el estilo
+rectangle._path.style.pointerEvents = "none";
 
         map.on('moveend', function () {
             const centerButton = document.getElementById('centerButton');
