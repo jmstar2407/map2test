@@ -40,6 +40,15 @@ backgroundPublicateModal.addEventListener('click', (event) => {
 
 
 
+// Manejo del evento 'popstate' para cerrar el modal cuando el usuario presiona "atrás"
+window.addEventListener('popstate', (event) => {
+  if (publicateModal.classList.contains('show')) {
+    closeModalPublicate(); // Cierra el modal si está abierto
+  }
+});
+
+
+
 // Obtén los botones por su ID
 const btnAlquilar = document.getElementById('publicate-btn-alquilar');
 const btnVender = document.getElementById('publicate-btn-vender');
