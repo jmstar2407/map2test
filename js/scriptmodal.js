@@ -221,6 +221,16 @@ function closeModal() {
         
             mainImage.addEventListener('click', () => openFullscreenModal(currentFullscreenIndex));
         }
+
+        // Manejar el evento "popstate" para el botón de "atrás"
+window.addEventListener('popstate', (event) => {
+    const modal = document.getElementById('propertyModal');
+    if (modal.style.display === 'block') {
+        closeModal(); // Si el modal está abierto, lo cierra
+    }
+});
+
+
         
         // Verificar ID en la URL al cargar
         window.addEventListener('load', () => {
